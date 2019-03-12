@@ -215,7 +215,7 @@ class Model(object):
             print()
             
             print(f">> Completed epoch {epoch} in ", time.time()-start)
-            metrics = self.evaluate(dev_file, dev, batch_size)
+            metrics = self.evaluate(dev_file, dev, batch_size, False, None)
             no_punct_dev_uas = metrics["nopunct_uas"]
             no_punct_dev_las = metrics["nopunct_las"]
             punct_dev_uas = metrics["uas"]
@@ -250,9 +250,12 @@ class Model(object):
 
         print(f">> Finished at epoch {epoch}")
 
-    def evaluate(self, test_file: str, test_data: List, batch_size: int):
+    def evaluate(self, test_file: str, test_data: List, batch_size: int, save_output: bool, output_file: str):
         stripped_filename = ntpath.basename(test_file)
-        output_file = f"{self._model_uid}_on_{stripped_filename}"
+        if save_output:
+            output_file = output_file
+        else:
+            output_file = f"{self._model_uid}_on_{stripped_filename}"
 
         # run parser on data
         predictions = self.run(test_data, batch_size)
@@ -263,7 +266,10 @@ class Model(object):
 
         metrics = uni_eval.evaluate_files(output_file, test_file)
 
-        os.system("rm %s" % output_file)
+        if not save_output:
+            os.system("rm %s" % output_file)
+        else:
+            print('output file saved to %s' % (output_file))
 
         return metrics
 

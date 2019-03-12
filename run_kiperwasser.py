@@ -6,6 +6,9 @@ from uniparse.models.kiperwasser import DependencyParser
 
 parser = argparse.ArgumentParser()
 
+# sample call:
+# $ python run_kiperwasser.py --train /home/lpmayos/code/datasets/ud2.1/ud-treebanks-v2.1/UD_English/en-ud-train.conllu --dev /home/lpmayos/code/datasets/ud2.1/ud-treebanks-v2.1/UD_English/en-ud-dev.conllu --test /home/lpmayos/code/datasets/ud2.1/ud-treebanks-v2.1/UD_English/en-ud-test.conllu --model_dest /home/lpmayos/code/UniParse/saved_models/model_en_ud/prova.model --decoder eisner --dev_mode True
+
 parser.add_argument("--train", dest="train", help="Annotated CONLL train file", metavar="FILE", required=True)
 parser.add_argument("--dev", dest="dev", help="Annotated CONLL dev file", metavar="FILE", required=True)
 parser.add_argument("--test", dest="test", help="Annotated CONLL dev test", metavar="FILE", required=True)
