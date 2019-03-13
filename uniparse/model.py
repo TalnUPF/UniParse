@@ -2,6 +2,7 @@ import os
 import sys
 import time
 import ntpath
+import logging
 from typing import *
 
 from uniparse.types import Parser
@@ -10,7 +11,7 @@ from uniparse.dataprovider import ScaledBatcher, BucketBatcher
 try:
     import uniparse.decoders as decoders
 except Exception as e:
-    print(">> ERROR: can't import decoders. please run 'python setup.py build_ext --inplace' from the root directory")
+    logging.error("ERROR: can't import decoders. please run 'python setup.py build_ext --inplace' from the root directory")
     raise e
 
 import uniparse.backend as backend_wrapper
@@ -135,9 +136,9 @@ class Model(object):
         callbacks = callbacks if callbacks else []  # This is done to avoid using the same list.
         
         if patience > -1:
-            print(f">...Training with patience {patience} for less than {epochs} epochs")
+            logging.debug(f"...Training with patience {patience} for less than {epochs} epochs")
         else: 
-            print(f">...Training without patience for exactly {epochs} epochs")
+            logging.debug(f"...Training without patience for exactly {epochs} epochs")
 
         running_patience=patience
 
@@ -152,8 +153,8 @@ class Model(object):
 
             samples = sklearn.utils.shuffle(samples)
 
-            print(f"> Epoch {epoch}")
-            print("=====================")
+            logging.info(f"Epoch {epoch}")
+            logging.info("=====================")
             for step, (x, y) in enumerate(samples):
                 # renew graph
                 backend.renew_cg()
@@ -212,25 +213,23 @@ class Model(object):
 
                 global_step += 1
 
-            print()
-            
-            print(f">> Completed epoch {epoch} in ", time.time()-start)
-            metrics = self.evaluate(dev_file, dev, batch_size, False, None)
+            logging.debug("Completed epoch %s in %s" % (epoch, time.time()-start))
+            metrics = self.evaluate(dev_file, dev, batch_size, None)
             no_punct_dev_uas = metrics["nopunct_uas"]
             no_punct_dev_las = metrics["nopunct_las"]
             punct_dev_uas = metrics["uas"]
             punct_dev_las = metrics["las"]
-            print(f">> UAS (wo. punct) {no_punct_dev_uas:.{5}}\t LAS (wo. punct) {no_punct_dev_las:.{5}}")
-            print(f">> UAS (w. punct) {punct_dev_uas:.{5}}\t LAS (w. punct) {punct_dev_las:.{5}}")
+            logging.debug(f"UAS (wo. punct) {no_punct_dev_uas:.{5}}\t LAS (wo. punct) {no_punct_dev_las:.{5}}")
+            logging.debug(f"UAS (w. punct) {punct_dev_uas:.{5}}\t LAS (w. punct) {punct_dev_las:.{5}}")
 
             if patience > -1:
                 if max_dev_uas > no_punct_dev_uas:
                     max_dev_uas = no_punct_dev_uas
                     running_patience-=1
-                    print(f">> Patience decremented to {running_patience}")
+                    logging.debug(f"Patience decremented to {running_patience}")
                 else:
                     running_patience=patience
-                    print(f">> Patience incremented to {running_patience}")
+                    logging.debug(f"Patience incremented to {running_patience}")
                 
                 if running_patience==0:
                     break    
@@ -246,30 +245,30 @@ class Model(object):
             for callback in callbacks:
                 callback.on_epoch_end(epoch, batch_end_info)
 
-            print()
+        logging.debug(f"Finished at epoch {epoch}")
 
-        print(f">> Finished at epoch {epoch}")
-
-    def evaluate(self, test_file: str, test_data: List, batch_size: int, save_output: bool, output_file: str):
+    def evaluate(self, test_file: str, test_data: List, batch_size: int, output_file: str):
         stripped_filename = ntpath.basename(test_file)
-        if save_output:
+
+        if output_file is not None:
+            is_temporal = False
             output_file = output_file
         else:
+            is_temporal = True
             output_file = f"{self._model_uid}_on_{stripped_filename}"
 
         # run parser on data
         predictions = self.run(test_data, batch_size)
 
         # write to file
-        uni_eval.write_predictions_to_file(
-            predictions, reference_file=test_file, output_file=output_file, vocab=self._vocab)
+        uni_eval.write_predictions_to_file(predictions, reference_file=test_file, output_file=output_file, vocab=self._vocab)
 
         metrics = uni_eval.evaluate_files(output_file, test_file)
 
-        if not save_output:
+        if is_temporal:
             os.system("rm %s" % output_file)
         else:
-            print('output file saved to %s' % (output_file))
+            logging.debug('output file saved to %s' % (output_file))
 
         return metrics
 

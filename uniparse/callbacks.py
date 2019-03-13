@@ -1,4 +1,5 @@
 from uniparse.types import Callback, Parser
+import logging
 
 
 class TensorboardLoggerCallback(Callback):
@@ -6,7 +7,7 @@ class TensorboardLoggerCallback(Callback):
         # import is located inside body in to avoid a dependency on tensorboard / tensorflow
         from uniparse.utility.tensorboard_logging import Logger
         self.writer = Logger(logger_destination)
-        print("> writing tensorboard to", logger_destination)
+        logging.info("writing tensorboard to %s" % logger_destination)
 
     def on_batch_end(self, info):
         global_step = info["global_step"]
@@ -27,7 +28,7 @@ class ModelSaveCallback(Callback):
     def __init__(self, save_destination, save_after=0):
         self.save_destination = save_destination
         self.save_after = save_after
-        print("> saving model to", save_destination, "(after step %d)" % save_after)
+        logging.info("saving model to %s  (after step %d)" % (save_destination, save_after))
         self.best_uas = -1
         self.best_epoch = -1
 
@@ -38,10 +39,10 @@ class ModelSaveCallback(Callback):
 
         if dev_uas > self.best_uas:
             if global_step < self.save_after:
-                print("skipped saving (below threshold %d < %d)" % (global_step, self.save_after))
+                logging.info("skipped saving (below threshold %d < %d)" % (global_step, self.save_after))
                 return
             else:
                 self.best_uas = dev_uas
                 self.best_epoch = epoch
                 model.save_to_file(self.save_destination)
-                print("saved to", self.save_destination)
+                logging.info("saved to %s" % self.save_destination)

@@ -1,0 +1,186 @@
+2019-03-13 12:02:17,193:INFO:	
+2019-03-13 12:02:17,193:INFO:	
+2019-03-13 12:02:17,193:INFO:	
+2019-03-13 12:02:17,193:INFO:	===================================================================================================
+2019-03-13 12:02:17,193:INFO:	kiperwasser_main
+2019-03-13 12:02:17,193:INFO:	===================================================================================================
+2019-03-13 12:02:17,193:INFO:	
+2019-03-13 12:02:18,126:INFO:	> saving vocab to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/vocab.pkl
+2019-03-13 12:02:18,129:DEBUG:	
+
+ Init training
+2019-03-13 12:02:18,129:INFO:	>> Loading in data
+2019-03-13 12:02:19,679:INFO:	saving model to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model  (after step 0)
+2019-03-13 12:02:19,680:DEBUG:	...Training without patience for exactly 30 epochs
+2019-03-13 12:02:19,688:INFO:	Epoch 1
+2019-03-13 12:02:19,688:INFO:	=====================
+2019-03-13 12:02:21,827:DEBUG:	Completed epoch 1 in 2.139565944671631
+2019-03-13 12:02:26,238:DEBUG:	UAS (wo. punct) 0.1623	 LAS (wo. punct) 0.054265
+2019-03-13 12:02:26,239:DEBUG:	UAS (w. punct) 0.17131	 LAS (w. punct) 0.070781
+2019-03-13 12:02:27,059:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:02:27,060:INFO:	Epoch 2
+2019-03-13 12:02:27,060:INFO:	=====================
+2019-03-13 12:02:29,246:DEBUG:	Completed epoch 2 in 2.186964750289917
+2019-03-13 12:02:38,790:DEBUG:	UAS (wo. punct) 0.19986	 LAS (wo. punct) 0.088884
+2019-03-13 12:02:38,791:DEBUG:	UAS (w. punct) 0.20423	 LAS (w. punct) 0.10478
+2019-03-13 12:02:39,609:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:02:39,610:INFO:	Epoch 3
+2019-03-13 12:02:39,610:INFO:	=====================
+2019-03-13 12:02:41,832:DEBUG:	Completed epoch 3 in 2.222304344177246
+2019-03-13 12:02:46,127:DEBUG:	UAS (wo. punct) 0.1564	 LAS (wo. punct) 0.081897
+2019-03-13 12:02:46,127:DEBUG:	UAS (w. punct) 0.15846	 LAS (w. punct) 0.092492
+2019-03-13 12:02:46,128:INFO:	Epoch 4
+2019-03-13 12:02:46,128:INFO:	=====================
+2019-03-13 12:02:48,295:DEBUG:	Completed epoch 4 in 2.1679251194000244
+2019-03-13 12:02:57,607:DEBUG:	UAS (wo. punct) 0.12237	 LAS (wo. punct) 0.077949
+2019-03-13 12:02:57,607:DEBUG:	UAS (w. punct) 0.13425	 LAS (w. punct) 0.094401
+2019-03-13 12:02:57,608:INFO:	Epoch 5
+2019-03-13 12:02:57,608:INFO:	=====================
+2019-03-13 12:03:00,064:DEBUG:	Completed epoch 5 in 2.456639051437378
+2019-03-13 12:03:06,950:DEBUG:	UAS (wo. punct) 0.36053	 LAS (wo. punct) 0.28054
+2019-03-13 12:03:06,951:DEBUG:	UAS (w. punct) 0.35112	 LAS (w. punct) 0.28002
+2019-03-13 12:03:07,797:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:03:07,797:INFO:	Epoch 6
+2019-03-13 12:03:07,797:INFO:	=====================
+2019-03-13 12:03:09,987:DEBUG:	Completed epoch 6 in 2.190258741378784
+2019-03-13 12:03:19,834:DEBUG:	UAS (wo. punct) 0.54505	 LAS (wo. punct) 0.45349
+2019-03-13 12:03:19,835:DEBUG:	UAS (w. punct) 0.53448	 LAS (w. punct) 0.4528
+2019-03-13 12:03:20,621:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:03:20,621:INFO:	Epoch 7
+2019-03-13 12:03:20,621:INFO:	=====================
+2019-03-13 12:03:22,883:DEBUG:	Completed epoch 7 in 2.2622759342193604
+2019-03-13 12:03:32,160:DEBUG:	UAS (wo. punct) 0.55726	 LAS (wo. punct) 0.4912
+2019-03-13 12:03:32,160:DEBUG:	UAS (w. punct) 0.55245	 LAS (w. punct) 0.49332
+2019-03-13 12:03:32,958:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:03:32,958:INFO:	Epoch 8
+2019-03-13 12:03:32,958:INFO:	=====================
+2019-03-13 12:03:35,092:DEBUG:	Completed epoch 8 in 2.1345136165618896
+2019-03-13 12:03:44,636:DEBUG:	UAS (wo. punct) 0.62795	 LAS (wo. punct) 0.55
+2019-03-13 12:03:44,636:DEBUG:	UAS (w. punct) 0.61301	 LAS (w. punct) 0.5433
+2019-03-13 12:03:45,588:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:03:45,588:INFO:	Epoch 9
+2019-03-13 12:03:45,588:INFO:	=====================
+2019-03-13 12:03:47,881:DEBUG:	Completed epoch 9 in 2.293457269668579
+2019-03-13 12:03:58,179:DEBUG:	UAS (wo. punct) 0.67119	 LAS (wo. punct) 0.59741
+2019-03-13 12:03:58,179:DEBUG:	UAS (w. punct) 0.65329	 LAS (w. punct) 0.58724
+2019-03-13 12:03:58,979:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:03:58,980:INFO:	Epoch 10
+2019-03-13 12:03:58,980:INFO:	=====================
+2019-03-13 12:04:01,302:DEBUG:	Completed epoch 10 in 2.3231072425842285
+2019-03-13 12:04:07,796:DEBUG:	UAS (wo. punct) 0.70168	 LAS (wo. punct) 0.6314
+2019-03-13 12:04:07,796:DEBUG:	UAS (w. punct) 0.6828	 LAS (w. punct) 0.61985
+2019-03-13 12:04:08,807:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:04:08,808:INFO:	Epoch 11
+2019-03-13 12:04:08,808:INFO:	=====================
+2019-03-13 12:04:11,642:DEBUG:	Completed epoch 11 in 2.8348476886749268
+2019-03-13 12:04:21,252:DEBUG:	UAS (wo. punct) 0.70808	 LAS (wo. punct) 0.63126
+2019-03-13 12:04:21,253:DEBUG:	UAS (w. punct) 0.69043	 LAS (w. punct) 0.6216
+2019-03-13 12:04:22,167:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:04:22,167:INFO:	Epoch 12
+2019-03-13 12:04:22,167:INFO:	=====================
+2019-03-13 12:04:24,458:DEBUG:	Completed epoch 12 in 2.291428804397583
+2019-03-13 12:04:29,226:DEBUG:	UAS (wo. punct) 0.71915	 LAS (wo. punct) 0.64551
+2019-03-13 12:04:29,226:DEBUG:	UAS (w. punct) 0.70276	 LAS (w. punct) 0.63683
+2019-03-13 12:04:30,186:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:04:30,186:INFO:	Epoch 13
+2019-03-13 12:04:30,187:INFO:	=====================
+2019-03-13 12:04:32,430:DEBUG:	Completed epoch 13 in 2.2434988021850586
+2019-03-13 12:04:37,153:DEBUG:	UAS (wo. punct) 0.73471	 LAS (wo. punct) 0.6564
+2019-03-13 12:04:37,153:DEBUG:	UAS (w. punct) 0.71517	 LAS (w. punct) 0.64502
+2019-03-13 12:04:37,949:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:04:37,949:INFO:	Epoch 14
+2019-03-13 12:04:37,949:INFO:	=====================
+2019-03-13 12:04:40,098:DEBUG:	Completed epoch 14 in 2.1490988731384277
+2019-03-13 12:04:49,568:DEBUG:	UAS (wo. punct) 0.72396	 LAS (wo. punct) 0.64247
+2019-03-13 12:04:49,568:DEBUG:	UAS (w. punct) 0.70757	 LAS (w. punct) 0.63476
+2019-03-13 12:04:49,568:INFO:	Epoch 15
+2019-03-13 12:04:49,568:INFO:	=====================
+2019-03-13 12:04:51,708:DEBUG:	Completed epoch 15 in 2.1400163173675537
+2019-03-13 12:04:57,724:DEBUG:	UAS (wo. punct) 0.72804	 LAS (wo. punct) 0.64578
+2019-03-13 12:04:57,724:DEBUG:	UAS (w. punct) 0.71039	 LAS (w. punct) 0.63667
+2019-03-13 12:04:57,724:INFO:	Epoch 16
+2019-03-13 12:04:57,724:INFO:	=====================
+2019-03-13 12:04:59,904:DEBUG:	Completed epoch 16 in 2.1801705360412598
+2019-03-13 12:05:09,579:DEBUG:	UAS (wo. punct) 0.72328	 LAS (wo. punct) 0.64551
+2019-03-13 12:05:09,579:DEBUG:	UAS (w. punct) 0.7053	 LAS (w. punct) 0.63576
+2019-03-13 12:05:09,579:INFO:	Epoch 17
+2019-03-13 12:05:09,579:INFO:	=====================
+2019-03-13 12:05:11,905:DEBUG:	Completed epoch 17 in 2.325626850128174
+2019-03-13 12:05:21,585:DEBUG:	UAS (wo. punct) 0.7333	 LAS (wo. punct) 0.6593
+2019-03-13 12:05:21,586:DEBUG:	UAS (w. punct) 0.71568	 LAS (w. punct) 0.64936
+2019-03-13 12:05:21,586:INFO:	Epoch 18
+2019-03-13 12:05:21,586:INFO:	=====================
+2019-03-13 12:05:23,730:DEBUG:	Completed epoch 18 in 2.14377760887146
+2019-03-13 12:05:33,717:DEBUG:	UAS (wo. punct) 0.71774	 LAS (wo. punct) 0.6427
+2019-03-13 12:05:33,718:DEBUG:	UAS (w. punct) 0.70165	 LAS (w. punct) 0.63417
+2019-03-13 12:05:33,718:INFO:	Epoch 19
+2019-03-13 12:05:33,718:INFO:	=====================
+2019-03-13 12:05:35,989:DEBUG:	Completed epoch 19 in 2.2716352939605713
+2019-03-13 12:05:45,561:DEBUG:	UAS (wo. punct) 0.72718	 LAS (wo. punct) 0.64791
+2019-03-13 12:05:45,562:DEBUG:	UAS (w. punct) 0.71115	 LAS (w. punct) 0.64021
+2019-03-13 12:05:45,562:INFO:	Epoch 20
+2019-03-13 12:05:45,562:INFO:	=====================
+2019-03-13 12:05:47,756:DEBUG:	Completed epoch 20 in 2.1945464611053467
+2019-03-13 12:05:57,598:DEBUG:	UAS (wo. punct) 0.73466	 LAS (wo. punct) 0.66302
+2019-03-13 12:05:57,598:DEBUG:	UAS (w. punct) 0.71727	 LAS (w. punct) 0.6527
+2019-03-13 12:05:57,599:INFO:	Epoch 21
+2019-03-13 12:05:57,599:INFO:	=====================
+2019-03-13 12:05:59,782:DEBUG:	Completed epoch 21 in 2.1838457584381104
+2019-03-13 12:06:09,442:DEBUG:	UAS (wo. punct) 0.73439	 LAS (wo. punct) 0.65907
+2019-03-13 12:06:09,442:DEBUG:	UAS (w. punct) 0.71886	 LAS (w. punct) 0.65111
+2019-03-13 12:06:09,443:INFO:	Epoch 22
+2019-03-13 12:06:09,443:INFO:	=====================
+2019-03-13 12:06:11,615:DEBUG:	Completed epoch 22 in 2.1722967624664307
+2019-03-13 12:06:18,729:DEBUG:	UAS (wo. punct) 0.73539	 LAS (wo. punct) 0.65885
+2019-03-13 12:06:18,729:DEBUG:	UAS (w. punct) 0.71871	 LAS (w. punct) 0.65003
+2019-03-13 12:06:19,609:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:06:19,610:INFO:	Epoch 23
+2019-03-13 12:06:19,610:INFO:	=====================
+2019-03-13 12:06:21,700:DEBUG:	Completed epoch 23 in 2.090712070465088
+2019-03-13 12:06:31,290:DEBUG:	UAS (wo. punct) 0.73893	 LAS (wo. punct) 0.66357
+2019-03-13 12:06:31,290:DEBUG:	UAS (w. punct) 0.72201	 LAS (w. punct) 0.65433
+2019-03-13 12:06:32,119:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/model.model
+2019-03-13 12:06:32,119:INFO:	Epoch 24
+2019-03-13 12:06:32,119:INFO:	=====================
+2019-03-13 12:06:34,324:DEBUG:	Completed epoch 24 in 2.2054734230041504
+2019-03-13 12:06:43,745:DEBUG:	UAS (wo. punct) 0.73394	 LAS (wo. punct) 0.65626
+2019-03-13 12:06:43,745:DEBUG:	UAS (w. punct) 0.71684	 LAS (w. punct) 0.64673
+2019-03-13 12:06:43,745:INFO:	Epoch 25
+2019-03-13 12:06:43,745:INFO:	=====================
+2019-03-13 12:06:45,911:DEBUG:	Completed epoch 25 in 2.1658759117126465
+2019-03-13 12:06:52,877:DEBUG:	UAS (wo. punct) 0.72595	 LAS (wo. punct) 0.65358
+2019-03-13 12:06:52,877:DEBUG:	UAS (w. punct) 0.70884	 LAS (w. punct) 0.64391
+2019-03-13 12:06:52,878:INFO:	Epoch 26
+2019-03-13 12:06:52,878:INFO:	=====================
+2019-03-13 12:06:55,184:DEBUG:	Completed epoch 26 in 2.306422472000122
+2019-03-13 12:06:59,842:DEBUG:	UAS (wo. punct) 0.73044	 LAS (wo. punct) 0.65472
+2019-03-13 12:06:59,842:DEBUG:	UAS (w. punct) 0.71401	 LAS (w. punct) 0.64558
+2019-03-13 12:06:59,843:INFO:	Epoch 27
+2019-03-13 12:06:59,843:INFO:	=====================
+2019-03-13 12:07:02,087:DEBUG:	Completed epoch 27 in 2.2446746826171875
+2019-03-13 12:07:08,061:DEBUG:	UAS (wo. punct) 0.72804	 LAS (wo. punct) 0.64882
+2019-03-13 12:07:08,061:DEBUG:	UAS (w. punct) 0.71115	 LAS (w. punct) 0.64021
+2019-03-13 12:07:08,062:INFO:	Epoch 28
+2019-03-13 12:07:08,062:INFO:	=====================
+2019-03-13 12:07:10,243:DEBUG:	Completed epoch 28 in 2.181382417678833
+2019-03-13 12:07:14,117:DEBUG:	UAS (wo. punct) 0.72414	 LAS (wo. punct) 0.65014
+2019-03-13 12:07:14,118:DEBUG:	UAS (w. punct) 0.70709	 LAS (w. punct) 0.64049
+2019-03-13 12:07:14,118:INFO:	Epoch 29
+2019-03-13 12:07:14,118:INFO:	=====================
+2019-03-13 12:07:16,336:DEBUG:	Completed epoch 29 in 2.218380928039551
+2019-03-13 12:07:25,977:DEBUG:	UAS (wo. punct) 0.73099	 LAS (wo. punct) 0.65558
+2019-03-13 12:07:25,977:DEBUG:	UAS (w. punct) 0.71505	 LAS (w. punct) 0.64721
+2019-03-13 12:07:25,977:INFO:	Epoch 30
+2019-03-13 12:07:25,977:INFO:	=====================
+2019-03-13 12:07:28,170:DEBUG:	Completed epoch 30 in 2.1930813789367676
+2019-03-13 12:07:37,710:DEBUG:	UAS (wo. punct) 0.73044	 LAS (wo. punct) 0.66062
+2019-03-13 12:07:37,710:DEBUG:	UAS (w. punct) 0.71286	 LAS (w. punct) 0.65019
+2019-03-13 12:07:37,711:DEBUG:	Finished at epoch 30
+2019-03-13 12:07:37,711:INFO:	Model maxed on dev at epoch 23 
+2019-03-13 12:07:42,695:DEBUG:	output file saved to /home/lpmayos/code/UniParse/saved_models/model_en_ud_test/prova.output
+2019-03-13 12:07:42,696:INFO:	{'uas': 0.7188396557220275, 'las': 0.6503028371055148, 'nopunct_uas': 0.7361801029941212, 'nopunct_las': 0.6601194002643211}
+2019-03-13 12:07:42,696:INFO:	
+2019-03-13 12:07:42,696:INFO:	--------------------------------------------------------
+2019-03-13 12:07:42,696:INFO:	Test score: 0.7361801029941212 0.6601194002643211
+2019-03-13 12:07:42,696:INFO:	--------------------------------------------------------
+2019-03-13 12:07:42,696:INFO:	
