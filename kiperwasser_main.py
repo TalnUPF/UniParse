@@ -84,11 +84,11 @@ def do_training(arguments, vocab, embs):
 
 def main():
     """
-    train sample call:
-      $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/model_en_ud_test --logging_file logging.log --do_training True --train_file /home/lpmayos/code/datasets/ud2.1/ud-treebanks-v2.1/UD_English/en-ud-train.conllu --dev_file /home/lpmayos/code/datasets/ud2.1/ud-treebanks-v2.1/UD_English/en-ud-dev.conllu --test_file /home/lpmayos/code/datasets/ud2.1/ud-treebanks-v2.1/UD_English/en-ud-test.conllu --output_file prova.output --model_file model.model --vocab_file vocab.pkl --dev_mode True
+    train sample call with dev_mode True and 2 epochs:
+        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb --logging_file logging.log --do_training True --train_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.conll --dev_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl --dev_mode True --epochs 2
 
     test sample call:
-      $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/model_en_ud --logging_file logging.log --do_training False --test_file /home/lpmayos/code/datasets/ud2.1/ud-treebanks-v2.1/UD_English/en-ud-test.conllu --output_file prova2.output --model_file model.model --vocab_file vocab.pkl --dev_mode True
+        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb --logging_file logging.log --do_training False --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl 
     """
 
     parser = argparse.ArgumentParser()
