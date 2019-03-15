@@ -19,4 +19,4 @@ python setup.py build_ext --inplace
 
 # training and running model 
 
-python kiperwasser_main.py --results_folder /homedtic/lperez/UniParse/saved_models/model_en_ud_test --logging_file logging.log --do_training True --train_file /homedtic/lperez/UniParse/datasets/ud2.1/en-ud-train.conllu --dev_file /homedtic/lperez/UniParse/datasets/ud2.1/en-ud-dev.conllu --test_file /homedtic/lperez/UniParse/datasets/ud2.1/en-ud-test.conllu --output_file prova.output --model_file model.model --vocab_file vocab.pkl --dev_mode True --epochs 2 --dynet-devices GPU:0
+python kiperwasser_main.py --results_folder /homedtic/lperez/UniParse/saved_models/kiperwasser_en_ud_test_hpc --logging_file logging.log --do_training True --train_file /homedtic/lperez/UniParse/datasets/ud2.1/en-ud-train.conllu --dev_file /homedtic/lperez/UniParse/datasets/ud2.1/en-ud-dev.conllu --test_file /homedtic/lperez/UniParse/datasets/ud2.1/en-ud-test.conllu --output_file prova.output --model_file model.model --vocab_file vocab.pkl --dev_mode True --epochs 2 --dynet-devices GPU:0
