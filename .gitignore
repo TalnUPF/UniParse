@@ -38,3 +38,5 @@ coverage.xml
 *.mo
 
 .vscode
+
+saved_models/prova/*

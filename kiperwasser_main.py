@@ -128,6 +128,11 @@ def main():
     logging.info("===================================================================================================")
     logging.info("")
 
+    logging.info("")
+    logging.info("Arguments:")
+    logging.info(arguments)
+    logging.info("")
+
     # load or create vocabulary and embeddings
 
     vocab, embs = load_or_create_vocab_and_embs(arguments)
