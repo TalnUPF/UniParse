@@ -67,7 +67,7 @@ if __name__ == "__main__":
         raise Exception(output_dir, " does not exist!")
 
     num_sentence = 1
-    for file in os.listdir(input_dir):
+    for file in sorted(os.listdir(input_dir)):
         in_file = '%s/%s' % (input_dir, file)
         out_file = '%s/%s.conllu' % (output_dir, file)
         num_sentence = parse_file_to_conllu(in_file, out_file, num_sentence, all_sentences_file)
