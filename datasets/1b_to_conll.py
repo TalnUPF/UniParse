@@ -130,7 +130,7 @@ if __name__ == "__main__":
     2) 1b_to_conll:
         dummy: python 1b_to_conll.py --input_dir ~/code/datasets/test_1B_dataset/heldout-monolingual.tokenized.shuffled/ --output_dir ~/code/datasets/test_1B_dataset/conll/heldout-monolingual.tokenized.shuffled/
         real (heldout):  python 1b_to_conll.py --input_dir ~/code/datasets/1-billion-word-language-modeling-benchmark-r13output/heldout-monolingual.tokenized.shuffled/ --output_dir ~/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll/heldout-monolingual.tokenized.shuffled/
-        real (tarining):  python 1b_to_conll.py --input_dir ~/code/datasets/1-billion-word-language-modeling-benchmark-r13output/training-monolingual.tokenized.shuffled/ --output_dir ~/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll/training-monolingual.tokenized.shuffled/
+        real (training):  python 1b_to_conll.py --input_dir ~/code/datasets/1-billion-word-language-modeling-benchmark-r13output/training-monolingual.tokenized.shuffled/ --output_dir ~/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll/training-monolingual.tokenized.shuffled/
     """
 
     logging.basicConfig(level=logging.INFO,
