@@ -138,6 +138,6 @@ if __name__ == "__main__":
     training_dir_conll = '%s/%s/%s' % (input_dir, 'conll_individual_files', args.training_folder)
     generate_individual_conllu(training_dir, training_dir_conll)
 
-    dev_set = ['news.en-00097-of-00100.conllu', 'news.en-00098-of-00100.conllu', 'news.en-00099-of-00100.conllu']  # for real
+    dev_set = ['news.en-000%s-of-00100.conllu' % a for a in range(80, 99)]  # for real
     # dev_set = ['news.en-00001-of-00100.conllu', 'news.en-00002-of-00100.conllu']  # for dummy
     create_1b_train_dev_test_splits(input_dir, heldout_dir_conll, training_dir_conll, dev_set)
