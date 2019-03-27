@@ -191,7 +191,13 @@ class Vocabulary(object):
             [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
         with open(input_file, encoding="UTF-8") as f:
-            for line in f.readlines():
+
+            # lpmayos: I change readlines() to avoid runing out of memory when loading the training file.
+            # for line in f.readlines():
+
+            line = f.readline()
+            while line:
+
                 if not validate_line(line):
                     continue
 
@@ -204,17 +210,16 @@ class Vocabulary(object):
                     heads.append(head)
                     rels.append(rel)
                     chars.append(characters)
-                    # sent.append([word, tag, head, rel])
-                    # word_chars.append([characters])
                 else:
-                    # sent_chars.append(word_chars)
                     sent = (words, lemmas, tags, heads, rels, chars)
                     sents.append(sent)
 
                     words, lemmas, tags, heads, rels, chars = \
                         [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
-                    # sent = [[word_root, tag_root, root_head, rel_root]]
-                    # word_chars = [char_root]
+
+                line = f.readline()
+
+        f.close()  # lpmayos: close file when read
 
         return sents
 
