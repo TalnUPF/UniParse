@@ -1,5 +1,0 @@
-552943 --> uniparse_intel.sl 1 GPU --> saved_models/kiperwasser_en_1b
-
-553079 --> uniparse_intel.sl 2 GPU --> saved_models/kiperwasser_en_1b_2gpu
-
-553097 --> uniparse_amd.sl 2 GPU --> saved_models/kiperwasser_en_1b_amd_2gpu
