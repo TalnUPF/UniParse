@@ -1,0 +1,83 @@
+
+The following have been reloaded with a version change:
+  1) zlib/1.2.8-foss-2017a => zlib/1.2.9-foss-2017a
+
+
+The following have been reloaded with a version change:
+  1) cuDNN/7.4.1-CUDA-9.0.176 => cuDNN/7.0.5-CUDA-9.0.176
+
+running build_ext
+building 'uniparse.decoders.cle' extension
+gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -O2 -march=native -fPIC -O2 -march=native -fPIC -fPIC -I/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include -I/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/include/python3.6m -c uniparse/decoders/cle.c -o build/temp.linux-x86_64-3.6/uniparse/decoders/cle.o -O3
+In file included from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/ndarraytypes.h:1788:0,
+                 from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/ndarrayobject.h:18,
+                 from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/arrayobject.h:4,
+                 from uniparse/decoders/cle.c:293:
+/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it by " \
+  ^~~~~~~
+In file included from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/ndarrayobject.h:27:0,
+                 from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/arrayobject.h:4,
+                 from uniparse/decoders/cle.c:293:
+/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/__multiarray_api.h:1448:1: warning: ‘_import_array’ defined but not used [-Wunused-function]
+ _import_array(void)
+ ^~~~~~~~~~~~~
+uniparse/decoders/cle.c: In function ‘__pyx_f_8uniparse_8decoders_3cle_chu_liu_edmonds’:
+uniparse/decoders/cle.c:3949:3: warning: ‘__pyx_v_k’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_7; __pyx_t_14+=1) {
+   ^~~
+In file included from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/include/python3.6m/Python.h:86:0,
+                 from uniparse/decoders/cle.c:23:
+/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/include/python3.6m/listobject.h:72:64: warning: ‘__pyx_v_node’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ #define PyList_GET_ITEM(op, i) (((PyListObject *)(op))->ob_item[i])
+                                                                ^
+uniparse/decoders/cle.c:2746:7: note: ‘__pyx_v_node’ was declared here
+   int __pyx_v_node;
+       ^~~~~~~~~~~~
+gcc -shared -L/soft/easybuild/debian/8.8/Broadwell/software/GCCcore/6.3.0/lib64 -L/soft/easybuild/debian/8.8/Broadwell/software/GCCcore/6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/OpenBLAS/0.2.19-GCC-6.3.0-2.27-LAPACK-3.7.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/ScaLAPACK/2.0.2-gompi-2017a-OpenBLAS-0.2.19-LAPACK-3.7.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/FFTW/3.3.6-gompi-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/bzip2/1.0.6-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/zlib/1.2.8-foss-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/libreadline/6.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/ncurses/6.0-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/SQLite/3.13.0-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/GMP/6.1.1-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/XZ/5.2.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/libffi/3.2.1-GCCcore-6.3.0/lib64 -L/soft/easybuild/debian/8.8/Broadwell/software/libffi/3.2.1-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/flex/2.6.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/OpenSSL/1.0.1k-foss-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/GCCcore/6.3.0/lib64 -L/soft/easybuild/debian/8.8/Broadwell/software/GCCcore/6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/OpenBLAS/0.2.19-GCC-6.3.0-2.27-LAPACK-3.7.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/ScaLAPACK/2.0.2-gompi-2017a-OpenBLAS-0.2.19-LAPACK-3.7.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/FFTW/3.3.6-gompi-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/bzip2/1.0.6-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/zlib/1.2.8-foss-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/libreadline/6.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/ncurses/6.0-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/SQLite/3.13.0-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/GMP/6.1.1-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/XZ/5.2.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/libffi/3.2.1-GCCcore-6.3.0/lib64 -L/soft/easybuild/debian/8.8/Broadwell/software/libffi/3.2.1-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/flex/2.6.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/OpenSSL/1.0.1k-foss-2017a/lib build/temp.linux-x86_64-3.6/uniparse/decoders/cle.o -L/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib -lpython3.6m -o /homedtic/lperez/UniParse/uniparse/decoders/cle.cpython-36m-x86_64-linux-gnu.so
+building 'uniparse.models.mst_encode' extension
+creating build/temp.linux-x86_64-3.6/uniparse/models
+gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -O2 -march=native -fPIC -O2 -march=native -fPIC -fPIC -I/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include -I/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/include/python3.6m -c uniparse/models/mst_encode.cpp -o build/temp.linux-x86_64-3.6/uniparse/models/mst_encode.o -O3 -ffast-math -march=native -std=c++0x
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/ndarraytypes.h:1788:0,
+                 from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/ndarrayobject.h:18,
+                 from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/arrayobject.h:4,
+                 from uniparse/models/mst_encode.cpp:305:
+/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: warning: #warning "Using deprecated NumPy API, disable it by " "#defining NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it by " \
+  ^~~~~~~
+In file included from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/ndarrayobject.h:27:0,
+                 from /soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/arrayobject.h:4,
+                 from uniparse/models/mst_encode.cpp:305:
+/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib/python3.6/site-packages/numpy-1.12.1-py3.6-linux-x86_64.egg/numpy/core/include/numpy/__multiarray_api.h:1448:1: warning: ‘int _import_array()’ defined but not used [-Wunused-function]
+ _import_array(void)
+ ^~~~~~~~~~~~~
+g++ -shared -L/soft/easybuild/debian/8.8/Broadwell/software/GCCcore/6.3.0/lib64 -L/soft/easybuild/debian/8.8/Broadwell/software/GCCcore/6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/OpenBLAS/0.2.19-GCC-6.3.0-2.27-LAPACK-3.7.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/ScaLAPACK/2.0.2-gompi-2017a-OpenBLAS-0.2.19-LAPACK-3.7.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/FFTW/3.3.6-gompi-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/bzip2/1.0.6-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/zlib/1.2.8-foss-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/libreadline/6.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/ncurses/6.0-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/SQLite/3.13.0-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/GMP/6.1.1-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/XZ/5.2.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/libffi/3.2.1-GCCcore-6.3.0/lib64 -L/soft/easybuild/debian/8.8/Broadwell/software/libffi/3.2.1-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/flex/2.6.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/OpenSSL/1.0.1k-foss-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/GCCcore/6.3.0/lib64 -L/soft/easybuild/debian/8.8/Broadwell/software/GCCcore/6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/OpenBLAS/0.2.19-GCC-6.3.0-2.27-LAPACK-3.7.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/ScaLAPACK/2.0.2-gompi-2017a-OpenBLAS-0.2.19-LAPACK-3.7.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/FFTW/3.3.6-gompi-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/bzip2/1.0.6-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/zlib/1.2.8-foss-2017a/lib -L/soft/easybuild/debian/8.8/Broadwell/software/libreadline/6.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/ncurses/6.0-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/SQLite/3.13.0-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/GMP/6.1.1-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/XZ/5.2.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/libffi/3.2.1-GCCcore-6.3.0/lib64 -L/soft/easybuild/debian/8.8/Broadwell/software/libffi/3.2.1-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/flex/2.6.3-GCCcore-6.3.0/lib -L/soft/easybuild/debian/8.8/Broadwell/software/OpenSSL/1.0.1k-foss-2017a/lib build/temp.linux-x86_64-3.6/uniparse/models/mst_encode.o -L/soft/easybuild/debian/8.8/Broadwell/software/Python/3.6.4-foss-2017a/lib -lpython3.6m -o /homedtic/lperez/UniParse/uniparse/models/mst_encode.cpython-36m-x86_64-linux-gnu.so
+[dynet] initializing CUDA
+[dynet] CUDA driver/runtime versions are 9.0/9.0
+[dynet] Request for 3 specific GPUs ...
+[dynet] Device Number: 0
+[dynet]   Device name: GeForce GTX 1080 Ti
+[dynet]   Memory Clock Rate (KHz): 5505000
+[dynet]   Memory Bus Width (bits): 352
+[dynet]   Peak Memory Bandwidth (GB/s): 484.44
+[dynet]   Memory Free (GB): 11.5359/11.7151
+[dynet]
+[dynet] Device Number: 1
+[dynet]   Device name: GeForce GTX 1080 Ti
+[dynet]   Memory Clock Rate (KHz): 5505000
+[dynet]   Memory Bus Width (bits): 352
+[dynet]   Peak Memory Bandwidth (GB/s): 484.44
+[dynet]   Memory Free (GB): 11.5359/11.7151
+[dynet]
+[dynet] Device Number: 2
+[dynet]   Device name: GeForce GTX 1080 Ti
+[dynet]   Memory Clock Rate (KHz): 5505000
+[dynet]   Memory Bus Width (bits): 352
+[dynet]   Peak Memory Bandwidth (GB/s): 484.44
+[dynet]   Memory Free (GB): 11.5359/11.7151
+[dynet]
+[dynet] Device(s) selected: 0 1 2
+[dynet] random seed: 3791202899
+[dynet] allocating memory: 512MB
+[dynet] memory allocation done.
