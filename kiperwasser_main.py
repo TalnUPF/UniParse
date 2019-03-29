@@ -55,13 +55,22 @@ def do_training(arguments, vocab, embs):
 
     # prep data
     logging.info(">> Loading in data")
+
+    logging.info("tokenizing train data ...")
     training_data = vocab.tokenize_conll(arguments.train)
+    logging.info("... tokenized train data")
+
     if arguments.dev_mode:
         training_data=training_data[:100]
+
+    logging.info("tokenizing dev data ...")
     dev_data = vocab.tokenize_conll(arguments.dev)
+    logging.info("... tokenized dev data")
 
     # instantiate model
+    logging.info("creating model ...")
     model = DependencyParser(vocab, embs, arguments.no_update_pretrained_emb)
+    logging.info("... model created")
 
     callbacks = []
     tensorboard_logger = None
@@ -70,12 +79,19 @@ def do_training(arguments, vocab, embs):
         callbacks.append(tensorboard_logger)
 
 
+    logging.info("creating ModelSaveCallback ...")
     save_callback = ModelSaveCallback("%s/%s" % (arguments.results_folder, arguments.model_file))
     callbacks.append(save_callback)
+    logging.info("... ModelSaveCallback created")
 
     # prep params
+    logging.info("creating Model ...")
     parser = Model(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
+    logging.info("... Model created")
+
+    logging.info("training Model ...")
     parser.train(training_data, arguments.dev, dev_data, epochs=n_epochs, batch_size=batch_size, callbacks=callbacks, patience=arguments.patience)
+    logging.info("...Model trained")
 
     logging.info("Model maxed on dev at epoch %s " % (save_callback.best_epoch))
 
