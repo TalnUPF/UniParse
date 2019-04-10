@@ -1,5 +1,15 @@
 import logging
-import sentencepiece as spm
+from io import open
+from conllu import parse_incr
+
+def conllu_to_text(input_file_path, output_file_path):
+    """ reads input_file_path conllu file and saves raw text sentences to output_file_path
+    """
+    conllu_file = open(input_file_path, "r", encoding="utf-8")
+    text_file = open(output_file_path, "w", encoding="utf-8")
+    for tokenlist in parse_incr(conllu_file):
+        text_file.write(' '.join([a['form'] for a in tokenlist]))
+        text_file.write('\n')
 
 
 if __name__ == "__main__":
@@ -8,6 +18,12 @@ if __name__ == "__main__":
 
     logging.basicConfig(level=logging.INFO,
                         format="%(asctime)s:\t%(message)s")
+
+    # 0. Generate txt version of PTB
+    if False:
+        conllu_to_text('/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll', '/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.txt')
+        conllu_to_text('/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll', '/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.txt')
+        conllu_to_text('/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.conll', '/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.txt')
 
 
     # 1. train bpe model (bpe.sh) with [raw 1b text training set + raw penn 
