@@ -1,6 +1,6 @@
 import logging
 from io import open
-from conllu import parse_incr
+# from conllu import parse_incr
 import sentencepiece as spm
 
 
