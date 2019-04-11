@@ -1,7 +1,8 @@
 import logging
 from io import open
-# from conllu import parse_incr
+from conllu import parse_incr, TokenList
 import sentencepiece as spm
+from collections import OrderedDict
 
 
 def conllu_to_text(input_file_path, output_file_path):
@@ -9,14 +10,85 @@ def conllu_to_text(input_file_path, output_file_path):
     """
     conllu_file = open(input_file_path, "r", encoding="utf-8")
     text_file = open(output_file_path, "w", encoding="utf-8")
-    for tokenlist in parse_incr(conllu_file):
-        text_file.write(' '.join([a['form'] for a in tokenlist]))
+    for sentence in parse_incr(conllu_file):
+        text_file.write(' '.join([a['form'] for a in sentence]))
         text_file.write('\n')
 
 
 def reconstruct_dependency_trees(conll_file_path, model_prefix, output_file_path):
     """ adds extra conll file for tokens that have been splitted by sentencepiece
+    and changes original ids (and head pointers) accordingly
     """
+
+    def _get_correspondances(pieces, sentence):
+        """ returns a list of tuples with the correspondance between the pieces 
+        and the tokens in sentence; i.e. [([0], [0]), ([1], [1]), ([2], [2]), ([3, 4], [3]), ([5], [4])]
+        """
+
+        correspondances = []
+        i_pieces = 0
+        i_sentence = 0
+        while i_pieces < len(pieces) and i_sentence < len(sentence):
+            piece = pieces[i_pieces].replace('▁', '')
+            token = sentence[i_sentence]['form'].replace('\xa0', ' ')  # \xa0 is actually non-breaking space in Latin1 (ISO 8859-1)
+
+            if piece == token:
+                correspondance = ([i_pieces], [i_sentence])
+
+            elif len(token) > len(piece): 
+                # add pieces until they are the same
+                correspondance = ([i_pieces], [i_sentence])
+                while piece != token:
+                    i_pieces += 1
+                    new_piece = pieces[i_pieces].replace('▁', ' ')
+                    piece += new_piece
+                    correspondance[0].append(i_pieces)
+
+            else:
+                # add tokens until they are the same
+                correspondance = ([i_pieces], [i_sentence])
+                while piece != token:
+                    i_sentence += 1
+                    new_token = sentence[i_sentence]
+                    token += new_token
+                    correspondance[1].append(i_sentence)
+
+            i_pieces += 1
+            i_sentence += 1
+            correspondances.append(correspondance)
+
+        return correspondances
+
+
+    def _increment_ids(sentence, increment, origin):
+        """ increments in 'increment' the id of all tokens with id > origin;
+        increments in 'increment' the head of all tokens with head > origin;
+        """
+        for token in sentence:
+            if token['id'] > origin:
+                token['id'] += increment
+            if token['head'] > origin + 1:
+                token['head'] += increment
+
+    def _add_new_pieces_as_tokens(piece_ids, original_token, pieces, new_sentence):
+        """
+        """
+        piece_initial_id = piece_ids[0] + 1
+
+        for i, piece_id in enumerate(piece_ids):
+            id = piece_initial_id + i
+            form = pieces[piece_id].replace('▁', '')
+            lemma = form
+            upostag = original_token['upostag'] if i == 0 else None
+            xpostag = original_token['xpostag'] if i == 0 else None
+            feats = original_token['feats'] if i == 0 else None
+            head = original_token['head'] if i == 0 else piece_initial_id
+            deprel = original_token['deprel'] if i == 0 else 'PIECED'
+            deps = original_token['deps'] if i == 0 else None
+            misc = original_token['misc'] if i == 0 else None
+            new_token = OrderedDict([('id', id), ('form', form), ('lemma', lemma), ('upostag', upostag), ('xpostag', xpostag), ('feats', feats), ('head', head), ('deprel', deprel), ('deps', deps), ('misc', misc)])
+            new_sentence.append(new_token)
+
     conll_file = open(conll_file_path, "r", encoding="utf-8")
     output_file = open(output_file_path, "w", encoding="utf-8")
 
@@ -25,21 +97,38 @@ def reconstruct_dependency_trees(conll_file_path, model_prefix, output_file_path
     sp = spm.SentencePieceProcessor()                                                                                                                                                                            
     sp.Load('%s.model' % model_prefix)
 
-    for tokenlist in conll_sentences:
-        sentence = ' '.join([a['form'] for a in tokenlist.tokens])
-        pieces = sp.EncodeAsPieces(sentence)
+    for sentence in conll_sentences:
+
+        sentence_txt = ' '.join([a['form'] for a in sentence.tokens])
+        pieces = sp.EncodeAsPieces(sentence_txt)
+
+        # sentence_txt  --> "In the plan 's first stage , the Palestinians were to dismantle armed groups ."
+        # pieces        --> ['▁In', '▁the', '▁plan', "▁'", 's', '▁first', '▁stage', '▁,', '▁the', '▁Palestinians', '▁were', '▁to', '▁dismantle', '▁armed', '▁groups', '▁.']
+        # sentence      --> sentence<In, the, plan, 's, first, stage, ,, the, Palestinians, were, to, dismantle, armed, groups, .>
         
-        i_token = 0
-        for i_pieces, piece in enumerate(pieces):
+        correspondances = _get_correspondances(pieces, sentence)  # i.e. [([0], [0]), ([1], [1]), ([2], [2]), ([3, 4], [3]), ([5], [4])]
+        new_sentence = TokenList([])
 
-            piece = piece.replace('▁', '')
-            import ipdb; ipdb.set_trace()
+        for piece_ids, token_ids in correspondances:
 
-            token = tokenlist[i_token]
-            if token['form'] != piece:  # the word has been splitted
-                import ipdb; ipdb.set_trace()
+            original_token = sentence[token_ids[0]]
+
+            if len(piece_ids) == len(token_ids) == 1: 
+                new_sentence.append(original_token)
+
+            elif len(piece_ids) > 1 and len(token_ids) == 1: 
+                num_new_nodes = len(piece_ids) - 1
+                _increment_ids(sentence, num_new_nodes, piece_ids[0])
+                _add_new_pieces_as_tokens(piece_ids, original_token, pieces, new_sentence)
+
+            elif len(piece_ids) == 1 and len(token_ids) > 1:
+                logging.error('More tokens than pieces found for sentence %s. Debug needed!' % sentence_txt)
+
             else:
-                import ipdb; ipdb.set_trace()
+                logging.error('Ill correspondance found for sentence %s. Debug needed!' % sentence_txt)
+
+        print(new_sentence.serialize())
+        output_file.write(new_sentence.serialize())
 
 
 if __name__ == "__main__":
@@ -47,7 +136,7 @@ if __name__ == "__main__":
     """
 
     logging.basicConfig(level=logging.INFO,
-                        format="%(asctime)s:\t%(message)s")
+                        format="%(levelname)s:%(asctime)s:\t%(message)s")
 
     # 0. Generate txt version of PTB
 
@@ -67,7 +156,7 @@ if __name__ == "__main__":
     model_prefix = 'm'
     character_coverage = '1.0'
 
-    if True:
+    if False:
         spm.SentencePieceTrainer.Train('--input=%s --model_prefix=%s --vocab_size=%s  --character_coverage=%s --model_type=%s' % (input_files_hpc, model_prefix, vocab_size, character_coverage, model_type))
 
 
