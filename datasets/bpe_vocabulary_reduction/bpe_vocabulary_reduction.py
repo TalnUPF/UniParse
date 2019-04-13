@@ -161,7 +161,7 @@ if __name__ == "__main__":
         spm.SentencePieceTrainer.Train('--input=%s --model_prefix=%s --vocab_size=%s  --character_coverage=%s --model_type=%s' % (input_files_hpc, model_prefix, vocab_size, character_coverage, model_type))
 
 
-    # 2. reconstruct penn dependency trees with bpe model
+    # 2. reconstruct penn dependency trees with bpe model --> [PTB bpe]
 
     if False:
         conll_file = '/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll'
@@ -177,16 +177,27 @@ if __name__ == "__main__":
         reconstruct_dependency_trees(conll_file, model_prefix, output_file)
 
 
-    # 3. train kiperwasser/StanfordCoreNLP parser with penn_train_pieced.conll, 
-    #    penn_dev_pieced.conll and penn_test_pieced.conll --> model1_pieced
+    # 3a. train kiperwasser parser with [PTB bpe] --> model_bpe.model & vocab_bpe.pkl
 
     # python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE --logging_file logging.log --do_training True --train_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.bpe.conll --dev_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.bpe.conll --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.bpe.conll --output_file output_ptb_bpe.output --model_file model_bpe.model --vocab_file vocab_bpe.pkl
 
 
-    # 4. use kiperwasser/StanfordCoreNLP + model1_pieced to parse 
-    #    1B input_pieced.txt[1b] --> 1b_train_pieced.conll, 1b_dev_pieced.conll, 
-    #    1b_test_pieced.conll
+    # 3b. execute bpe encoding on 1B dataset --> text files with @@@x marking the bpe tokens
+    #   --> /home/code/datasets/1-billion-word-language-modeling-benchmark-r13output/text_bpe/heldout-monolingual.tokenized.shuffled/...
+    #   --> /home/code/datasets/1-billion-word-language-modeling-benchmark-r13output/text_bpe/training-monolingual.tokenized.shuffled/...
+
+    # bash bpe_1B.sh
 
 
-    # 5. train kiperwasser parser with 1b_train_pieced.conll, 
-    #    1b_dev_pieced.conll, 1b_test_pieced --> model3
+    # can we parse text files with kiperwasser?? how??
+    # if not,
+    # 4. convert [1B bpe text] into [1B bpe conll] using corenlp (parse_1b_with_corenlp.py)
+    # 5. use kiperwasser + model_bpe.model to parse [1B bpe conll] --> a lot of parsed conll files
+    # make sure that results form 4 and 5 are different, and that we get same results parsing dummy conll files!
+
+
+    # 6. generate 1B_bpe_dev.conllu, 1B_bpe_test.conllu, 1B_bpe_train.conllu
+    # (using create_1b_train_dev_test_splits function from parse_1b_with_corenlp.py)
+
+    # 7. train kiperwasser with 1B_bpe_dev.conllu, 1B_bpe_test.conllu, 1B_bpe_train.conllu
+

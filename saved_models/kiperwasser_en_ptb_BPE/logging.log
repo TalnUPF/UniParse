@@ -1,0 +1,90 @@
+2019-04-13 17:34:43,957:INFO:	
+2019-04-13 17:34:43,957:INFO:	
+2019-04-13 17:34:43,957:INFO:	
+2019-04-13 17:34:43,957:INFO:	===================================================================================================
+2019-04-13 17:34:43,957:INFO:	kiperwasser_main
+2019-04-13 17:34:43,957:INFO:	===================================================================================================
+2019-04-13 17:34:43,957:INFO:	
+2019-04-13 17:34:43,957:INFO:	
+2019-04-13 17:34:43,957:INFO:	Arguments:
+2019-04-13 17:34:43,957:INFO:	Namespace(batch_size=32, dev='/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.bpe.conll', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='logging.log', model_file='model_bpe.model', no_update_pretrained_emb=False, output_file='output_ptb_bpe.output', patience=-1, results_folder='/home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE', tb_dest=None, test='/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.bpe.conll', train='/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.bpe.conll', vocab_file='vocab_bpe.pkl')
+2019-04-13 17:34:43,957:INFO:	
+2019-04-13 17:34:49,601:INFO:	> saving vocab to /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE/vocab_bpe.pkl
+2019-04-13 17:34:49,608:DEBUG:	Init training
+2019-04-13 17:34:49,608:INFO:	>> Loading in data
+2019-04-13 17:34:49,608:INFO:	tokenizing train data ...
+2019-04-13 17:34:57,567:INFO:	... tokenized train data
+2019-04-13 17:34:57,568:INFO:	tokenizing dev data ...
+2019-04-13 17:34:58,269:INFO:	... tokenized dev data
+2019-04-13 17:34:58,269:INFO:	creating model ...
+2019-04-13 17:34:58,665:INFO:	... model created
+2019-04-13 17:34:58,665:INFO:	creating ModelSaveCallback ...
+2019-04-13 17:34:58,665:INFO:	saving model to /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE/model_bpe.model  (after step 0)
+2019-04-13 17:34:58,665:INFO:	... ModelSaveCallback created
+2019-04-13 17:34:58,665:INFO:	creating Model ...
+2019-04-13 17:34:58,690:INFO:	... Model created
+2019-04-13 17:34:58,690:INFO:	training Model ...
+2019-04-13 17:34:58,690:DEBUG:	...Training without patience for exactly 30 epochs
+2019-04-13 17:35:00,242:INFO:	Epoch 1
+2019-04-13 17:35:00,243:INFO:	=====================
+2019-04-13 17:42:33,616:DEBUG:	Completed epoch 1 in 453.37348651885986
+2019-04-13 17:42:42,037:DEBUG:	UAS (wo. punct) 0.91361	 LAS (wo. punct) 0.89509
+2019-04-13 17:42:42,037:DEBUG:	UAS (w. punct) 0.90714	 LAS (w. punct) 0.89091
+2019-04-13 17:42:43,549:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE/model_bpe.model
+2019-04-13 17:42:43,612:INFO:	Epoch 2
+2019-04-13 17:42:43,612:INFO:	=====================
+2019-04-13 17:50:35,106:DEBUG:	Completed epoch 2 in 471.5570294857025
+2019-04-13 17:50:41,042:DEBUG:	UAS (wo. punct) 0.92956	 LAS (wo. punct) 0.91313
+2019-04-13 17:50:41,043:DEBUG:	UAS (w. punct) 0.92417	 LAS (w. punct) 0.90967
+2019-04-13 17:50:42,377:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE/model_bpe.model
+2019-04-13 17:50:42,378:INFO:	Epoch 3
+2019-04-13 17:50:42,378:INFO:	=====================
+2019-04-13 17:58:13,573:DEBUG:	Completed epoch 3 in 451.1957640647888
+2019-04-13 17:58:19,583:DEBUG:	UAS (wo. punct) 0.93462	 LAS (wo. punct) 0.91996
+2019-04-13 17:58:19,584:DEBUG:	UAS (w. punct) 0.92904	 LAS (w. punct) 0.9164
+2019-04-13 17:58:21,116:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE/model_bpe.model
+2019-04-13 17:58:21,117:INFO:	Epoch 4
+2019-04-13 17:58:21,117:INFO:	=====================
+2019-04-13 18:06:07,264:DEBUG:	Completed epoch 4 in 466.14788579940796
+2019-04-13 18:06:13,864:DEBUG:	UAS (wo. punct) 0.93793	 LAS (wo. punct) 0.92377
+2019-04-13 18:06:13,864:DEBUG:	UAS (w. punct) 0.93279	 LAS (w. punct) 0.92056
+2019-04-13 18:06:15,732:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE/model_bpe.model
+2019-04-13 18:06:15,745:INFO:	Epoch 5
+2019-04-13 18:06:15,745:INFO:	=====================
+2019-04-13 18:14:10,027:DEBUG:	Completed epoch 5 in 474.27209401130676
+2019-04-13 18:14:16,200:DEBUG:	UAS (wo. punct) 0.93798	 LAS (wo. punct) 0.92459
+2019-04-13 18:14:16,200:DEBUG:	UAS (w. punct) 0.93288	 LAS (w. punct) 0.92141
+2019-04-13 18:14:17,621:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE/model_bpe.model
+2019-04-13 18:14:17,622:INFO:	Epoch 6
+2019-04-13 18:14:17,622:INFO:	=====================
+2019-04-13 18:22:15,853:DEBUG:	Completed epoch 6 in 478.21823501586914
+2019-04-13 18:22:22,126:DEBUG:	UAS (wo. punct) 0.93827	 LAS (wo. punct) 0.92483
+2019-04-13 18:22:22,126:DEBUG:	UAS (w. punct) 0.93348	 LAS (w. punct) 0.92193
+2019-04-13 18:22:23,509:INFO:	saved to /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE/model_bpe.model
+2019-04-13 18:22:23,510:INFO:	Epoch 7
+2019-04-13 18:22:23,510:INFO:	=====================
+2019-04-13 18:30:26,934:DEBUG:	Completed epoch 7 in 483.41271448135376
+2019-04-13 18:30:34,875:DEBUG:	UAS (wo. punct) 0.93761	 LAS (wo. punct) 0.92353
+2019-04-13 18:30:34,875:DEBUG:	UAS (w. punct) 0.93265	 LAS (w. punct) 0.92056
+2019-04-13 18:30:34,876:INFO:	Epoch 8
+2019-04-13 18:30:34,876:INFO:	=====================
+2019-04-13 18:38:28,337:DEBUG:	Completed epoch 8 in 473.4301338195801
+2019-04-13 18:38:34,621:DEBUG:	UAS (wo. punct) 0.93642	 LAS (wo. punct) 0.9221
+2019-04-13 18:38:34,622:DEBUG:	UAS (w. punct) 0.93101	 LAS (w. punct) 0.91869
+2019-04-13 18:38:34,622:INFO:	Epoch 9
+2019-04-13 18:38:34,622:INFO:	=====================
+2019-04-13 18:46:21,650:DEBUG:	Completed epoch 9 in 467.02778482437134
+2019-04-13 18:46:28,902:DEBUG:	UAS (wo. punct) 0.93695	 LAS (wo. punct) 0.92231
+2019-04-13 18:46:28,903:DEBUG:	UAS (w. punct) 0.93173	 LAS (w. punct) 0.91903
+2019-04-13 18:46:29,006:INFO:	Epoch 10
+2019-04-13 18:46:29,006:INFO:	=====================
+2019-04-13 18:54:12,452:DEBUG:	Completed epoch 10 in 463.5490982532501
+2019-04-13 18:54:18,484:DEBUG:	UAS (wo. punct) 0.93546	 LAS (wo. punct) 0.92123
+2019-04-13 18:54:18,484:DEBUG:	UAS (w. punct) 0.92998	 LAS (w. punct) 0.91768
+2019-04-13 18:54:18,498:INFO:	Epoch 11
+2019-04-13 18:54:18,498:INFO:	=====================
+2019-04-13 19:01:46,863:DEBUG:	Completed epoch 11 in 448.3787171840668
+2019-04-13 19:01:53,221:DEBUG:	UAS (wo. punct) 0.93419	 LAS (wo. punct) 0.91924
+2019-04-13 19:01:53,221:DEBUG:	UAS (w. punct) 0.92935	 LAS (w. punct) 0.91643
+2019-04-13 19:01:53,236:INFO:	Epoch 12
+2019-04-13 19:01:53,236:INFO:	=====================
