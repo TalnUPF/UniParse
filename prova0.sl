@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name="prova1"
+#SBATCH --job-name="prova0"
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem=32Gb
