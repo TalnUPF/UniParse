@@ -110,8 +110,8 @@ if __name__ == "__main__":
     1) start CoreNLP Server:
         ~/code/stanford-corenlp-full-2018-02-27$ java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -preload tokenize,ssplit,pos,lemma,ner,parse,depparse -status_port 9000 -port 9000 -timeout 15000 &
     2) 1b_to_conll:
-        dummy: python 1b_to_conll.py --input_dir ~/code/datasets/test_1B_dataset/ --heldout_folder heldout-monolingual.tokenized.shuffled --training_folder training-monolingual.tokenized.shuffled
-        real:  python 1b_to_conll.py --input_dir ~/code/datasets/1-billion-word-language-modeling-benchmark-r13output/ --heldout_folder heldout-monolingual.tokenized.shuffled --training_folder training-monolingual.tokenized.shuffled
+        dummy: parse_1b_with_corenlp.py --input_dir ~/code/datasets/test_1B_dataset/ --heldout_folder heldout-monolingual.tokenized.shuffled --training_folder training-monolingual.tokenized.shuffled
+        real:  parse_1b_with_corenlp.py --input_dir ~/code/datasets/1-billion-word-language-modeling-benchmark-r13output/ --heldout_folder heldout-monolingual.tokenized.shuffled --training_folder training-monolingual.tokenized.shuffled
     """
 
     logging.basicConfig(level=logging.INFO,
@@ -124,18 +124,18 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     input_dir = os.path.expanduser(args.input_dir)
-    heldout_dir = '%s/text/%s' % (input_dir, args.heldout_folder)
-    training_dir = '%s/text/%s' % (input_dir, args.training_folder)
+    heldout_dir = '%s/text_bpe/%s' % (input_dir, args.heldout_folder)
+    training_dir = '%s/text_bpe/%s' % (input_dir, args.training_folder)
 
     if not os.path.exists(heldout_dir):
         raise Exception(heldout_dir, " does not exist!")
     if not os.path.exists(training_dir):
         raise Exception(training_dir, " does not exist!")
 
-    heldout_dir_conll = '%s/%s/%s' % (input_dir, 'conll_individual_files', args.heldout_folder)
+    heldout_dir_conll = '%s/%s/%s' % (input_dir, 'conll_bpe_individual_files', args.heldout_folder)
     generate_individual_conllu(heldout_dir, heldout_dir_conll)
 
-    training_dir_conll = '%s/%s/%s' % (input_dir, 'conll_individual_files', args.training_folder)
+    training_dir_conll = '%s/%s/%s' % (input_dir, 'conll_bpe_individual_files', args.training_folder)
     generate_individual_conllu(training_dir, training_dir_conll)
 
     dev_set = ['news.en-000%s-of-00100.conllu' % a for a in range(80, 100)]  # for real

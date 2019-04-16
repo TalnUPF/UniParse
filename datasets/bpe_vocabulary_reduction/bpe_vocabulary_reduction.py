@@ -32,26 +32,29 @@ def reconstruct_dependency_trees(conll_file_path, model_prefix, output_file_path
             piece = pieces[i_pieces].replace('▁', '')
             token = sentence[i_sentence]['form'].replace('\xa0', ' ')  # \xa0 is actually non-breaking space in Latin1 (ISO 8859-1)
 
-            if piece == token:
+            if piece == token or len(piece) >= len(token):  # second condiction added to cover ™/TM cases
                 correspondance = ([i_pieces], [i_sentence])
 
             elif len(token) > len(piece): 
                 # add pieces until they are the same
                 correspondance = ([i_pieces], [i_sentence])
-                while piece != token:
+                while piece != token and i_pieces < len(pieces) - 1:
                     i_pieces += 1
                     new_piece = pieces[i_pieces].replace('▁', ' ')
                     piece += new_piece
                     correspondance[0].append(i_pieces)
 
             else:
-                # add tokens until they are the same
-                correspondance = ([i_pieces], [i_sentence])
-                while piece != token:
-                    i_sentence += 1
-                    new_token = sentence[i_sentence]
-                    token += new_token
-                    correspondance[1].append(i_sentence)
+                import ipdb; ipdb.set_trace()
+                print('babau')
+
+                # # add tokens until they are the same
+                # correspondance = ([i_pieces], [i_sentence])
+                # while piece != token:
+                #     i_sentence += 1
+                #     new_token = sentence[i_sentence]
+                #     token += new_token
+                #     correspondance[1].append(i_sentence)
 
             i_pieces += 1
             i_sentence += 1
@@ -161,7 +164,7 @@ if __name__ == "__main__":
         spm.SentencePieceTrainer.Train('--input=%s --model_prefix=%s --vocab_size=%s  --character_coverage=%s --model_type=%s' % (input_files_hpc, model_prefix, vocab_size, character_coverage, model_type))
 
 
-    # 2. reconstruct penn dependency trees with bpe model --> [PTB bpe]
+    # 2a. reconstruct penn dependency trees with bpe model --> [PTB bpe]
 
     if False:
         conll_file = '/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll'
@@ -177,6 +180,22 @@ if __name__ == "__main__":
         reconstruct_dependency_trees(conll_file, model_prefix, output_file)
 
 
+    # 2b. reconstruct 1B dependency trees with bpe model --> [1B bpe]
+
+    if True:
+        conll_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_normal/1B_test.conllu'
+        output_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_test.conllu'
+        reconstruct_dependency_trees(conll_file, model_prefix, output_file)
+
+        conll_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_normal/1B_dev.conllu'
+        output_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_dev.conllu'
+        reconstruct_dependency_trees(conll_file, model_prefix, output_file)
+
+        conll_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_normal/1B_train.conllu'
+        output_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_train.conllu'
+        reconstruct_dependency_trees(conll_file, model_prefix, output_file)
+
+
     # 3a. train kiperwasser parser with [PTB bpe] --> model_bpe.model & vocab_bpe.pkl
 
     # python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb_BPE --logging_file logging.log --do_training True --train_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.bpe.conll --dev_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.bpe.conll --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.bpe.conll --output_file output_ptb_bpe.output --model_file model_bpe.model --vocab_file vocab_bpe.pkl
@@ -189,11 +208,14 @@ if __name__ == "__main__":
     # bash bpe_1B.sh
 
 
-    # can we parse text files with kiperwasser?? how??
-    # if not,
+    # can we parse text files with kiperwasser?? not directly, as it expects a conll file
     # 4. convert [1B bpe text] into [1B bpe conll] using corenlp (parse_1b_with_corenlp.py)
+    #    $ python parse_1b_with_corenlp.py --input_dir ~/code/datasets/1-billion-word-language-modeling-benchmark-r13output/ --heldout_folder heldout-monolingual.tokenized.shuffled --training_folder training-monolingual.tokenized.shuffled
+    #       --> we get tokenization and POS tagging! (along with parsing, that we don't need and we won't use)
+    #       --> head and deprel do not matter, bc when parsing with kiperwasser they will not be taken into account
+    #           (I tested this by parsing the same file with different head-deprel, obtaining the same results)
+
     # 5. use kiperwasser + model_bpe.model to parse [1B bpe conll] --> a lot of parsed conll files
-    # make sure that results form 4 and 5 are different, and that we get same results parsing dummy conll files!
 
 
     # 6. generate 1B_bpe_dev.conllu, 1B_bpe_test.conllu, 1B_bpe_train.conllu
