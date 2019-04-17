@@ -195,34 +195,29 @@ class Vocabulary(object):
             # lpmayos: I change readlines() to avoid runing out of memory when loading the training file.
             # for line in f.readlines():
 
-            i = 0
-
             line = f.readline()
             while line:
 
-                if validate_line(line):
+                if not validate_line(line):
+                    continue
 
-                    info = line.strip().split("\t")
-                    if len(info) == 10:
-                        word, lemma, tag, head, rel, characters = self._parse_conll_line(info, tokenize=tokenize)
-                        words.append(word)
-                        lemmas.append(lemma)
-                        tags.append(tag)
-                        heads.append(head)
-                        rels.append(rel)
-                        chars.append(characters)
-                    else:
-                        sent = (words, lemmas, tags, heads, rels, chars)
-                        sents.append(sent)
+                info = line.strip().split("\t")
+                if len(info) == 10:
+                    word, lemma, tag, head, rel, characters = self._parse_conll_line(info, tokenize=tokenize)
+                    words.append(word)
+                    lemmas.append(lemma)
+                    tags.append(tag)
+                    heads.append(head)
+                    rels.append(rel)
+                    chars.append(characters)
+                else:
+                    sent = (words, lemmas, tags, heads, rels, chars)
+                    sents.append(sent)
 
-                        words, lemmas, tags, heads, rels, chars = \
-                            [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
+                    words, lemmas, tags, heads, rels, chars = \
+                        [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
                 line = f.readline()
-
-                i += 1
-                if i % 1000 == 0:
-                    print("... reading line %s ..." % i)
 
         f.close()  # lpmayos: close file when read
 
