@@ -15,6 +15,22 @@ def str2bool(v):
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
 
+def load_vocab_and_embs(arguments):
+
+    vocab_file = "%s/%s" % (arguments.results_folder, arguments.vocab_file)
+
+    vocab = Vocabulary()
+    vocab.load(vocab_file)
+
+    if arguments.embs == None:
+        embs = None
+    else:
+        embs = vocab.load_embedding()
+        logging.info('shape %s' % (embs.shape))
+
+    return vocab, embs
+
+
 def load_or_create_vocab_and_embs(arguments):
 
     vocab_file = "%s/%s" % (arguments.results_folder, arguments.vocab_file)
@@ -151,7 +167,8 @@ def main():
 
     # load or create vocabulary and embeddings
 
-    vocab, embs = load_or_create_vocab_and_embs(arguments)
+    # vocab, embs = load_or_create_vocab_and_embs(arguments)
+    vocab, embs = load_vocab_and_embs(arguments)
 
     # create parser and train it if needed
 
