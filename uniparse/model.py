@@ -98,11 +98,17 @@ class Model(object):
 
     def _batch_data(self, samples: List, strategy: str, scale: int, shuffle: bool):
         if strategy == "bucket":
+            logging.debug(f"### _batch_data, bucket strategy. 1")
             dataprovider = BucketBatcher(samples, padding_token=self._vocab.PAD)
+            logging.debug(f"### _batch_data, bucket strategy. 2")
             _idx, _sentences = dataprovider.get_data(scale, shuffle)
+            logging.debug(f"### _batch_data, bucket strategy. 3")
         elif strategy == "scaled_batch":
+            logging.debug(f"### _batch_data, scaled_batch strategy. 1")
             dataprovider = ScaledBatcher(samples, cluster_count=40, padding_token=self._vocab.PAD)
+            logging.debug(f"### _batch_data, scaled_batch strategy. 2")
             _idx, _sentences = dataprovider.get_data(scale, shuffle)
+            logging.debug(f"### _batch_data, scaled_batch strategy. 3")
         else:
             raise ValueError("no such data strategy")
 
