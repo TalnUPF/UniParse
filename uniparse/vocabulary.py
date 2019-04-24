@@ -212,7 +212,14 @@ class Vocabulary(object):
                     chars.append(characters)
                 else:
                     sent = (words, lemmas, tags, heads, rels, chars)
-                    sents.append(sent)
+                    
+                    # condition added to avoid sentences longer than 150 words
+                    if len(sent[0]) < 150:
+                        sents.append(sent)
+                        print('... added sentence shorter than 150: len(sent[0]) = %s' % (len(sent[0])))
+                    else:
+                        print('... skipping sentence longer than 150: len(sent[0]) = %s' % (len(sent[0])))
+
 
                     words, lemmas, tags, heads, rels, chars = \
                         [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
