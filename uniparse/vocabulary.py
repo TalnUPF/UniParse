@@ -190,6 +190,8 @@ class Vocabulary(object):
         words, lemmas, tags, heads, rels, chars = \
             [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
+        num_sents = 0
+
         with open(input_file, encoding="UTF-8") as f:
 
             # lpmayos: I change readlines() to avoid runing out of memory when loading the training file.
@@ -213,13 +215,14 @@ class Vocabulary(object):
                 else:
                     sent = (words, lemmas, tags, heads, rels, chars)
                     
+                    num_sents += 1
+                    print('sentence num %s; len(sent[0]) = %s; sentence = %s' % (num_sents, len(sent[0]), ' '.join(sent[0])))
+
                     # condition added to avoid sentences longer than 150 words
                     if len(sent[0]) < 150:
                         sents.append(sent)
-                        print('... added sentence shorter than 150: len(sent[0]) = %s' % (len(sent[0])))
                     else:
                         print('... skipping sentence longer than 150: len(sent[0]) = %s' % (len(sent[0])))
-
 
                     words, lemmas, tags, heads, rels, chars = \
                         [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
