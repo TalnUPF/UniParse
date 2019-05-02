@@ -155,10 +155,13 @@ def do_training_big_datasets(arguments, vocab, embs, subset_size):
 def main():
     """
     train sample call with dev_mode True and 2 epochs:
-        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb --logging_file logging.log --do_training True --train_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.conll --dev_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl --dev_mode True --epochs 2
+        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/prova --logging_file logging.log --do_training True --train_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.conll --dev_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl --dev_mode True --epochs 2 --big_dataset False
+
+    train sample call with big dataset:
+        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/prova --logging_file logging.log --do_training True --train_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.conll --dev_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl --big_dataset True
 
     test sample call:
-        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/kiperwasser_en_ptb --logging_file logging.log --do_training False --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl 
+        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/prova --logging_file logging.log --do_training False --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl --big_dataset False
     """
 
     parser = argparse.ArgumentParser()
@@ -181,6 +184,8 @@ def main():
     parser.add_argument("--no_update_pretrained_emb", dest="no_update_pretrained_emb", type=str2bool, default=False, help="don't update the pretrained embeddings during training")
     parser.add_argument("--patience", dest='patience', type=int, default=-1)
     parser.add_argument("--dev_mode", dest='dev_mode', type=str2bool, default=False, help='small subset of training examples, for code testing')
+
+    parser.add_argument("--big_dataset", dest='big_dataset', type=str2bool, default=False, help='Are you training with a huge dataset? (i.e. 1B benchmark)')
 
     arguments, unknown = parser.parse_known_args()
 
@@ -213,9 +218,13 @@ def main():
     # create parser and train it if needed
 
     if arguments.do_training:
-        # parser = do_training(arguments, vocab, embs)
-        subset_size = 100
-        parser = do_training_big_datasets(arguments, vocab, embs, subset_size)
+        if not arguments.big_dataset:
+            logging.info('Training with normal dataset')
+            parser = do_training(arguments, vocab, embs)
+        else:
+            subset_size = 10000
+            logging.info('Training with big dataset; subset_size = %i' % subset_size)
+            parser = do_training_big_datasets(arguments, vocab, embs, subset_size)
 
     else:
         model = DependencyParser(vocab, embs, arguments.no_update_pretrained_emb)
