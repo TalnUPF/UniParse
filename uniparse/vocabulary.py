@@ -160,8 +160,8 @@ class Vocabulary(object):
 
         return pret_embs
 
-    def tokenize_conll(self, file: str):
-        sentences = self._read_conll(file, tokenize=True)
+    def tokenize_conll(self, file: str, init_sent: int = float('-inf'), end_sent: int = float('+inf')):
+        sentences = self._read_conll(file, init_sent, end_sent, tokenize=True)
         return sentences
 
     def _parse_conll_line(self, info, tokenize):
@@ -178,7 +178,7 @@ class Vocabulary(object):
 
         return word, lemma, tag, head, rel, chars
 
-    def _read_conll(self, input_file: str, tokenize: bool = True):
+    def _read_conll(self, input_file: str, init_sent: int = float('inf'), end_sent: int = float('-inf'), tokenize: bool = True):
         word_root = self.ROOT
         lemma_root = self.ROOT
         tag_root = self.ROOT
@@ -194,11 +194,8 @@ class Vocabulary(object):
 
         with open(input_file, encoding="UTF-8") as f:
 
-            # lpmayos: I change readlines() to avoid runing out of memory when loading the training file.
-            # for line in f.readlines():
-
             line = f.readline()
-            while line:
+            while line and num_sents <= end_sent:
 
                 if not validate_line(line):
                     continue
@@ -214,13 +211,14 @@ class Vocabulary(object):
                     chars.append(characters)
                 else:
                     sent = (words, lemmas, tags, heads, rels, chars)
-                    
+
                     num_sents += 1
-                    sent_words = [self.id2word(a) for a in sent[0]] 
-                    print('sentence num %i; len(sent[0]) = %i; sentence = %s' % (num_sents, len(sent[0]), ' '.join(sent_words)))
+                    sent_words = [self.id2word(a) for a in sent[0]]
+                    print('sentence num %i; len(sent[0]) = %i; sentence = %s' % (
+                    num_sents, len(sent[0]), ' '.join(sent_words)))
 
                     # condition added to avoid sentences longer than 150 words
-                    if len(sent[0]) < 150:
+                    if len(sent[0]) < 150 and num_sents >= init_sent:
                         sents.append(sent)
                     else:
                         print('... skipping sentence longer than 150: len(sent[0]) = %s' % (len(sent[0])))
@@ -230,7 +228,7 @@ class Vocabulary(object):
 
                 line = f.readline()
 
-        f.close()  # lpmayos: close file when read
+        f.close()
 
         return sents
 

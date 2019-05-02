@@ -114,6 +114,44 @@ def do_training(arguments, vocab, embs):
     return parser
 
 
+def do_training_big_datasets(arguments, vocab, embs, subset_size):
+    logging.debug("Init training with big dataset (there is no dev mode)")
+    n_epochs = arguments.epochs
+    batch_size = arguments.batch_size
+
+    logging.info("tokenizing dev data ...")
+    dev_data = vocab.tokenize_conll(arguments.dev)
+    logging.info("... tokenized dev data")
+
+    # instantiate model
+    logging.info("creating model ...")
+    model = DependencyParser(vocab, embs, arguments.no_update_pretrained_emb)
+    logging.info("... model created")
+
+    callbacks = []
+    if arguments.tb_dest:
+        tensorboard_logger = TensorboardLoggerCallback(arguments.tb_dest)
+        callbacks.append(tensorboard_logger)
+
+    logging.info("creating ModelSaveCallback ...")
+    save_callback = ModelSaveCallback("%s/%s" % (arguments.results_folder, arguments.model_file))
+    callbacks.append(save_callback)
+    logging.info("... ModelSaveCallback created")
+
+    # prep params
+    logging.info("creating Model ...")
+    parser = Model(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
+    logging.info("... Model created")
+
+    logging.info("training Model ...")
+    parser.train_big_datasets(arguments.train, arguments.dev, dev_data, epochs=n_epochs, batch_size=batch_size, callbacks=callbacks, patience=arguments.patience, subset_size=subset_size)
+    logging.info("...Model trained")
+
+    logging.info("Model maxed on dev at epoch %s " % (save_callback.best_epoch))
+
+    return parser
+
+
 def main():
     """
     train sample call with dev_mode True and 2 epochs:
@@ -167,13 +205,17 @@ def main():
 
     # load or create vocabulary and embeddings
 
-    # vocab, embs = load_or_create_vocab_and_embs(arguments)
-    vocab, embs = load_vocab_and_embs(arguments)
+    try:
+        vocab, embs = load_vocab_and_embs(arguments)
+    except:
+        vocab, embs = load_or_create_vocab_and_embs(arguments)
 
     # create parser and train it if needed
 
     if arguments.do_training:
-        parser = do_training(arguments, vocab, embs)
+        # parser = do_training(arguments, vocab, embs)
+        subset_size = 100
+        parser = do_training_big_datasets(arguments, vocab, embs, subset_size)
 
     else:
         model = DependencyParser(vocab, embs, arguments.no_update_pretrained_emb)
