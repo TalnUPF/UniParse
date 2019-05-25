@@ -126,11 +126,7 @@ class DependencyParser(Parser):
             for bi in range(batch_size):
                 for m in range(n):
                     h = target_arcs[bi, m]
-                    try:
-                        margin[h, m, bi] -= 1
-                        print('alright!')
-                    except IndexError as ie:
-                        print('error!! ' + ie)
+                    margin[h, m, bi] -= 1
 
             margin_tensor = dy.inputTensor(margin, batched=True)
             arc_scores = arc_scores + margin_tensor
