@@ -1,0 +1,24 @@
+1	But	_	CC	CC	_	9	cc	_	_
+2	the	_	DT	DT	_	3	det	_	_
+3	build-up	_	NN	NN	_	9	nsubj	_	_
+4	of	_	IN	IN	_	3	prep	_	_
+5	S&P	_	NNP	NNP	_	8	nn	_	_
+6	futures	_	NNS	NNS	_	8	nn	_	_
+7	sell	_	NN	NN	_	8	nn	_	_
+8	orders	_	NNS	NNS	_	4	pobj	_	_
+9	weighed	_	VBD	VBD	_	0	root	_	_
+10	on	_	IN	IN	_	9	prep	_	_
+11	the	_	DT	DT	_	12	det	_	_
+12	market	_	NN	NN	_	10	pobj	_	_
+13	,	_	,	,	_	9	punct	_	_
+14	and	_	CC	CC	_	9	cc	_	_
+15	the	_	DT	DT	_	16	det	_	_
+16	link	_	NN	NN	_	19	nsubj	_	_
+17	with	_	IN	IN	_	16	prep	_	_
+18	stocks	_	NNS	NNS	_	17	pobj	_	_
+19	began	_	VBD	VBD	_	9	conj	_	_
+20	to	_	TO	TO	_	21	aux	_	_
+21	fray	_	VB	VB	_	19	xcomp	_	_
+22	again	_	RB	RB	_	21	advmod	_	_
+23	.	_	.	.	_	9	punct	_	_
+

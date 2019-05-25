@@ -147,7 +147,7 @@
 22	,	_	,	,	_	24	punct	_	_
 23	''	_	''	''	_	24	punct	_	_
 24	said	_	VBD	VBD	_	0	root	_	_
-25	Rep	Rep	NNP	NNP	_	28	nn	_	_
+25	Rep	Rep	NNP	NNP	_	29	nn	_	_
 26	@@@.	@@@.	BPE	BPE	_	25	BPE	_	_
 27	Fort	Fort	NNP	NNP	_	29	nn	_	_
 28	@@@ney	@@@ney	BPE	BPE	_	27	BPE	_	_
@@ -460,7 +460,7 @@
 3	it	_	PRP	PRP	_	4	nsubj	_	_
 4	says	_	VBZ	VBZ	_	0	root	_	_
 5	the	_	DT	DT	_	6	det	_	_
-6	R	R	NNP	NNP	_	10	poss	_	_
+6	R	R	NNP	NNP	_	11	poss	_	_
 7	@@@TC	@@@TC	BPE	BPE	_	6	BPE	_	_
 8	'	'	POS	POS	_	6	possessive	_	_
 9	@@@s	@@@s	BPE	BPE	_	8	BPE	_	_
@@ -519,7 +519,7 @@
 15	opponents	_	NNS	NNS	_	14	nsubj	_	_
 16	of	_	IN	IN	_	15	prep	_	_
 17	the	_	DT	DT	_	18	det	_	_
-18	R	R	NNP	NNP	_	22	poss	_	_
+18	R	R	NNP	NNP	_	25	poss	_	_
 19	@@@TC	@@@TC	BPE	BPE	_	18	BPE	_	_
 20	'	'	POS	POS	_	18	possessive	_	_
 21	@@@s	@@@s	BPE	BPE	_	20	BPE	_	_
@@ -654,7 +654,7 @@
 6	Friday	_	NNP	NNP	_	15	poss	_	_
 7	'	'	POS	POS	_	6	possessive	_	_
 8	@@@s	@@@s	BPE	BPE	_	7	BPE	_	_
-9	190	190	JJ	JJ	_	13	amod	_	_
+9	190	190	JJ	JJ	_	15	amod	_	_
 10	@@@-	@@@-	BPE	BPE	_	9	BPE	_	_
 11	@@@point	@@@point	BPE	BPE	_	9	BPE	_	_
 12	stock	stock	NN	NN	_	15	nn	_	_
@@ -966,7 +966,7 @@
 3	spokesman	_	NN	NN	_	4	nsubj	_	_
 4	says	_	VBZ	VBZ	_	0	root	_	_
 5	the	_	DT	DT	_	6	det	_	_
-6	800-	800-	NN	NN	_	22	nsubj	_	_
+6	800-	800-	NN	NN	_	24	nsubj	_	_
 7	@@@line	@@@line	BPE	BPE	_	6	BPE	_	_
 8	,	_	,	,	_	6	punct	_	_
 9	which	_	WDT	WDT	_	12	nsubj	_	_
@@ -1395,7 +1395,7 @@
 35	Lamp	Lamp	NNP	NNP	_	33	nsubj	_	_
 36	@@@e	@@@e	BPE	BPE	_	35	BPE	_	_
 37	,	_	,	,	_	35	punct	_	_
-38	Paine	Paine	NNP	NNP	_	41	poss	_	_
+38	Paine	Paine	NNP	NNP	_	42	poss	_	_
 39	@@@Webber	@@@Webber	BPE	BPE	_	38	BPE	_	_
 40	'	'	POS	POS	_	38	possessive	_	_
 41	@@@s	@@@s	BPE	BPE	_	40	BPE	_	_
@@ -1496,11 +1496,11 @@
 6	make	_	VB	VB	_	4	xcomp	_	_
 7	one	_	CD	CD	_	6	dobj	_	_
 8	of	_	IN	IN	_	7	prep	_	_
-9	Shear	Shear	NNP	NNP	_	20	poss	_	_
+9	Shear	Shear	NNP	NNP	_	29	poss	_	_
 10	@@@son	@@@son	BPE	BPE	_	9	BPE	_	_
 11	'	'	POS	POS	_	9	possessive	_	_
 12	@@@s	@@@s	BPE	BPE	_	11	BPE	_	_
-13	easy	easy	JJ	JJ	_	25	amod	_	_
+13	easy	easy	JJ	JJ	_	29	amod	_	_
 14	@@@-	@@@-	BPE	BPE	_	13	BPE	_	_
 15	@@@to	@@@to	BPE	BPE	_	13	BPE	_	_
 16	@@@-	@@@-	BPE	BPE	_	13	BPE	_	_
@@ -1548,7 +1548,7 @@
 14	debut	_	NN	NN	_	15	nn	_	_
 15	commercial	_	NN	NN	_	12	dobj	_	_
 16	of	_	IN	IN	_	15	prep	_	_
-17	Shear	Shear	NNP	NNP	_	22	poss	_	_
+17	Shear	Shear	NNP	NNP	_	23	poss	_	_
 18	@@@son	@@@son	BPE	BPE	_	17	BPE	_	_
 19	'	'	POS	POS	_	17	possessive	_	_
 20	@@@s	@@@s	BPE	BPE	_	19	BPE	_	_
@@ -1630,7 +1630,7 @@
 21	,	_	,	,	_	23	punct	_	_
 22	''	_	''	''	_	23	punct	_	_
 23	says	_	VBZ	VBZ	_	0	root	_	_
-24	Cath	Cath	NNP	NNP	_	27	nn	_	_
+24	Cath	Cath	NNP	NNP	_	28	nn	_	_
 25	@@@leen	@@@leen	BPE	BPE	_	24	BPE	_	_
 26	B	B	NNP	NNP	_	28	nn	_	_
 27	@@@.	@@@.	BPE	BPE	_	26	BPE	_	_
@@ -1743,7 +1743,7 @@
 9	:	_	:	:	_	4	punct	_	_
 
 1	Edward	_	NNP	NNP	_	2	nn	_	_
-2	Esk	Esk	NNP	NNP	_	15	nsubj	_	_
+2	Esk	Esk	NNP	NNP	_	20	nsubj	_	_
 3	@@@and	@@@and	BPE	BPE	_	2	BPE	_	_
 4	@@@arian	@@@arian	BPE	BPE	_	2	BPE	_	_
 5	,	_	,	,	_	2	punct	_	_
@@ -1791,7 +1791,7 @@
 
 1	Mr	Mr	NNP	NNP	_	3	nn	_	_
 2	@@@.	@@@.	BPE	BPE	_	1	BPE	_	_
-3	Esk	Esk	NNP	NNP	_	17	nsubj	_	_
+3	Esk	Esk	NNP	NNP	_	18	nsubj	_	_
 4	@@@and	@@@and	BPE	BPE	_	3	BPE	_	_
 5	@@@arian	@@@arian	BPE	BPE	_	3	BPE	_	_
 6	,	_	,	,	_	3	punct	_	_
@@ -1815,7 +1815,7 @@
 24	.	_	.	.	_	18	punct	_	_
 
 1	John	_	NNP	NNP	_	2	nn	_	_
-2	Ver	Ver	NNP	NNP	_	14	nsubj	_	_
+2	Ver	Ver	NNP	NNP	_	15	nsubj	_	_
 3	@@@ret	@@@ret	BPE	BPE	_	2	BPE	_	_
 4	,	_	,	,	_	2	punct	_	_
 5	the	_	DT	DT	_	6	det	_	_
@@ -1840,7 +1840,7 @@
 3	McDonald	_	NNP	NNP	_	6	poss	_	_
 4	'	'	POS	POS	_	3	possessive	_	_
 5	@@@s	@@@s	BPE	BPE	_	4	BPE	_	_
-6	Corp	Corp	NNP	NNP	_	14	nsubj	_	_
+6	Corp	Corp	NNP	NNP	_	15	nsubj	_	_
 7	@@@.	@@@.	BPE	BPE	_	6	BPE	_	_
 8	,	_	,	,	_	6	punct	_	_
 9	Oak	_	NNP	NNP	_	10	nn	_	_
@@ -2053,7 +2053,7 @@
 56	pianos	_	NNS	NNS	_	54	pobj	_	_
 57	would	_	MD	MD	_	58	aux	_	_
 58	produce	_	VB	VB	_	49	ccomp	_	_
-59	1,11	1,11	CD	CD	_	62	num	_	_
+59	1,11	1,11	CD	CD	_	63	num	_	_
 60	@@@8	@@@8	BPE	BPE	_	59	BPE	_	_
 61	publish	publish	JJ	JJ	_	63	amod	_	_
 62	@@@able	@@@able	BPE	BPE	_	61	BPE	_	_
@@ -2395,7 +2395,7 @@
 45	.	_	.	.	_	14	punct	_	_
 
 1	The	_	DT	DT	_	2	det	_	_
-2	A	A	NNS	NNS	_	20	nsubj	_	_
+2	A	A	NNS	NNS	_	26	nsubj	_	_
 3	@@@-	@@@-	BPE	BPE	_	2	BPE	_	_
 4	@@@men	@@@men	BPE	BPE	_	2	BPE	_	_
 5	batting	_	VBG	VBG	_	2	partmod	_	_
@@ -2719,7 +2719,7 @@
 13	Subway	_	NNP	NNP	_	11	pobj	_	_
 14	Called	_	VBN	VBN	_	13	partmod	_	_
 15	BART	_	NNP	NNP	_	14	dep	_	_
-16	-	-	-LRB-	-LRB-	_	23	punct	_	_
+16	-	-	-LRB-	-LRB-	_	24	punct	_	_
 17	@@@LRB	@@@LRB	BPE	BPE	_	16	BPE	_	_
 18	@@@-	@@@-	BPE	BPE	_	16	BPE	_	_
 19	that	_	DT	DT	_	24	nsubj	_	_
@@ -2969,7 +2969,7 @@
 24	and	_	CC	CC	_	23	cc	_	_
 25	White	_	NNP	NNP	_	26	nn	_	_
 26	Sox	_	NNP	NNP	_	23	conj	_	_
-27	-	-	-LRB-	-LRB-	_	34	punct	_	_
+27	-	-	-LRB-	-LRB-	_	35	punct	_	_
 28	@@@LRB	@@@LRB	BPE	BPE	_	27	BPE	_	_
 29	@@@-	@@@-	BPE	BPE	_	27	BPE	_	_
 30	hey	_	UH	UH	_	35	discourse	_	_
@@ -3046,7 +3046,7 @@
 15	Weiss	_	NNP	NNP	_	13	nsubj	_	_
 16	,	_	,	,	_	15	punct	_	_
 17	a	_	DT	DT	_	26	det	_	_
-18	tw	tw	JJ	JJ	_	24	amod	_	_
+18	tw	tw	JJ	JJ	_	26	amod	_	_
 19	@@@iggy	@@@iggy	BPE	BPE	_	18	BPE	_	_
 20	@@@-	@@@-	BPE	BPE	_	18	BPE	_	_
 21	@@@looking	@@@looking	BPE	BPE	_	18	BPE	_	_
@@ -3091,7 +3091,7 @@
 20	in	_	IN	IN	_	16	prep	_	_
 21	the	_	DT	DT	_	29	det	_	_
 22	A	_	NNP	NNP	_	29	nn	_	_
-23	'	'	NNP	NNP	_	27	nn	_	_
+23	'	'	NNP	NNP	_	29	nn	_	_
 24	@@@s	@@@s	BPE	BPE	_	23	BPE	_	_
 25	three	three	JJ	JJ	_	29	amod	_	_
 26	@@@-	@@@-	BPE	BPE	_	25	BPE	_	_
@@ -3695,7 +3695,7 @@
 23	a	_	DT	DT	_	24	det	_	_
 24	few	_	JJ	JJ	_	22	pobj	_	_
 25	of	_	IN	IN	_	24	prep	_	_
-26	NC	NC	NNP	NNP	_	30	poss	_	_
+26	NC	NC	NNP	NNP	_	31	poss	_	_
 27	@@@R	@@@R	BPE	BPE	_	26	BPE	_	_
 28	'	'	POS	POS	_	26	possessive	_	_
 29	@@@s	@@@s	BPE	BPE	_	28	BPE	_	_
@@ -3751,7 +3751,7 @@
 46	,	_	,	,	_	48	punct	_	_
 47	''	_	''	''	_	48	punct	_	_
 48	notes	_	VBZ	VBZ	_	0	root	_	_
-49	Sanj	Sanj	NNP	NNP	_	52	nn	_	_
+49	Sanj	Sanj	NNP	NNP	_	53	nn	_	_
 50	@@@iv	@@@iv	BPE	BPE	_	49	BPE	_	_
 51	G	G	NNP	NNP	_	53	nn	_	_
 52	@@@.	@@@.	BPE	BPE	_	51	BPE	_	_
@@ -3972,7 +3972,7 @@
 20	57	_	CD	CD	_	19	num	_	_
 21	.	_	.	.	_	13	punct	_	_
 
-1	Concer	Concer	VBG	VBG	_	21	dep	_	_
+1	Concer	Concer	VBG	VBG	_	23	dep	_	_
 2	@@@ning	@@@ning	BPE	BPE	_	1	BPE	_	_
 3	your	_	PRP$	PRP$	_	7	poss	_	_
 4	Sept	Sept	NNP	NNP	_	7	nn	_	_
@@ -4136,7 +4136,7 @@
 2	Clark	_	NNP	NNP	_	13	nsubj	_	_
 3	,	_	,	,	_	2	punct	_	_
 4	a	_	DT	DT	_	11	det	_	_
-5	Shear	Shear	NNP	NNP	_	10	nn	_	_
+5	Shear	Shear	NNP	NNP	_	11	nn	_	_
 6	@@@son	@@@son	BPE	BPE	_	5	BPE	_	_
 7	Lehman	_	NNP	NNP	_	11	nn	_	_
 8	Hutton	_	NNP	NNP	_	11	nn	_	_
@@ -4177,7 +4177,7 @@
 7	J	J	NNP	NNP	_	10	nn	_	_
 8	@@@.	@@@.	BPE	BPE	_	7	BPE	_	_
 9	Francis	_	NNP	NNP	_	10	nn	_	_
-10	Pal	Pal	NNP	NNP	_	15	nsubj	_	_
+10	Pal	Pal	NNP	NNP	_	17	nsubj	_	_
 11	@@@am	@@@am	BPE	BPE	_	10	BPE	_	_
 12	@@@ara	@@@ara	BPE	BPE	_	10	BPE	_	_
 13	did	_	VBD	VBD	_	17	aux	_	_
@@ -4234,11 +4234,11 @@
 6	every	_	DT	DT	_	7	det	_	_
 7	hour	_	NN	NN	_	4	dobj	_	_
 8	--	_	:	:	_	7	punct	_	_
-9	1	1	CD	CD	_	17	num	_	_
+9	1	1	CD	CD	_	21	num	_	_
 10	@@@:	@@@:	BPE	BPE	_	9	BPE	_	_
 11	@@@30	@@@30	BPE	BPE	_	9	BPE	_	_
 12	,	_	,	,	_	21	punct	_	_
-13	2	2	CD	CD	_	19	num	_	_
+13	2	2	CD	CD	_	21	num	_	_
 14	@@@:	@@@:	BPE	BPE	_	13	BPE	_	_
 15	@@@30	@@@30	BPE	BPE	_	13	BPE	_	_
 16	,	_	,	,	_	21	punct	_	_
@@ -5238,7 +5238,7 @@
 2	2	2	CD	CD	_	5	num	_	_
 3	@@@:	@@@:	BPE	BPE	_	2	BPE	_	_
 4	@@@30	@@@30	BPE	BPE	_	2	BPE	_	_
-5	p	p	NN	NN	_	16	nsubj	_	_
+5	p	p	NN	NN	_	17	nsubj	_	_
 6	@@@.	@@@.	BPE	BPE	_	5	BPE	_	_
 7	@@@m	@@@m	BPE	BPE	_	5	BPE	_	_
 8	@@@.	@@@.	BPE	BPE	_	5	BPE	_	_
@@ -5360,7 +5360,7 @@
 4	expect	_	VB	VB	_	0	root	_	_
 5	Ford	_	NNP	NNP	_	7	nn	_	_
 6	Motor	_	NNP	NNP	_	7	nn	_	_
-7	Co	Co	NNP	NNP	_	14	nsubj	_	_
+7	Co	Co	NNP	NNP	_	15	nsubj	_	_
 8	@@@.	@@@.	BPE	BPE	_	7	BPE	_	_
 9	or	_	CC	CC	_	7	cc	_	_
 10	General	_	NNP	NNP	_	12	nn	_	_
@@ -5550,7 +5550,7 @@
 
 1	Ambassador	_	NNP	NNP	_	3	nn	_	_
 2	Paul	_	NNP	NNP	_	3	nn	_	_
-3	Nit	Nit	NNP	NNP	_	6	poss	_	_
+3	Nit	Nit	NNP	NNP	_	7	poss	_	_
 4	@@@ze	@@@ze	BPE	BPE	_	3	BPE	_	_
 5	'	'	POS	POS	_	3	possessive	_	_
 6	@@@s	@@@s	BPE	BPE	_	5	BPE	_	_
@@ -6694,7 +6694,7 @@
 11	at	_	IN	IN	_	10	prep	_	_
 12	its	_	PRP$	PRP$	_	20	poss	_	_
 13	giant	_	JJ	JJ	_	20	amod	_	_
-14	R	R	NNP	NNP	_	19	dep	_	_
+14	R	R	NNP	NNP	_	20	dep	_	_
 15	@@@enton	@@@enton	BPE	BPE	_	14	BPE	_	_
 16	,	_	,	,	_	14	punct	_	_
 17	Wash	Wash	NNP	NNP	_	14	dep	_	_
@@ -6750,7 +6750,7 @@
 33	stock	_	NN	NN	_	25	pobj	_	_
 34	.	_	.	.	_	17	punct	_	_
 
-1	D	D	NNP	NNP	_	17	nsubj	_	_
+1	D	D	NNP	NNP	_	19	nsubj	_	_
 2	@@@PC	@@@PC	BPE	BPE	_	1	BPE	_	_
 3	,	_	,	,	_	1	punct	_	_
 4	a	_	DT	DT	_	5	det	_	_
@@ -7006,7 +7006,7 @@
 24	loss	_	NN	NN	_	22	pobj	_	_
 25	to	_	TO	TO	_	26	aux	_	_
 26	understand	_	VB	VB	_	21	xcomp	_	_
-27	D	D	NNP	NNP	_	30	poss	_	_
+27	D	D	NNP	NNP	_	31	poss	_	_
 28	@@@PC	@@@PC	BPE	BPE	_	27	BPE	_	_
 29	'	'	POS	POS	_	27	possessive	_	_
 30	@@@s	@@@s	BPE	BPE	_	29	BPE	_	_
@@ -7972,7 +7972,7 @@
 26	rally	_	NN	NN	_	24	dobj	_	_
 27	.	_	.	.	_	4	punct	_	_
 
-1	Att	Att	VBN	VBN	_	15	ccomp	_	_
+1	Att	Att	VBN	VBN	_	16	ccomp	_	_
 2	@@@racted	@@@racted	BPE	BPE	_	1	BPE	_	_
 3	by	_	IN	IN	_	1	prep	_	_
 4	low	_	JJ	JJ	_	5	amod	_	_
@@ -8625,7 +8625,7 @@
 1	NC	NC	NNP	NNP	_	4	nn	_	_
 2	@@@N	@@@N	BPE	BPE	_	1	BPE	_	_
 3	@@@B	@@@B	BPE	BPE	_	1	BPE	_	_
-4	Corp	Corp	NNP	NNP	_	8	poss	_	_
+4	Corp	Corp	NNP	NNP	_	9	poss	_	_
 5	@@@.	@@@.	BPE	BPE	_	4	BPE	_	_
 6	'	'	POS	POS	_	4	possessive	_	_
 7	@@@s	@@@s	BPE	BPE	_	6	BPE	_	_
@@ -8752,7 +8752,7 @@
 14	the	_	DT	DT	_	15	det	_	_
 15	size	_	NN	NN	_	13	pobj	_	_
 16	of	_	IN	IN	_	15	prep	_	_
-17	NC	NC	NNP	NNP	_	22	poss	_	_
+17	NC	NC	NNP	NNP	_	23	poss	_	_
 18	@@@N	@@@N	BPE	BPE	_	17	BPE	_	_
 19	@@@B	@@@B	BPE	BPE	_	17	BPE	_	_
 20	'	'	POS	POS	_	17	possessive	_	_
@@ -8879,7 +8879,7 @@
 11	17	_	CD	CD	_	12	num	_	_
 12	%	_	NN	NN	_	10	pobj	_	_
 13	in	_	IN	IN	_	9	prep	_	_
-14	NC	NC	NNP	NNP	_	19	poss	_	_
+14	NC	NC	NNP	NNP	_	20	poss	_	_
 15	@@@N	@@@N	BPE	BPE	_	14	BPE	_	_
 16	@@@B	@@@B	BPE	BPE	_	14	BPE	_	_
 17	'	'	POS	POS	_	14	possessive	_	_
@@ -8913,7 +8913,7 @@
 7	also	_	RB	RB	_	8	advmod	_	_
 8	helped	_	VBD	VBD	_	0	root	_	_
 9	squeeze	_	VB	VB	_	8	ccomp	_	_
-10	NC	NC	NNP	NNP	_	16	poss	_	_
+10	NC	NC	NNP	NNP	_	17	poss	_	_
 11	@@@N	@@@N	BPE	BPE	_	10	BPE	_	_
 12	@@@B	@@@B	BPE	BPE	_	10	BPE	_	_
 13	'	'	POS	POS	_	10	possessive	_	_
@@ -8993,7 +8993,7 @@
 26	@@@.9	@@@.9	BPE	BPE	_	25	BPE	_	_
 27	million	_	CD	CD	_	24	num	_	_
 28	to	_	TO	TO	_	23	prep	_	_
-29	NC	NC	NNP	NNP	_	34	poss	_	_
+29	NC	NC	NNP	NNP	_	35	poss	_	_
 30	@@@N	@@@N	BPE	BPE	_	29	BPE	_	_
 31	@@@B	@@@B	BPE	BPE	_	29	BPE	_	_
 32	'	'	POS	POS	_	29	possessive	_	_
@@ -9113,7 +9113,7 @@
 4	nine	_	CD	CD	_	5	num	_	_
 5	months	_	NNS	NNS	_	1	pobj	_	_
 6	,	_	,	,	_	14	punct	_	_
-7	NC	NC	NNP	NNP	_	12	poss	_	_
+7	NC	NC	NNP	NNP	_	13	poss	_	_
 8	@@@N	@@@N	BPE	BPE	_	7	BPE	_	_
 9	@@@B	@@@B	BPE	BPE	_	7	BPE	_	_
 10	'	'	POS	POS	_	7	possessive	_	_
@@ -10299,7 +10299,7 @@
 36	losses	_	NNS	NNS	_	34	pobj	_	_
 37	suffered	_	VBN	VBN	_	36	partmod	_	_
 38	by	_	IN	IN	_	37	prep	_	_
-39	U	U	NNP	NNP	_	44	nn	_	_
+39	U	U	NNP	NNP	_	46	nn	_	_
 40	@@@.	@@@.	BPE	BPE	_	39	BPE	_	_
 41	@@@S	@@@S	BPE	BPE	_	39	BPE	_	_
 42	@@@.	@@@.	BPE	BPE	_	39	BPE	_	_
@@ -10359,7 +10359,7 @@
 42	.	_	.	.	_	12	punct	_	_
 43	''	_	''	''	_	12	punct	_	_
 
-1	Question	Question	VBN	VBN	_	25	partmod	_	_
+1	Question	Question	VBN	VBN	_	30	partmod	_	_
 2	@@@ed	@@@ed	BPE	BPE	_	1	BPE	_	_
 3	about	_	IN	IN	_	1	prep	_	_
 4	the	_	DT	DT	_	6	det	_	_
@@ -10563,7 +10563,7 @@
 3	Hills	_	NNP	NNP	_	4	nsubj	_	_
 4	said	_	VBD	VBD	_	0	root	_	_
 5	the	_	DT	DT	_	6	det	_	_
-6	U	U	NNP	NNP	_	12	nsubj	_	_
+6	U	U	NNP	NNP	_	14	nsubj	_	_
 7	@@@.	@@@.	BPE	BPE	_	6	BPE	_	_
 8	@@@S	@@@S	BPE	BPE	_	6	BPE	_	_
 9	@@@.	@@@.	BPE	BPE	_	6	BPE	_	_
@@ -10579,7 +10579,7 @@
 19	@@@.	@@@.	BPE	BPE	_	18	BPE	_	_
 20	13	_	CD	CD	_	18	num	_	_
 21	because	_	IN	IN	_	30	mark	_	_
-22	U	U	NNP	NNP	_	27	nn	_	_
+22	U	U	NNP	NNP	_	29	nn	_	_
 23	@@@.	@@@.	BPE	BPE	_	22	BPE	_	_
 24	@@@S	@@@S	BPE	BPE	_	22	BPE	_	_
 25	@@@.	@@@.	BPE	BPE	_	22	BPE	_	_
@@ -10766,7 +10766,7 @@
 14	@@@bank	@@@bank	BPE	BPE	_	12	BPE	_	_
 15	assistance	_	NN	NN	_	11	pobj	_	_
 16	to	_	TO	TO	_	7	prep	_	_
-17	Banc	Banc	NNP	NNP	_	28	poss	_	_
+17	Banc	Banc	NNP	NNP	_	29	poss	_	_
 18	@@@Ok	@@@Ok	BPE	BPE	_	17	BPE	_	_
 19	@@@lah	@@@lah	BPE	BPE	_	17	BPE	_	_
 20	@@@oma	@@@oma	BPE	BPE	_	17	BPE	_	_
@@ -10819,7 +10819,7 @@
 21	60	_	CD	CD	_	22	num	_	_
 22	%	_	NN	NN	_	20	dobj	_	_
 23	of	_	IN	IN	_	22	prep	_	_
-24	Banc	Banc	NNP	NNP	_	30	poss	_	_
+24	Banc	Banc	NNP	NNP	_	31	poss	_	_
 25	@@@Ok	@@@Ok	BPE	BPE	_	24	BPE	_	_
 26	@@@lah	@@@lah	BPE	BPE	_	24	BPE	_	_
 27	@@@oma	@@@oma	BPE	BPE	_	24	BPE	_	_
@@ -10921,7 +10921,7 @@
 25	and	_	CC	CC	_	10	cc	_	_
 26	holders	_	NNS	NNS	_	39	nsubj	_	_
 27	of	_	IN	IN	_	26	prep	_	_
-28	Banc	Banc	NNP	NNP	_	36	poss	_	_
+28	Banc	Banc	NNP	NNP	_	37	poss	_	_
 29	@@@Ok	@@@Ok	BPE	BPE	_	28	BPE	_	_
 30	@@@lah	@@@lah	BPE	BPE	_	28	BPE	_	_
 31	@@@oma	@@@oma	BPE	BPE	_	28	BPE	_	_
@@ -11323,7 +11323,7 @@
 28	Paine	Paine	NNP	NNP	_	31	nn	_	_
 29	@@@Webber	@@@Webber	BPE	BPE	_	28	BPE	_	_
 30	Group	_	NNP	NNP	_	31	nn	_	_
-31	Inc	Inc	NNP	NNP	_	34	poss	_	_
+31	Inc	Inc	NNP	NNP	_	35	poss	_	_
 32	@@@.	@@@.	BPE	BPE	_	31	BPE	_	_
 33	'	'	POS	POS	_	31	possessive	_	_
 34	@@@s	@@@s	BPE	BPE	_	33	BPE	_	_
@@ -13214,7 +13214,7 @@
 26	workers	_	NNS	NNS	_	25	dobj	_	_
 27	.	_	.	.	_	6	punct	_	_
 
-1	CL	CL	VBG	VBG	_	13	csubj	_	_
+1	CL	CL	VBG	VBG	_	16	csubj	_	_
 2	@@@U	@@@U	BPE	BPE	_	1	BPE	_	_
 3	@@@BB	@@@BB	BPE	BPE	_	1	BPE	_	_
 4	@@@ING	@@@ING	BPE	BPE	_	1	BPE	_	_
@@ -13248,7 +13248,7 @@
 14	the	_	DT	DT	_	23	det	_	_
 15	minor	_	JJ	JJ	_	23	amod	_	_
 16	league	_	NN	NN	_	23	nn	_	_
-17	Blue	Blue	NNP	NNP	_	22	dep	_	_
+17	Blue	Blue	NNP	NNP	_	23	dep	_	_
 18	@@@field	@@@field	BPE	BPE	_	17	BPE	_	_
 19	,	_	,	,	_	17	punct	_	_
 20	Va	Va	NNP	NNP	_	17	dep	_	_
@@ -13308,7 +13308,7 @@
 1	After	_	IN	IN	_	30	prep	_	_
 2	the	_	DT	DT	_	3	det	_	_
 3	game	_	NN	NN	_	1	pobj	_	_
-4	-	-	-LRB-	-LRB-	_	23	punct	_	_
+4	-	-	-LRB-	-LRB-	_	24	punct	_	_
 5	@@@LRB	@@@LRB	BPE	BPE	_	4	BPE	_	_
 6	@@@-	@@@-	BPE	BPE	_	4	BPE	_	_
 7	``	_	``	``	_	24	punct	_	_
@@ -13597,7 +13597,7 @@
 23	housing	_	NN	NN	_	14	conj	_	_
 24	.	_	.	.	_	5	punct	_	_
 
-1	TRE	TRE	VBG	VBG	_	7	csubj	_	_
+1	TRE	TRE	VBG	VBG	_	11	csubj	_	_
 2	@@@ATING	@@@ATING	BPE	BPE	_	1	BPE	_	_
 3	EM	EM	NNS	NNS	_	1	dobj	_	_
 4	@@@P	@@@P	BPE	BPE	_	3	BPE	_	_
@@ -13738,7 +13738,7 @@
 11	55,000	_	CD	CD	_	10	num	_	_
 12	.	_	.	.	_	7	punct	_	_
 
-1	CUR	CUR	VBG	VBG	_	7	csubj	_	_
+1	CUR	CUR	VBG	VBG	_	11	csubj	_	_
 2	@@@B	@@@B	BPE	BPE	_	1	BPE	_	_
 3	@@@ING	@@@ING	BPE	BPE	_	1	BPE	_	_
 4	W	W	NN	NN	_	6	nn	_	_
@@ -14182,7 +14182,7 @@
 24	normal	_	JJ	JJ	_	34	amod	_	_
 25	,	_	,	,	_	34	punct	_	_
 26	400	_	CD	CD	_	27	number	_	_
-27	million	million	JJ	JJ	_	33	amod	_	_
+27	million	million	JJ	JJ	_	34	amod	_	_
 28	@@@-	@@@-	BPE	BPE	_	27	BPE	_	_
 29	@@@share	@@@share	BPE	BPE	_	27	BPE	_	_
 30	,	_	,	,	_	34	punct	_	_
@@ -14626,10 +14626,10 @@
 3	@@@s	@@@s	BPE	BPE	_	2	BPE	_	_
 4	Fried	_	NNP	NNP	_	6	nn	_	_
 5	Chicken	_	NNP	NNP	_	6	nn	_	_
-6	Inc	Inc	NNP	NNP	_	22	nsubjpass	_	_
+6	Inc	Inc	NNP	NNP	_	25	nsubjpass	_	_
 7	@@@.	@@@.	BPE	BPE	_	6	BPE	_	_
 8	and	_	CC	CC	_	6	cc	_	_
-9	Pop	Pop	NNP	NNP	_	15	poss	_	_
+9	Pop	Pop	NNP	NNP	_	16	poss	_	_
 10	@@@eye	@@@eye	BPE	BPE	_	9	BPE	_	_
 11	'	'	POS	POS	_	9	possessive	_	_
 12	@@@s	@@@s	BPE	BPE	_	11	BPE	_	_
@@ -14880,7 +14880,7 @@
 2	Goldman	_	NNP	NNP	_	11	nsubj	_	_
 3	,	_	,	,	_	2	punct	_	_
 4	a	_	DT	DT	_	9	det	_	_
-5	Paine	Paine	NNP	NNP	_	8	nn	_	_
+5	Paine	Paine	NNP	NNP	_	9	nn	_	_
 6	@@@Webber	@@@Webber	BPE	BPE	_	5	BPE	_	_
 7	Inc	Inc	NNP	NNP	_	9	nn	_	_
 8	@@@.	@@@.	BPE	BPE	_	7	BPE	_	_
@@ -15035,7 +15035,7 @@
 6	include	_	VBP	VBP	_	0	root	_	_
 7	Burt	_	NNP	NNP	_	14	nn	_	_
 8	Hill	_	NNP	NNP	_	14	nn	_	_
-9	Kos	Kos	NNP	NNP	_	12	nn	_	_
+9	Kos	Kos	NNP	NNP	_	14	nn	_	_
 10	@@@ar	@@@ar	BPE	BPE	_	9	BPE	_	_
 11	R	R	NNP	NNP	_	14	nn	_	_
 12	@@@ittle	@@@ittle	BPE	BPE	_	11	BPE	_	_
@@ -15401,7 +15401,7 @@
 1	Thomas	_	NNP	NNP	_	4	nn	_	_
 2	G	G	NNP	NNP	_	4	nn	_	_
 3	@@@.	@@@.	BPE	BPE	_	2	BPE	_	_
-4	Dah	Dah	NNP	NNP	_	14	nsubj	_	_
+4	Dah	Dah	NNP	NNP	_	15	nsubj	_	_
 5	@@@len	@@@len	BPE	BPE	_	4	BPE	_	_
 6	,	_	,	,	_	4	punct	_	_
 7	Big	_	NNP	NNP	_	8	nn	_	_
@@ -15750,7 +15750,7 @@
 
 1	Dr	Dr	NNP	NNP	_	3	nn	_	_
 2	@@@.	@@@.	BPE	BPE	_	1	BPE	_	_
-3	Nov	Nov	NNP	NNP	_	6	poss	_	_
+3	Nov	Nov	NNP	NNP	_	7	poss	_	_
 4	@@@ello	@@@ello	BPE	BPE	_	3	BPE	_	_
 5	'	'	POS	POS	_	3	possessive	_	_
 6	@@@s	@@@s	BPE	BPE	_	5	BPE	_	_
@@ -16605,7 +16605,7 @@
 26	the	_	DT	DT	_	27	det	_	_
 27	reach	_	NN	NN	_	25	pobj	_	_
 28	of	_	IN	IN	_	27	prep	_	_
-29	low	low	JJ	JJ	_	33	amod	_	_
+29	low	low	JJ	JJ	_	35	amod	_	_
 30	@@@-	@@@-	BPE	BPE	_	29	BPE	_	_
 31	and	_	CC	CC	_	29	cc	_	_
 32	middle	middle	JJ	JJ	_	29	conj	_	_
@@ -17686,7 +17686,7 @@
 21	Resources	_	NNP	NNP	_	18	conj	_	_
 22	,	_	,	,	_	18	punct	_	_
 23	and	_	CC	CC	_	18	cc	_	_
-24	Camp	Camp	NNP	NNP	_	28	poss	_	_
+24	Camp	Camp	NNP	NNP	_	29	poss	_	_
 25	@@@eau	@@@eau	BPE	BPE	_	24	BPE	_	_
 26	'	'	POS	POS	_	24	possessive	_	_
 27	@@@s	@@@s	BPE	BPE	_	26	BPE	_	_
@@ -18140,7 +18140,7 @@
 7	.	_	.	.	_	6	punct	_	_
 
 1	The	_	DT	DT	_	2	det	_	_
-2	arbitr	arbitr	NNS	NNS	_	8	nsubjpass	_	_
+2	arbitr	arbitr	NNS	NNS	_	10	nsubjpass	_	_
 3	@@@agers	@@@agers	BPE	BPE	_	2	BPE	_	_
 4	and	_	CC	CC	_	2	cc	_	_
 5	takeover	_	NN	NN	_	6	nn	_	_
@@ -19191,7 +19191,7 @@
 
 1	Nob	Nob	NNP	NNP	_	3	nn	_	_
 2	@@@uto	@@@uto	BPE	BPE	_	1	BPE	_	_
-3	Yas	Yas	NNP	NNP	_	16	nsubj	_	_
+3	Yas	Yas	NNP	NNP	_	18	nsubj	_	_
 4	@@@uda	@@@uda	BPE	BPE	_	3	BPE	_	_
 5	,	_	,	,	_	3	punct	_	_
 6	a	_	DT	DT	_	7	det	_	_
@@ -19255,7 +19255,7 @@
 
 1	Is	Is	NNP	NNP	_	3	nn	_	_
 2	@@@ao	@@@ao	BPE	BPE	_	1	BPE	_	_
-3	Ush	Ush	NNP	NNP	_	23	nsubj	_	_
+3	Ush	Ush	NNP	NNP	_	25	nsubj	_	_
 4	@@@ik	@@@ik	BPE	BPE	_	3	BPE	_	_
 5	@@@ubo	@@@ubo	BPE	BPE	_	3	BPE	_	_
 6	,	_	,	,	_	3	punct	_	_
@@ -19736,7 +19736,7 @@
 30	regional	_	JJ	JJ	_	31	amod	_	_
 31	analyst	_	NN	NN	_	26	appos	_	_
 32	with	_	IN	IN	_	31	prep	_	_
-33	Bar	Bar	NNP	NNP	_	40	nn	_	_
+33	Bar	Bar	NNP	NNP	_	44	nn	_	_
 34	@@@ing	@@@ing	BPE	BPE	_	33	BPE	_	_
 35	Securities	_	NNP	NNP	_	44	nn	_	_
 36	-	-	-LRB-	-LRB-	_	40	punct	_	_
@@ -19863,7 +19863,7 @@
 22	.	_	.	.	_	5	punct	_	_
 
 1	Richard	_	NNP	NNP	_	2	nn	_	_
-2	Chen	Chen	NNP	NNP	_	20	nsubj	_	_
+2	Chen	Chen	NNP	NNP	_	24	nsubj	_	_
 3	@@@ev	@@@ev	BPE	BPE	_	2	BPE	_	_
 4	@@@ix	@@@ix	BPE	BPE	_	2	BPE	_	_
 5	@@@-	@@@-	BPE	BPE	_	2	BPE	_	_
@@ -19874,7 +19874,7 @@
 10	director	_	NN	NN	_	2	appos	_	_
 11	at	_	IN	IN	_	10	prep	_	_
 12	Hong	_	NNP	NNP	_	13	amod	_	_
-13	Kong	Kong	JJ	JJ	_	20	amod	_	_
+13	Kong	Kong	JJ	JJ	_	21	amod	_	_
 14	@@@-	@@@-	BPE	BPE	_	13	BPE	_	_
 15	@@@based	@@@based	BPE	BPE	_	13	BPE	_	_
 16	Bar	Bar	NNP	NNP	_	21	nn	_	_
@@ -19980,7 +19980,7 @@
 13	.	_	.	.	_	3	punct	_	_
 
 1	Nestor	_	NNP	NNP	_	2	nn	_	_
-2	Hin	Hin	NNP	NNP	_	18	nsubj	_	_
+2	Hin	Hin	NNP	NNP	_	22	nsubj	_	_
 3	@@@z	@@@z	BPE	BPE	_	2	BPE	_	_
 4	@@@ack	@@@ack	BPE	BPE	_	2	BPE	_	_
 5	,	_	,	,	_	2	punct	_	_
@@ -19989,7 +19989,7 @@
 8	at	_	IN	IN	_	7	prep	_	_
 9	brokerage	_	NN	NN	_	19	nn	_	_
 10	firm	_	NN	NN	_	19	nn	_	_
-11	Burd	Burd	NNP	NNP	_	17	nn	_	_
+11	Burd	Burd	NNP	NNP	_	19	nn	_	_
 12	@@@ett	@@@ett	BPE	BPE	_	11	BPE	_	_
 13	,	_	,	,	_	11	punct	_	_
 14	Buck	Buck	NNP	NNP	_	11	conj	_	_
@@ -20042,7 +20042,7 @@
 2	'	'	POS	POS	_	1	possessive	_	_
 3	@@@s	@@@s	BPE	BPE	_	2	BPE	_	_
 4	Financial	_	NNP	NNP	_	12	nn	_	_
-5	Times	Times	NNP	NNP	_	11	nn	_	_
+5	Times	Times	NNP	NNP	_	12	nn	_	_
 6	@@@-	@@@-	BPE	BPE	_	5	BPE	_	_
 7	@@@St	@@@St	BPE	BPE	_	5	BPE	_	_
 8	@@@ock	@@@ock	BPE	BPE	_	5	BPE	_	_
@@ -20364,7 +20364,7 @@
 6	make	_	VB	VB	_	1	infmod	_	_
 7	of	_	IN	IN	_	6	prep	_	_
 8	the	_	DT	DT	_	16	det	_	_
-9	whack	whack	JJ	JJ	_	12	amod	_	_
+9	whack	whack	JJ	JJ	_	16	amod	_	_
 10	@@@y	@@@y	BPE	BPE	_	9	BPE	_	_
 11	save	save	JJ	JJ	_	16	amod	_	_
 12	@@@-	@@@-	BPE	BPE	_	11	BPE	_	_
@@ -20884,7 +20884,7 @@
 19	@@@back	@@@back	BPE	BPE	_	18	BPE	_	_
 20	.	_	.	.	_	5	punct	_	_
 
-1	-	-	-LRB-	-LRB-	_	13	punct	_	_
+1	-	-	-LRB-	-LRB-	_	14	punct	_	_
 2	@@@LRB	@@@LRB	BPE	BPE	_	1	BPE	_	_
 3	@@@-	@@@-	BPE	BPE	_	1	BPE	_	_
 4	The	_	DT	DT	_	6	det	_	_
@@ -20952,7 +20952,7 @@
 6	recently	_	RB	RB	_	7	advmod	_	_
 7	passed	_	VBD	VBD	_	4	rcmod	_	_
 8	the	_	DT	DT	_	15	det	_	_
-9	Prop	Prop	NNP	NNP	_	13	nn	_	_
+9	Prop	Prop	NNP	NNP	_	15	nn	_	_
 10	@@@.	@@@.	BPE	BPE	_	9	BPE	_	_
 11	65	_	CD	CD	_	15	num	_	_
 12	anti	anti	JJ	JJ	_	15	amod	_	_
@@ -21068,7 +21068,7 @@
 35	any	_	DT	DT	_	36	det	_	_
 36	collection	_	NN	NN	_	49	nsubj	_	_
 37	of	_	IN	IN	_	36	prep	_	_
-38	anti	anti	JJ	JJ	_	44	amod	_	_
+38	anti	anti	JJ	JJ	_	47	amod	_	_
 39	@@@-	@@@-	BPE	BPE	_	38	BPE	_	_
 40	@@@sc	@@@sc	BPE	BPE	_	38	BPE	_	_
 41	@@@ientific	@@@ientific	BPE	BPE	_	38	BPE	_	_
@@ -21234,7 +21234,7 @@
 2	exhilaration	_	NN	NN	_	0	root	_	_
 3	.	_	.	.	_	2	punct	_	_
 
-1	Spur	Spur	VBN	VBN	_	17	partmod	_	_
+1	Spur	Spur	VBN	VBN	_	21	partmod	_	_
 2	@@@red	@@@red	BPE	BPE	_	1	BPE	_	_
 3	by	_	IN	IN	_	1	prep	_	_
 4	waves	_	NNS	NNS	_	3	pobj	_	_
@@ -21566,7 +21566,7 @@
 23	,	_	,	,	_	21	punct	_	_
 24	a	_	DT	DT	_	30	det	_	_
 25	veteran	_	JJ	JJ	_	30	amod	_	_
-26	Paine	Paine	NNP	NNP	_	29	nn	_	_
+26	Paine	Paine	NNP	NNP	_	30	nn	_	_
 27	@@@Webber	@@@Webber	BPE	BPE	_	26	BPE	_	_
 28	Inc	Inc	NNP	NNP	_	30	nn	_	_
 29	@@@.	@@@.	BPE	BPE	_	28	BPE	_	_
@@ -21684,7 +21684,7 @@
 8	disaster	_	NN	NN	_	7	pobj	_	_
 9	on	_	IN	IN	_	6	prep	_	_
 10	the	_	DT	DT	_	19	det	_	_
-11	9	9	CD	CD	_	16	num	_	_
+11	9	9	CD	CD	_	19	num	_	_
 12	@@@:	@@@:	BPE	BPE	_	11	BPE	_	_
 13	@@@30	@@@30	BPE	BPE	_	11	BPE	_	_
 14	a	a	NN	NN	_	19	nn	_	_
@@ -22500,7 +22500,7 @@
 10	@@@son	@@@son	BPE	BPE	_	9	BPE	_	_
 11	Lehman	_	NNP	NNP	_	13	nn	_	_
 12	Hutton	_	NNP	NNP	_	13	nn	_	_
-13	Inc	Inc	NNP	NNP	_	17	poss	_	_
+13	Inc	Inc	NNP	NNP	_	18	poss	_	_
 14	@@@.	@@@.	BPE	BPE	_	13	BPE	_	_
 15	'	'	POS	POS	_	13	possessive	_	_
 16	@@@s	@@@s	BPE	BPE	_	15	BPE	_	_
@@ -22624,7 +22624,7 @@
 21	the	_	DT	DT	_	22	det	_	_
 22	trading	_	NN	NN	_	33	nsubjpass	_	_
 23	in	_	IN	IN	_	22	prep	_	_
-24	S	S	NNP	NNP	_	29	nn	_	_
+24	S	S	NNP	NNP	_	31	nn	_	_
 25	@@@&	@@@&	BPE	BPE	_	24	BPE	_	_
 26	@@@P	@@@P	BPE	BPE	_	24	BPE	_	_
 27	100	_	CD	CD	_	31	num	_	_
@@ -22806,7 +22806,7 @@
 
 1	This	_	DT	DT	_	2	det	_	_
 2	time	_	NN	NN	_	12	tmod	_	_
-3	-	-	-LRB-	-LRB-	_	9	punct	_	_
+3	-	-	-LRB-	-LRB-	_	12	punct	_	_
 4	@@@LC	@@@LC	BPE	BPE	_	3	BPE	_	_
 5	@@@B	@@@B	BPE	BPE	_	3	BPE	_	_
 6	@@@-	@@@-	BPE	BPE	_	3	BPE	_	_
@@ -23584,12 +23584,12 @@
 1	Meanwhile	_	RB	RB	_	19	advmod	_	_
 2	,	_	,	,	_	19	punct	_	_
 3	Peter	_	NNP	NNP	_	4	nn	_	_
-4	Da	Da	NNP	NNP	_	17	nsubj	_	_
+4	Da	Da	NNP	NNP	_	19	nsubj	_	_
 5	@@@P	@@@P	BPE	BPE	_	4	BPE	_	_
 6	@@@uzz	@@@uzz	BPE	BPE	_	4	BPE	_	_
 7	@@@o	@@@o	BPE	BPE	_	4	BPE	_	_
 8	,	_	,	,	_	4	punct	_	_
-9	Shear	Shear	NNP	NNP	_	12	poss	_	_
+9	Shear	Shear	NNP	NNP	_	13	poss	_	_
 10	@@@son	@@@son	BPE	BPE	_	9	BPE	_	_
 11	'	'	POS	POS	_	9	possessive	_	_
 12	@@@s	@@@s	BPE	BPE	_	11	BPE	_	_
@@ -24825,7 +24825,7 @@
 28	year	_	NN	NN	_	25	pobj	_	_
 29	.	_	.	.	_	13	punct	_	_
 
-1	En	En	VBG	VBG	_	18	dep	_	_
+1	En	En	VBG	VBG	_	25	dep	_	_
 2	@@@j	@@@j	BPE	BPE	_	1	BPE	_	_
 3	@@@oying	@@@oying	BPE	BPE	_	1	BPE	_	_
 4	several	_	JJ	JJ	_	7	amod	_	_
@@ -24838,7 +24838,7 @@
 11	,	_	,	,	_	8	punct	_	_
 12	''	_	''	''	_	8	punct	_	_
 13	Los	_	NNP	NNP	_	14	amod	_	_
-14	Angeles	Angeles	JJ	JJ	_	19	amod	_	_
+14	Angeles	Angeles	JJ	JJ	_	23	amod	_	_
 15	@@@-	@@@-	BPE	BPE	_	14	BPE	_	_
 16	@@@based	@@@based	BPE	BPE	_	14	BPE	_	_
 17	Gu	Gu	NNP	NNP	_	23	nn	_	_
@@ -24880,7 +24880,7 @@
 53	.	_	.	.	_	25	punct	_	_
 
 1	Sony	_	NNP	NNP	_	2	nn	_	_
-2	Corp	Corp	NNP	NNP	_	15	nsubj	_	_
+2	Corp	Corp	NNP	NNP	_	17	nsubj	_	_
 3	@@@.	@@@.	BPE	BPE	_	2	BPE	_	_
 4	,	_	,	,	_	2	punct	_	_
 5	which	_	WDT	WDT	_	7	nsubj	_	_
@@ -24916,7 +24916,7 @@
 35	with	_	IN	IN	_	34	prep	_	_
 36	Time	_	NNP	NNP	_	38	nn	_	_
 37	Warner	_	NNP	NNP	_	38	nn	_	_
-38	Inc	Inc	NNP	NNP	_	43	poss	_	_
+38	Inc	Inc	NNP	NNP	_	44	poss	_	_
 39	@@@.	@@@.	BPE	BPE	_	38	BPE	_	_
 40	'	'	POS	POS	_	38	possessive	_	_
 41	@@@s	@@@s	BPE	BPE	_	40	BPE	_	_
@@ -24995,7 +24995,7 @@
 39	companies	_	NNS	NNS	_	36	pobj	_	_
 40	.	_	.	.	_	2	punct	_	_
 
-1	Gu	Gu	NNS	NNS	_	8	poss	_	_
+1	Gu	Gu	NNS	NNS	_	9	poss	_	_
 2	@@@ber	@@@ber	BPE	BPE	_	1	BPE	_	_
 3	@@@-	@@@-	BPE	BPE	_	1	BPE	_	_
 4	@@@P	@@@P	BPE	BPE	_	1	BPE	_	_
@@ -25121,7 +25121,7 @@
 4	,	_	,	,	_	23	punct	_	_
 5	Huntsman	_	NNP	NNP	_	7	nn	_	_
 6	Holdings	_	NNP	NNP	_	7	nn	_	_
-7	Corp	Corp	NNP	NNP	_	22	nsubj	_	_
+7	Corp	Corp	NNP	NNP	_	23	nsubj	_	_
 8	@@@.	@@@.	BPE	BPE	_	7	BPE	_	_
 9	,	_	,	,	_	7	punct	_	_
 10	owned	_	VBN	VBN	_	7	partmod	_	_
@@ -25190,7 +25190,7 @@
 14	said	_	VBD	VBD	_	0	root	_	_
 15	it	_	PRP	PRP	_	16	nsubj	_	_
 16	controls	_	VBZ	VBZ	_	14	ccomp	_	_
-17	2,7	2,7	CD	CD	_	23	num	_	_
+17	2,7	2,7	CD	CD	_	24	num	_	_
 18	@@@20	@@@20	BPE	BPE	_	17	BPE	_	_
 19	@@@,6	@@@,6	BPE	BPE	_	17	BPE	_	_
 20	@@@75	@@@75	BPE	BPE	_	17	BPE	_	_
@@ -25344,7 +25344,7 @@
 16	atrocities	_	NNS	NNS	_	13	dobj	_	_
 17	as	_	IN	IN	_	16	prep	_	_
 18	the	_	DT	DT	_	26	det	_	_
-19	1,3	1,3	CD	CD	_	25	num	_	_
+19	1,3	1,3	CD	CD	_	26	num	_	_
 20	@@@76	@@@76	BPE	BPE	_	19	BPE	_	_
 21	page	_	NN	NN	_	26	nn	_	_
 22	,	_	,	,	_	26	punct	_	_
@@ -26252,7 +26252,7 @@
 16	opened	_	VBD	VBD	_	11	rcmod	_	_
 17	at	_	IN	IN	_	16	prep	_	_
 18	about	_	RB	RB	_	26	advmod	_	_
-19	7	7	CD	CD	_	23	num	_	_
+19	7	7	CD	CD	_	26	num	_	_
 20	@@@:	@@@:	BPE	BPE	_	19	BPE	_	_
 21	@@@30	@@@30	BPE	BPE	_	19	BPE	_	_
 22	p	p	NN	NN	_	26	nn	_	_
@@ -26371,7 +26371,7 @@
 22	.	_	.	.	_	13	punct	_	_
 
 1	Jay	_	NNP	NNP	_	2	nn	_	_
-2	Gold	Gold	NNP	NNP	_	19	nsubj	_	_
+2	Gold	Gold	NNP	NNP	_	21	nsubj	_	_
 3	@@@inger	@@@inger	BPE	BPE	_	2	BPE	_	_
 4	,	_	,	,	_	2	punct	_	_
 5	who	_	WP	WP	_	7	nsubj	_	_
@@ -26632,7 +26632,7 @@
 24	billion	_	CD	CD	_	22	num	_	_
 25	offering	_	NN	NN	_	20	dobj	_	_
 26	of	_	IN	IN	_	25	prep	_	_
-27	one	one	JJ	JJ	_	36	amod	_	_
+27	one	one	JJ	JJ	_	41	amod	_	_
 28	@@@-	@@@-	BPE	BPE	_	27	BPE	_	_
 29	@@@year	@@@year	BPE	BPE	_	27	BPE	_	_
 30	,	_	,	,	_	27	punct	_	_
@@ -27475,7 +27475,7 @@
 20	increased	_	VBN	VBN	_	21	amod	_	_
 21	amounts	_	NNS	NNS	_	19	dobj	_	_
 22	of	_	IN	IN	_	21	prep	_	_
-23	fixed	fixed	JJ	JJ	_	27	amod	_	_
+23	fixed	fixed	JJ	JJ	_	29	amod	_	_
 24	@@@-	@@@-	BPE	BPE	_	23	BPE	_	_
 25	@@@rate	@@@rate	BPE	BPE	_	23	BPE	_	_
 26	mortgage	mortgage	JJ	JJ	_	29	amod	_	_
@@ -27806,7 +27806,7 @@
 10	.	_	.	.	_	4	punct	_	_
 
 1	BMA	_	NNP	NNP	_	2	nn	_	_
-2	Corp	Corp	NNP	NNP	_	10	nsubj	_	_
+2	Corp	Corp	NNP	NNP	_	11	nsubj	_	_
 3	@@@.	@@@.	BPE	BPE	_	2	BPE	_	_
 4	,	_	,	,	_	2	punct	_	_
 5	Kansas	_	NNP	NNP	_	6	nn	_	_
@@ -28307,7 +28307,7 @@
 9	.	_	.	.	_	8	punct	_	_
 
 1	Hertz	_	NNP	NNP	_	2	nn	_	_
-2	Corp	Corp	NNP	NNP	_	10	nsubj	_	_
+2	Corp	Corp	NNP	NNP	_	13	nsubj	_	_
 3	@@@.	@@@.	BPE	BPE	_	2	BPE	_	_
 4	of	_	IN	IN	_	2	prep	_	_
 5	Park	_	NNP	NNP	_	6	nn	_	_
@@ -28491,7 +28491,7 @@
 5	industrial	_	JJ	JJ	_	3	conj	_	_
 6	equipment	_	NN	NN	_	2	dobj	_	_
 7	including	_	VBG	VBG	_	6	prep	_	_
-8	earth	earth	JJ	JJ	_	17	amod	_	_
+8	earth	earth	JJ	JJ	_	18	amod	_	_
 9	@@@-	@@@-	BPE	BPE	_	8	BPE	_	_
 10	@@@moving	@@@moving	BPE	BPE	_	8	BPE	_	_
 11	,	_	,	,	_	8	punct	_	_
@@ -28855,7 +28855,7 @@
 20	year	_	NN	NN	_	14	tmod	_	_
 21	.	_	.	.	_	2	punct	_	_
 
-1	U	U	NNP	NNP	_	6	nn	_	_
+1	U	U	NNP	NNP	_	7	nn	_	_
 2	@@@.	@@@.	BPE	BPE	_	1	BPE	_	_
 3	@@@S	@@@S	BPE	BPE	_	1	BPE	_	_
 4	@@@.	@@@.	BPE	BPE	_	1	BPE	_	_
@@ -28973,7 +28973,7 @@
 32	@@@.	@@@.	BPE	BPE	_	31	BPE	_	_
 33	@@@S	@@@S	BPE	BPE	_	31	BPE	_	_
 34	@@@.	@@@.	BPE	BPE	_	31	BPE	_	_
-35	Bank	Bank	NNP	NNP	_	38	poss	_	_
+35	Bank	Bank	NNP	NNP	_	39	poss	_	_
 36	@@@note	@@@note	BPE	BPE	_	35	BPE	_	_
 37	'	'	POS	POS	_	35	possessive	_	_
 38	@@@s	@@@s	BPE	BPE	_	37	BPE	_	_
@@ -29116,7 +29116,7 @@
 34	,	_	,	,	_	28	punct	_	_
 35	of	_	IN	IN	_	28	conj	_	_
 36	International	_	NNP	NNP	_	37	nn	_	_
-37	Bank	Bank	NNP	NNP	_	40	poss	_	_
+37	Bank	Bank	NNP	NNP	_	41	poss	_	_
 38	@@@note	@@@note	BPE	BPE	_	37	BPE	_	_
 39	'	'	POS	POS	_	37	possessive	_	_
 40	@@@s	@@@s	BPE	BPE	_	39	BPE	_	_
@@ -29254,7 +29254,7 @@
 8	Clifford	_	NNP	NNP	_	9	nn	_	_
 9	Parker	_	NNP	NNP	_	7	pobj	_	_
 10	,	_	,	,	_	9	punct	_	_
-11	Reg	Reg	NNP	NNP	_	14	poss	_	_
+11	Reg	Reg	NNP	NNP	_	15	poss	_	_
 12	@@@atta	@@@atta	BPE	BPE	_	11	BPE	_	_
 13	'	'	POS	POS	_	11	possessive	_	_
 14	@@@s	@@@s	BPE	BPE	_	13	BPE	_	_
@@ -29269,7 +29269,7 @@
 23	continue	_	VB	VB	_	9	rcmod	_	_
 24	to	_	TO	TO	_	25	aux	_	_
 25	manage	_	VB	VB	_	23	xcomp	_	_
-26	Reg	Reg	NNP	NNP	_	29	poss	_	_
+26	Reg	Reg	NNP	NNP	_	30	poss	_	_
 27	@@@atta	@@@atta	BPE	BPE	_	26	BPE	_	_
 28	'	'	POS	POS	_	26	possessive	_	_
 29	@@@s	@@@s	BPE	BPE	_	28	BPE	_	_
@@ -29307,7 +29307,7 @@
 26	said	_	VBD	VBD	_	0	root	_	_
 27	.	_	.	.	_	26	punct	_	_
 
-1	Git	Git	NNP	NNP	_	19	nsubj	_	_
+1	Git	Git	NNP	NNP	_	24	nsubj	_	_
 2	@@@ano	@@@ano	BPE	BPE	_	1	BPE	_	_
 3	,	_	,	,	_	1	punct	_	_
 4	which	_	WDT	WDT	_	5	nsubj	_	_
@@ -29390,7 +29390,7 @@
 15	newly	_	RB	RB	_	16	advmod	_	_
 16	formed	_	VBN	VBN	_	28	amod	_	_
 17	Enron	_	NNP	NNP	_	28	nn	_	_
-18	NG	NG	NNP	NNP	_	25	nn	_	_
+18	NG	NG	NNP	NNP	_	28	nn	_	_
 19	@@@L	@@@L	BPE	BPE	_	18	BPE	_	_
 20	Partners	_	NNP	NNP	_	28	nn	_	_
 21	L	L	NNP	NNP	_	28	nn	_	_
@@ -29606,7 +29606,7 @@
 
 1	DIG	_	NNP	NNP	_	3	nn	_	_
 2	Acquisition	_	NNP	NNP	_	3	nn	_	_
-3	Corp	Corp	NNP	NNP	_	14	nsubj	_	_
+3	Corp	Corp	NNP	NNP	_	15	nsubj	_	_
 4	@@@.	@@@.	BPE	BPE	_	3	BPE	_	_
 5	,	_	,	,	_	3	punct	_	_
 6	the	_	DT	DT	_	9	det	_	_
@@ -29816,7 +29816,7 @@
 4	typewrit	typewrit	NNS	NNS	_	0	root	_	_
 5	@@@ers	@@@ers	BPE	BPE	_	4	BPE	_	_
 6	,	_	,	,	_	4	punct	_	_
-7	B	B	LS	LS	_	10	dep	_	_
+7	B	B	LS	LS	_	14	dep	_	_
 8	@@@.	@@@.	BPE	BPE	_	7	BPE	_	_
 9	black	black	JJ	JJ	_	14	amod	_	_
 10	@@@-	@@@-	BPE	BPE	_	9	BPE	_	_
@@ -30025,7 +30025,7 @@
 22	of	_	IN	IN	_	21	prep	_	_
 23	Eastman	_	NNP	NNP	_	25	nn	_	_
 24	Kodak	_	NNP	NNP	_	25	nn	_	_
-25	Co	Co	NNP	NNP	_	30	poss	_	_
+25	Co	Co	NNP	NNP	_	31	poss	_	_
 26	@@@.	@@@.	BPE	BPE	_	25	BPE	_	_
 27	'	'	POS	POS	_	25	possessive	_	_
 28	@@@s	@@@s	BPE	BPE	_	27	BPE	_	_
@@ -30356,7 +30356,7 @@
 15	be	_	VB	VB	_	23	cop	_	_
 16	International	_	NNP	NNP	_	18	nn	_	_
 17	Paper	_	NNP	NNP	_	18	nn	_	_
-18	Co	Co	NNP	NNP	_	22	poss	_	_
+18	Co	Co	NNP	NNP	_	23	poss	_	_
 19	@@@.	@@@.	BPE	BPE	_	18	BPE	_	_
 20	'	'	POS	POS	_	18	possessive	_	_
 21	@@@s	@@@s	BPE	BPE	_	20	BPE	_	_
@@ -30741,7 +30741,7 @@
 37	@@@ou	@@@ou	BPE	BPE	_	36	BPE	_	_
 38	@@@ffer	@@@ffer	BPE	BPE	_	36	BPE	_	_
 39	Food	_	NNP	NNP	_	40	nn	_	_
-40	Corp	Corp	NNP	NNP	_	44	poss	_	_
+40	Corp	Corp	NNP	NNP	_	45	poss	_	_
 41	@@@.	@@@.	BPE	BPE	_	40	BPE	_	_
 42	'	'	POS	POS	_	40	possessive	_	_
 43	@@@s	@@@s	BPE	BPE	_	42	BPE	_	_
@@ -31110,7 +31110,7 @@
 1	Charles	_	NNP	NNP	_	4	nn	_	_
 2	Bes	Bes	NNP	NNP	_	4	nn	_	_
 3	@@@eler	@@@eler	BPE	BPE	_	2	BPE	_	_
-4	Co	Co	NNP	NNP	_	14	nsubj	_	_
+4	Co	Co	NNP	NNP	_	15	nsubj	_	_
 5	@@@.	@@@.	BPE	BPE	_	4	BPE	_	_
 6	,	_	,	,	_	4	punct	_	_
 7	a	_	DT	DT	_	9	det	_	_
@@ -31200,7 +31200,7 @@
 13	Bright	Bright	NNP	NNP	_	11	nsubj	_	_
 14	@@@man	@@@man	BPE	BPE	_	13	BPE	_	_
 15	,	_	,	,	_	13	punct	_	_
-16	Bes	Bes	NNP	NNP	_	19	poss	_	_
+16	Bes	Bes	NNP	NNP	_	20	poss	_	_
 17	@@@eler	@@@eler	BPE	BPE	_	16	BPE	_	_
 18	'	'	POS	POS	_	16	possessive	_	_
 19	@@@s	@@@s	BPE	BPE	_	18	BPE	_	_
@@ -31589,13 +31589,13 @@
 23	cents	_	NNS	NNS	_	21	pobj	_	_
 24	.	_	.	.	_	13	punct	_	_
 
-1	Ag	Ag	NNP	NNP	_	5	nn	_	_
+1	Ag	Ag	NNP	NNP	_	7	nn	_	_
 2	@@@ip	@@@ip	BPE	BPE	_	1	BPE	_	_
 3	S	S	NNP	NNP	_	7	nn	_	_
 4	@@@.	@@@.	BPE	BPE	_	3	BPE	_	_
 5	@@@p	@@@p	BPE	BPE	_	3	BPE	_	_
 6	.	_	.	.	_	7	punct	_	_
-7	A	A	NNP	NNP	_	26	nsubj	_	_
+7	A	A	NNP	NNP	_	28	nsubj	_	_
 8	@@@.	@@@.	BPE	BPE	_	7	BPE	_	_
 9	and	_	CC	CC	_	7	cc	_	_
 10	Societe	_	NNP	NNP	_	13	nn	_	_
@@ -32660,7 +32660,7 @@
 16	agreed	_	VBD	VBD	_	14	ccomp	_	_
 17	to	_	TO	TO	_	18	aux	_	_
 18	acquire	_	VB	VB	_	16	xcomp	_	_
-19	Birk	Birk	NNP	NNP	_	23	nn	_	_
+19	Birk	Birk	NNP	NNP	_	27	nn	_	_
 20	@@@el	@@@el	BPE	BPE	_	19	BPE	_	_
 21	G	G	NNP	NNP	_	27	nn	_	_
 22	@@@.	@@@.	BPE	BPE	_	21	BPE	_	_
@@ -32696,7 +32696,7 @@
 4	in	_	IN	IN	_	3	prep	_	_
 5	line	_	NN	NN	_	4	pobj	_	_
 6	with	_	IN	IN	_	5	prep	_	_
-7	BS	BS	NNP	NNP	_	10	poss	_	_
+7	BS	BS	NNP	NNP	_	11	poss	_	_
 8	@@@N	@@@N	BPE	BPE	_	7	BPE	_	_
 9	'	'	POS	POS	_	7	possessive	_	_
 10	@@@s	@@@s	BPE	BPE	_	9	BPE	_	_
@@ -32787,7 +32787,7 @@
 16	said	_	VBD	VBD	_	0	root	_	_
 17	.	_	.	.	_	16	punct	_	_
 
-1	Birk	Birk	NNP	NNP	_	8	nsubj	_	_
+1	Birk	Birk	NNP	NNP	_	11	nsubj	_	_
 2	@@@el	@@@el	BPE	BPE	_	1	BPE	_	_
 3	is	_	VBZ	VBZ	_	11	cop	_	_
 4	West	_	NNP	NNP	_	5	nn	_	_
@@ -32849,7 +32849,7 @@
 1	The	_	DT	DT	_	2	det	_	_
 2	acquisition	_	NN	NN	_	3	nsubj	_	_
 3	strengthens	_	VBZ	VBZ	_	0	root	_	_
-4	BS	BS	NNP	NNP	_	7	poss	_	_
+4	BS	BS	NNP	NNP	_	8	poss	_	_
 5	@@@N	@@@N	BPE	BPE	_	4	BPE	_	_
 6	'	'	POS	POS	_	4	possessive	_	_
 7	@@@s	@@@s	BPE	BPE	_	6	BPE	_	_
@@ -32986,7 +32986,7 @@
 39	Code	_	NNP	NNP	_	35	pobj	_	_
 40	.	_	.	.	_	18	punct	_	_
 
-1	CENT	CENT	NNP	NNP	_	5	nn	_	_
+1	CENT	CENT	NNP	NNP	_	7	nn	_	_
 2	@@@R	@@@R	BPE	BPE	_	1	BPE	_	_
 3	@@@UST	@@@UST	BPE	BPE	_	1	BPE	_	_
 4	SA	SA	NNP	NNP	_	7	nn	_	_
@@ -33096,7 +33096,7 @@
 23	of	_	IN	IN	_	22	prep	_	_
 24	dividends	_	NNS	NNS	_	23	pobj	_	_
 25	on	_	IN	IN	_	24	prep	_	_
-26	Cen	Cen	NNP	NNP	_	30	poss	_	_
+26	Cen	Cen	NNP	NNP	_	31	poss	_	_
 27	@@@Trust	@@@Trust	BPE	BPE	_	26	BPE	_	_
 28	'	'	POS	POS	_	26	possessive	_	_
 29	@@@s	@@@s	BPE	BPE	_	28	BPE	_	_
@@ -33710,7 +33710,7 @@
 9	dominance	_	NN	NN	_	7	dobj	_	_
 10	of	_	IN	IN	_	9	prep	_	_
 11	the	_	DT	DT	_	19	det	_	_
-12	U	U	NNP	NNP	_	17	nn	_	_
+12	U	U	NNP	NNP	_	19	nn	_	_
 13	@@@.	@@@.	BPE	BPE	_	12	BPE	_	_
 14	@@@S	@@@S	BPE	BPE	_	12	BPE	_	_
 15	@@@.	@@@.	BPE	BPE	_	12	BPE	_	_
@@ -33747,7 +33747,7 @@
 25	reserves	_	NNS	NNS	_	21	pobj	_	_
 26	.	_	.	.	_	6	punct	_	_
 
-1	NC	NC	NNP	NNP	_	5	poss	_	_
+1	NC	NC	NNP	NNP	_	6	poss	_	_
 2	@@@N	@@@N	BPE	BPE	_	1	BPE	_	_
 3	@@@B	@@@B	BPE	BPE	_	1	BPE	_	_
 4	'	'	POS	POS	_	1	possessive	_	_
@@ -33995,12 +33995,12 @@
 1	Source	_	NN	NN	_	0	root	_	_
 2	:	_	:	:	_	1	punct	_	_
 3	Fulton	_	NNP	NNP	_	18	nn	_	_
-4	Pre	Pre	NNP	NNP	_	10	nn	_	_
+4	Pre	Pre	NNP	NNP	_	18	nn	_	_
 5	@@@bon	@@@bon	BPE	BPE	_	4	BPE	_	_
-6	-	-	-LRB-	-LRB-	_	12	punct	_	_
+6	-	-	-LRB-	-LRB-	_	18	punct	_	_
 7	@@@LRB	@@@LRB	BPE	BPE	_	6	BPE	_	_
 8	@@@-	@@@-	BPE	BPE	_	6	BPE	_	_
-9	U	U	NNP	NNP	_	16	nn	_	_
+9	U	U	NNP	NNP	_	18	nn	_	_
 10	@@@.	@@@.	BPE	BPE	_	9	BPE	_	_
 11	@@@S	@@@S	BPE	BPE	_	9	BPE	_	_
 12	@@@.	@@@.	BPE	BPE	_	9	BPE	_	_
@@ -34374,7 +34374,7 @@
 30	months	_	NNS	NNS	_	28	npadvmod	_	_
 31	;	_	:	:	_	17	punct	_	_
 32	8	_	CD	CD	_	42	number	_	_
-33	9	9	CD	CD	_	40	number	_	_
+33	9	9	CD	CD	_	42	number	_	_
 34	@@@/	@@@/	BPE	BPE	_	33	BPE	_	_
 35	@@@16	@@@16	BPE	BPE	_	33	BPE	_	_
 36	%	_	NN	NN	_	42	dep	_	_
@@ -34422,7 +34422,7 @@
 78	.	_	.	.	_	4	punct	_	_
 
 1	LONDON	_	NNP	NNP	_	7	nn	_	_
-2	INTER	INTER	NNP	NNP	_	5	nn	_	_
+2	INTER	INTER	NNP	NNP	_	7	nn	_	_
 3	@@@BANK	@@@BANK	BPE	BPE	_	2	BPE	_	_
 4	OFF	OFF	VBN	VBN	_	7	amod	_	_
 5	@@@ER	@@@ER	BPE	BPE	_	4	BPE	_	_
@@ -34487,7 +34487,7 @@
 20	banks	_	NNS	NNS	_	17	pobj	_	_
 21	.	_	.	.	_	2	punct	_	_
 
-1	FOR	FOR	NNP	NNP	_	5	nn	_	_
+1	FOR	FOR	NNP	NNP	_	6	nn	_	_
 2	@@@EI	@@@EI	BPE	BPE	_	1	BPE	_	_
 3	@@@GN	@@@GN	BPE	BPE	_	1	BPE	_	_
 4	PR	PR	NNP	NNP	_	6	nn	_	_
@@ -34554,7 +34554,7 @@
 17	,	_	,	,	_	11	punct	_	_
 18	auction	_	NN	NN	_	9	pobj	_	_
 19	of	_	IN	IN	_	18	prep	_	_
-20	short	short	JJ	JJ	_	25	amod	_	_
+20	short	short	JJ	JJ	_	28	amod	_	_
 21	@@@-	@@@-	BPE	BPE	_	20	BPE	_	_
 22	@@@term	@@@term	BPE	BPE	_	20	BPE	_	_
 23	U	U	NNP	NNP	_	28	nn	_	_
@@ -34596,10 +34596,10 @@
 59	weeks	_	NNS	NNS	_	56	appos	_	_
 60	.	_	.	.	_	5	punct	_	_
 
-1	FED	FED	NNP	NNP	_	6	nn	_	_
+1	FED	FED	NNP	NNP	_	10	nn	_	_
 2	@@@ERAL	@@@ERAL	BPE	BPE	_	1	BPE	_	_
 3	HOME	_	NNP	NNP	_	10	nn	_	_
-4	LO	LO	NNP	NNP	_	7	nn	_	_
+4	LO	LO	NNP	NNP	_	10	nn	_	_
 5	@@@AN	@@@AN	BPE	BPE	_	4	BPE	_	_
 6	M	M	NNP	NNP	_	10	nn	_	_
 7	@@@ORT	@@@ORT	BPE	BPE	_	6	BPE	_	_
@@ -34665,7 +34665,7 @@
 6	Inc	_	NNP	NNP	_	1	dep	_	_
 7	.	_	.	.	_	1	punct	_	_
 
-1	FED	FED	NNP	NNP	_	5	nn	_	_
+1	FED	FED	NNP	NNP	_	8	nn	_	_
 2	@@@ERAL	@@@ERAL	BPE	BPE	_	1	BPE	_	_
 3	NATIONAL	_	NNP	NNP	_	8	nn	_	_
 4	M	M	NNP	NNP	_	8	nn	_	_
@@ -34722,7 +34722,7 @@
 55	@@@0	@@@0	BPE	BPE	_	54	BPE	_	_
 56	%	_	NN	NN	_	44	dep	_	_
 57	,	_	,	,	_	56	punct	_	_
-58	6	6	CD	CD	_	66	num	_	_
+58	6	6	CD	CD	_	68	num	_	_
 59	@@@/	@@@/	BPE	BPE	_	58	BPE	_	_
 60	@@@2	@@@2	BPE	BPE	_	58	BPE	_	_
 61	rate	_	NN	NN	_	62	dep	_	_
@@ -34743,13 +34743,13 @@
 6	Inc	_	NNP	NNP	_	1	dep	_	_
 7	.	_	.	.	_	1	punct	_	_
 
-1	MER	MER	NNP	NNP	_	7	nn	_	_
+1	MER	MER	NNP	NNP	_	12	nn	_	_
 2	@@@R	@@@R	BPE	BPE	_	1	BPE	_	_
 3	@@@ILL	@@@ILL	BPE	BPE	_	1	BPE	_	_
-4	L	L	NNP	NNP	_	9	nn	_	_
+4	L	L	NNP	NNP	_	12	nn	_	_
 5	@@@YN	@@@YN	BPE	BPE	_	4	BPE	_	_
 6	@@@CH	@@@CH	BPE	BPE	_	4	BPE	_	_
-7	READ	READ	NNP	NNP	_	10	nn	_	_
+7	READ	READ	NNP	NNP	_	12	nn	_	_
 8	@@@Y	@@@Y	BPE	BPE	_	7	BPE	_	_
 9	AS	AS	NNP	NNP	_	12	nn	_	_
 10	@@@SE	@@@SE	BPE	BPE	_	9	BPE	_	_
@@ -34814,7 +34814,7 @@
 28	.	_	.	.	_	4	punct	_	_
 
 1	The	_	DT	DT	_	2	det	_	_
-2	i	i	NN	NN	_	14	nsubj	_	_
+2	i	i	NN	NN	_	15	nsubj	_	_
 3	@@@8	@@@8	BPE	BPE	_	2	BPE	_	_
 4	@@@60	@@@60	BPE	BPE	_	2	BPE	_	_
 5	,	_	,	,	_	2	punct	_	_
@@ -34912,7 +34912,7 @@
 31	engineers	_	NNS	NNS	_	29	conj	_	_
 32	.	_	.	.	_	7	punct	_	_
 
-1	All	All	NNP	NNP	_	11	nsubj	_	_
+1	All	All	NNP	NNP	_	12	nsubj	_	_
 2	@@@iant	@@@iant	BPE	BPE	_	1	BPE	_	_
 3	,	_	,	,	_	1	punct	_	_
 4	based	_	VBN	VBN	_	1	partmod	_	_
@@ -35219,7 +35219,7 @@
 20	said	_	VBD	VBD	_	0	root	_	_
 21	.	_	.	.	_	20	punct	_	_
 
-1	SH	SH	NNP	NNP	_	24	nsubjpass	_	_
+1	SH	SH	NNP	NNP	_	25	nsubjpass	_	_
 2	@@@V	@@@V	BPE	BPE	_	1	BPE	_	_
 3	,	_	,	,	_	1	punct	_	_
 4	which	_	WDT	WDT	_	7	nsubj	_	_
@@ -35270,7 +35270,7 @@
 9	@@@or	@@@or	BPE	BPE	_	8	BPE	_	_
 10	.	_	.	.	_	4	punct	_	_
 
-1	Burm	Burm	NNP	NNP	_	13	nsubj	_	_
+1	Burm	Burm	NNP	NNP	_	15	nsubj	_	_
 2	@@@ah	@@@ah	BPE	BPE	_	1	BPE	_	_
 3	,	_	,	,	_	1	punct	_	_
 4	which	_	WDT	WDT	_	5	nsubj	_	_
@@ -35669,9 +35669,9 @@
 23	.	_	.	.	_	4	punct	_	_
 
 1	United	_	NNP	NNP	_	11	nn	_	_
-2	Bisc	Bisc	NNP	NNP	_	7	nn	_	_
+2	Bisc	Bisc	NNP	NNP	_	11	nn	_	_
 3	@@@uits	@@@uits	BPE	BPE	_	2	BPE	_	_
-4	-	-	-LRB-	-LRB-	_	9	punct	_	_
+4	-	-	-LRB-	-LRB-	_	11	punct	_	_
 5	@@@LRB	@@@LRB	BPE	BPE	_	4	BPE	_	_
 6	@@@-	@@@-	BPE	BPE	_	4	BPE	_	_
 7	Holdings	_	NNP	NNP	_	11	nn	_	_
@@ -35711,7 +35711,7 @@
 6	all	_	DT	DT	_	5	dobj	_	_
 7	of	_	IN	IN	_	6	prep	_	_
 8	United	_	NNP	NNP	_	9	nn	_	_
-9	Bisc	Bisc	NNP	NNP	_	12	poss	_	_
+9	Bisc	Bisc	NNP	NNP	_	13	poss	_	_
 10	@@@uit	@@@uit	BPE	BPE	_	9	BPE	_	_
 11	'	'	POS	POS	_	9	possessive	_	_
 12	@@@s	@@@s	BPE	BPE	_	11	BPE	_	_
@@ -35898,7 +35898,7 @@
 5	will	_	MD	MD	_	14	aux	_	_
 6	be	_	VB	VB	_	14	cop	_	_
 7	the	_	DT	DT	_	14	det	_	_
-8	Marxist	Marxist	JJ	JJ	_	12	amod	_	_
+8	Marxist	Marxist	JJ	JJ	_	14	amod	_	_
 9	@@@-	@@@-	BPE	BPE	_	8	BPE	_	_
 10	@@@dominated	@@@dominated	BPE	BPE	_	8	BPE	_	_
 11	SW	SW	NNP	NNP	_	14	nn	_	_
@@ -36452,7 +36452,7 @@
 28	make	_	VB	VB	_	19	conj	_	_
 29	certain	_	JJ	JJ	_	28	acomp	_	_
 30	that	_	IN	IN	_	40	mark	_	_
-31	Mr	Mr	NNP	NNP	_	34	nn	_	_
+31	Mr	Mr	NNP	NNP	_	39	nn	_	_
 32	@@@.	@@@.	BPE	BPE	_	31	BPE	_	_
 33	O	O	NNP	NNP	_	39	nn	_	_
 34	@@@'	@@@'	BPE	BPE	_	33	BPE	_	_
@@ -38342,10 +38342,10 @@
 10	caused	_	VBN	VBN	_	6	ccomp	_	_
 11	when	_	WRB	WRB	_	28	advmod	_	_
 12	James	_	NNP	NNP	_	13	nn	_	_
-13	Batt	Batt	NNP	NNP	_	23	nsubj	_	_
+13	Batt	Batt	NNP	NNP	_	28	nsubj	_	_
 14	@@@en	@@@en	BPE	BPE	_	13	BPE	_	_
 15	,	_	,	,	_	13	punct	_	_
-16	Knight	Knight	NNP	NNP	_	22	poss	_	_
+16	Knight	Knight	NNP	NNP	_	23	poss	_	_
 17	@@@-	@@@-	BPE	BPE	_	16	BPE	_	_
 18	@@@R	@@@R	BPE	BPE	_	16	BPE	_	_
 19	@@@id	@@@id	BPE	BPE	_	16	BPE	_	_
@@ -38365,7 +38365,7 @@
 33	weeks	_	NNS	NNS	_	34	npadvmod	_	_
 34	ago	_	RB	RB	_	28	advmod	_	_
 35	that	_	IN	IN	_	55	mark	_	_
-36	Knight	Knight	NNP	NNP	_	42	poss	_	_
+36	Knight	Knight	NNP	NNP	_	43	poss	_	_
 37	@@@-	@@@-	BPE	BPE	_	36	BPE	_	_
 38	@@@R	@@@R	BPE	BPE	_	36	BPE	_	_
 39	@@@id	@@@id	BPE	BPE	_	36	BPE	_	_
@@ -38579,7 +38579,7 @@
 7	Unic	Unic	NNP	NNP	_	10	nn	_	_
 8	@@@orp	@@@orp	BPE	BPE	_	7	BPE	_	_
 9	Canada	_	NNP	NNP	_	10	nn	_	_
-10	Corp	Corp	NNP	NNP	_	16	poss	_	_
+10	Corp	Corp	NNP	NNP	_	18	poss	_	_
 11	@@@.	@@@.	BPE	BPE	_	10	BPE	_	_
 12	'	'	POS	POS	_	10	possessive	_	_
 13	@@@s	@@@s	BPE	BPE	_	12	BPE	_	_
@@ -38932,7 +38932,7 @@
 17	.	_	.	.	_	3	punct	_	_
 
 1	Whirlpool	_	NNP	NNP	_	2	nn	_	_
-2	Corp	Corp	NNP	NNP	_	10	nsubj	_	_
+2	Corp	Corp	NNP	NNP	_	11	nsubj	_	_
 3	@@@.	@@@.	BPE	BPE	_	2	BPE	_	_
 4	,	_	,	,	_	2	punct	_	_
 5	Benton	_	NNP	NNP	_	6	nn	_	_
@@ -39313,7 +39313,7 @@
 9	-	-	-LRB-	-LRB-	_	12	punct	_	_
 10	@@@LRB	@@@LRB	BPE	BPE	_	9	BPE	_	_
 11	@@@-	@@@-	BPE	BPE	_	9	BPE	_	_
-12	S	S	NNP	NNP	_	15	appos	_	_
+12	S	S	NNP	NNP	_	17	appos	_	_
 13	@@@ES	@@@ES	BPE	BPE	_	12	BPE	_	_
 14	-	-	-RRB-	-RRB-	_	12	punct	_	_
 15	@@@RRB	@@@RRB	BPE	BPE	_	14	BPE	_	_
@@ -39321,9 +39321,9 @@
 17	Ltd	Ltd	NNP	NNP	_	5	pobj	_	_
 18	@@@.	@@@.	BPE	BPE	_	17	BPE	_	_
 19	,	_	,	,	_	17	punct	_	_
-20	C	C	NNP	NNP	_	25	nn	_	_
+20	C	C	NNP	NNP	_	27	nn	_	_
 21	@@@.	@@@.	BPE	BPE	_	20	BPE	_	_
-22	It	It	NNP	NNP	_	26	nn	_	_
+22	It	It	NNP	NNP	_	27	nn	_	_
 23	@@@oh	@@@oh	BPE	BPE	_	22	BPE	_	_
 24	Energy	_	NNP	NNP	_	27	nn	_	_
 25	Co	Co	NNP	NNP	_	27	nn	_	_
@@ -39331,11 +39331,11 @@
 27	Ltd	Ltd	NNP	NNP	_	17	conj	_	_
 28	@@@.	@@@.	BPE	BPE	_	27	BPE	_	_
 29	,	_	,	,	_	17	punct	_	_
-30	Dem	Dem	NNP	NNP	_	37	nn	_	_
+30	Dem	Dem	NNP	NNP	_	42	nn	_	_
 31	@@@ine	@@@ine	BPE	BPE	_	30	BPE	_	_
 32	@@@x	@@@x	BPE	BPE	_	30	BPE	_	_
 33	Sumatra	_	NNP	NNP	_	42	nn	_	_
-34	O	O	NNP	NNP	_	38	nn	_	_
+34	O	O	NNP	NNP	_	42	nn	_	_
 35	@@@EL	@@@EL	BPE	BPE	_	34	BPE	_	_
 36	G	G	NNP	NNP	_	42	nn	_	_
 37	@@@.	@@@.	BPE	BPE	_	36	BPE	_	_
@@ -39346,7 +39346,7 @@
 42	H	H	NNP	NNP	_	17	conj	_	_
 43	@@@.	@@@.	BPE	BPE	_	42	BPE	_	_
 44	,	_	,	,	_	17	punct	_	_
-45	Hispan	Hispan	NNP	NNP	_	51	nn	_	_
+45	Hispan	Hispan	NNP	NNP	_	55	nn	_	_
 46	@@@oil	@@@oil	BPE	BPE	_	45	BPE	_	_
 47	-	-	-LRB-	-LRB-	_	50	punct	_	_
 48	@@@LRB	@@@LRB	BPE	BPE	_	47	BPE	_	_
@@ -39359,7 +39359,7 @@
 55	Ltd	Ltd	NNP	NNP	_	17	conj	_	_
 56	@@@.	@@@.	BPE	BPE	_	55	BPE	_	_
 57	,	_	,	,	_	17	punct	_	_
-58	Hud	Hud	NNP	NNP	_	64	nn	_	_
+58	Hud	Hud	NNP	NNP	_	68	nn	_	_
 59	@@@bay	@@@bay	BPE	BPE	_	58	BPE	_	_
 60	Oil	_	NNP	NNP	_	68	nn	_	_
 61	-	-	-LRB-	-LRB-	_	64	punct	_	_
@@ -39372,7 +39372,7 @@
 68	Ltd	Ltd	NNP	NNP	_	17	conj	_	_
 69	@@@.	@@@.	BPE	BPE	_	68	BPE	_	_
 70	,	_	,	,	_	17	punct	_	_
-71	In	In	NNP	NNP	_	75	nn	_	_
+71	In	In	NNP	NNP	_	76	nn	_	_
 72	@@@pex	@@@pex	BPE	BPE	_	71	BPE	_	_
 73	Sumatra	_	NNP	NNP	_	76	nn	_	_
 74	Co	Co	NNP	NNP	_	76	nn	_	_
@@ -39390,7 +39390,7 @@
 86	@@@a	@@@a	BPE	BPE	_	85	BPE	_	_
 87	Shell	_	NNP	NNP	_	17	conj	_	_
 88	,	_	,	,	_	17	punct	_	_
-89	T	T	NNP	NNP	_	92	nn	_	_
+89	T	T	NNP	NNP	_	93	nn	_	_
 90	@@@CR	@@@CR	BPE	BPE	_	89	BPE	_	_
 91	Sum	Sum	NNP	NNP	_	93	nn	_	_
 92	@@@at	@@@at	BPE	BPE	_	91	BPE	_	_
@@ -39773,7 +39773,7 @@
 42	purpose	_	NN	NN	_	40	pobj	_	_
 43	.	_	.	.	_	3	punct	_	_
 
-1	Mem	Mem	NNP	NNP	_	6	nsubj	_	_
+1	Mem	Mem	NNP	NNP	_	8	nsubj	_	_
 2	@@@otec	@@@otec	BPE	BPE	_	1	BPE	_	_
 3	is	_	VBZ	VBZ	_	8	cop	_	_
 4	a	_	DT	DT	_	8	det	_	_
@@ -39941,7 +39941,7 @@
 
 1	CMS	_	NNP	NNP	_	3	nn	_	_
 2	Energy	_	NNP	NNP	_	3	nn	_	_
-3	Corp	Corp	NNP	NNP	_	10	nsubj	_	_
+3	Corp	Corp	NNP	NNP	_	11	nsubj	_	_
 4	@@@.	@@@.	BPE	BPE	_	3	BPE	_	_
 5	,	_	,	,	_	3	punct	_	_
 6	Jackson	_	NNP	NNP	_	3	appos	_	_
@@ -40113,7 +40113,7 @@
 
 1	Hughes	_	NNP	NNP	_	3	nn	_	_
 2	Aircraft	_	NNP	NNP	_	3	nn	_	_
-3	Co	Co	NNP	NNP	_	13	nsubj	_	_
+3	Co	Co	NNP	NNP	_	14	nsubj	_	_
 4	@@@.	@@@.	BPE	BPE	_	3	BPE	_	_
 5	,	_	,	,	_	3	punct	_	_
 6	a	_	DT	DT	_	7	det	_	_
@@ -40208,7 +40208,7 @@
 49	sector	_	NN	NN	_	42	pobj	_	_
 50	.	_	.	.	_	30	punct	_	_
 
-1	Per	Per	NNP	NNP	_	15	nsubj	_	_
+1	Per	Per	NNP	NNP	_	16	nsubj	_	_
 2	@@@kin	@@@kin	BPE	BPE	_	1	BPE	_	_
 3	@@@-	@@@-	BPE	BPE	_	1	BPE	_	_
 4	@@@El	@@@El	BPE	BPE	_	1	BPE	_	_
@@ -40228,7 +40228,7 @@
 18	sale	_	NN	NN	_	29	nsubj	_	_
 19	of	_	IN	IN	_	18	prep	_	_
 20	the	_	DT	DT	_	27	det	_	_
-21	Dan	Dan	NNP	NNP	_	26	dep	_	_
+21	Dan	Dan	NNP	NNP	_	27	dep	_	_
 22	@@@bury	@@@bury	BPE	BPE	_	21	BPE	_	_
 23	,	_	,	,	_	21	punct	_	_
 24	Conn	Conn	NNP	NNP	_	21	dep	_	_
@@ -40363,7 +40363,7 @@
 22	Corp	_	NNP	NNP	_	19	pobj	_	_
 23	.	_	.	.	_	6	punct	_	_
 
-1	C	C	NNP	NNP	_	7	poss	_	_
+1	C	C	NNP	NNP	_	8	poss	_	_
 2	@@@WA	@@@WA	BPE	BPE	_	1	BPE	_	_
 3	'	'	POS	POS	_	1	possessive	_	_
 4	@@@s	@@@s	BPE	BPE	_	3	BPE	_	_
@@ -40866,7 +40866,7 @@
 
 1	And	_	CC	CC	_	20	cc	_	_
 2	many	_	JJ	JJ	_	3	amod	_	_
-3	arbitr	arbitr	NNS	NNS	_	19	nsubjpass	_	_
+3	arbitr	arbitr	NNS	NNS	_	20	nsubjpass	_	_
 4	@@@agers	@@@agers	BPE	BPE	_	3	BPE	_	_
 5	,	_	,	,	_	3	punct	_	_
 6	already	_	RB	RB	_	7	advmod	_	_
@@ -41076,7 +41076,7 @@
 23	.	_	.	.	_	14	punct	_	_
 
 1	Stephen	_	NNP	NNP	_	2	nn	_	_
-2	Bo	Bo	NNP	NNP	_	17	nsubj	_	_
+2	Bo	Bo	NNP	NNP	_	18	nsubj	_	_
 3	@@@es	@@@es	BPE	BPE	_	2	BPE	_	_
 4	@@@el	@@@el	BPE	BPE	_	2	BPE	_	_
 5	,	_	,	,	_	2	punct	_	_
@@ -41119,7 +41119,7 @@
 5	@@@.	@@@.	BPE	BPE	_	4	BPE	_	_
 6	,	_	,	,	_	2	punct	_	_
 7	Adrian	_	NNP	NNP	_	8	nn	_	_
-8	S	S	NNP	NNP	_	27	nsubj	_	_
+8	S	S	NNP	NNP	_	31	nsubj	_	_
 9	@@@ween	@@@ween	BPE	BPE	_	8	BPE	_	_
 10	,	_	,	,	_	8	punct	_	_
 11	who	_	WP	WP	_	12	nsubj	_	_
@@ -41720,7 +41720,7 @@
 5	New	_	NNP	NNP	_	6	nn	_	_
 6	York	_	NNP	NNP	_	4	pobj	_	_
 7	at	_	IN	IN	_	3	prep	_	_
-8	9	9	CD	CD	_	12	num	_	_
+8	9	9	CD	CD	_	15	num	_	_
 9	@@@:	@@@:	BPE	BPE	_	8	BPE	_	_
 10	@@@30	@@@30	BPE	BPE	_	8	BPE	_	_
 11	a	a	NN	NN	_	15	nn	_	_
@@ -41986,7 +41986,7 @@
 21	Hutton	_	NNP	NNP	_	17	pobj	_	_
 22	.	_	.	.	_	10	punct	_	_
 
-1	Shear	Shear	NNP	NNP	_	6	poss	_	_
+1	Shear	Shear	NNP	NNP	_	7	poss	_	_
 2	@@@son	@@@son	BPE	BPE	_	1	BPE	_	_
 3	'	'	POS	POS	_	1	possessive	_	_
 4	@@@s	@@@s	BPE	BPE	_	3	BPE	_	_
@@ -42050,7 +42050,7 @@
 7	,	_	,	,	_	9	punct	_	_
 8	''	_	''	''	_	9	punct	_	_
 9	shouted	_	VBD	VBD	_	0	root	_	_
-10	Shear	Shear	NNP	NNP	_	14	poss	_	_
+10	Shear	Shear	NNP	NNP	_	15	poss	_	_
 11	@@@son	@@@son	BPE	BPE	_	10	BPE	_	_
 12	'	'	POS	POS	_	10	possessive	_	_
 13	@@@s	@@@s	BPE	BPE	_	12	BPE	_	_
@@ -42142,7 +42142,7 @@
 
 1	Walt	_	NNP	NNP	_	3	nn	_	_
 2	Disney	_	NNP	NNP	_	3	nn	_	_
-3	Co	Co	NNP	NNP	_	31	nsubj	_	_
+3	Co	Co	NNP	NNP	_	33	nsubj	_	_
 4	@@@.	@@@.	BPE	BPE	_	3	BPE	_	_
 5	,	_	,	,	_	3	punct	_	_
 6	which	_	WDT	WDT	_	7	nsubj	_	_
@@ -42327,7 +42327,7 @@
 3	perhaps	_	RB	RB	_	5	advmod	_	_
 4	,	_	,	,	_	5	punct	_	_
 5	was	_	VBD	VBD	_	0	root	_	_
-6	Batter	Batter	NNP	NNP	_	11	poss	_	_
+6	Batter	Batter	NNP	NNP	_	12	poss	_	_
 7	@@@ym	@@@ym	BPE	BPE	_	6	BPE	_	_
 8	@@@arch	@@@arch	BPE	BPE	_	6	BPE	_	_
 9	'	'	POS	POS	_	6	possessive	_	_
@@ -42422,7 +42422,7 @@
 21	the	_	DT	DT	_	22	det	_	_
 22	trading	_	NN	NN	_	33	nsubjpass	_	_
 23	in	_	IN	IN	_	22	prep	_	_
-24	S	S	NNP	NNP	_	29	nn	_	_
+24	S	S	NNP	NNP	_	31	nn	_	_
 25	@@@&	@@@&	BPE	BPE	_	24	BPE	_	_
 26	@@@P	@@@P	BPE	BPE	_	24	BPE	_	_
 27	100	_	CD	CD	_	31	num	_	_
@@ -42747,7 +42747,7 @@
 21	.	_	.	.	_	3	punct	_	_
 
 1	Ralph	_	NNP	NNP	_	2	nn	_	_
-2	Hol	Hol	NNP	NNP	_	18	nsubj	_	_
+2	Hol	Hol	NNP	NNP	_	23	nsubj	_	_
 3	@@@z	@@@z	BPE	BPE	_	2	BPE	_	_
 4	@@@f	@@@f	BPE	BPE	_	2	BPE	_	_
 5	@@@aster	@@@aster	BPE	BPE	_	2	BPE	_	_
@@ -42843,7 +42843,7 @@
 1	Skipper	_	NNP	NNP	_	4	poss	_	_
 2	'	'	POS	POS	_	1	possessive	_	_
 3	@@@s	@@@s	BPE	BPE	_	2	BPE	_	_
-4	Inc	Inc	NNP	NNP	_	11	nsubj	_	_
+4	Inc	Inc	NNP	NNP	_	12	nsubj	_	_
 5	@@@.	@@@.	BPE	BPE	_	4	BPE	_	_
 6	,	_	,	,	_	4	punct	_	_
 7	Bellevue	_	NNP	NNP	_	4	appos	_	_
@@ -43122,7 +43122,7 @@
 10	officials	_	NNS	NNS	_	12	nsubj	_	_
 11	reportedly	_	RB	RB	_	12	advmod	_	_
 12	sought	_	VBD	VBD	_	5	advcl	_	_
-13	Hon	Hon	NNP	NNP	_	16	poss	_	_
+13	Hon	Hon	NNP	NNP	_	17	poss	_	_
 14	@@@ecker	@@@ecker	BPE	BPE	_	13	BPE	_	_
 15	'	'	POS	POS	_	13	possessive	_	_
 16	@@@s	@@@s	BPE	BPE	_	15	BPE	_	_
@@ -43413,7 +43413,7 @@
 35	scandal	_	NN	NN	_	31	pobj	_	_
 36	.	_	.	.	_	7	punct	_	_
 
-1	Wall	Wall	NNP	NNP	_	12	nsubjpass	_	_
+1	Wall	Wall	NNP	NNP	_	16	nsubjpass	_	_
 2	@@@ach	@@@ach	BPE	BPE	_	1	BPE	_	_
 3	,	_	,	,	_	1	punct	_	_
 4	an	_	DT	DT	_	5	det	_	_
@@ -43909,7 +43909,7 @@
 7	V	_	NNP	NNP	_	8	nsubj	_	_
 8	installed	_	VBD	VBD	_	0	root	_	_
 9	a	_	DT	DT	_	18	det	_	_
-10	three	three	JJ	JJ	_	14	amod	_	_
+10	three	three	JJ	JJ	_	18	amod	_	_
 11	@@@-	@@@-	BPE	BPE	_	10	BPE	_	_
 12	@@@party	@@@party	BPE	BPE	_	10	BPE	_	_
 13	non	non	JJ	JJ	_	18	amod	_	_
@@ -43921,7 +43921,7 @@
 19	as	_	IN	IN	_	35	mark	_	_
 20	Gro	_	NNP	NNP	_	22	nn	_	_
 21	Harlem	_	NNP	NNP	_	22	nn	_	_
-22	Br	Br	NNP	NNP	_	29	poss	_	_
+22	Br	Br	NNP	NNP	_	34	poss	_	_
 23	@@@und	@@@und	BPE	BPE	_	22	BPE	_	_
 24	@@@t	@@@t	BPE	BPE	_	22	BPE	_	_
 25	@@@land	@@@land	BPE	BPE	_	22	BPE	_	_
@@ -44299,7 +44299,7 @@
 49	one	_	CD	CD	_	47	conj	_	_
 50	of	_	IN	IN	_	49	prep	_	_
 51	West	_	NNP	NNP	_	52	nn	_	_
-52	Point	Point	NNP	NNP	_	59	poss	_	_
+52	Point	Point	NNP	NNP	_	60	poss	_	_
 53	@@@-	@@@-	BPE	BPE	_	52	BPE	_	_
 54	@@@Pe	@@@Pe	BPE	BPE	_	52	BPE	_	_
 55	@@@pper	@@@pper	BPE	BPE	_	52	BPE	_	_
@@ -44354,7 +44354,7 @@
 6	is	_	VBZ	VBZ	_	7	cop	_	_
 7	subject	_	JJ	JJ	_	3	ccomp	_	_
 8	to	_	TO	TO	_	7	prep	_	_
-9	B	B	NNP	NNP	_	13	poss	_	_
+9	B	B	NNP	NNP	_	14	poss	_	_
 10	@@@ider	@@@ider	BPE	BPE	_	9	BPE	_	_
 11	@@@mann	@@@mann	BPE	BPE	_	9	BPE	_	_
 12	'	'	POS	POS	_	9	possessive	_	_
@@ -44395,7 +44395,7 @@
 7	of	_	IN	IN	_	6	prep	_	_
 8	three	_	CD	CD	_	7	pobj	_	_
 9	of	_	IN	IN	_	8	prep	_	_
-10	Cl	Cl	NNP	NNP	_	16	poss	_	_
+10	Cl	Cl	NNP	NNP	_	17	poss	_	_
 11	@@@u	@@@u	BPE	BPE	_	10	BPE	_	_
 12	@@@ett	@@@ett	BPE	BPE	_	10	BPE	_	_
 13	'	'	POS	POS	_	10	possessive	_	_
@@ -44748,7 +44748,7 @@
 17	dominance	_	NN	NN	_	12	dobj	_	_
 18	of	_	IN	IN	_	17	prep	_	_
 19	the	_	DT	DT	_	27	det	_	_
-20	U	U	NNP	NNP	_	25	nn	_	_
+20	U	U	NNP	NNP	_	27	nn	_	_
 21	@@@.	@@@.	BPE	BPE	_	20	BPE	_	_
 22	@@@S	@@@S	BPE	BPE	_	20	BPE	_	_
 23	@@@.	@@@.	BPE	BPE	_	20	BPE	_	_
@@ -45508,7 +45508,7 @@
 48	.	_	.	.	_	31	punct	_	_
 
 1	The	_	DT	DT	_	11	det	_	_
-2	45-	45-	JJ	JJ	_	10	amod	_	_
+2	45-	45-	JJ	JJ	_	11	amod	_	_
 3	@@@year	@@@year	BPE	BPE	_	2	BPE	_	_
 4	@@@-	@@@-	BPE	BPE	_	2	BPE	_	_
 5	@@@old	@@@old	BPE	BPE	_	2	BPE	_	_
@@ -45576,7 +45576,7 @@
 22	.	_	.	.	_	12	punct	_	_
 
 1	The	_	DT	DT	_	8	det	_	_
-2	Water	Water	NNP	NNP	_	7	dep	_	_
+2	Water	Water	NNP	NNP	_	8	dep	_	_
 3	@@@town	@@@town	BPE	BPE	_	2	BPE	_	_
 4	,	_	,	,	_	2	punct	_	_
 5	Mass	Mass	NNP	NNP	_	2	dep	_	_

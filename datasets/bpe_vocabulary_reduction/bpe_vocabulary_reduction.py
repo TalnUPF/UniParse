@@ -16,7 +16,7 @@ def conllu_to_text(input_file_path, output_file_path):
 
 
 def reconstruct_dependency_trees(conll_file_path, model_prefix, output_file_path):
-    """ adds extra conll file for tokens that have been splitted by sentencepiece
+    """ adds extra conll lines for tokens that have been splitted by sentencepiece
     and changes original ids (and head pointers) accordingly
     """
 
@@ -44,54 +44,27 @@ def reconstruct_dependency_trees(conll_file_path, model_prefix, output_file_path
                     piece += new_piece
                     correspondance[0].append(i_pieces)
 
-            else:
-                import ipdb; ipdb.set_trace()
-                print('babau')
-
-                # # add tokens until they are the same
-                # correspondance = ([i_pieces], [i_sentence])
-                # while piece != token:
-                #     i_sentence += 1
-                #     new_token = sentence[i_sentence]
-                #     token += new_token
-                #     correspondance[1].append(i_sentence)
-
             i_pieces += 1
             i_sentence += 1
             correspondances.append(correspondance)
 
         return correspondances
 
-
-    def _increment_ids(sentence, increment, origin):
+    def _increment_ids(sentence, tokens_to_add, increment, origin):
         """ increments in 'increment' the id of all tokens with id > origin;
         increments in 'increment' the head of all tokens with head > origin;
         """
         for token in sentence:
             if token['id'] > origin:
                 token['id'] += increment
-            if token['head'] > origin + 1:
+            if token['head'] > origin:
                 token['head'] += increment
 
-    def _add_new_pieces_as_tokens(piece_ids, original_token, pieces, new_sentence):
-        """
-        """
-        piece_initial_id = piece_ids[0] + 1
-
-        for i, piece_id in enumerate(piece_ids):
-            id = piece_initial_id + i
-            original_form = pieces[piece_id].replace('▁', '')
-            form = original_form  if i == 0 else '@@@%s' % original_form
-            lemma = form
-            upostag = original_token['upostag'] if i == 0 else 'BPE'
-            xpostag = original_token['xpostag'] if i == 0 else 'BPE'
-            feats = original_token['feats'] if i == 0 else None
-            head = original_token['head'] if i == 0 else piece_initial_id
-            deprel = original_token['deprel'] if i == 0 else 'BPE'
-            deps = original_token['deps'] if i == 0 else None
-            misc = original_token['misc'] if i == 0 else None
-            new_token = OrderedDict([('id', id), ('form', form), ('lemma', lemma), ('upostag', upostag), ('xpostag', xpostag), ('feats', feats), ('head', head), ('deprel', deprel), ('deps', deps), ('misc', misc)])
-            new_sentence.append(new_token)
+        for token in tokens_to_add:
+            if token['id'] > origin:
+                token['id'] += increment
+            if token['head'] > origin:
+                token['head'] += increment
 
     conll_file = open(conll_file_path, "r", encoding="utf-8")
     output_file = open(output_file_path, "w", encoding="utf-8")
@@ -106,33 +79,65 @@ def reconstruct_dependency_trees(conll_file_path, model_prefix, output_file_path
         sentence_txt = ' '.join([a['form'] for a in sentence.tokens])
         pieces = sp.EncodeAsPieces(sentence_txt)
 
-        # sentence_txt  --> "In the plan 's first stage , the Palestinians were to dismantle armed groups ."
-        # pieces        --> ['▁In', '▁the', '▁plan', "▁'", 's', '▁first', '▁stage', '▁,', '▁the', '▁Palestinians', '▁were', '▁to', '▁dismantle', '▁armed', '▁groups', '▁.']
-        # sentence      --> sentence<In, the, plan, 's, first, stage, ,, the, Palestinians, were, to, dismantle, armed, groups, .>
-        
+        # get tokens to pieces correspondances
+
+        pieces = [a for a in pieces if a != '▁']
         correspondances = _get_correspondances(pieces, sentence)  # i.e. [([0], [0]), ([1], [1]), ([2], [2]), ([3, 4], [3]), ([5], [4])]
-        new_sentence = TokenList([])
+
+        tokens_to_add = []
+        tokens_to_remove = []
 
         for piece_ids, token_ids in correspondances:
 
             original_token = sentence[token_ids[0]]
 
-            if len(piece_ids) == len(token_ids) == 1: 
-                new_sentence.append(original_token)
+            # save original token to remove it later and create new tokens for each one of the pieces
+            if len(piece_ids) > 1:
 
-            elif len(piece_ids) > 1 and len(token_ids) == 1: 
+                tokens_to_remove.append(original_token)
+
+                # increase ids and heads in sentence
+
                 num_new_nodes = len(piece_ids) - 1
-                _increment_ids(sentence, num_new_nodes, piece_ids[0])
-                _add_new_pieces_as_tokens(piece_ids, original_token, pieces, new_sentence)
+                origin_id = original_token['id']
+                _increment_ids(sentence, tokens_to_add, num_new_nodes, origin_id)
 
-            elif len(piece_ids) == 1 and len(token_ids) > 1:
-                logging.error('More tokens than pieces found for sentence %s. Debug needed!' % sentence_txt)
+                # add new tokens to new tokens list
 
-            else:
-                logging.error('Ill correspondance found for sentence %s. Debug needed!' % sentence_txt)
+                for i, piece_id in enumerate(piece_ids):
 
-        print(new_sentence.serialize())
-        output_file.write(new_sentence.serialize())
+                    id = origin_id + i
+
+                    original_form = pieces[piece_id].replace('▁', '')
+                    form = original_form if i == 0 else '@@@%s' % original_form
+                    lemma = form
+
+                    upostag = original_token['upostag'] if i == 0 else 'BPE'
+                    xpostag = original_token['xpostag'] if i == 0 else 'BPE'
+                    feats = original_token['feats'] if i == 0 else None
+                    head = original_token['head'] if i == 0 else origin_id
+                    deprel = original_token['deprel'] if i == 0 else 'BPE'
+                    deps = original_token['deps'] if i == 0 else None
+                    misc = original_token['misc'] if i == 0 else None
+                    new_token = OrderedDict(
+                        [('id', id), ('form', form), ('lemma', lemma), ('upostag', upostag), ('xpostag', xpostag),
+                         ('feats', feats), ('head', head), ('deprel', deprel), ('deps', deps), ('misc', misc)])
+                    tokens_to_add.append(new_token)
+
+        # add new tokens to sentence
+        for new_token in tokens_to_add:
+            sentence.append(new_token)
+
+        # remove tokens that have been split from sentence
+        for token in tokens_to_remove:
+            sentence.remove(token)
+
+        sentence.sort(key=lambda x: x['id'], reverse=False)
+
+        # remove sentence metadata to avoid comments on conll file
+        sentence.metadata = None
+
+        output_file.write(sentence.serialize())
 
 
 if __name__ == "__main__":
@@ -164,6 +169,14 @@ if __name__ == "__main__":
         spm.SentencePieceTrainer.Train('--input=%s --model_prefix=%s --vocab_size=%s  --character_coverage=%s --model_type=%s' % (input_files_hpc, model_prefix, vocab_size, character_coverage, model_type))
 
 
+    # dummy testing reconstruction
+
+    if False:
+        conll_file = '/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/prova.conll'
+        output_file = '/home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/prova.bpe.conll'
+        reconstruct_dependency_trees(conll_file, model_prefix, output_file)
+
+
     # 2a. reconstruct penn dependency trees with bpe model --> [PTB bpe]
 
     if False:
@@ -183,16 +196,16 @@ if __name__ == "__main__":
     # 2b. reconstruct 1B dependency trees with bpe model --> [1B bpe]
 
     if True:
-        conll_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_normal/1B_test.conllu'
-        output_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_test.conllu'
-        reconstruct_dependency_trees(conll_file, model_prefix, output_file)
+        # conll_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_normal/1B_test.conllu'
+        # output_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_test.bpe.conllu'
+        # reconstruct_dependency_trees(conll_file, model_prefix, output_file)
 
         conll_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_normal/1B_dev.conllu'
-        output_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_dev.conllu'
+        output_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_dev.bpe.conllu'
         reconstruct_dependency_trees(conll_file, model_prefix, output_file)
 
         conll_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_normal/1B_train.conllu'
-        output_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_train.conllu'
+        output_file = '/home/lpmayos/code/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_train.bpe.conllu'
         reconstruct_dependency_trees(conll_file, model_prefix, output_file)
 
 
