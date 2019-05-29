@@ -159,3 +159,11 @@ Note that published model performances for systems we re-implement and distribut
 |:---------:|:------:|:------:|:-------:|
 | `{02-21}` | `{22}` | `{23}` | `{00}`  | 
 
+
+# NOTES
+
+## How to check how much memory was used by a job in the HPC
+
+ask Slurm afterwards with the sacct -l -j <JobId> command (look for the MaxRSS column) 
+
+

@@ -1,0 +1,103 @@
+2019-05-28 14:35:14,117:INFO:	
+2019-05-28 14:35:14,135:INFO:	
+2019-05-28 14:35:14,138:INFO:	
+2019-05-28 14:35:14,147:INFO:	===================================================================================================
+2019-05-28 14:35:14,150:INFO:	kiperwasser_main
+2019-05-28 14:35:14,152:INFO:	===================================================================================================
+2019-05-28 14:35:14,154:INFO:	
+2019-05-28 14:35:14,154:INFO:	
+2019-05-28 14:35:14,155:INFO:	Arguments:
+2019-05-28 14:35:14,156:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='logging.log', model_file='model_1B_mini_bpe.model', no_update_pretrained_emb=False, output_file='output_1B_mini_bpe.output', patience=-1, results_folder='/homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B_mini', tb_dest=None, test='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_test.bpe.conllu', train='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_train.bpe.conllu', vocab_file='vocab_1B_mini_bpe.pkl')
+2019-05-28 14:35:14,157:INFO:	
+2019-05-28 14:35:27,070:INFO:	> saving vocab to /homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B_mini/vocab_1B_mini_bpe.pkl
+2019-05-28 14:35:27,144:INFO:	Training with big dataset; subset_size = 10000
+2019-05-28 14:35:27,148:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-05-28 14:35:27,153:INFO:	tokenizing dev data ...
+2019-05-28 14:35:31,734:INFO:	... tokenized dev data
+2019-05-28 14:35:31,740:INFO:	creating model ...
+2019-05-28 14:35:31,831:INFO:	... model created
+2019-05-28 14:35:31,833:INFO:	creating ModelSaveCallback ...
+2019-05-28 14:35:31,840:INFO:	saving model to /homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B_mini/model_1B_mini_bpe.model  (after step 0)
+2019-05-28 14:35:31,844:INFO:	... ModelSaveCallback created
+2019-05-28 14:35:31,848:INFO:	creating Model ...
+2019-05-28 14:35:31,892:INFO:	... Model created
+2019-05-28 14:35:31,897:INFO:	training Model ...
+2019-05-28 14:35:31,898:DEBUG:	...Training without patience for exactly 30 epochs
+2019-05-28 14:35:31,901:INFO:	Epoch 1
+2019-05-28 14:35:31,903:INFO:	=====================
+2019-05-28 14:35:37,831:DEBUG:	### _batch_data, bucket strategy. 1
+2019-05-28 14:35:37,835:DEBUG:	### _batch_data, bucket strategy. 2
+2019-05-28 14:35:38,972:DEBUG:	### _batch_data, bucket strategy. 3
+2019-05-28 14:39:22,676:DEBUG:	Completed epoch 1 in 230.77502369880676
+2019-05-28 14:39:22,676:DEBUG:	### _batch_data, bucket strategy. 1
+2019-05-28 14:39:22,677:DEBUG:	### _batch_data, bucket strategy. 2
+2019-05-28 14:39:23,459:DEBUG:	### _batch_data, bucket strategy. 3
+2019-05-28 15:05:40,350:INFO:	
+2019-05-28 15:05:40,379:INFO:	
+2019-05-28 15:05:40,379:INFO:	
+2019-05-28 15:05:40,380:INFO:	===================================================================================================
+2019-05-28 15:05:40,380:INFO:	kiperwasser_main
+2019-05-28 15:05:40,381:INFO:	===================================================================================================
+2019-05-28 15:05:40,381:INFO:	
+2019-05-28 15:05:40,382:INFO:	
+2019-05-28 15:05:40,382:INFO:	Arguments:
+2019-05-28 15:05:40,383:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='logging.log', model_file='model_1B_mini_bpe.model', no_update_pretrained_emb=False, output_file='output_1B_mini_bpe.output', patience=-1, results_folder='/homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B_mini', tb_dest=None, test='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_test.bpe.conllu', train='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_train.bpe.conllu', vocab_file='vocab_1B_mini_bpe.pkl')
+2019-05-28 15:05:40,384:INFO:	
+2019-05-28 15:05:40,529:INFO:	Training with big dataset; subset_size = 10000
+2019-05-28 15:05:40,529:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-05-28 15:05:40,530:INFO:	tokenizing dev data ...
+2019-05-28 15:05:44,354:INFO:	... tokenized dev data
+2019-05-28 15:05:44,356:INFO:	creating model ...
+2019-05-28 15:05:44,395:INFO:	... model created
+2019-05-28 15:05:44,396:INFO:	creating ModelSaveCallback ...
+2019-05-28 15:05:44,397:INFO:	saving model to /homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B_mini/model_1B_mini_bpe.model  (after step 0)
+2019-05-28 15:05:44,398:INFO:	... ModelSaveCallback created
+2019-05-28 15:05:44,399:INFO:	creating Model ...
+2019-05-28 15:05:44,749:INFO:	... Model created
+2019-05-28 15:05:44,751:INFO:	training Model ...
+2019-05-28 15:05:44,755:DEBUG:	...Training without patience for exactly 30 epochs
+2019-05-28 15:05:44,764:INFO:	Epoch 1
+2019-05-28 15:05:44,769:INFO:	=====================
+2019-05-28 15:05:49,390:DEBUG:	### _batch_data, bucket strategy. 1
+2019-05-28 15:05:49,395:DEBUG:	### _batch_data, bucket strategy. 2
+2019-05-28 15:05:50,314:DEBUG:	### _batch_data, bucket strategy. 3
+2019-05-28 15:12:05,108:DEBUG:	Completed epoch 1 in 380.3445427417755
+2019-05-28 15:12:05,115:DEBUG:	### _batch_data, bucket strategy. 1
+2019-05-28 15:12:05,120:DEBUG:	### _batch_data, bucket strategy. 2
+2019-05-28 15:12:05,769:DEBUG:	### _batch_data, bucket strategy. 3
+2019-05-28 17:13:29,747:INFO:	
+2019-05-28 17:13:30,782:INFO:	
+2019-05-28 17:13:30,784:INFO:	
+2019-05-28 17:13:30,786:INFO:	===================================================================================================
+2019-05-28 17:13:30,787:INFO:	kiperwasser_main
+2019-05-28 17:13:30,788:INFO:	===================================================================================================
+2019-05-28 17:13:30,790:INFO:	
+2019-05-28 17:13:30,791:INFO:	
+2019-05-28 17:13:30,793:INFO:	Arguments:
+2019-05-28 17:13:30,794:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='logging.log', model_file='model_1B_mini_bpe.model', no_update_pretrained_emb=False, output_file='output_1B_mini_bpe.output', patience=-1, results_folder='/homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B_mini', tb_dest=None, test='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_test.bpe.conllu', train='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_train.bpe.conllu', vocab_file='vocab_1B_mini_bpe.pkl')
+2019-05-28 17:13:30,796:INFO:	
+2019-05-28 17:13:31,055:INFO:	Training with normal dataset
+2019-05-28 17:13:31,060:DEBUG:	Init training
+2019-05-28 17:13:31,063:INFO:	>> Loading in data
+2019-05-28 17:13:31,068:INFO:	tokenizing train data ...
+2019-05-28 17:14:07,872:INFO:	... tokenized train data
+2019-05-28 17:14:07,873:INFO:	tokenizing dev data ...
+2019-05-28 17:14:16,026:INFO:	... tokenized dev data
+2019-05-28 17:14:16,028:INFO:	creating model ...
+2019-05-28 17:14:16,082:INFO:	... model created
+2019-05-28 17:14:16,095:INFO:	creating ModelSaveCallback ...
+2019-05-28 17:14:16,101:INFO:	saving model to /homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B_mini/model_1B_mini_bpe.model  (after step 0)
+2019-05-28 17:14:16,107:INFO:	... ModelSaveCallback created
+2019-05-28 17:14:16,113:INFO:	creating Model ...
+2019-05-28 17:14:16,206:INFO:	... Model created
+2019-05-28 17:14:16,217:INFO:	training Model ...
+2019-05-28 17:14:16,220:DEBUG:	...Training without patience for exactly 30 epochs
+2019-05-28 17:14:16,229:DEBUG:	### _batch_data, bucket strategy. 1
+2019-05-28 17:14:16,242:DEBUG:	### _batch_data, bucket strategy. 2
+2019-05-28 17:14:22,235:DEBUG:	### _batch_data, bucket strategy. 3
+2019-05-28 17:14:22,238:INFO:	Epoch 1
+2019-05-28 17:14:22,239:INFO:	=====================
+2019-05-28 17:59:30,320:DEBUG:	Completed epoch 1 in 2708.0825707912445
+2019-05-28 17:59:30,379:DEBUG:	### _batch_data, bucket strategy. 1
+2019-05-28 17:59:30,383:DEBUG:	### _batch_data, bucket strategy. 2
+2019-05-28 17:59:31,535:DEBUG:	### _batch_data, bucket strategy. 3
