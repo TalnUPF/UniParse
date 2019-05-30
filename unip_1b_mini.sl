@@ -25,7 +25,8 @@ dataset_version=mini
 dataset_folder=/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_$dataset_version
 
 echo 'babau1'
-echo $dataset_folder
+echo xxx $dataset_folder yyy
+echo xxx$dataset_folderyyy
 echo 'babau2'
 
 train_file=$dataset_folder/1b_train.bpe.conllu
@@ -42,11 +43,11 @@ do_training=True
 model_file=model_1B.bpe.$dataset_version.model
 vocab_file=vocab_1B.bpe.$dataset_version.pkl
 
-dynet-devices=GPU:0
-dynet-mem=15000
+dynet_devices=GPU:0
+dynet_mem=15000
 big_dataset=True
 
-python kiperwasser_main.py --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --dynet-devices $dynet-devices --dynet-mem $dynet-mem --big_dataset $big_dataset
+python kiperwasser_main.py --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --dynet-devices $dynet_devices --dynet-mem $dynet_mem --big_dataset $big_dataset
 
 
 # testing in local (remember: there is no dev mode if you choose big_dataset = True)
