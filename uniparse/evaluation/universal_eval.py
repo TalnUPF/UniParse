@@ -172,6 +172,7 @@ def _flat_map(lst):
 
 
 def write_predictions_to_file(predictions: Iterable, reference_file: str, output_file: str, vocab: Vocabulary):
+
     indices, arcs, rels = zip(*predictions)
     flat_arcs = _flat_map(arcs)
     flat_rels = _flat_map(rels)
@@ -184,6 +185,7 @@ def write_predictions_to_file(predictions: Iterable, reference_file: str, output
                 assert len(info) == 10, 'Illegal line: %s' % line
                 info[6] = str(flat_arcs[idx])
                 info[7] = vocab.id2rel(flat_rels[idx])
+
                 fo.write('\t'.join(info) + '\n')
                 idx += 1
             else:

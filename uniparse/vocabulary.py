@@ -217,11 +217,7 @@ class Vocabulary(object):
                     print('sentence num %i; len(sent[0]) = %i; sentence = %s' % (
                     num_sents, len(sent[0]), ' '.join(sent_words)))
 
-                    # condition added to avoid sentences longer than 150 words
-                    if len(sent[0]) < 150 and num_sents >= init_sent:
-                        sents.append(sent)
-                    else:
-                        print('... skipping sentence longer than 150: len(sent[0]) = %s' % (len(sent[0])))
+                    sents.append(sent)
 
                     words, lemmas, tags, heads, rels, chars = \
                         [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]

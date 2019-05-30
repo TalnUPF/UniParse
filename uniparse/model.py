@@ -98,17 +98,11 @@ class Model(object):
 
     def _batch_data(self, samples: List, strategy: str, scale: int, shuffle: bool):
         if strategy == "bucket":
-            logging.debug(f"### _batch_data, bucket strategy. 1")
             dataprovider = BucketBatcher(samples, padding_token=self._vocab.PAD)
-            logging.debug(f"### _batch_data, bucket strategy. 2")
             _idx, _sentences = dataprovider.get_data(scale, shuffle)
-            logging.debug(f"### _batch_data, bucket strategy. 3")
         elif strategy == "scaled_batch":
-            logging.debug(f"### _batch_data, scaled_batch strategy. 1")
             dataprovider = ScaledBatcher(samples, cluster_count=40, padding_token=self._vocab.PAD)
-            logging.debug(f"### _batch_data, scaled_batch strategy. 2")
             _idx, _sentences = dataprovider.get_data(scale, shuffle)
-            logging.debug(f"### _batch_data, scaled_batch strategy. 3")
         else:
             raise ValueError("no such data strategy")
 
@@ -349,41 +343,43 @@ class Model(object):
 
                     global_step += 1
 
-                logging.debug("Completed epoch %s in %s" % (epoch, time.time() - start))
-
-                metrics = self.evaluate(dev_file, dev, batch_size, None)
-                no_punct_dev_uas = metrics["nopunct_uas"]
-                no_punct_dev_las = metrics["nopunct_las"]
-                punct_dev_uas = metrics["uas"]
-                punct_dev_las = metrics["las"]
-                logging.debug(f"UAS (wo. punct) {no_punct_dev_uas:.{5}}\t LAS (wo. punct) {no_punct_dev_las:.{5}}")
-                logging.debug(f"UAS (w. punct) {punct_dev_uas:.{5}}\t LAS (w. punct) {punct_dev_las:.{5}}")
-
-                if patience > -1:
-                    if max_dev_uas > no_punct_dev_uas:
-                        max_dev_uas = no_punct_dev_uas
-                        running_patience -= 1
-                        logging.debug(f"Patience decremented to {running_patience}")
-                    else:
-                        running_patience = patience
-                        logging.debug(f"Patience incremented to {running_patience}")
-
-                    if running_patience == 0:
-                        break
-
-                batch_end_info = {
-                    "dev_uas": no_punct_dev_uas,
-                    "dev_las": no_punct_dev_las,
-                    "global_step": global_step,
-                    "model": self._parser
-                }
-
-                for callback in callbacks:
-                    callback.on_epoch_end(epoch, batch_end_info)
-
                 init_sent = end_sent + 1
                 end_sent = init_sent + subset_size
                 training_data = self._vocab.tokenize_conll(train_file, init_sent, end_sent)  # we just tokenize the sentences we need for training
+
+
+            logging.debug("Completed epoch %s in %s" % (epoch, time.time() - start))
+
+            metrics = self.evaluate(dev_file, dev, batch_size, None)
+            no_punct_dev_uas = metrics["nopunct_uas"]
+            no_punct_dev_las = metrics["nopunct_las"]
+            punct_dev_uas = metrics["uas"]
+            punct_dev_las = metrics["las"]
+            logging.debug(f"UAS (wo. punct) {no_punct_dev_uas:.{5}}\t LAS (wo. punct) {no_punct_dev_las:.{5}}")
+            logging.debug(f"UAS (w. punct) {punct_dev_uas:.{5}}\t LAS (w. punct) {punct_dev_las:.{5}}")
+
+            if patience > -1:
+                if max_dev_uas > no_punct_dev_uas:
+                    max_dev_uas = no_punct_dev_uas
+                    running_patience -= 1
+                    logging.debug(f"Patience decremented to {running_patience}")
+                else:
+                    running_patience = patience
+                    logging.debug(f"Patience incremented to {running_patience}")
+
+                if running_patience == 0:
+                    break
+
+            batch_end_info = {
+                "dev_uas": no_punct_dev_uas,
+                "dev_las": no_punct_dev_las,
+                "global_step": global_step,
+                "model": self._parser
+            }
+
+            for callback in callbacks:
+                callback.on_epoch_end(epoch, batch_end_info)
+
 
         logging.debug(f"Finished at epoch {epoch}")
 

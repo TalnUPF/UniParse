@@ -21,3 +21,8 @@ python setup.py build_ext --inplace
 # training and running model 
 
 python kiperwasser_main.py --results_folder /homedtic/lperez/UniParse/saved_models/kiperwasser_en_ptb_BPE_by_sets --logging_file logging.log --do_training True --train_file /homedtic/lperez/UniParse/datasets/PTB_SD_3_3_0/train.gold.bpe.conll --dev_file /homedtic/lperez/UniParse/datasets/PTB_SD_3_3_0/dev.gold.bpe.conll --test_file /homedtic/lperez/UniParse/datasets/PTB_SD_3_3_0/test.gold.bpe.conll --output_file output_ptb_bpe.output --model_file model_bpe.model --vocab_file vocab_bpe.pkl --big_dataset True
+
+
+# testing in local
+# python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/prova --logging_file logging.log --do_training True --train_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.bpe.conll --dev_file /home/lpmayos/code//UniParse/datasets/PTB_SD_3_3_0/dev.gold.bpe.conll --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.bpe.conll --output_file output_1B_mini_bpe.output --model_file model_1B_mini_bpe.model --vocab_file vocab_1B_mini_bpe.pkl --big_dataset True --dev_mode False
+
