@@ -2,7 +2,7 @@
 #SBATCH --job-name="1bbig"
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH --mem=50Gb
+#SBATCH --mem=20Gb
 #SBATCH -p high
 #SBATCH --gres=gpu:1
 
@@ -18,8 +18,27 @@ module load dynet/2.1-foss-2017a-Python-3.6.4-GPU-CUDA-9.0.176
 python setup.py build_ext --inplace
 
 
-# training and running model 
+# training and running model
 
-# python kiperwasser_main.py --results_folder /homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B --logging_file logging.log --do_training True --train_file /homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_train.conllu --dev_file /homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_dev.conllu --test_file /homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_test.conllu --output_file output_1B_bpe.output --model_file model_1B_bpe.model --vocab_file vocab_1B_bpe.pkl --dynet-mem 80000
 
-python kiperwasser_main.py --results_folder /homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B --logging_file logging.log --do_training True --train_file /homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_train.conllu --dev_file /homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_dev.conllu --test_file /homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe/1B_test.conllu --output_file output_1B_bpe.output --model_file model_1B_bpe.model --vocab_file vocab_1B_bpe.pkl --dynet-devices GPU:0 --dynet-mem 80000 --big_dataset True
+dataset_version=big
+dataset_folder=/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe
+
+train_file=$dataset_folder/1b_train.bpe.conllu
+dev_file=$dataset_folder/1b_dev.bpe.conllu
+test_file=$dataset_folder/1b_test.bpe.conllu
+
+results_folder=/homedtic/lperez/UniParse/saved_models/$dataset_version
+output_file=$results_folder/output_1B_bpe_$dataset_version.output
+logging_file=logging.log
+
+do_training=True
+
+model_file=model_1B.bpe.$dataset_version.model
+vocab_file=vocab_1B.bpe.$dataset_version.pkl
+
+dynet_devices=GPU:0
+dynet_mem=8000
+big_dataset=True
+
+python kiperwasser_main.py --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --dynet-devices $dynet_devices --dynet-mem $dynet_mem --big_dataset $big_dataset
