@@ -3,7 +3,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem=20Gb
-#SBATCH -p high
+#SBATCH -p short
 #SBATCH --gres=gpu:1
 
 module load Tensorflow-gpu/1.12.0-foss-2017a-Python-3.6.4
@@ -23,6 +23,10 @@ python setup.py build_ext --inplace
 
 dataset_version=mini
 dataset_folder=/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_$dataset_version
+
+echo 'babau1'
+echo $dataset_folder
+echo 'babau2'
 
 train_file=$dataset_folder/1b_train.bpe.conllu
 dev_file=$dataset_folder/1b_dev.bpe.conllu
