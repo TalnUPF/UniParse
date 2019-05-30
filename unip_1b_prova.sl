@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name="1bmini"
+#SBATCH --job-name="1bprova"
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem=20Gb
@@ -39,9 +39,11 @@ vocab_file=vocab_1B.bpe.$dataset_version.pkl
 
 dynet_devices=GPU:0
 dynet_mem=8000
-big_dataset=True
 
-python kiperwasser_main.py --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --dynet-devices $dynet_devices --dynet-mem $dynet_mem --big_dataset $big_dataset
+big_dataset=False
+dev_mode=True
+
+python kiperwasser_main.py --dev_mode $dev_mode --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --dynet-devices $dynet_devices --dynet-mem $dynet_mem --big_dataset $big_dataset
 
 
 # testing in local (remember: there is no dev mode if you choose big_dataset = True)
