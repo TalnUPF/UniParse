@@ -3,7 +3,7 @@
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem=20Gb
-#SBATCH -p short
+#SBATCH -p high
 #SBATCH --gres=gpu:1
 
 module load Tensorflow-gpu/1.12.0-foss-2017a-Python-3.6.4
@@ -24,15 +24,9 @@ python setup.py build_ext --inplace
 dataset_version=mini
 dataset_folder=/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_$dataset_version
 
-echo 'babau1'
-echo xxx $dataset_folder yyy
-echo xxx$dataset_folderyyy
-echo 'babau2'
-
 train_file=$dataset_folder/1b_train.bpe.conllu
 dev_file=$dataset_folder/1b_dev.bpe.conllu
 test_file=$dataset_folder/1b_test.bpe.conllu
-
 
 results_folder=/homedtic/lperez/UniParse/saved_models/$dataset_version
 output_file=$results_folder/output_1B_bpe_$dataset_version.output
@@ -44,7 +38,7 @@ model_file=model_1B.bpe.$dataset_version.model
 vocab_file=vocab_1B.bpe.$dataset_version.pkl
 
 dynet_devices=GPU:0
-dynet_mem=15000
+dynet_mem=8000
 big_dataset=True
 
 python kiperwasser_main.py --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --dynet-devices $dynet_devices --dynet-mem $dynet_mem --big_dataset $big_dataset
