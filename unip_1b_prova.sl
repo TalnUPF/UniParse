@@ -28,7 +28,7 @@ train_file=$dataset_folder/1b_train.bpe.conllu
 dev_file=$dataset_folder/1b_dev.bpe.conllu
 test_file=$dataset_folder/1b_test.bpe.conllu
 
-results_folder=/homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B_$dataset_version
+results_folder=/homedtic/lperez/UniParse/saved_models/kiperwasser_en_1B_prova
 output_file=$results_folder/output_1B_bpe_$dataset_version.output
 logging_file=logging.log
 
