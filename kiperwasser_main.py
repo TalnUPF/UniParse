@@ -236,7 +236,7 @@ def main():
 
     test_data = vocab.tokenize_conll(arguments.test)
 
-    metrics = parser.evaluate(arguments.test, test_data, arguments.batch_size, "%s/%s" % (arguments.results_folder, arguments.output_file))
+    metrics = parser.evaluate(arguments.test, test_data, arguments.batch_size, arguments.output_file)
     test_UAS = metrics["nopunct_uas"]
     test_LAS = metrics["nopunct_las"]
 
