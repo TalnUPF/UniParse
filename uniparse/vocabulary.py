@@ -97,7 +97,7 @@ class Vocabulary(object):
         rel_set = set()
         char_set = set()
         with open(input_file, encoding="UTF-8") as f:
-            for line in f.readlines():
+            for line in f:
                 if not validate_line(line):
                     continue
 
@@ -119,7 +119,7 @@ class Vocabulary(object):
         counter = 0
 
         with open(embedding_file, encoding="UTF-8") as f:
-            for line in f.readlines():
+            for line in f:
                 line = line.strip().split()
                 if not line:
                     continue
@@ -139,7 +139,7 @@ class Vocabulary(object):
         vector = None
         with open(self._pret_file, encoding="UTF-8") as f:
             print(">> Loading embedding vectors")
-            for i, line in enumerate(f.readlines(), start=1):
+            for i, line in enumerate(f, start=1):
                 line = line.strip().split()
                 if not line:
                     continue
@@ -195,7 +195,7 @@ class Vocabulary(object):
         with open(input_file, encoding="UTF-8") as f:
 
             line = f.readline()
-            while line and num_sents <= end_sent:
+            while line and num_sents >= init_sent and num_sents <= end_sent:
 
                 if not validate_line(line):
                     continue

@@ -56,7 +56,7 @@ def read_conll(filename) -> List[Sentence]:
     sentences = []
     words, tags, heads, rels = [], [], [], []
     with open(filename, encoding="UTF-8") as f:
-        for line in f.readlines():
+        for line in f:
             # filter out comments and subphrase words
             if invalid_line(line):
                 continue
@@ -179,7 +179,7 @@ def write_predictions_to_file(predictions: Iterable, reference_file: str, output
 
     idx = 0
     with open(reference_file, encoding="UTF-8") as f, open(output_file, 'w', encoding="UTF-8") as fo:
-        for line in f.readlines():
+        for line in f:
             if re.match(r'\d+\t', line):
                 info = line.strip().split()
                 assert len(info) == 10, 'Illegal line: %s' % line
