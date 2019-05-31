@@ -214,7 +214,6 @@ class Vocabulary(object):
 
                     num_sents += 1
                     sent_words = [self.id2word(a) for a in sent[0]]
-                    print('sentence num %i; len(sent[0]) = %i; sentence = %s' % (
                     num_sents, len(sent[0]), ' '.join(sent_words)))
 
                     sents.append(sent)
