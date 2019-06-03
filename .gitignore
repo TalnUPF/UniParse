@@ -39,9 +39,7 @@ coverage.xml
 
 .vscode
 
-saved_models/prova/*
+saved_models/
 datasets/1-billion-benchmark/
-saved_models/kiperwasser_en_1b_unip1/
-saved_models/kiperwasser_en_1B/
 
 .idea/*

@@ -153,16 +153,6 @@ def do_training_big_datasets(arguments, vocab, embs, subset_size):
 
 
 def main():
-    """
-    train sample call with dev_mode True and 2 epochs:
-        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/prova --logging_file logging.log --do_training True --train_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.conll --dev_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl --dev_mode True --epochs 2 --big_dataset False
-
-    train sample call with big dataset:
-        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/prova --logging_file logging.log --do_training True --train_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.conll --dev_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl --big_dataset True
-
-    test sample call:
-        $ python kiperwasser_main.py --results_folder /home/lpmayos/code/UniParse/saved_models/prova --logging_file logging.log --do_training False --test_file /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll --output_file prova.output --model_file model.model --vocab_file vocab.pkl --big_dataset False
-    """
 
     parser = argparse.ArgumentParser()
 
@@ -189,9 +179,16 @@ def main():
 
     arguments, unknown = parser.parse_known_args()
 
+
+    # create results folder if needed
+
+    if not os.path.exists(arguments.results_folder):
+        os.makedirs(arguments.results_folder)
+
+
     # configure logging
 
-    logging.basicConfig(filename="%s/%s" % (arguments.results_folder, arguments.logging_file),
+    logging.basicConfig(filename=arguments.logging_file,
                         level=logging.DEBUG,
                         format="%(asctime)s:%(levelname)s:\t%(message)s")
 
