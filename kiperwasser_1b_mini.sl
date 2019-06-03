@@ -18,7 +18,6 @@ python setup.py build_ext --inplace
 
 # dynet config 
 
-#dynet-gpu                              # Specify whether to use GPU or not (SET IN PYTHON COMMAND)
 dynet-gpus=1                            # Specify how many GPUs you want to use, if DyNet is compiled with CUDA.
 #dynet-devices=CPU,GPU:1,GPU:3,GPU:0    # Specify the CPU/GPU devices that you want to use.
 #dynet_mem=8000                         # DyNet runs by default with 512MB of memory, which is split evenly for the forward and backward steps, parameter storage as well as scratch use. This will be expanded automatically every time one of the pools runs out of memory.
@@ -48,5 +47,5 @@ vocab_file=vocab_1b.bpe.$dataset_version.pkl
 
 # running the code
 
-python kiperwasser_main.py --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --dynet-gpu --dynet-gpus $dynet-gpus --dynet-profiling dynet-profiling --big_dataset $big_dataset
+python kiperwasser_main.py --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --dynet-gpus $dynet-gpus --dynet-profiling dynet-profiling --big_dataset $big_dataset
 
