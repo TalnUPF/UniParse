@@ -18,10 +18,11 @@ python setup.py build_ext --inplace
 
 # dynet config 
 
---dynet-gpus=1                            # Specify how many GPUs you want to use, if DyNet is compiled with CUDA.
+#--dynet-gpus=1                            # Specify how many GPUs you want to use, if DyNet is compiled with CUDA.
 #--dynet-devices=CPU,GPU:1,GPU:3,GPU:0      # Specify the CPU/GPU devices that you want to use.
---dynet_mem=8000                           # DyNet runs by default with 512MB of memory, which is split evenly for the forward and backward steps, parameter storage as well as scratch use. This will be expanded automatically every time one of the pools runs out of memory.
---dynet-profiling=2                       # Will output information about the amount of time/memory used by each node in the graph. Profile level with 0, 1 and 2.
+#--dynet_mem=8000                           # DyNet runs by default with 512MB of memory, which is split evenly for the forward and backward steps, parameter storage as well as scratch use. This will be expanded automatically every time one of the pools runs out of memory.
+#--dynet-profiling=2                       # Will output information about the amount of time/memory used by each node in the graph. Profile level with 0, 1 and 2.
+
 
 # training params
 
@@ -47,5 +48,5 @@ vocab_file=vocab_1b.bpe.$dataset_version.pkl
 
 # running the code
 
-python kiperwasser_main.py --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --big_dataset $big_dataset
+python kiperwasser_main.py --dynet_mem 8000 --dynet-gpus 1 --dynet-profiling 2 --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --big_dataset $big_dataset
 
