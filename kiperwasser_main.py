@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 
 from uniparse import Vocabulary, Model
 from uniparse.callbacks import TensorboardLoggerCallback, ModelSaveCallback
