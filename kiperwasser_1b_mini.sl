@@ -47,5 +47,5 @@ vocab_file=vocab_1b.bpe.$dataset_version.pkl
 
 # running the code
 
-python kiperwasser_main.py --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --dynet-gpus $dynet-gpus --dynet-profiling dynet-profiling --big_dataset $big_dataset
+python kiperwasser_main.py --dynet-gpus $dynet-gpus --dynet-profiling dynet-profiling --results_folder $results_folder --logging_file $logging_file --do_training $do_training --train_file $train_file --dev_file $dev_file --test_file $test_file --output_file $output_file --model_file $model_file --vocab_file $vocab_file --big_dataset $big_dataset
 
