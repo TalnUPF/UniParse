@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name="1bsmall"
+#SBATCH --job-name="1bs_m"
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem=20Gb
