@@ -38,7 +38,7 @@ train_file=$dataset_folder/1b_train.bpe.conllu
 dev_file=/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu
 test_file=$dataset_folder/1b_test.bpe.conllu
 
-results_folder=/homedtic/lperez/UniParse/saved_models/1b/small_2_gpu
+results_folder=/homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev
 output_file=$results_folder/output.out
 logging_file=$results_folder/logging.log
 
