@@ -249,9 +249,10 @@ def main():
     vocab, embs = load_or_create_vocab_and_embs(arguments)
 
     # transform input files into conllu if needed
+
     transform_to_conllu(arguments)
 
-    # create parser and train it if needed
+    # load or train parser
 
     if arguments.do_training:
         if not arguments.big_dataset:

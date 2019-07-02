@@ -168,6 +168,7 @@ class Vocabulary(object):
             [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
         num_sents = 0
+        sent_to_save = False
 
         with open(input_file, encoding="UTF-8") as f:
 
@@ -186,16 +187,22 @@ class Vocabulary(object):
                     heads.append(head)
                     rels.append(rel)
                     chars.append(characters)
+                    sent_to_save = True
 
                 else:
                     num_sents += 1
                     sent = (words, lemmas, tags, heads, rels, chars)
                     sents.append(sent)
+                    sent_to_save = False
                     words, lemmas, tags, heads, rels, chars = [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
                 line = f.readline()
 
         f.close()
+
+        if sent_to_save:
+            sent = (words, lemmas, tags, heads, rels, chars)
+            sents.append(sent)
 
         return sents
 
@@ -205,7 +212,7 @@ class Vocabulary(object):
 
         comment_line = line.startswith('#')
 
-        blank_line = line == "\n"
+        blank_line = line == "\n" or line == ""
 
         info = line.strip().split()
         conllu_line = len(info) == 10
