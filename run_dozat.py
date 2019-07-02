@@ -126,7 +126,7 @@ parser.train(training_data, dev_file, dev_data, epochs=n_epochs, batch_size=batc
 
 parser.load_from_file(model_destination)
 
-metrics = parser.evaluate(arguments.test, test_data, batch_size=batch_scale)
+metrics = parser.parse_and_evaluate(arguments.test, test_data, batch_size=batch_scale)
 test_UAS = metrics["nopunct_uas"]
 test_LAS = metrics["nopunct_las"]
 

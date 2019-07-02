@@ -264,16 +264,20 @@ def main():
             parser = do_training_big_datasets(arguments, vocab, embs, subset_size)
 
     else:
+        logging.info('No training; loading model')
         model = DependencyParser(vocab, embs, arguments.no_update_pretrained_emb)
         parser = Model(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
 
     parser.load_from_file(arguments.model_file)
 
-    # test
+    # parse test file
 
     test_data = vocab.tokenize_conll(arguments.test)
+    output_file = parser.parse(arguments.test, test_data, arguments.batch_size, arguments.output_file)
 
-    metrics = parser.evaluate(arguments.test, test_data, arguments.batch_size, arguments.output_file)
+    # evaluate output
+
+    metrics = parser.evaluate(output_file, arguments.test)
     test_UAS = metrics["nopunct_uas"]
     test_LAS = metrics["nopunct_las"]
 

@@ -65,7 +65,7 @@ parser = Model(model, decoder="eisner", loss="kiperwasser", optimizer="adam", st
 parser.train(training_data, arguments.dev, dev_data, epochs=n_epochs, batch_size=32, callbacks=callbacks, patience=arguments.patience)
 parser.load_from_file(arguments.model_dest)
 
-metrics = parser.evaluate(arguments.test, test_data, batch_size=32)
+metrics = parser.parse_and_evaluate(arguments.test, test_data, batch_size=32)
 test_UAS = metrics["nopunct_uas"]
 test_LAS = metrics["nopunct_las"]
 

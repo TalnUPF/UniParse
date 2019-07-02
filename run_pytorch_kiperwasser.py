@@ -46,7 +46,7 @@ parser.train(
 # load best model
 model.load_from_file(arguments.model)
 
-metrics = parser.evaluate(arguments.test, test_data, batch_size=arguments.batch_size)
+metrics = parser.parse_and_evaluate(arguments.test, test_data, batch_size=arguments.batch_size)
 test_UAS = metrics["nopunct_uas"]
 test_LAS = metrics["nopunct_las"]
 

@@ -222,7 +222,7 @@ class Model(object):
                 global_step += 1
 
             logging.debug("Completed epoch %s in %s" % (epoch, time.time()-start))
-            metrics = self.evaluate(dev_file, dev, batch_size, None)
+            metrics = self.parse_and_evaluate(dev_file, dev, batch_size, None)
             no_punct_dev_uas = metrics["nopunct_uas"]
             no_punct_dev_las = metrics["nopunct_las"]
             punct_dev_uas = metrics["uas"]
@@ -346,7 +346,7 @@ class Model(object):
 
             logging.debug("Completed epoch %s in %s" % (epoch, time.time() - start))
 
-            metrics = self.evaluate(dev_file, dev, batch_size, None)
+            metrics = self.parse_and_evaluate(dev_file, dev, batch_size, None)
             no_punct_dev_uas = metrics["nopunct_uas"]
             no_punct_dev_las = metrics["nopunct_las"]
             punct_dev_uas = metrics["uas"]
@@ -379,15 +379,10 @@ class Model(object):
 
         logging.debug(f"Finished at epoch {epoch}")
 
+    def parse(self, test_file: str, test_data: List, batch_size: int, output_file: str):
 
-    def evaluate(self, test_file: str, test_data: List, batch_size: int, output_file: str):
-        stripped_filename = ntpath.basename(test_file)
-
-        if output_file is not None:
-            is_temporal = False
-            output_file = output_file
-        else:
-            is_temporal = True
+        if output_file is None:
+            stripped_filename = ntpath.basename(test_file)
             output_file = f"{self._model_uid}_on_{stripped_filename}"
 
         # run parser on data
@@ -395,14 +390,19 @@ class Model(object):
 
         # write to file
         uni_eval.write_predictions_to_file(predictions, reference_file=test_file, output_file=output_file, vocab=self._vocab)
+        logging.debug('output file saved to %s' % (output_file))
+
+        return output_file
+
+    def evaluate(self, output_file, test_file):
 
         metrics = uni_eval.evaluate_files(output_file, test_file)
+        return metrics
 
-        if is_temporal:
-            os.system("rm %s" % output_file)
-        else:
-            logging.debug('output file saved to %s' % (output_file))
+    def parse_and_evaluate(self, test_file: str, test_data: List, batch_size: int, output_file: str):
 
+        output_file = self.parse(test_file, test_data, batch_size, output_file)
+        metrics = uni_eval.evaluate_files(output_file, test_file)
         return metrics
 
     def save_to_file(self, filename: str) -> None:
