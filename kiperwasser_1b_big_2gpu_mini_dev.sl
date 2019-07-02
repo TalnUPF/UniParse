@@ -41,9 +41,8 @@ test_file=$dataset_folder/1b_test.bpe.conllu
 results_folder=/homedtic/lperez/UniParse/saved_models/1b/big_2_gpu_mini_dev
 output_file=$results_folder/output.out
 logging_file=$results_folder/logging.log
-
-model_file=model_1b.bpe.$dataset_version.model
-vocab_file=vocab_1b.bpe.$dataset_version.pkl
+model_file=$results_folder/model_1b.bpe.$dataset_version.model
+vocab_file=$results_folder/vocab_1b.bpe.$dataset_version.pkl
 
 
 # running the code

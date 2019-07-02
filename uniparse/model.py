@@ -184,9 +184,7 @@ class Model(object):
                 postags = backend.input_tensor(tags, dtype="int")
                 lemmas = backend.input_tensor(lemmas, dtype="int")
 
-                arc_preds, rel_preds, arc_scores, rel_scores = self._parser(
-                    (words, lemmas, postags, gold_arcs, gold_rels, chars)
-                )
+                arc_preds, rel_preds, arc_scores, rel_scores = self._parser((words, lemmas, postags, gold_arcs, gold_rels, chars))
 
                 arc_loss = self.arc_loss(arc_scores, arc_preds, gold_arcs, mask)
                 rel_loss = self.rel_loss(rel_scores, None, gold_rels, mask)
@@ -305,9 +303,7 @@ class Model(object):
                     postags = backend.input_tensor(tags, dtype="int")
                     lemmas = backend.input_tensor(lemmas, dtype="int")
 
-                    arc_preds, rel_preds, arc_scores, rel_scores = self._parser(
-                        (words, lemmas, postags, gold_arcs, gold_rels, chars)
-                    )
+                    arc_preds, rel_preds, arc_scores, rel_scores = self._parser((words, lemmas, postags, gold_arcs, gold_rels, chars))
 
                     arc_loss = self.arc_loss(arc_scores, arc_preds, gold_arcs, mask)
                     rel_loss = self.rel_loss(rel_scores, None, gold_rels, mask)

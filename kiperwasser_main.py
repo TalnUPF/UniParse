@@ -16,51 +16,28 @@ def str2bool(v):
         raise argparse.ArgumentTypeError('Boolean value expected.')
 
 
-def load_vocab_and_embs(arguments):
+def load_or_create_vocab_and_embs(arguments):
 
-    vocab_file = "%s/%s" % (arguments.results_folder, arguments.vocab_file)
+    vocab = Vocabulary(arguments.only_words)
 
-    vocab = Vocabulary()
-    vocab.load(vocab_file)
+    # load or create vocabulary
+    try:
+        vocab.load(arguments.vocab_file)
+    except:
+        if arguments.embs == None:
+            vocab = vocab.fit(arguments.train)
+        else:
+            vocab = vocab.fit(arguments.train, arguments.embs)
+
+        # save vocab for reproducability later
+        logging.info("> saving vocab to %s" % (arguments.vocab_file))
+        vocab.save(arguments.vocab_file)
 
     if arguments.embs == None:
         embs = None
     else:
         embs = vocab.load_embedding()
         logging.info('shape %s' % (embs.shape))
-
-    return vocab, embs
-
-
-def load_or_create_vocab_and_embs(arguments):
-
-    vocab_file = "%s/%s" % (arguments.results_folder, arguments.vocab_file)
-
-    if arguments.do_training:
-
-        vocab = Vocabulary()
-        if arguments.embs == None:
-            vocab = vocab.fit(arguments.train)
-            embs = None
-        else:
-            vocab = vocab.fit(arguments.train, arguments.embs)
-            embs = vocab.load_embedding()
-            logging.info('shape %s' % (embs.shape))
-
-        # save vocab for reproducability later
-        logging.info("> saving vocab to %s" % (vocab_file))
-        vocab.save(vocab_file)
-
-    else:
-
-        vocab = Vocabulary()
-        vocab.load(vocab_file)
-
-        if arguments.embs == None:
-            embs = None
-        else:
-            embs = vocab.load_embedding()
-            logging.info('shape %s' % (embs.shape))
 
     return vocab, embs
 
@@ -97,7 +74,7 @@ def do_training(arguments, vocab, embs):
 
 
     logging.info("creating ModelSaveCallback ...")
-    save_callback = ModelSaveCallback("%s/%s" % (arguments.results_folder, arguments.model_file))
+    save_callback = ModelSaveCallback(arguments.model_file)
     callbacks.append(save_callback)
     logging.info("... ModelSaveCallback created")
 
@@ -135,7 +112,7 @@ def do_training_big_datasets(arguments, vocab, embs, subset_size):
         callbacks.append(tensorboard_logger)
 
     logging.info("creating ModelSaveCallback ...")
-    save_callback = ModelSaveCallback("%s/%s" % (arguments.results_folder, arguments.model_file))
+    save_callback = ModelSaveCallback(arguments.model_file)
     callbacks.append(save_callback)
     logging.info("... ModelSaveCallback created")
 
@@ -153,9 +130,75 @@ def do_training_big_datasets(arguments, vocab, embs, subset_size):
     return parser
 
 
+def create_new_conllu(original_file):
+
+    def _line_to_conllu(line, id):
+        """
+        ID: Word index, integer starting at 1 for each new sentence; may be a range for multiword tokens; may be a decimal number for empty nodes (decimal numbers can be lower than 1 but must be greater than 0).
+        FORM: Word form or punctuation symbol.
+        LEMMA: Lemma or stem of word form.
+        UPOS: Universal part-of-speech tag.
+        XPOS: Language-specific part-of-speech tag; underscore if not available.
+        FEATS: List of morphological features from the universal feature inventory or from a defined language-specific extension; underscore if not available.
+        HEAD: Head of the current word, which is either a value of ID or zero (0).
+        DEPREL: Universal dependency relation to the HEAD (root iff HEAD = 0) or a defined language-specific subtype of one.
+        DEPS: Enhanced dependency graph in the form of a list of head-deprel pairs.
+        MISC: Any other annotation.
+
+        """
+        info = line.strip().split()
+
+        if len(info) == 2:  # dep parse line; i.e. the 7-det
+            form = info[0]
+            head = info[1].split('-')[0]
+            rel = info[1].split('-')[1]
+
+        elif len(info) == 3:  # chunking line; i.e. said VBD B-VP
+            form = info[0]
+            head = -1
+            rel = '_'
+
+        return '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' % (id, form, '_', '_', '_', '_', head, rel, '_', '_')
+
+    new_file_name = original_file.replace('.txt', '.txt.conllu')
+
+    with open(original_file, encoding="UTF-8") as f, open(new_file_name, 'w+', encoding="UTF-8") as f_new:
+        id = 1
+        for line in f:
+            comment_line = line.startswith('#')
+            blank_line = line == "\n"
+
+            if comment_line or blank_line:
+                new_line = line
+                id = 1
+            else:
+                new_line = _line_to_conllu(line, id)
+                id += 1
+
+            f_new.write(new_line)
+
+    logging.info('Created new file %s from the original file %s' % (new_file_name, original_file))
+
+    return new_file_name
+
+
+def transform_to_conllu(arguments):
+    """
+    Transform cvt_txt text input files into conllu that we can use.
+    """
+    if arguments.test.endswith('.txt'):
+        arguments.test = create_new_conllu(arguments.test)
+    if arguments.dev.endswith('.txt'):
+        arguments.dev = create_new_conllu(arguments.dev)
+    if arguments.train.endswith('.txt'):
+        arguments.train = create_new_conllu(arguments.train)
+
+
 def main():
 
     parser = argparse.ArgumentParser()
+
+    parser.add_argument("--only_words", dest="only_words", type=str2bool, default=False, help="Should we use only words to train? Lemmas and POS will be ignored", required=True)
 
     parser.add_argument("--do_training", dest="do_training", type=str2bool, default=False, help="Should we train the model?", required=True)
     parser.add_argument("--train_file", dest="train", help="Annotated CONLL train file", metavar="FILE", required=False)
@@ -193,25 +236,20 @@ def main():
                         level=logging.DEBUG,
                         format="%(asctime)s:%(levelname)s:\t%(message)s")
 
-    logging.info("")
-    logging.info("")
-    logging.info("")
-    logging.info("===================================================================================================")
+    logging.info("\n\n\n===================================================================================================")
     logging.info("kiperwasser_main")
-    logging.info("===================================================================================================")
-    logging.info("")
+    logging.info("===================================================================================================\n")
 
-    logging.info("")
-    logging.info("Arguments:")
+    logging.info("\nArguments:")
     logging.info(arguments)
-    logging.info("")
+    logging.info("\n")
 
     # load or create vocabulary and embeddings
 
-    try:
-        vocab, embs = load_vocab_and_embs(arguments)
-    except:
-        vocab, embs = load_or_create_vocab_and_embs(arguments)
+    vocab, embs = load_or_create_vocab_and_embs(arguments)
+
+    # transform input files into conllu if needed
+    transform_to_conllu(arguments)
 
     # create parser and train it if needed
 
@@ -228,7 +266,7 @@ def main():
         model = DependencyParser(vocab, embs, arguments.no_update_pretrained_emb)
         parser = Model(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
 
-    parser.load_from_file("%s/%s" % (arguments.results_folder, arguments.model_file))
+    parser.load_from_file(arguments.model_file)
 
     # test
 
@@ -244,11 +282,9 @@ def main():
         tensorboard_logger.raw_write("test_UAS", test_UAS)
         tensorboard_logger.raw_write("test_LAS", test_LAS)
 
-    logging.info("")
-    logging.info("--------------------------------------------------------")
+    logging.info("\n--------------------------------------------------------")
     logging.info("Test score: %s %s" % (test_UAS, test_LAS))
-    logging.info("--------------------------------------------------------")
-    logging.info("")
+    logging.info("--------------------------------------------------------\n")
 
 
 if __name__ == '__main__':

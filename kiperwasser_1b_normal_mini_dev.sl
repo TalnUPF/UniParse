@@ -41,9 +41,8 @@ test_file=$dataset_folder/1b_test.conllu
 results_folder=/homedtic/lperez/UniParse/saved_models/1b/normal
 output_file=$results_folder/output.out
 logging_file=$results_folder/logging.log
-
-model_file=model_1b.normal.model
-vocab_file=vocab_1b.normal.pkl
+model_file=$results_folder/model_1b.normal.model
+vocab_file=$results_folder/vocab_1b.normal.pkl
 
 
 # running the code

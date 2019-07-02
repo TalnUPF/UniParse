@@ -6,25 +6,13 @@ import pickle
 import numpy as np
 
 
-def validate_line(line):
-    if line.startswith("#"):
-        return False
-    elif line == "\n":
-        return True
-    # think this is the one we want
-    elif not re.match(r'\d+\t', line):
-        return False
-    else:
-        return True
-
-
 class Vocabulary(object):
     # Reserved token mappings
     PAD = 0
     ROOT = 1
     OOV = UNK = 2
 
-    def __init__(self):
+    def __init__(self, only_words=False):
         self._id2word = None
         self._word2id = None
         self._lemma2id = None
@@ -38,6 +26,8 @@ class Vocabulary(object):
         self._char2id = None
         self._words_in_train_data = None
         self._pret_file = None
+
+        self.only_words = only_words
 
     @staticmethod
     def _normalize_word(word):
@@ -98,12 +88,13 @@ class Vocabulary(object):
         char_set = set()
         with open(input_file, encoding="UTF-8") as f:
             for line in f:
-                if not validate_line(line):
+
+                blank_line, comment_line, word, lemma, tag, _, rel, chars = self._parse_line(line, tokenize=False)
+
+                if comment_line:
                     continue
 
-                info = line.strip().split()
-                if len(info) == 10:
-                    word, lemma, tag, _, rel, chars = self._parse_conll_line(info, tokenize=False)
+                elif not blank_line:
                     word_counter[word] += 1
                     lemma_set.add(lemma)
                     tag_set.add(tag)
@@ -164,20 +155,6 @@ class Vocabulary(object):
         sentences = self._read_conll(file, init_sent, end_sent, tokenize=True)
         return sentences
 
-    def _parse_conll_line(self, info, tokenize):
-        word, lemma, tag, head, rel, chars = \
-            info[1].lower(), info[2].lower(), info[3], int(info[6]), info[7], list(info[1])
-
-        word = self._normalize_word(word)
-        if tokenize:
-            word, lemma, tag, head, rel = \
-                self._word2id.get(word, self.OOV), self._lemma2id.get(lemma, self.OOV), \
-                self._tag2id[tag], head, self._rel2id[rel]
-
-            chars = [self.char2id(c) for c in chars]
-
-        return word, lemma, tag, head, rel, chars
-
     def _read_conll(self, input_file: str, init_sent: int = float('inf'), end_sent: int = float('-inf'), tokenize: bool = True):
         word_root = self.ROOT
         lemma_root = self.ROOT
@@ -197,27 +174,24 @@ class Vocabulary(object):
             line = f.readline()
             while line and num_sents >= init_sent and num_sents <= end_sent:
 
-                if not validate_line(line):
+                blank_line, comment_line, word, lemma, tag, head, rel, characters = self._parse_line(line, tokenize=tokenize)
+
+                if comment_line:
                     continue
 
-                info = line.strip().split("\t")
-                if len(info) == 10:
-                    word, lemma, tag, head, rel, characters = self._parse_conll_line(info, tokenize=tokenize)
+                elif not blank_line:
                     words.append(word)
                     lemmas.append(lemma)
                     tags.append(tag)
                     heads.append(head)
                     rels.append(rel)
                     chars.append(characters)
+
                 else:
-                    sent = (words, lemmas, tags, heads, rels, chars)
-
                     num_sents += 1
-
+                    sent = (words, lemmas, tags, heads, rels, chars)
                     sents.append(sent)
-
-                    words, lemmas, tags, heads, rels, chars = \
-                        [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
+                    words, lemmas, tags, heads, rels, chars = [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
                 line = f.readline()
 
@@ -225,14 +199,61 @@ class Vocabulary(object):
 
         return sents
 
+    def _parse_line(self, line, tokenize):
+        """ A line can be a blank line, a comment line (starting with '#'), or a conllu line (10 items, tab separated)
+        """
+
+        comment_line = line.startswith('#')
+
+        blank_line = line == "\n"
+
+        info = line.strip().split()
+        conllu_line = len(info) == 10
+
+        word = ''
+        lemma = ''
+        tag = ''
+        head = -1
+        rel = ''
+        chars = []
+
+        if not (comment_line or blank_line or conllu_line):
+            raise Exception('We got a line that is neither a blank line, a comment or a valid conllu line: %s' % line)
+
+        if conllu_line:
+            word = self._normalize_word(info[1].lower())
+            lemma = info[2].lower()
+            tag = info[3]
+            head = int(info[6])
+            rel = info[7]
+            chars = list(info[1])
+
+            # todo lpmayos: easy/hacky way to train a parser with only word information: drop any other info
+            if self.only_words:
+                lemma = ''
+                tag = ''
+
+            if tokenize:
+                word = self.word2id(word)
+                lemma = self.lemma2id(lemma)
+                tag = self.tag2id(tag)
+                head = head
+                rel = self.rel2id(rel)
+                chars = [self.char2id(c) for c in chars]
+
+        return blank_line, comment_line, word, lemma, tag, head, rel, chars
+
     def word2id(self, x):
         return self._word2id.get(x, self.OOV)
+
+    def lemma2id(self, x):
+        return self._lemma2id.get(x, self.OOV)
 
     def id2word(self, x):
         return self._id2word[x]
 
     def rel2id(self, x):
-        return self._rel2id[x]
+        return self._rel2id.get(x, self.OOV)
 
     def id2rel(self, x):
         return self._id2rel[x]
