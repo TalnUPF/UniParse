@@ -167,13 +167,24 @@ class Vocabulary(object):
         words, lemmas, tags, heads, rels, chars = \
             [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
-        num_sents = 0
         sent_to_save = False
 
         with open(input_file, encoding="UTF-8") as f:
 
+            # skip sentences until we reach init_sent
+
+            skipped_sentences = 0
+            while skipped_sentences < init_sent:
+                line = f.readline()
+                blank_line, comment_line, word, lemma, tag, head, rel, characters = self._parse_line(line, tokenize=tokenize)
+                if blank_line:
+                    skipped_sentences += 1
+
+            # read sentences until we reach end_sent
+
             line = f.readline()
-            while line and num_sents >= init_sent and num_sents <= end_sent:
+            read_sentences = skipped_sentences
+            while line and read_sentences <= end_sent:
 
                 blank_line, comment_line, word, lemma, tag, head, rel, characters = self._parse_line(line, tokenize=tokenize)
 
@@ -190,7 +201,7 @@ class Vocabulary(object):
                     sent_to_save = True
 
                 else:
-                    num_sents += 1
+                    read_sentences += 1
                     sent = (words, lemmas, tags, heads, rels, chars)
                     sents.append(sent)
                     sent_to_save = False

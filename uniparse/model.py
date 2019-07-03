@@ -271,11 +271,12 @@ class Model(object):
         for epoch in range(1, epochs + 1):
 
             start = time.time()
+            logging.info("")
             logging.info(f"Epoch {epoch}")
             logging.info("=====================")
 
             init_sent = 0
-            end_sent = init_sent + subset_size
+            end_sent = init_sent + subset_size - 1
             training_data = self._vocab.tokenize_conll(train_file, init_sent, end_sent)  # we just tokenize the sentences we need for training
 
             while len(training_data) > 0:
@@ -340,7 +341,7 @@ class Model(object):
                     global_step += 1
 
                 init_sent = end_sent + 1
-                end_sent = init_sent + subset_size
+                end_sent = init_sent + subset_size -1
                 training_data = self._vocab.tokenize_conll(train_file, init_sent, end_sent)  # we just tokenize the sentences we need for training
 
 
@@ -381,9 +382,11 @@ class Model(object):
 
     def parse(self, test_file: str, test_data: List, batch_size: int, output_file: str):
 
+        temporal = False
         if output_file is None:
             stripped_filename = ntpath.basename(test_file)
             output_file = f"{self._model_uid}_on_{stripped_filename}"
+            temporal = True
 
         # run parser on data
         predictions = self.run(test_data, batch_size)
@@ -392,7 +395,7 @@ class Model(object):
         uni_eval.write_predictions_to_file(predictions, reference_file=test_file, output_file=output_file, vocab=self._vocab)
         logging.debug('output file saved to %s' % (output_file))
 
-        return output_file
+        return output_file, temporal
 
     def evaluate(self, output_file, test_file):
 
@@ -401,8 +404,12 @@ class Model(object):
 
     def parse_and_evaluate(self, test_file: str, test_data: List, batch_size: int, output_file: str):
 
-        output_file = self.parse(test_file, test_data, batch_size, output_file)
+        output_file, temporal = self.parse(test_file, test_data, batch_size, output_file)
         metrics = uni_eval.evaluate_files(output_file, test_file)
+
+        if temporal:
+            os.remove(output_file)
+
         return metrics
 
     def save_to_file(self, filename: str) -> None:
