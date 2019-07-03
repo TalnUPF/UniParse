@@ -156,8 +156,6 @@ class Vocabulary(object):
 
     def _read_conll(self, input_file: str, init_sent: int = float('inf'), end_sent: int = float('-inf'), tokenize: bool = True):
 
-        logging.info("_read_conll; file: %s" % input_file)
-
         word_root = self.ROOT
         lemma_root = self.ROOT
         tag_root = self.ROOT
@@ -170,15 +168,12 @@ class Vocabulary(object):
             [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
         num_sents = 0
-        num_lines = 1
         sent_to_save = False
 
         with open(input_file, encoding="UTF-8") as f:
 
             line = f.readline()
             while line and num_sents >= init_sent and num_sents <= end_sent:
-
-                logging.info("_read_conll; line read: %s" % num_lines)
 
                 blank_line, comment_line, word, lemma, tag, head, rel, characters = self._parse_line(line, tokenize=tokenize)
 
@@ -202,7 +197,6 @@ class Vocabulary(object):
                     words, lemmas, tags, heads, rels, chars = [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
                 line = f.readline()
-                num_lines += 1
 
         f.close()
 
@@ -222,7 +216,7 @@ class Vocabulary(object):
 
         blank_line = line == "\n" or line == ""
 
-        info = line.strip().split()
+        info = line.strip().split('\t')
         conllu_line = len(info) == 10
 
         word = ''
