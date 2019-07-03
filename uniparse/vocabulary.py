@@ -183,7 +183,7 @@ class Vocabulary(object):
                 blank_line, comment_line, word, lemma, tag, head, rel, characters = self._parse_line(line, tokenize=tokenize)
 
                 if comment_line:
-                    continue
+                    pass
 
                 elif not blank_line:
                     words.append(word)
