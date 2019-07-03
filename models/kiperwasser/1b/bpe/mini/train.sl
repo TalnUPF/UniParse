@@ -11,11 +11,6 @@ module load scikit-learn/0.19.1-foss-2017a-Python-3.6.4
 module load dynet/2.1-foss-2017a-Python-3.6.4-GPU-CUDA-9.0.176
 
 
-# compiling decoders
-
-python setup.py build_ext --inplace
-
-
 # dataset
 
 dataset_folder=/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini
@@ -40,6 +35,8 @@ big_dataset=True
 only_words=False
 
 cd /homedtic/lperez/UniParse
+
+python setup.py build_ext --inplace  # compiling decoders
 
 python kiperwasser_main.py --dynet_mem 8000 \
                            --dynet-gpus 2 \
