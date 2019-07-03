@@ -181,7 +181,7 @@ def write_predictions_to_file(predictions: Iterable, reference_file: str, output
     with open(reference_file, encoding="UTF-8") as f, open(output_file, 'w', encoding="UTF-8") as fo:
         for line in f:
             if re.match(r'\d+\t', line):
-                info = line.strip().split()
+                info = line.strip().split("\t")
                 assert len(info) == 10, 'Illegal line: %s' % line
                 info[6] = str(flat_arcs[idx])
                 info[7] = vocab.id2rel(flat_rels[idx])
