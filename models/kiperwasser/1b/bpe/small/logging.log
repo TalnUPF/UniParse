@@ -1,0 +1,197 @@
+2019-06-06 18:49:45,179:INFO:	
+2019-06-06 18:49:45,181:INFO:	
+2019-06-06 18:49:45,181:INFO:	
+2019-06-06 18:49:45,183:INFO:	===================================================================================================
+2019-06-06 18:49:45,185:INFO:	kiperwasser_main
+2019-06-06 18:49:45,186:INFO:	===================================================================================================
+2019-06-06 18:49:45,188:INFO:	
+2019-06-06 18:49:45,190:INFO:	
+2019-06-06 18:49:45,191:INFO:	Arguments:
+2019-06-06 18:49:45,193:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='/homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/logging.log', model_file='model_1b.bpe.small.model', no_update_pretrained_emb=False, output_file='/homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/output.out', patience=-1, results_folder='/homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev', tb_dest=None, test='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_small/1b_test.bpe.conllu', train='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_small/1b_train.bpe.conllu', vocab_file='vocab_1b.bpe.small.pkl')
+2019-06-06 18:49:45,195:INFO:	
+2019-06-06 18:57:03,999:INFO:	> saving vocab to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/vocab_1b.bpe.small.pkl
+2019-06-06 18:57:04,046:INFO:	Training with big dataset; subset_size = 10000
+2019-06-06 18:57:04,048:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-06-06 18:57:04,049:INFO:	tokenizing dev data ...
+2019-06-06 18:57:06,626:INFO:	... tokenized dev data
+2019-06-06 18:57:06,627:INFO:	creating model ...
+2019-06-06 18:57:06,675:INFO:	... model created
+2019-06-06 18:57:06,675:INFO:	creating ModelSaveCallback ...
+2019-06-06 18:57:06,677:INFO:	saving model to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model  (after step 0)
+2019-06-06 18:57:06,678:INFO:	... ModelSaveCallback created
+2019-06-06 18:57:06,679:INFO:	creating Model ...
+2019-06-06 18:57:06,752:INFO:	... Model created
+2019-06-06 18:57:06,753:INFO:	training Model ...
+2019-06-06 18:57:06,754:DEBUG:	...Training without patience for exactly 30 epochs
+2019-06-06 18:57:06,756:INFO:	Epoch 1
+2019-06-06 18:57:06,757:INFO:	=====================
+2019-06-06 19:05:02,860:DEBUG:	Completed epoch 1 in 476.1040189266205
+2019-06-06 19:05:40,979:DEBUG:	UAS (wo. punct) 0.80772	 LAS (wo. punct) 0.77604
+2019-06-06 19:05:40,981:DEBUG:	UAS (w. punct) 0.78934	 LAS (w. punct) 0.76118
+2019-06-06 19:05:44,728:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-06 19:05:44,729:INFO:	Epoch 2
+2019-06-06 19:05:44,731:INFO:	=====================
+2019-06-06 19:13:44,571:DEBUG:	Completed epoch 2 in 479.8416428565979
+2019-06-06 19:14:25,582:DEBUG:	UAS (wo. punct) 0.87468	 LAS (wo. punct) 0.8415
+2019-06-06 19:14:25,583:DEBUG:	UAS (w. punct) 0.86244	 LAS (w. punct) 0.83297
+2019-06-06 19:14:29,754:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-06 19:14:29,756:INFO:	Epoch 3
+2019-06-06 19:14:29,757:INFO:	=====================
+2019-06-06 19:22:48,320:DEBUG:	Completed epoch 3 in 498.5643787384033
+2019-06-06 19:23:27,597:DEBUG:	UAS (wo. punct) 0.89025	 LAS (wo. punct) 0.86292
+2019-06-06 19:23:27,600:DEBUG:	UAS (w. punct) 0.87721	 LAS (w. punct) 0.85281
+2019-06-06 19:23:31,384:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-06 19:23:31,386:INFO:	Epoch 4
+2019-06-06 19:23:31,387:INFO:	=====================
+2019-06-06 19:31:55,754:DEBUG:	Completed epoch 4 in 504.36794209480286
+2019-06-06 19:32:36,778:DEBUG:	UAS (wo. punct) 0.89701	 LAS (wo. punct) 0.86406
+2019-06-06 19:32:36,780:DEBUG:	UAS (w. punct) 0.88516	 LAS (w. punct) 0.85594
+2019-06-06 19:32:40,475:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-06 19:32:40,476:INFO:	Epoch 5
+2019-06-06 19:32:40,477:INFO:	=====================
+2019-06-06 19:40:58,962:DEBUG:	Completed epoch 5 in 498.4858720302582
+2019-06-06 19:41:38,654:DEBUG:	UAS (wo. punct) 0.89749	 LAS (wo. punct) 0.86853
+2019-06-06 19:41:38,657:DEBUG:	UAS (w. punct) 0.88497	 LAS (w. punct) 0.85927
+2019-06-06 19:41:42,416:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-06 19:41:42,418:INFO:	Epoch 6
+2019-06-06 19:41:42,419:INFO:	=====================
+2019-06-06 19:50:00,502:DEBUG:	Completed epoch 6 in 498.08462357521057
+2019-06-06 19:50:40,075:DEBUG:	UAS (wo. punct) 0.89852	 LAS (wo. punct) 0.87455
+2019-06-06 19:50:40,077:DEBUG:	UAS (w. punct) 0.88526	 LAS (w. punct) 0.86385
+2019-06-06 19:50:43,808:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-06 19:50:43,809:INFO:	Epoch 7
+2019-06-06 19:50:43,810:INFO:	=====================
+2019-06-06 19:58:58,643:DEBUG:	Completed epoch 7 in 494.8338806629181
+2019-06-06 19:59:38,126:DEBUG:	UAS (wo. punct) 0.89928	 LAS (wo. punct) 0.86598
+2019-06-06 19:59:38,129:DEBUG:	UAS (w. punct) 0.88635	 LAS (w. punct) 0.85687
+2019-06-06 19:59:41,814:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-06 19:59:41,815:INFO:	Epoch 8
+2019-06-06 19:59:41,816:INFO:	=====================
+2019-06-06 20:08:06,278:DEBUG:	Completed epoch 8 in 504.46244406700134
+2019-06-06 20:08:59,772:DEBUG:	UAS (wo. punct) 0.89826	 LAS (wo. punct) 0.85925
+2019-06-06 20:08:59,775:DEBUG:	UAS (w. punct) 0.88634	 LAS (w. punct) 0.85192
+2019-06-06 20:08:59,776:INFO:	Epoch 9
+2019-06-06 20:08:59,777:INFO:	=====================
+2019-06-06 20:18:34,241:DEBUG:	Completed epoch 9 in 574.4650354385376
+2019-06-06 20:19:28,666:DEBUG:	UAS (wo. punct) 0.8976	 LAS (wo. punct) 0.867
+2019-06-06 20:19:28,668:DEBUG:	UAS (w. punct) 0.8855	 LAS (w. punct) 0.85839
+2019-06-06 20:19:28,669:INFO:	Epoch 10
+2019-06-06 20:19:28,671:INFO:	=====================
+2019-06-06 20:28:45,218:DEBUG:	Completed epoch 10 in 556.5488409996033
+2019-06-06 20:29:39,375:DEBUG:	UAS (wo. punct) 0.89672	 LAS (wo. punct) 0.87372
+2019-06-06 20:29:39,378:DEBUG:	UAS (w. punct) 0.88489	 LAS (w. punct) 0.86446
+2019-06-06 20:29:39,379:INFO:	Epoch 11
+2019-06-06 20:29:39,380:INFO:	=====================
+2019-06-06 20:39:29,850:DEBUG:	Completed epoch 11 in 590.4712483882904
+2019-06-06 20:40:33,015:DEBUG:	UAS (wo. punct) 0.89681	 LAS (wo. punct) 0.87268
+2019-06-06 20:40:33,017:DEBUG:	UAS (w. punct) 0.88373	 LAS (w. punct) 0.86221
+2019-06-06 20:40:33,019:INFO:	Epoch 12
+2019-06-06 20:40:33,020:INFO:	=====================
+2019-06-06 20:50:30,901:DEBUG:	Completed epoch 12 in 597.8820905685425
+2019-06-06 20:51:48,205:DEBUG:	UAS (wo. punct) 0.8976	 LAS (wo. punct) 0.87498
+2019-06-06 20:51:48,208:DEBUG:	UAS (w. punct) 0.88513	 LAS (w. punct) 0.86491
+2019-06-06 20:51:48,209:INFO:	Epoch 13
+2019-06-06 20:51:48,210:INFO:	=====================
+2019-06-06 21:01:38,924:DEBUG:	Completed epoch 13 in 590.7152600288391
+2019-06-06 21:02:43,044:DEBUG:	UAS (wo. punct) 0.89604	 LAS (wo. punct) 0.87339
+2019-06-06 21:02:43,047:DEBUG:	UAS (w. punct) 0.88474	 LAS (w. punct) 0.86454
+2019-06-06 21:02:43,048:INFO:	Epoch 14
+2019-06-06 21:02:43,049:INFO:	=====================
+2019-06-06 21:12:34,574:DEBUG:	Completed epoch 14 in 591.5261564254761
+2019-06-06 21:13:38,884:DEBUG:	UAS (wo. punct) 0.8952	 LAS (wo. punct) 0.87113
+2019-06-06 21:13:38,885:DEBUG:	UAS (w. punct) 0.88317	 LAS (w. punct) 0.86169
+2019-06-06 21:13:38,887:INFO:	Epoch 15
+2019-06-06 21:13:38,888:INFO:	=====================
+2019-06-06 21:24:23,269:DEBUG:	Completed epoch 15 in 644.3812599182129
+2019-06-06 21:27:37,709:DEBUG:	UAS (wo. punct) 0.89882	 LAS (wo. punct) 0.87644
+2019-06-06 21:27:37,711:DEBUG:	UAS (w. punct) 0.88747	 LAS (w. punct) 0.8675
+2019-06-06 21:27:37,713:INFO:	Epoch 16
+2019-06-06 21:27:37,714:INFO:	=====================
+2019-06-06 21:46:54,220:DEBUG:	Completed epoch 16 in 1156.507384300232
+2019-06-06 21:49:59,702:DEBUG:	UAS (wo. punct) 0.89526	 LAS (wo. punct) 0.86625
+2019-06-06 21:49:59,710:DEBUG:	UAS (w. punct) 0.88338	 LAS (w. punct) 0.85767
+2019-06-06 21:49:59,715:INFO:	Epoch 17
+2019-06-06 21:49:59,719:INFO:	=====================
+2019-06-06 22:09:39,519:DEBUG:	Completed epoch 17 in 1179.8038892745972
+2019-06-06 22:12:51,238:DEBUG:	UAS (wo. punct) 0.89418	 LAS (wo. punct) 0.87134
+2019-06-06 22:12:51,241:DEBUG:	UAS (w. punct) 0.8821	 LAS (w. punct) 0.86172
+2019-06-06 22:12:51,243:INFO:	Epoch 18
+2019-06-06 22:12:51,243:INFO:	=====================
+2019-06-06 22:31:22,864:DEBUG:	Completed epoch 18 in 1111.6210720539093
+2019-06-06 22:34:57,768:DEBUG:	UAS (wo. punct) 0.89637	 LAS (wo. punct) 0.87267
+2019-06-06 22:34:57,771:DEBUG:	UAS (w. punct) 0.88474	 LAS (w. punct) 0.86382
+2019-06-06 22:34:57,773:INFO:	Epoch 19
+2019-06-06 22:34:57,774:INFO:	=====================
+2019-06-06 22:52:17,074:DEBUG:	Completed epoch 19 in 1039.3010699748993
+2019-06-06 22:55:07,422:DEBUG:	UAS (wo. punct) 0.89878	 LAS (wo. punct) 0.87728
+2019-06-06 22:55:07,424:DEBUG:	UAS (w. punct) 0.88763	 LAS (w. punct) 0.86855
+2019-06-06 22:55:07,426:INFO:	Epoch 20
+2019-06-06 22:55:07,427:INFO:	=====================
+2019-06-06 23:12:18,544:DEBUG:	Completed epoch 20 in 1031.1178228855133
+2019-06-06 23:15:12,596:DEBUG:	UAS (wo. punct) 0.89999	 LAS (wo. punct) 0.87771
+2019-06-06 23:15:12,598:DEBUG:	UAS (w. punct) 0.88906	 LAS (w. punct) 0.86932
+2019-06-06 23:15:25,163:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-06 23:15:25,164:INFO:	Epoch 21
+2019-06-06 23:15:25,164:INFO:	=====================
+2019-06-06 23:32:53,040:DEBUG:	Completed epoch 21 in 1047.8764386177063
+2019-06-06 23:36:10,206:DEBUG:	UAS (wo. punct) 0.90046	 LAS (wo. punct) 0.87863
+2019-06-06 23:36:10,209:DEBUG:	UAS (w. punct) 0.88928	 LAS (w. punct) 0.86994
+2019-06-06 23:36:15,316:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-06 23:36:15,317:INFO:	Epoch 22
+2019-06-06 23:36:15,318:INFO:	=====================
+2019-06-06 23:52:49,339:DEBUG:	Completed epoch 22 in 994.0215330123901
+2019-06-06 23:56:19,039:DEBUG:	UAS (wo. punct) 0.89984	 LAS (wo. punct) 0.87813
+2019-06-06 23:56:19,040:DEBUG:	UAS (w. punct) 0.8886	 LAS (w. punct) 0.86921
+2019-06-06 23:56:19,043:INFO:	Epoch 23
+2019-06-06 23:56:19,046:INFO:	=====================
+2019-06-07 00:13:12,705:DEBUG:	Completed epoch 23 in 1013.6614947319031
+2019-06-07 00:16:22,597:DEBUG:	UAS (wo. punct) 0.89973	 LAS (wo. punct) 0.87742
+2019-06-07 00:16:22,600:DEBUG:	UAS (w. punct) 0.88897	 LAS (w. punct) 0.86916
+2019-06-07 00:16:22,602:INFO:	Epoch 24
+2019-06-07 00:16:22,603:INFO:	=====================
+2019-06-07 00:32:55,211:DEBUG:	Completed epoch 24 in 992.608433008194
+2019-06-07 00:36:05,428:DEBUG:	UAS (wo. punct) 0.89955	 LAS (wo. punct) 0.87893
+2019-06-07 00:36:05,431:DEBUG:	UAS (w. punct) 0.88877	 LAS (w. punct) 0.87055
+2019-06-07 00:36:05,434:INFO:	Epoch 25
+2019-06-07 00:36:05,436:INFO:	=====================
+2019-06-07 00:52:41,489:DEBUG:	Completed epoch 25 in 996.0550112724304
+2019-06-07 00:55:51,752:DEBUG:	UAS (wo. punct) 0.89922	 LAS (wo. punct) 0.87846
+2019-06-07 00:55:51,755:DEBUG:	UAS (w. punct) 0.88774	 LAS (w. punct) 0.86941
+2019-06-07 00:55:51,758:INFO:	Epoch 26
+2019-06-07 00:55:51,759:INFO:	=====================
+2019-06-07 01:13:26,733:DEBUG:	Completed epoch 26 in 1054.9753828048706
+2019-06-07 01:16:58,234:DEBUG:	UAS (wo. punct) 0.90102	 LAS (wo. punct) 0.87986
+2019-06-07 01:16:58,237:DEBUG:	UAS (w. punct) 0.89007	 LAS (w. punct) 0.87133
+2019-06-07 01:17:04,765:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-07 01:17:04,766:INFO:	Epoch 27
+2019-06-07 01:17:04,766:INFO:	=====================
+2019-06-07 01:37:16,966:DEBUG:	Completed epoch 27 in 1212.2008838653564
+2019-06-07 01:40:26,781:DEBUG:	UAS (wo. punct) 0.90164	 LAS (wo. punct) 0.8815
+2019-06-07 01:40:26,784:DEBUG:	UAS (w. punct) 0.89037	 LAS (w. punct) 0.87258
+2019-06-07 01:40:30,459:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-07 01:40:30,459:INFO:	Epoch 28
+2019-06-07 01:40:30,460:INFO:	=====================
+2019-06-07 01:57:13,937:DEBUG:	Completed epoch 28 in 1003.4772689342499
+2019-06-07 02:00:24,376:DEBUG:	UAS (wo. punct) 0.90093	 LAS (wo. punct) 0.8805
+2019-06-07 02:00:24,379:DEBUG:	UAS (w. punct) 0.8889	 LAS (w. punct) 0.87086
+2019-06-07 02:00:24,381:INFO:	Epoch 29
+2019-06-07 02:00:24,382:INFO:	=====================
+2019-06-07 02:17:01,877:DEBUG:	Completed epoch 29 in 997.4960761070251
+2019-06-07 02:20:11,959:DEBUG:	UAS (wo. punct) 0.90314	 LAS (wo. punct) 0.88287
+2019-06-07 02:20:11,963:DEBUG:	UAS (w. punct) 0.89164	 LAS (w. punct) 0.87373
+2019-06-07 02:20:15,775:INFO:	saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/model_1b.bpe.small.model
+2019-06-07 02:20:15,776:INFO:	Epoch 30
+2019-06-07 02:20:15,777:INFO:	=====================
+2019-06-07 02:38:21,385:DEBUG:	Completed epoch 30 in 1085.6095271110535
+2019-06-07 02:41:32,279:DEBUG:	UAS (wo. punct) 0.90188	 LAS (wo. punct) 0.88028
+2019-06-07 02:41:32,280:DEBUG:	UAS (w. punct) 0.89088	 LAS (w. punct) 0.87178
+2019-06-07 02:41:32,283:DEBUG:	Finished at epoch 30
+2019-06-07 02:41:32,331:INFO:	...Model trained
+2019-06-07 02:41:32,333:INFO:	Model maxed on dev at epoch 29 
+2019-06-07 02:45:26,216:DEBUG:	output file saved to /homedtic/lperez/UniParse/saved_models/1b/small_2_gpu_mini_dev/output.out
+2019-06-07 02:45:26,240:INFO:	{'uas': 0.8928237170270058, 'las': 0.87514836213432323, 'nopunct_uas': 0.9043765757333293, 'nopunct_las': 0.88426757650326848}
+2019-06-07 02:45:26,241:INFO:	
+2019-06-07 02:45:26,242:INFO:	--------------------------------------------------------
+2019-06-07 02:45:26,243:INFO:	Test score: 0.904376575733 0.884267576503
+2019-06-07 02:45:26,244:INFO:	--------------------------------------------------------
+2019-06-07 02:45:26,245:INFO:	

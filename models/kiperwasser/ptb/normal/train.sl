@@ -36,7 +36,7 @@ vocab_file=$results_folder/vocab.pkl
 # running the code
 
 do_training=True
-big_dataset=True
+big_dataset=False
 only_words=False
 
 cd /homedtic/lperez/UniParse
@@ -54,3 +54,4 @@ python kiperwasser_main.py --dynet_mem 8000 \
                            --vocab_file $vocab_file \
                            --big_dataset $big_dataset \
                            --only_words $only_words
+

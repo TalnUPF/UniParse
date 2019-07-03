@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name="ptb"
+#SBATCH --job-name="ptb_bpe"
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem=20Gb
@@ -19,9 +19,9 @@ python setup.py build_ext --inplace
 # dataset
 
 dataset_folder=homedtic/lperez/UniParse/datasets/PTB_SD_3_3_0/
-train_file=$dataset_folder/train.gold.conll
-dev_file=$dataset_folder/dev.gold.conll
-test_file=$dataset_folder/test.gold.conll
+train_file=$dataset_folder/train.gold.bpe.conll
+dev_file=$dataset_folder/dev.gold.bpe.conll
+test_file=$dataset_folder/test.gold.bpe.conll
 
 
 # results folder
@@ -36,7 +36,7 @@ vocab_file=$results_folder/vocab.pkl
 # running the code
 
 do_training=True
-big_dataset=False
+big_dataset=True
 only_words=False
 
 cd /homedtic/lperez/UniParse
