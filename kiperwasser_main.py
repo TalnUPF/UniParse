@@ -259,7 +259,7 @@ def main():
             logging.info('Training with normal dataset')
             parser = do_training(arguments, vocab, embs)
         else:
-            subset_size = 2
+            subset_size = 10000
             logging.info('Training with big dataset; subset_size = %i' % subset_size)
             parser = do_training_big_datasets(arguments, vocab, embs, subset_size)
 
