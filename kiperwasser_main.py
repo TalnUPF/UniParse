@@ -182,16 +182,13 @@ def create_new_conllu(original_file):
     return new_file_name
 
 
-def transform_to_conllu(arguments):
+def transform_to_conllu(filename):
     """
     Transform cvt_txt text input files into conllu that we can use.
     """
-    if arguments.test.endswith('.txt'):
-        arguments.test = create_new_conllu(arguments.test)
-    if arguments.dev.endswith('.txt'):
-        arguments.dev = create_new_conllu(arguments.dev)
-    if arguments.train.endswith('.txt'):
-        arguments.train = create_new_conllu(arguments.train)
+    if filename.endswith('.txt'):
+        filename = create_new_conllu(filename)
+    return filename
 
 
 def main():
@@ -250,7 +247,10 @@ def main():
 
     # transform input files into conllu if needed
 
-    transform_to_conllu(arguments)
+    arguments.train = transform_to_conllu(arguments.train)
+    arguments.dev = transform_to_conllu(arguments.dev)
+    arguments.test = transform_to_conllu(arguments.test)
+
 
     # load or train parser
 

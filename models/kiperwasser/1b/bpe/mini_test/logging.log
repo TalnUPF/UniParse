@@ -1,0 +1,469 @@
+2019-07-03 19:51:46,157:INFO:	
+
+
+===================================================================================================
+2019-07-03 19:51:46,157:INFO:	kiperwasser_main
+2019-07-03 19:51:46,157:INFO:	===================================================================================================
+
+2019-07-03 19:51:46,157:INFO:	
+Arguments:
+2019-07-03 19:51:46,157:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/home/lpmayos/code/datasets/test_1B_dataset/conll/1B_dev.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/logging.log', model_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', no_update_pretrained_emb=False, only_words=False, output_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/output.out', patience=-1, results_folder='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test', tb_dest=None, test='/home/lpmayos/code/datasets/test_1B_dataset/conll/1B_test.conllu', train='/home/lpmayos/code/datasets/test_1B_dataset/conll/1B_train.conllu', vocab_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-07-03 19:51:46,157:INFO:	
+
+2019-07-03 19:51:46,158:INFO:	> saving vocab to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl
+2019-07-03 19:51:46,158:INFO:	Training with big dataset; subset_size = 2
+2019-07-03 19:51:46,158:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-07-03 19:51:46,158:INFO:	tokenizing dev data ...
+2019-07-03 19:51:46,160:INFO:	_read_conll; read 6 sentences
+2019-07-03 19:51:46,160:INFO:	... tokenized dev data
+2019-07-03 19:51:46,160:INFO:	creating model ...
+2019-07-03 19:51:46,164:INFO:	... model created
+2019-07-03 19:51:46,164:INFO:	creating ModelSaveCallback ...
+2019-07-03 19:51:46,164:INFO:	saving model to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model  (after step 0)
+2019-07-03 19:51:46,164:INFO:	... ModelSaveCallback created
+2019-07-03 19:51:46,164:INFO:	creating Model ...
+2019-07-03 19:51:46,164:INFO:	... Model created
+2019-07-03 19:51:46,164:INFO:	training Model ...
+2019-07-03 19:51:46,164:DEBUG:	...Training without patience for exactly 30 epochs
+2019-07-03 19:51:46,164:INFO:	
+2019-07-03 19:51:46,164:INFO:	Epoch 1
+2019-07-03 19:51:46,164:INFO:	=====================
+2019-07-03 19:51:46,164:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,193:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,242:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,318:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,378:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,413:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,461:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:46,461:DEBUG:	Completed epoch 1 in 0.29662489891052246
+2019-07-03 19:51:46,531:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:46,533:DEBUG:	UAS (wo. punct) 0.022727	 LAS (wo. punct) 0.0
+2019-07-03 19:51:46,533:DEBUG:	UAS (w. punct) 0.019802	 LAS (w. punct) 0.0
+2019-07-03 19:51:46,786:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:46,786:INFO:	
+2019-07-03 19:51:46,786:INFO:	Epoch 2
+2019-07-03 19:51:46,786:INFO:	=====================
+2019-07-03 19:51:46,787:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,814:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,861:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,934:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:46,993:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,029:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,076:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:47,076:DEBUG:	Completed epoch 2 in 0.28956031799316406
+2019-07-03 19:51:47,146:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:47,148:DEBUG:	UAS (wo. punct) 0.0	 LAS (wo. punct) 0.0
+2019-07-03 19:51:47,148:DEBUG:	UAS (w. punct) 0.0	 LAS (w. punct) 0.0
+2019-07-03 19:51:47,148:INFO:	
+2019-07-03 19:51:47,148:INFO:	Epoch 3
+2019-07-03 19:51:47,148:INFO:	=====================
+2019-07-03 19:51:47,148:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,175:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,223:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,298:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,359:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,394:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,442:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:47,442:DEBUG:	Completed epoch 3 in 0.2942667007446289
+2019-07-03 19:51:47,513:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:47,514:DEBUG:	UAS (wo. punct) 0.017045	 LAS (wo. punct) 0.0056818
+2019-07-03 19:51:47,514:DEBUG:	UAS (w. punct) 0.014851	 LAS (w. punct) 0.0049505
+2019-07-03 19:51:47,514:INFO:	
+2019-07-03 19:51:47,514:INFO:	Epoch 4
+2019-07-03 19:51:47,514:INFO:	=====================
+2019-07-03 19:51:47,514:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,542:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,589:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,662:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,722:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,757:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:47,805:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:47,805:DEBUG:	Completed epoch 4 in 0.29085540771484375
+2019-07-03 19:51:47,875:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:47,877:DEBUG:	UAS (wo. punct) 0.051136	 LAS (wo. punct) 0.0056818
+2019-07-03 19:51:47,877:DEBUG:	UAS (w. punct) 0.044554	 LAS (w. punct) 0.0049505
+2019-07-03 19:51:48,133:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:48,133:INFO:	
+2019-07-03 19:51:48,133:INFO:	Epoch 5
+2019-07-03 19:51:48,133:INFO:	=====================
+2019-07-03 19:51:48,133:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,160:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,207:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,309:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,370:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,405:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,454:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:48,454:DEBUG:	Completed epoch 5 in 0.3213841915130615
+2019-07-03 19:51:48,524:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:48,525:DEBUG:	UAS (wo. punct) 0.045455	 LAS (wo. punct) 0.0056818
+2019-07-03 19:51:48,525:DEBUG:	UAS (w. punct) 0.054455	 LAS (w. punct) 0.009901
+2019-07-03 19:51:48,525:INFO:	
+2019-07-03 19:51:48,525:INFO:	Epoch 6
+2019-07-03 19:51:48,525:INFO:	=====================
+2019-07-03 19:51:48,526:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,553:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,602:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,674:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,734:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,770:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:48,818:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:48,818:DEBUG:	Completed epoch 6 in 0.2924363613128662
+2019-07-03 19:51:48,888:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:48,889:DEBUG:	UAS (wo. punct) 0.11932	 LAS (wo. punct) 0.039773
+2019-07-03 19:51:48,889:DEBUG:	UAS (w. punct) 0.12871	 LAS (w. punct) 0.039604
+2019-07-03 19:51:49,144:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:49,144:INFO:	
+2019-07-03 19:51:49,144:INFO:	Epoch 7
+2019-07-03 19:51:49,144:INFO:	=====================
+2019-07-03 19:51:49,144:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,172:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,221:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,294:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,358:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,393:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,441:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:49,441:DEBUG:	Completed epoch 7 in 0.29746246337890625
+2019-07-03 19:51:49,511:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:49,513:DEBUG:	UAS (wo. punct) 0.073864	 LAS (wo. punct) 0.011364
+2019-07-03 19:51:49,513:DEBUG:	UAS (w. punct) 0.089109	 LAS (w. punct) 0.029703
+2019-07-03 19:51:49,513:INFO:	
+2019-07-03 19:51:49,513:INFO:	Epoch 8
+2019-07-03 19:51:49,513:INFO:	=====================
+2019-07-03 19:51:49,513:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,541:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,588:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,663:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,723:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,758:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,806:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:49,806:DEBUG:	Completed epoch 8 in 0.2931084632873535
+2019-07-03 19:51:49,877:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:49,878:DEBUG:	UAS (wo. punct) 0.028409	 LAS (wo. punct) 0.011364
+2019-07-03 19:51:49,878:DEBUG:	UAS (w. punct) 0.024752	 LAS (w. punct) 0.009901
+2019-07-03 19:51:49,878:INFO:	
+2019-07-03 19:51:49,878:INFO:	Epoch 9
+2019-07-03 19:51:49,878:INFO:	=====================
+2019-07-03 19:51:49,878:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,906:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:49,954:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,026:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,087:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,124:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,172:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:50,172:DEBUG:	Completed epoch 9 in 0.29380130767822266
+2019-07-03 19:51:50,244:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:50,245:DEBUG:	UAS (wo. punct) 0.068182	 LAS (wo. punct) 0.017045
+2019-07-03 19:51:50,245:DEBUG:	UAS (w. punct) 0.064356	 LAS (w. punct) 0.014851
+2019-07-03 19:51:50,245:INFO:	
+2019-07-03 19:51:50,245:INFO:	Epoch 10
+2019-07-03 19:51:50,245:INFO:	=====================
+2019-07-03 19:51:50,245:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,273:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,320:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,393:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,454:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,489:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,537:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:50,537:DEBUG:	Completed epoch 10 in 0.29181528091430664
+2019-07-03 19:51:50,610:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:50,612:DEBUG:	UAS (wo. punct) 0.039773	 LAS (wo. punct) 0.017045
+2019-07-03 19:51:50,612:DEBUG:	UAS (w. punct) 0.039604	 LAS (w. punct) 0.019802
+2019-07-03 19:51:50,612:INFO:	
+2019-07-03 19:51:50,612:INFO:	Epoch 11
+2019-07-03 19:51:50,612:INFO:	=====================
+2019-07-03 19:51:50,612:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,640:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,687:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,759:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,820:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,855:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:50,903:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:50,904:DEBUG:	Completed epoch 11 in 0.29189610481262207
+2019-07-03 19:51:50,974:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:50,976:DEBUG:	UAS (wo. punct) 0.0056818	 LAS (wo. punct) 0.0
+2019-07-03 19:51:50,976:DEBUG:	UAS (w. punct) 0.0049505	 LAS (w. punct) 0.0
+2019-07-03 19:51:50,976:INFO:	
+2019-07-03 19:51:50,976:INFO:	Epoch 12
+2019-07-03 19:51:50,976:INFO:	=====================
+2019-07-03 19:51:50,976:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,004:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,051:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,126:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,188:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,223:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,271:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:51,271:DEBUG:	Completed epoch 12 in 0.29518628120422363
+2019-07-03 19:51:51,341:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:51,343:DEBUG:	UAS (wo. punct) 0.085227	 LAS (wo. punct) 0.022727
+2019-07-03 19:51:51,343:DEBUG:	UAS (w. punct) 0.094059	 LAS (w. punct) 0.024752
+2019-07-03 19:51:51,343:INFO:	
+2019-07-03 19:51:51,343:INFO:	Epoch 13
+2019-07-03 19:51:51,343:INFO:	=====================
+2019-07-03 19:51:51,343:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,371:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,418:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,491:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,552:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,587:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,638:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:51,638:DEBUG:	Completed epoch 13 in 0.29480791091918945
+2019-07-03 19:51:51,708:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:51,709:DEBUG:	UAS (wo. punct) 0.056818	 LAS (wo. punct) 0.034091
+2019-07-03 19:51:51,709:DEBUG:	UAS (w. punct) 0.059406	 LAS (w. punct) 0.034653
+2019-07-03 19:51:51,709:INFO:	
+2019-07-03 19:51:51,710:INFO:	Epoch 14
+2019-07-03 19:51:51,710:INFO:	=====================
+2019-07-03 19:51:51,710:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,737:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,785:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,858:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,918:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:51,954:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,005:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:52,005:DEBUG:	Completed epoch 14 in 0.2957627773284912
+2019-07-03 19:51:52,077:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:52,078:DEBUG:	UAS (wo. punct) 0.056818	 LAS (wo. punct) 0.011364
+2019-07-03 19:51:52,079:DEBUG:	UAS (w. punct) 0.064356	 LAS (w. punct) 0.024752
+2019-07-03 19:51:52,079:INFO:	
+2019-07-03 19:51:52,079:INFO:	Epoch 15
+2019-07-03 19:51:52,079:INFO:	=====================
+2019-07-03 19:51:52,079:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,107:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,155:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,230:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,293:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,328:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,376:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:52,376:DEBUG:	Completed epoch 15 in 0.2978334426879883
+2019-07-03 19:51:52,449:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:52,452:DEBUG:	UAS (wo. punct) 0.045455	 LAS (wo. punct) 0.017045
+2019-07-03 19:51:52,452:DEBUG:	UAS (w. punct) 0.054455	 LAS (w. punct) 0.019802
+2019-07-03 19:51:52,452:INFO:	
+2019-07-03 19:51:52,452:INFO:	Epoch 16
+2019-07-03 19:51:52,452:INFO:	=====================
+2019-07-03 19:51:52,452:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,480:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,527:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,599:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,661:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,698:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:52,748:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:52,748:DEBUG:	Completed epoch 16 in 0.29664015769958496
+2019-07-03 19:51:52,820:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:52,822:DEBUG:	UAS (wo. punct) 0.14773	 LAS (wo. punct) 0.079545
+2019-07-03 19:51:52,822:DEBUG:	UAS (w. punct) 0.15347	 LAS (w. punct) 0.069307
+2019-07-03 19:51:53,076:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:53,076:INFO:	
+2019-07-03 19:51:53,076:INFO:	Epoch 17
+2019-07-03 19:51:53,076:INFO:	=====================
+2019-07-03 19:51:53,077:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,104:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,152:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,224:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,285:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,321:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,371:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:53,371:DEBUG:	Completed epoch 17 in 0.2947843074798584
+2019-07-03 19:51:53,442:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:53,443:DEBUG:	UAS (wo. punct) 0.13068	 LAS (wo. punct) 0.073864
+2019-07-03 19:51:53,443:DEBUG:	UAS (w. punct) 0.14356	 LAS (w. punct) 0.079208
+2019-07-03 19:51:53,443:INFO:	
+2019-07-03 19:51:53,443:INFO:	Epoch 18
+2019-07-03 19:51:53,443:INFO:	=====================
+2019-07-03 19:51:53,443:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,471:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,518:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,591:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,654:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,689:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:53,737:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:53,737:DEBUG:	Completed epoch 18 in 0.293745756149292
+2019-07-03 19:51:53,810:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:53,812:DEBUG:	UAS (wo. punct) 0.17614	 LAS (wo. punct) 0.090909
+2019-07-03 19:51:53,812:DEBUG:	UAS (w. punct) 0.17822	 LAS (w. punct) 0.084158
+2019-07-03 19:51:54,071:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:54,072:INFO:	
+2019-07-03 19:51:54,072:INFO:	Epoch 19
+2019-07-03 19:51:54,072:INFO:	=====================
+2019-07-03 19:51:54,072:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,100:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,147:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,219:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,280:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,315:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,367:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:54,367:DEBUG:	Completed epoch 19 in 0.29558634757995605
+2019-07-03 19:51:54,437:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:54,439:DEBUG:	UAS (wo. punct) 0.13068	 LAS (wo. punct) 0.079545
+2019-07-03 19:51:54,439:DEBUG:	UAS (w. punct) 0.13366	 LAS (w. punct) 0.079208
+2019-07-03 19:51:54,439:INFO:	
+2019-07-03 19:51:54,439:INFO:	Epoch 20
+2019-07-03 19:51:54,439:INFO:	=====================
+2019-07-03 19:51:54,439:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,467:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,514:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,589:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,650:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,685:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:54,733:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:54,733:DEBUG:	Completed epoch 20 in 0.2943418025970459
+2019-07-03 19:51:54,808:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:54,809:DEBUG:	UAS (wo. punct) 0.19886	 LAS (wo. punct) 0.13068
+2019-07-03 19:51:54,809:DEBUG:	UAS (w. punct) 0.19802	 LAS (w. punct) 0.12376
+2019-07-03 19:51:55,062:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:55,062:INFO:	
+2019-07-03 19:51:55,062:INFO:	Epoch 21
+2019-07-03 19:51:55,062:INFO:	=====================
+2019-07-03 19:51:55,062:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,090:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,138:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,210:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,272:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,307:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,355:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:55,355:DEBUG:	Completed epoch 21 in 0.2925717830657959
+2019-07-03 19:51:55,429:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:55,430:DEBUG:	UAS (wo. punct) 0.13636	 LAS (wo. punct) 0.10227
+2019-07-03 19:51:55,430:DEBUG:	UAS (w. punct) 0.13366	 LAS (w. punct) 0.094059
+2019-07-03 19:51:55,430:INFO:	
+2019-07-03 19:51:55,430:INFO:	Epoch 22
+2019-07-03 19:51:55,430:INFO:	=====================
+2019-07-03 19:51:55,430:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,458:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,505:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,578:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,638:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,674:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:55,722:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:55,722:DEBUG:	Completed epoch 22 in 0.2916989326477051
+2019-07-03 19:51:55,792:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:55,794:DEBUG:	UAS (wo. punct) 0.22727	 LAS (wo. punct) 0.16477
+2019-07-03 19:51:55,794:DEBUG:	UAS (w. punct) 0.20792	 LAS (w. punct) 0.14851
+2019-07-03 19:51:56,049:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:56,049:INFO:	
+2019-07-03 19:51:56,049:INFO:	Epoch 23
+2019-07-03 19:51:56,049:INFO:	=====================
+2019-07-03 19:51:56,049:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,077:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,124:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,197:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,257:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,293:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,341:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:56,341:DEBUG:	Completed epoch 23 in 0.29213547706604004
+2019-07-03 19:51:56,415:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:56,416:DEBUG:	UAS (wo. punct) 0.18182	 LAS (wo. punct) 0.090909
+2019-07-03 19:51:56,416:DEBUG:	UAS (w. punct) 0.16832	 LAS (w. punct) 0.084158
+2019-07-03 19:51:56,416:INFO:	
+2019-07-03 19:51:56,416:INFO:	Epoch 24
+2019-07-03 19:51:56,416:INFO:	=====================
+2019-07-03 19:51:56,416:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,444:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,491:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,564:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,625:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,660:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:56,708:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:56,708:DEBUG:	Completed epoch 24 in 0.29152870178222656
+2019-07-03 19:51:56,778:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:56,780:DEBUG:	UAS (wo. punct) 0.23864	 LAS (wo. punct) 0.16477
+2019-07-03 19:51:56,780:DEBUG:	UAS (w. punct) 0.22277	 LAS (w. punct) 0.15347
+2019-07-03 19:51:57,038:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:57,038:INFO:	
+2019-07-03 19:51:57,038:INFO:	Epoch 25
+2019-07-03 19:51:57,038:INFO:	=====================
+2019-07-03 19:51:57,038:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,066:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,114:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,186:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,248:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,283:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,331:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:57,331:DEBUG:	Completed epoch 25 in 0.2932159900665283
+2019-07-03 19:51:57,404:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:57,406:DEBUG:	UAS (wo. punct) 0.22727	 LAS (wo. punct) 0.17045
+2019-07-03 19:51:57,406:DEBUG:	UAS (w. punct) 0.21782	 LAS (w. punct) 0.16337
+2019-07-03 19:51:57,406:INFO:	
+2019-07-03 19:51:57,406:INFO:	Epoch 26
+2019-07-03 19:51:57,406:INFO:	=====================
+2019-07-03 19:51:57,406:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,434:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,481:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,553:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,615:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,650:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,698:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:57,698:DEBUG:	Completed epoch 26 in 0.2923767566680908
+2019-07-03 19:51:57,769:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:57,770:DEBUG:	UAS (wo. punct) 0.21023	 LAS (wo. punct) 0.15341
+2019-07-03 19:51:57,770:DEBUG:	UAS (w. punct) 0.19307	 LAS (w. punct) 0.13861
+2019-07-03 19:51:57,770:INFO:	
+2019-07-03 19:51:57,770:INFO:	Epoch 27
+2019-07-03 19:51:57,770:INFO:	=====================
+2019-07-03 19:51:57,771:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,798:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,847:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,921:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:57,982:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:58,017:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:58,065:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:58,065:DEBUG:	Completed epoch 27 in 0.2945256233215332
+2019-07-03 19:51:58,136:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:58,137:DEBUG:	UAS (wo. punct) 0.27841	 LAS (wo. punct) 0.21023
+2019-07-03 19:51:58,137:DEBUG:	UAS (w. punct) 0.25743	 LAS (w. punct) 0.19307
+2019-07-03 19:51:58,393:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:58,393:INFO:	
+2019-07-03 19:51:58,393:INFO:	Epoch 28
+2019-07-03 19:51:58,393:INFO:	=====================
+2019-07-03 19:51:58,394:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:58,422:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:58,469:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:58,542:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:58,603:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:58,639:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:58,687:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:58,687:DEBUG:	Completed epoch 28 in 0.293548583984375
+2019-07-03 19:51:58,757:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:58,759:DEBUG:	UAS (wo. punct) 0.28977	 LAS (wo. punct) 0.23864
+2019-07-03 19:51:58,759:DEBUG:	UAS (w. punct) 0.26238	 LAS (w. punct) 0.21287
+2019-07-03 19:51:59,014:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:59,014:INFO:	
+2019-07-03 19:51:59,014:INFO:	Epoch 29
+2019-07-03 19:51:59,014:INFO:	=====================
+2019-07-03 19:51:59,015:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,042:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,090:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,163:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,224:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,259:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,308:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:59,308:DEBUG:	Completed epoch 29 in 0.29343199729919434
+2019-07-03 19:51:59,381:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:51:59,382:DEBUG:	UAS (wo. punct) 0.35227	 LAS (wo. punct) 0.26705
+2019-07-03 19:51:59,383:DEBUG:	UAS (w. punct) 0.31188	 LAS (w. punct) 0.23267
+2019-07-03 19:51:59,636:INFO:	saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model
+2019-07-03 19:51:59,636:INFO:	
+2019-07-03 19:51:59,636:INFO:	Epoch 30
+2019-07-03 19:51:59,636:INFO:	=====================
+2019-07-03 19:51:59,636:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,664:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,712:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,785:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,847:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,883:INFO:	_read_conll; read 2 sentences
+2019-07-03 19:51:59,931:INFO:	_read_conll; read 0 sentences
+2019-07-03 19:51:59,932:DEBUG:	Completed epoch 30 in 0.2954845428466797
+2019-07-03 19:52:00,003:DEBUG:	output file saved to 0703195146_on_1B_dev.conllu
+2019-07-03 19:52:00,004:DEBUG:	UAS (wo. punct) 0.32955	 LAS (wo. punct) 0.23295
+2019-07-03 19:52:00,005:DEBUG:	UAS (w. punct) 0.32178	 LAS (w. punct) 0.22772
+2019-07-03 19:52:00,005:DEBUG:	Finished at epoch 30
+2019-07-03 19:52:00,005:INFO:	...Model trained
+2019-07-03 19:52:00,005:INFO:	Model maxed on dev at epoch 29 
+2019-07-03 19:52:00,397:INFO:	_read_conll; read 9 sentences
+2019-07-03 19:52:00,465:DEBUG:	output file saved to /home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/output.out
+2019-07-03 19:52:00,466:INFO:	{'uas': 0.616822429906542, 'las': 0.5934579439252337, 'nopunct_uas': 0.6203208556149733, 'nopunct_las': 0.5935828877005348}
+2019-07-03 19:52:00,467:INFO:	
+--------------------------------------------------------
+2019-07-03 19:52:00,467:INFO:	Test score: 0.6203208556149733 0.5935828877005348
+2019-07-03 19:52:00,467:INFO:	--------------------------------------------------------
+

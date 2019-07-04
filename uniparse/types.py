@@ -40,6 +40,9 @@ class Parser(object):
     def __call__(self, *args, **kwargs):
         raise NotImplementedError("You need to implement the forward pas procedure your self")
 
+    def extract_internal_states(self, *args, **kwargs):
+        raise NotImplementedError("Not implemented!")
+
 
 # callback interface
 class Callback(object):

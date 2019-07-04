@@ -107,7 +107,34 @@ class Model(object):
             raise ValueError("no such data strategy")
 
         return _idx, _sentences
-    
+
+    def extract_embeddings(self, samples: List, batch_size: int):
+        """
+        based on original function 'run', but instead of calling _parser() to end up executing dynet 'transduce'
+        function, we call 'extract_internal_states' to end up executing dynet 'add_inputs' function:
+            add_inputs(es)
+                returns the list of state pairs (stateF, stateB) obtained by adding inputs to both forward (stateF) and
+                backward (stateB) RNNs. Does not preserve the internal state after adding the inputs
+        """
+        indices, batches = self._batch_data(samples, strategy=self._batch_strategy, scale=batch_size, shuffle=False)
+        backend = self.backend
+
+        embeddings = []
+        for indicies, (x, y) in zip(indices, batches):
+            backend.renew_cg()
+
+            words, lemmas, tags, chars = x
+
+            words = backend.input_tensor(words, dtype="int")
+            tags = backend.input_tensor(tags, dtype="int")
+            lemmas = backend.input_tensor(lemmas, dtype="int")
+
+            state_pairs_list = self._parser.extract_internal_states(words, tags)
+
+            embeddings.extend(state_pairs_list)
+
+        return embeddings
+
     def run(self, samples: List, batch_size: int):
         indices, batches = self._batch_data(samples, strategy=self._batch_strategy, scale=batch_size, shuffle=False)
         backend = self.backend

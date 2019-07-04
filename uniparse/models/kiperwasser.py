@@ -171,4 +171,15 @@ class DependencyParser(Parser):
 
         return parsed_tree, predicted_rels, arc_scores, rel_scores
 
+    def extract_internal_states(self, word_ids, upos_ids):
+        """
+        based on original function 'run', but instead of transduce we call add_inputs to get the list of state pairs
+        (stateF, stateB)
+        """
+        n = word_ids.shape[-1]
 
+        word_embs = [dy.lookup_batch(self.wlookup, word_ids[:, i]) for i in range(n)]
+        upos_embs = [dy.lookup_batch(self.tlookup, upos_ids[:, i]) for i in range(n)]
+        words = [dy.concatenate([w, p]) for w, p in zip(word_embs, upos_embs)]
+        state_pairs_list = self.deep_bilstm.add_inputs(words)
+        return state_pairs_list
