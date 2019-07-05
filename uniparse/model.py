@@ -116,22 +116,34 @@ class Model(object):
                 returns the list of state pairs (stateF, stateB) obtained by adding inputs to both forward (stateF) and
                 backward (stateB) RNNs. Does not preserve the internal state after adding the inputs
         """
-        indices, batches = self._batch_data(samples, strategy=self._batch_strategy, scale=batch_size, shuffle=False)
         backend = self.backend
 
-        embeddings = []
-        for indicies, (x, y) in zip(indices, batches):
+        embeddings = {}
+        i = 0
+        for sample in samples:
             backend.renew_cg()
 
-            words, lemmas, tags, chars = x
+            words, lemmas, tags, heads, rels, chars = sample
 
-            words = backend.input_tensor(words, dtype="int")
-            tags = backend.input_tensor(tags, dtype="int")
-            lemmas = backend.input_tensor(lemmas, dtype="int")
+            words = backend.input_tensor(np.array([words]), dtype="int")
+            tags = backend.input_tensor(np.array([tags]), dtype="int")
+            lemmas = backend.input_tensor(np.array([lemmas]), dtype="int")
 
-            state_pairs_list = self._parser.extract_internal_states(words, tags)
+            states = self._parser.extract_internal_states(words, tags)
 
-            embeddings.extend(state_pairs_list)
+            for state in states:
+                state_layer1 = state[0]
+                hidden_state_layer1 = state_layer1.s()
+                hidden_state_layer1_f = hidden_state_layer1[0].value()
+                hidden_state_layer1_b = hidden_state_layer1[1].value()
+
+                state_layer2 = state[1]
+                hidden_state_layer2 = state_layer2.s()
+                hidden_state_layer2_f = hidden_state_layer2[0].value()
+                hidden_state_layer2_b = hidden_state_layer2[1].value()
+
+                embeddings[i] = [hidden_state_layer1_f, hidden_state_layer1_b, hidden_state_layer2_f, hidden_state_layer2_b]
+                i += 1
 
         return embeddings
 

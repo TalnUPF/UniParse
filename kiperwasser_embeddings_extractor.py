@@ -57,14 +57,15 @@ def main():
     # parse test file
 
     input_data = vocab.tokenize_conll(arguments.input_file)
+
     embeddings = parser.extract_embeddings(input_data, arguments.batch_size)
-    first_embedding = embeddings[0][0]
-    output = first_embedding.h()
-    hidden_state = first_embedding.s()
-    s_f = hidden_state[0]
-    s_b = hidden_state[1]
-    print(s_f.value())
-    print(s_b.value())
+
+    for i, embedding in embeddings.items():
+        print(i)
+        print('\tl1_f: %s' % embedding[0])
+        print('\tl1_b: %s' % embedding[1])
+        print('\tl2_f: %s' % embedding[2])
+        print('\tl2_b: %s' % embedding[3])
 
 
 if __name__ == '__main__':
