@@ -1,0 +1,373 @@
+2019-07-04 12:07:00,178:INFO:	
+
+
+===================================================================================================
+2019-07-04 12:07:00,179:INFO:	kiperwasser_main
+2019-07-04 12:07:00,180:INFO:	===================================================================================================
+
+2019-07-04 12:07:00,181:INFO:	
+Arguments:
+2019-07-04 12:07:00,181:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/logging.log', model_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/model.model', no_update_pretrained_emb=False, only_words=False, output_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/output.out', patience=-1, results_folder='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false', tb_dest=None, test='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_test.bpe.conllu', train='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_train.bpe.conllu', vocab_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/vocab.pkl')
+2019-07-04 12:07:00,182:INFO:	
+
+2019-07-04 12:07:07,481:INFO:	> saving vocab to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/vocab.pkl
+2019-07-04 12:07:07,504:INFO:	Training with big dataset; subset_size = 10000
+2019-07-04 12:07:07,505:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-07-04 12:07:07,506:INFO:	tokenizing dev data ...
+2019-07-04 12:07:10,915:INFO:	_read_conll; read 7110 sentences
+2019-07-04 12:07:10,916:INFO:	... tokenized dev data
+2019-07-04 12:07:10,917:INFO:	creating model ...
+2019-07-04 12:07:10,948:INFO:	... model created
+2019-07-04 12:07:10,949:INFO:	creating ModelSaveCallback ...
+2019-07-04 12:07:10,950:INFO:	saving model to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/model.model  (after step 0)
+2019-07-04 12:07:10,951:INFO:	... ModelSaveCallback created
+2019-07-04 12:07:10,952:INFO:	creating Model ...
+2019-07-04 12:07:11,013:INFO:	... Model created
+2019-07-04 12:07:11,014:INFO:	training Model ...
+2019-07-04 12:07:11,015:DEBUG:	...Training without patience for exactly 30 epochs
+2019-07-04 12:07:11,016:INFO:	
+2019-07-04 12:07:11,016:INFO:	Epoch 1
+2019-07-04 12:07:11,017:INFO:	=====================
+2019-07-04 12:07:15,094:INFO:	_read_conll; read 10000 sentences
+2019-07-04 12:16:36,988:INFO:	_read_conll; read 10000 sentences
+2019-07-04 12:24:37,165:INFO:	_read_conll; read 9984 sentences
+2019-07-04 12:32:36,179:INFO:	_read_conll; read 0 sentences
+2019-07-04 12:32:36,216:DEBUG:	Completed epoch 1 in 1525.2000467777252
+2019-07-04 12:33:10,573:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 12:33:13,810:DEBUG:	UAS (wo. punct) 0.90061	 LAS (wo. punct) 0.87935
+2019-07-04 12:33:13,811:DEBUG:	UAS (w. punct) 0.89157	 LAS (w. punct) 0.87262
+2019-07-04 12:33:17,618:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/model.model
+2019-07-04 12:33:17,619:INFO:	
+2019-07-04 12:33:17,620:INFO:	Epoch 2
+2019-07-04 12:33:17,621:INFO:	=====================
+2019-07-04 12:33:21,694:INFO:	_read_conll; read 10000 sentences
+2019-07-04 12:42:31,629:INFO:	_read_conll; read 10000 sentences
+2019-07-04 13:06:07,669:INFO:	_read_conll; read 9984 sentences
+2019-07-04 13:29:46,398:INFO:	_read_conll; read 0 sentences
+2019-07-04 13:29:46,435:DEBUG:	Completed epoch 2 in 3388.815726995468
+2019-07-04 13:35:13,370:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 13:35:16,514:DEBUG:	UAS (wo. punct) 0.91899	 LAS (wo. punct) 0.89902
+2019-07-04 13:35:16,515:DEBUG:	UAS (w. punct) 0.90928	 LAS (w. punct) 0.89169
+2019-07-04 13:35:19,938:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/model.model
+2019-07-04 13:35:19,939:INFO:	
+2019-07-04 13:35:19,940:INFO:	Epoch 3
+2019-07-04 13:35:19,941:INFO:	=====================
+2019-07-04 13:35:24,177:INFO:	_read_conll; read 10000 sentences
+2019-07-04 14:00:28,259:INFO:	_read_conll; read 10000 sentences
+2019-07-04 14:24:44,445:INFO:	_read_conll; read 9984 sentences
+2019-07-04 14:48:32,702:INFO:	_read_conll; read 0 sentences
+2019-07-04 14:48:32,737:DEBUG:	Completed epoch 3 in 4392.79817533493
+2019-07-04 14:54:00,466:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 14:54:03,487:DEBUG:	UAS (wo. punct) 0.92772	 LAS (wo. punct) 0.91075
+2019-07-04 14:54:03,488:DEBUG:	UAS (w. punct) 0.91903	 LAS (w. punct) 0.90407
+2019-07-04 14:54:07,196:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/model.model
+2019-07-04 14:54:07,197:INFO:	
+2019-07-04 14:54:07,197:INFO:	Epoch 4
+2019-07-04 14:54:07,198:INFO:	=====================
+2019-07-04 14:54:11,438:INFO:	_read_conll; read 10000 sentences
+2019-07-04 15:19:11,788:INFO:	_read_conll; read 10000 sentences
+2019-07-04 15:43:27,265:INFO:	_read_conll; read 9984 sentences
+2019-07-04 16:07:26,802:INFO:	_read_conll; read 0 sentences
+2019-07-04 16:07:26,840:DEBUG:	Completed epoch 4 in 4399.643282175064
+2019-07-04 16:12:51,693:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 16:12:54,752:DEBUG:	UAS (wo. punct) 0.92864	 LAS (wo. punct) 0.91288
+2019-07-04 16:12:54,754:DEBUG:	UAS (w. punct) 0.92031	 LAS (w. punct) 0.9064
+2019-07-04 16:12:58,462:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/model.model
+2019-07-04 16:12:58,463:INFO:	
+2019-07-04 16:12:58,464:INFO:	Epoch 5
+2019-07-04 16:12:58,465:INFO:	=====================
+2019-07-04 16:13:02,708:INFO:	_read_conll; read 10000 sentences
+2019-07-04 16:37:34,073:INFO:	_read_conll; read 10000 sentences
+2019-07-04 17:00:36,987:INFO:	_read_conll; read 9984 sentences
+2019-07-04 17:16:30,924:INFO:	_read_conll; read 0 sentences
+2019-07-04 17:16:30,957:DEBUG:	Completed epoch 5 in 3812.494275331497
+2019-07-04 17:20:08,124:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 17:20:09,796:DEBUG:	UAS (wo. punct) 0.92907	 LAS (wo. punct) 0.91277
+2019-07-04 17:20:09,798:DEBUG:	UAS (w. punct) 0.92085	 LAS (w. punct) 0.90649
+2019-07-04 17:20:11,862:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/model.model
+2019-07-04 17:20:11,863:INFO:	
+2019-07-04 17:20:11,863:INFO:	Epoch 6
+2019-07-04 17:20:11,864:INFO:	=====================
+2019-07-04 17:20:14,302:INFO:	_read_conll; read 10000 sentences
+2019-07-04 17:36:39,725:INFO:	_read_conll; read 10000 sentences
+2019-07-04 17:52:22,707:INFO:	_read_conll; read 9984 sentences
+2019-07-04 18:08:10,451:INFO:	_read_conll; read 0 sentences
+2019-07-04 18:08:10,484:DEBUG:	Completed epoch 6 in 2878.620722055435
+2019-07-04 18:11:48,366:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 18:11:50,199:DEBUG:	UAS (wo. punct) 0.92866	 LAS (wo. punct) 0.91326
+2019-07-04 18:11:50,200:DEBUG:	UAS (w. punct) 0.92019	 LAS (w. punct) 0.9066
+2019-07-04 18:11:50,200:INFO:	
+2019-07-04 18:11:50,201:INFO:	Epoch 7
+2019-07-04 18:11:50,202:INFO:	=====================
+2019-07-04 18:11:52,532:INFO:	_read_conll; read 10000 sentences
+2019-07-04 18:28:29,412:INFO:	_read_conll; read 10000 sentences
+2019-07-04 18:44:30,453:INFO:	_read_conll; read 9984 sentences
+2019-07-04 19:00:32,947:INFO:	_read_conll; read 0 sentences
+2019-07-04 19:00:32,974:DEBUG:	Completed epoch 7 in 2922.7733447551727
+2019-07-04 19:04:16,145:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 19:04:18,038:DEBUG:	UAS (wo. punct) 0.92755	 LAS (wo. punct) 0.911
+2019-07-04 19:04:18,039:DEBUG:	UAS (w. punct) 0.91916	 LAS (w. punct) 0.9046
+2019-07-04 19:04:18,040:INFO:	
+2019-07-04 19:04:18,040:INFO:	Epoch 8
+2019-07-04 19:04:18,041:INFO:	=====================
+2019-07-04 19:04:20,492:INFO:	_read_conll; read 10000 sentences
+2019-07-04 19:20:56,536:INFO:	_read_conll; read 10000 sentences
+2019-07-04 19:36:59,724:INFO:	_read_conll; read 9984 sentences
+2019-07-04 19:54:01,493:INFO:	_read_conll; read 0 sentences
+2019-07-04 19:54:01,544:DEBUG:	Completed epoch 8 in 2983.5039625167847
+2019-07-04 19:58:41,580:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 19:58:43,662:DEBUG:	UAS (wo. punct) 0.92652	 LAS (wo. punct) 0.91108
+2019-07-04 19:58:43,663:DEBUG:	UAS (w. punct) 0.91783	 LAS (w. punct) 0.90419
+2019-07-04 19:58:43,664:INFO:	
+2019-07-04 19:58:43,665:INFO:	Epoch 9
+2019-07-04 19:58:43,667:INFO:	=====================
+2019-07-04 19:58:46,291:INFO:	_read_conll; read 10000 sentences
+2019-07-04 20:19:15,551:INFO:	_read_conll; read 10000 sentences
+2019-07-04 20:38:51,041:INFO:	_read_conll; read 9984 sentences
+2019-07-04 20:58:24,792:INFO:	_read_conll; read 0 sentences
+2019-07-04 20:58:24,835:DEBUG:	Completed epoch 9 in 3581.1701221466064
+2019-07-04 21:02:59,713:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 21:03:01,787:DEBUG:	UAS (wo. punct) 0.92678	 LAS (wo. punct) 0.91096
+2019-07-04 21:03:01,788:DEBUG:	UAS (w. punct) 0.91756	 LAS (w. punct) 0.90362
+2019-07-04 21:03:01,790:INFO:	
+2019-07-04 21:03:01,790:INFO:	Epoch 10
+2019-07-04 21:03:01,791:INFO:	=====================
+2019-07-04 21:03:04,591:INFO:	_read_conll; read 10000 sentences
+2019-07-04 21:23:39,517:INFO:	_read_conll; read 10000 sentences
+2019-07-04 21:42:48,905:INFO:	_read_conll; read 9984 sentences
+2019-07-04 21:59:41,408:INFO:	_read_conll; read 0 sentences
+2019-07-04 21:59:41,438:DEBUG:	Completed epoch 10 in 3399.6478567123413
+2019-07-04 22:03:20,489:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 22:03:22,171:DEBUG:	UAS (wo. punct) 0.92694	 LAS (wo. punct) 0.91093
+2019-07-04 22:03:22,172:DEBUG:	UAS (w. punct) 0.9183	 LAS (w. punct) 0.90416
+2019-07-04 22:03:22,173:INFO:	
+2019-07-04 22:03:22,174:INFO:	Epoch 11
+2019-07-04 22:03:22,175:INFO:	=====================
+2019-07-04 22:03:24,469:INFO:	_read_conll; read 10000 sentences
+2019-07-04 22:20:07,810:INFO:	_read_conll; read 10000 sentences
+2019-07-04 22:36:01,523:INFO:	_read_conll; read 9984 sentences
+2019-07-04 22:51:59,019:INFO:	_read_conll; read 0 sentences
+2019-07-04 22:51:59,054:DEBUG:	Completed epoch 11 in 2916.8809747695923
+2019-07-04 22:55:38,845:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 22:55:40,509:DEBUG:	UAS (wo. punct) 0.92613	 LAS (wo. punct) 0.91042
+2019-07-04 22:55:40,510:DEBUG:	UAS (w. punct) 0.91765	 LAS (w. punct) 0.90379
+2019-07-04 22:55:40,511:INFO:	
+2019-07-04 22:55:40,512:INFO:	Epoch 12
+2019-07-04 22:55:40,513:INFO:	=====================
+2019-07-04 22:55:42,950:INFO:	_read_conll; read 10000 sentences
+2019-07-04 23:12:24,048:INFO:	_read_conll; read 10000 sentences
+2019-07-04 23:28:32,720:INFO:	_read_conll; read 9984 sentences
+2019-07-04 23:44:27,893:INFO:	_read_conll; read 0 sentences
+2019-07-04 23:44:27,950:DEBUG:	Completed epoch 12 in 2927.4386897087097
+2019-07-04 23:48:08,324:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-04 23:48:10,105:DEBUG:	UAS (wo. punct) 0.92618	 LAS (wo. punct) 0.91001
+2019-07-04 23:48:10,106:DEBUG:	UAS (w. punct) 0.91698	 LAS (w. punct) 0.9027
+2019-07-04 23:48:10,106:INFO:	
+2019-07-04 23:48:10,107:INFO:	Epoch 13
+2019-07-04 23:48:10,108:INFO:	=====================
+2019-07-04 23:48:12,424:INFO:	_read_conll; read 10000 sentences
+2019-07-05 00:04:57,251:INFO:	_read_conll; read 10000 sentences
+2019-07-05 00:20:52,220:INFO:	_read_conll; read 9984 sentences
+2019-07-05 00:36:53,899:INFO:	_read_conll; read 0 sentences
+2019-07-05 00:36:53,927:DEBUG:	Completed epoch 13 in 2923.8206803798676
+2019-07-05 00:40:32,887:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 00:40:34,522:DEBUG:	UAS (wo. punct) 0.92646	 LAS (wo. punct) 0.91049
+2019-07-05 00:40:34,523:DEBUG:	UAS (w. punct) 0.91762	 LAS (w. punct) 0.90357
+2019-07-05 00:40:34,524:INFO:	
+2019-07-05 00:40:34,525:INFO:	Epoch 14
+2019-07-05 00:40:34,526:INFO:	=====================
+2019-07-05 00:40:36,826:INFO:	_read_conll; read 10000 sentences
+2019-07-05 00:57:16,315:INFO:	_read_conll; read 10000 sentences
+2019-07-05 01:13:19,484:INFO:	_read_conll; read 9984 sentences
+2019-07-05 01:29:11,525:INFO:	_read_conll; read 0 sentences
+2019-07-05 01:29:11,560:DEBUG:	Completed epoch 14 in 2917.0358169078827
+2019-07-05 01:32:50,926:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 01:32:52,575:DEBUG:	UAS (wo. punct) 0.92459	 LAS (wo. punct) 0.90824
+2019-07-05 01:32:52,576:DEBUG:	UAS (w. punct) 0.91495	 LAS (w. punct) 0.90053
+2019-07-05 01:32:52,576:INFO:	
+2019-07-05 01:32:52,577:INFO:	Epoch 15
+2019-07-05 01:32:52,578:INFO:	=====================
+2019-07-05 01:32:54,999:INFO:	_read_conll; read 10000 sentences
+2019-07-05 01:49:24,879:INFO:	_read_conll; read 10000 sentences
+2019-07-05 02:05:11,840:INFO:	_read_conll; read 9984 sentences
+2019-07-05 02:20:54,894:INFO:	_read_conll; read 0 sentences
+2019-07-05 02:20:54,927:DEBUG:	Completed epoch 15 in 2882.3504848480225
+2019-07-05 02:24:33,388:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 02:24:35,164:DEBUG:	UAS (wo. punct) 0.92457	 LAS (wo. punct) 0.90813
+2019-07-05 02:24:35,165:DEBUG:	UAS (w. punct) 0.91531	 LAS (w. punct) 0.90083
+2019-07-05 02:24:35,166:INFO:	
+2019-07-05 02:24:35,167:INFO:	Epoch 16
+2019-07-05 02:24:35,168:INFO:	=====================
+2019-07-05 02:24:37,512:INFO:	_read_conll; read 10000 sentences
+2019-07-05 02:41:07,030:INFO:	_read_conll; read 10000 sentences
+2019-07-05 02:56:56,930:INFO:	_read_conll; read 9984 sentences
+2019-07-05 03:13:05,493:INFO:	_read_conll; read 0 sentences
+2019-07-05 03:13:05,522:DEBUG:	Completed epoch 16 in 2910.3553533554077
+2019-07-05 03:16:45,638:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 03:16:47,274:DEBUG:	UAS (wo. punct) 0.92515	 LAS (wo. punct) 0.90876
+2019-07-05 03:16:47,275:DEBUG:	UAS (w. punct) 0.91604	 LAS (w. punct) 0.90162
+2019-07-05 03:16:47,276:INFO:	
+2019-07-05 03:16:47,277:INFO:	Epoch 17
+2019-07-05 03:16:47,278:INFO:	=====================
+2019-07-05 03:16:49,673:INFO:	_read_conll; read 10000 sentences
+2019-07-05 03:33:36,120:INFO:	_read_conll; read 10000 sentences
+2019-07-05 03:49:29,940:INFO:	_read_conll; read 9984 sentences
+2019-07-05 04:05:14,348:INFO:	_read_conll; read 0 sentences
+2019-07-05 04:05:14,376:DEBUG:	Completed epoch 17 in 2907.100102186203
+2019-07-05 04:08:54,265:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 04:08:56,039:DEBUG:	UAS (wo. punct) 0.92482	 LAS (wo. punct) 0.90771
+2019-07-05 04:08:56,040:DEBUG:	UAS (w. punct) 0.9152	 LAS (w. punct) 0.90008
+2019-07-05 04:08:56,040:INFO:	
+2019-07-05 04:08:56,041:INFO:	Epoch 18
+2019-07-05 04:08:56,042:INFO:	=====================
+2019-07-05 04:08:58,342:INFO:	_read_conll; read 10000 sentences
+2019-07-05 04:25:29,020:INFO:	_read_conll; read 10000 sentences
+2019-07-05 04:41:25,401:INFO:	_read_conll; read 9984 sentences
+2019-07-05 04:57:16,163:INFO:	_read_conll; read 0 sentences
+2019-07-05 04:57:16,198:DEBUG:	Completed epoch 18 in 2900.157413959503
+2019-07-05 05:00:55,871:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 05:00:57,637:DEBUG:	UAS (wo. punct) 0.92524	 LAS (wo. punct) 0.90914
+2019-07-05 05:00:57,638:DEBUG:	UAS (w. punct) 0.91599	 LAS (w. punct) 0.90182
+2019-07-05 05:00:57,638:INFO:	
+2019-07-05 05:00:57,639:INFO:	Epoch 19
+2019-07-05 05:00:57,639:INFO:	=====================
+2019-07-05 05:00:59,966:INFO:	_read_conll; read 10000 sentences
+2019-07-05 05:17:40,474:INFO:	_read_conll; read 10000 sentences
+2019-07-05 05:33:28,500:INFO:	_read_conll; read 9984 sentences
+2019-07-05 05:49:12,198:INFO:	_read_conll; read 0 sentences
+2019-07-05 05:49:12,224:DEBUG:	Completed epoch 19 in 2894.585880279541
+2019-07-05 05:52:51,451:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 05:52:53,091:DEBUG:	UAS (wo. punct) 0.92397	 LAS (wo. punct) 0.90731
+2019-07-05 05:52:53,092:DEBUG:	UAS (w. punct) 0.91466	 LAS (w. punct) 0.90001
+2019-07-05 05:52:53,093:INFO:	
+2019-07-05 05:52:53,094:INFO:	Epoch 20
+2019-07-05 05:52:53,094:INFO:	=====================
+2019-07-05 05:52:55,510:INFO:	_read_conll; read 10000 sentences
+2019-07-05 06:09:30,775:INFO:	_read_conll; read 10000 sentences
+2019-07-05 06:25:18,423:INFO:	_read_conll; read 9984 sentences
+2019-07-05 06:41:01,088:INFO:	_read_conll; read 0 sentences
+2019-07-05 06:41:01,122:DEBUG:	Completed epoch 20 in 2888.029374361038
+2019-07-05 06:44:40,606:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 06:44:42,403:DEBUG:	UAS (wo. punct) 0.92502	 LAS (wo. punct) 0.90866
+2019-07-05 06:44:42,404:DEBUG:	UAS (w. punct) 0.91529	 LAS (w. punct) 0.90089
+2019-07-05 06:44:42,405:INFO:	
+2019-07-05 06:44:42,406:INFO:	Epoch 21
+2019-07-05 06:44:42,407:INFO:	=====================
+2019-07-05 06:44:44,709:INFO:	_read_conll; read 10000 sentences
+2019-07-05 07:01:35,664:INFO:	_read_conll; read 10000 sentences
+2019-07-05 07:17:30,512:INFO:	_read_conll; read 9984 sentences
+2019-07-05 07:33:28,720:INFO:	_read_conll; read 0 sentences
+2019-07-05 07:33:28,754:DEBUG:	Completed epoch 21 in 2926.348803281784
+2019-07-05 07:37:08,443:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 07:37:10,077:DEBUG:	UAS (wo. punct) 0.92337	 LAS (wo. punct) 0.90609
+2019-07-05 07:37:10,078:DEBUG:	UAS (w. punct) 0.91345	 LAS (w. punct) 0.89823
+2019-07-05 07:37:10,079:INFO:	
+2019-07-05 07:37:10,079:INFO:	Epoch 22
+2019-07-05 07:37:10,080:INFO:	=====================
+2019-07-05 07:37:12,495:INFO:	_read_conll; read 10000 sentences
+2019-07-05 07:53:44,596:INFO:	_read_conll; read 10000 sentences
+2019-07-05 08:09:43,022:INFO:	_read_conll; read 9984 sentences
+2019-07-05 08:25:26,980:INFO:	_read_conll; read 0 sentences
+2019-07-05 08:25:27,015:DEBUG:	Completed epoch 22 in 2896.9360888004303
+2019-07-05 08:29:06,077:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 08:29:07,807:DEBUG:	UAS (wo. punct) 0.92412	 LAS (wo. punct) 0.90741
+2019-07-05 08:29:07,808:DEBUG:	UAS (w. punct) 0.91485	 LAS (w. punct) 0.90017
+2019-07-05 08:29:07,809:INFO:	
+2019-07-05 08:29:07,810:INFO:	Epoch 23
+2019-07-05 08:29:07,811:INFO:	=====================
+2019-07-05 08:29:10,163:INFO:	_read_conll; read 10000 sentences
+2019-07-05 08:45:41,007:INFO:	_read_conll; read 10000 sentences
+2019-07-05 09:01:29,983:INFO:	_read_conll; read 9984 sentences
+2019-07-05 09:17:19,339:INFO:	_read_conll; read 0 sentences
+2019-07-05 09:17:19,367:DEBUG:	Completed epoch 23 in 2891.5586247444153
+2019-07-05 09:20:58,471:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 09:21:05,263:DEBUG:	UAS (wo. punct) 0.92402	 LAS (wo. punct) 0.90739
+2019-07-05 09:21:05,264:DEBUG:	UAS (w. punct) 0.9146	 LAS (w. punct) 0.89997
+2019-07-05 09:21:05,266:INFO:	
+2019-07-05 09:21:05,267:INFO:	Epoch 24
+2019-07-05 09:21:05,268:INFO:	=====================
+2019-07-05 09:21:07,956:INFO:	_read_conll; read 10000 sentences
+2019-07-05 09:37:46,926:INFO:	_read_conll; read 10000 sentences
+2019-07-05 09:53:36,875:INFO:	_read_conll; read 9984 sentences
+2019-07-05 10:09:26,211:INFO:	_read_conll; read 0 sentences
+2019-07-05 10:09:26,238:DEBUG:	Completed epoch 24 in 2900.972320795059
+2019-07-05 10:13:05,390:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 10:13:07,192:DEBUG:	UAS (wo. punct) 0.92279	 LAS (wo. punct) 0.90644
+2019-07-05 10:13:07,193:DEBUG:	UAS (w. punct) 0.91328	 LAS (w. punct) 0.89894
+2019-07-05 10:13:07,194:INFO:	
+2019-07-05 10:13:07,195:INFO:	Epoch 25
+2019-07-05 10:13:07,196:INFO:	=====================
+2019-07-05 10:13:09,524:INFO:	_read_conll; read 10000 sentences
+2019-07-05 10:29:45,001:INFO:	_read_conll; read 10000 sentences
+2019-07-05 10:45:44,686:INFO:	_read_conll; read 9984 sentences
+2019-07-05 11:04:14,285:INFO:	_read_conll; read 0 sentences
+2019-07-05 11:04:14,324:DEBUG:	Completed epoch 25 in 3067.129988670349
+2019-07-05 11:10:31,235:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 11:10:34,696:DEBUG:	UAS (wo. punct) 0.92502	 LAS (wo. punct) 0.90823
+2019-07-05 11:10:34,697:DEBUG:	UAS (w. punct) 0.91579	 LAS (w. punct) 0.90103
+2019-07-05 11:10:34,698:INFO:	
+2019-07-05 11:10:34,698:INFO:	Epoch 26
+2019-07-05 11:10:34,699:INFO:	=====================
+2019-07-05 11:10:39,613:INFO:	_read_conll; read 10000 sentences
+2019-07-05 11:38:05,413:INFO:	_read_conll; read 10000 sentences
+2019-07-05 12:04:55,190:INFO:	_read_conll; read 9984 sentences
+2019-07-05 12:31:42,337:INFO:	_read_conll; read 0 sentences
+2019-07-05 12:31:42,376:DEBUG:	Completed epoch 26 in 4867.678627490997
+2019-07-05 12:37:43,062:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 12:37:44,782:DEBUG:	UAS (wo. punct) 0.92364	 LAS (wo. punct) 0.9075
+2019-07-05 12:37:44,783:DEBUG:	UAS (w. punct) 0.91451	 LAS (w. punct) 0.90029
+2019-07-05 12:37:44,784:INFO:	
+2019-07-05 12:37:44,784:INFO:	Epoch 27
+2019-07-05 12:37:44,785:INFO:	=====================
+2019-07-05 12:37:47,313:INFO:	_read_conll; read 10000 sentences
+2019-07-05 13:05:08,958:INFO:	_read_conll; read 10000 sentences
+2019-07-05 13:31:31,934:INFO:	_read_conll; read 9984 sentences
+2019-07-05 13:57:25,891:INFO:	_read_conll; read 0 sentences
+2019-07-05 13:57:25,930:DEBUG:	Completed epoch 27 in 4781.146194219589
+2019-07-05 14:03:54,735:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 14:03:58,326:DEBUG:	UAS (wo. punct) 0.92475	 LAS (wo. punct) 0.90823
+2019-07-05 14:03:58,327:DEBUG:	UAS (w. punct) 0.91539	 LAS (w. punct) 0.90081
+2019-07-05 14:03:58,328:INFO:	
+2019-07-05 14:03:58,328:INFO:	Epoch 28
+2019-07-05 14:03:58,329:INFO:	=====================
+2019-07-05 14:04:03,100:INFO:	_read_conll; read 10000 sentences
+2019-07-05 14:30:38,448:INFO:	_read_conll; read 10000 sentences
+2019-07-05 14:56:45,354:INFO:	_read_conll; read 9984 sentences
+2019-07-05 15:22:40,086:INFO:	_read_conll; read 0 sentences
+2019-07-05 15:22:40,125:DEBUG:	Completed epoch 28 in 4721.797731161118
+2019-07-05 15:29:01,210:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 15:29:04,849:DEBUG:	UAS (wo. punct) 0.9229	 LAS (wo. punct) 0.90647
+2019-07-05 15:29:04,850:DEBUG:	UAS (w. punct) 0.91361	 LAS (w. punct) 0.89914
+2019-07-05 15:29:04,850:INFO:	
+2019-07-05 15:29:04,851:INFO:	Epoch 29
+2019-07-05 15:29:04,851:INFO:	=====================
+2019-07-05 15:29:09,648:INFO:	_read_conll; read 10000 sentences
+2019-07-05 15:55:12,172:INFO:	_read_conll; read 10000 sentences
+2019-07-05 16:20:30,923:INFO:	_read_conll; read 9984 sentences
+2019-07-05 16:47:16,498:INFO:	_read_conll; read 0 sentences
+2019-07-05 16:47:16,533:DEBUG:	Completed epoch 29 in 4691.682787895203
+2019-07-05 16:51:07,103:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 16:51:09,035:DEBUG:	UAS (wo. punct) 0.92371	 LAS (wo. punct) 0.90711
+2019-07-05 16:51:09,036:DEBUG:	UAS (w. punct) 0.91453	 LAS (w. punct) 0.89988
+2019-07-05 16:51:09,037:INFO:	
+2019-07-05 16:51:09,037:INFO:	Epoch 30
+2019-07-05 16:51:09,037:INFO:	=====================
+2019-07-05 16:51:11,554:INFO:	_read_conll; read 10000 sentences
+2019-07-05 17:08:36,180:INFO:	_read_conll; read 10000 sentences
+2019-07-05 17:25:16,312:INFO:	_read_conll; read 9984 sentences
+2019-07-05 17:42:00,852:INFO:	_read_conll; read 0 sentences
+2019-07-05 17:42:00,887:DEBUG:	Completed epoch 30 in 3051.850152492523
+2019-07-05 17:45:52,155:DEBUG:	output file saved to 0704120710_on_1b_dev.bpe.conllu
+2019-07-05 17:45:54,066:DEBUG:	UAS (wo. punct) 0.92387	 LAS (wo. punct) 0.90729
+2019-07-05 17:45:54,067:DEBUG:	UAS (w. punct) 0.9144	 LAS (w. punct) 0.89981
+2019-07-05 17:45:54,068:DEBUG:	Finished at epoch 30
+2019-07-05 17:45:54,096:INFO:	...Model trained
+2019-07-05 17:45:54,097:INFO:	Model maxed on dev at epoch 5 
+2019-07-05 17:45:57,097:INFO:	_read_conll; read 2835 sentences
+2019-07-05 17:46:09,623:DEBUG:	output file saved to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/mini/only_words_false/output.out
+2019-07-05 17:46:10,362:INFO:	{'uas': 0.92285953527318398, 'las': 0.90840223989951852, 'nopunct_uas': 0.93161567040202975, 'nopunct_las': 0.91510858730782008}
+2019-07-05 17:46:10,363:INFO:	
+--------------------------------------------------------
+2019-07-05 17:46:10,364:INFO:	Test score: 0.931615670402 0.915108587308
+2019-07-05 17:46:10,365:INFO:	--------------------------------------------------------
+
