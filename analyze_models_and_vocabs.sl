@@ -4,6 +4,7 @@
 #SBATCH -N 1
 #SBATCH --mem=10Gb
 #SBATCH -p high
+#SBATCH --gres=gpu:1
 
 
 module load Tensorflow-gpu/1.12.0-foss-2017a-Python-3.6.4
