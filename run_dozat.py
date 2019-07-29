@@ -3,7 +3,7 @@ import argparse
 import numpy as np
 import dynet as dy
 
-from uniparse import Vocabulary, Model
+from uniparse import Vocabulary, ParserModel
 from uniparse.models.dozat import BaseParser
 from uniparse.types import Callback
 from uniparse.callbacks import TensorboardLoggerCallback, ModelSaveCallback
@@ -114,7 +114,7 @@ if arguments.tb_dest:
 else:
     callbacks = [custom_learning_update_callback, save_callback]
 
-parser = Model(
+parser = ParserModel(
     model, decoder="cle", loss="crossentropy", optimizer=optimizer, strategy="scaled_batch", vocab=vocab)
 
 """ Prep data """

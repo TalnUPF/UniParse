@@ -3,7 +3,7 @@ import argparse
 
 from uniparse.callbacks import ModelSaveCallback
 
-from uniparse import Model
+from uniparse import ParserModel
 from uniparse.vocabulary import Vocabulary
 from uniparse.models.pytorch_kiperwasser import DependencyParser
 
@@ -34,7 +34,7 @@ model = DependencyParser(vocab)
 save_callback = ModelSaveCallback(arguments.model)
 
 # prep params
-parser = Model(
+parser = ParserModel(
     model, decoder=arguments.decoder, loss="hinge", optimizer="adam", strategy="bucket", vocab=vocab)
 
 

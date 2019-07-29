@@ -1,6 +1,6 @@
 import argparse
 
-from uniparse import Vocabulary, Model
+from uniparse import Vocabulary, ParserModel
 from uniparse.callbacks import TensorboardLoggerCallback, ModelSaveCallback
 from uniparse.models.kiperwasser import DependencyParser
 
@@ -61,7 +61,7 @@ save_callback = ModelSaveCallback(arguments.model_dest)
 callbacks.append(save_callback)
 
 # prep params
-parser = Model(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
+parser = ParserModel(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
 parser.train(training_data, arguments.dev, dev_data, epochs=n_epochs, batch_size=32, callbacks=callbacks, patience=arguments.patience)
 parser.load_from_file(arguments.model_dest)
 

@@ -21,7 +21,7 @@ import numpy as np
 import sklearn.utils
 
 
-class Model(object):
+class ParserModel(object):
     def __init__(self, model: Parser, decoder, loss, optimizer, strategy, vocab):
         self._model_uid = time.strftime("%m%d%H%M%S")
         self._parser = model

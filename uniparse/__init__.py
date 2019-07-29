@@ -2,7 +2,7 @@
 import numpy as np
 
 from uniparse.vocabulary import Vocabulary
-from uniparse.model import Model
+from uniparse.parser_model import ParserModel
 from uniparse.decoders.tarjan import Tarjan
 from uniparse.utility.tensorboard_logging import Logger
 

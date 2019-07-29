@@ -1319,3 +1319,103 @@ Arguments:
 
 2019-07-05 11:39:29,869:INFO:	Created new file /home/lpmayos/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/code/cvt_text/data/raw_data/depparse/test_mini.txt
 2019-07-05 11:39:29,870:INFO:	_read_conll; read 2 sentences
+2019-07-29 12:18:10,657:INFO:	
+
+
+===================================================================================================
+2019-07-29 12:18:10,718:INFO:	kiperwasser_embeddings_extractor
+2019-07-29 12:18:10,718:INFO:	===================================================================================================
+
+2019-07-29 12:18:10,719:INFO:	
+Arguments:
+2019-07-29 12:18:10,719:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/code/UniParse/logging.log', model_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', vocab_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-07-29 12:18:10,719:INFO:	
+
+2019-07-29 12:18:11,254:INFO:	Created new file /home/lpmayos/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-07-29 12:18:11,255:INFO:	_read_conll; read 2 sentences
+2019-07-29 12:20:48,268:INFO:	
+
+
+===================================================================================================
+2019-07-29 12:20:48,268:INFO:	kiperwasser_embeddings_extractor
+2019-07-29 12:20:48,269:INFO:	===================================================================================================
+
+2019-07-29 12:20:48,269:INFO:	
+Arguments:
+2019-07-29 12:20:48,269:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/code/UniParse/logging.log', model_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', vocab_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-07-29 12:20:48,269:INFO:	
+
+2019-07-29 12:20:56,963:INFO:	Created new file /home/lpmayos/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-07-29 12:20:57,582:INFO:	_read_conll; read 2 sentences
+2019-07-29 12:51:15,308:INFO:	
+
+
+===================================================================================================
+2019-07-29 12:51:15,308:INFO:	kiperwasser_embeddings_extractor
+2019-07-29 12:51:15,309:INFO:	===================================================================================================
+
+2019-07-29 12:51:15,309:INFO:	
+Arguments:
+2019-07-29 12:51:15,309:INFO:	Namespace(batch_size=32, input_file=None, logging_file='/home/lpmayos/code/UniParse/logging.log', model_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', vocab_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-07-29 12:51:15,309:INFO:	
+
+2019-07-29 12:52:03,622:INFO:	
+
+
+===================================================================================================
+2019-07-29 12:52:03,622:INFO:	kiperwasser_embeddings_extractor
+2019-07-29 12:52:03,623:INFO:	===================================================================================================
+
+2019-07-29 12:52:03,623:INFO:	
+Arguments:
+2019-07-29 12:52:03,623:INFO:	Namespace(batch_size=32, input_file=None, logging_file='/home/lpmayos/code/UniParse/logging.log', model_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', vocab_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-07-29 12:52:03,623:INFO:	
+
+2019-07-29 12:52:58,725:INFO:	
+
+
+===================================================================================================
+2019-07-29 12:52:58,726:INFO:	kiperwasser_embeddings_extractor
+2019-07-29 12:52:58,726:INFO:	===================================================================================================
+
+2019-07-29 12:52:58,726:INFO:	
+Arguments:
+2019-07-29 12:52:58,726:INFO:	Namespace(batch_size=32, input_file=None, logging_file='/home/lpmayos/code/UniParse/logging.log', model_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', vocab_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-07-29 12:52:58,726:INFO:	
+
+2019-07-29 12:54:01,720:INFO:	
+
+
+===================================================================================================
+2019-07-29 12:54:01,720:INFO:	kiperwasser_embeddings_extractor
+2019-07-29 12:54:01,737:INFO:	===================================================================================================
+
+2019-07-29 12:54:01,738:INFO:	
+Arguments:
+2019-07-29 12:54:01,738:INFO:	Namespace(batch_size=32, input_file=None, logging_file='/home/lpmayos/code/UniParse/logging.log', model_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', vocab_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-07-29 12:54:01,738:INFO:	
+
+2019-07-29 12:55:24,131:INFO:	
+
+
+===================================================================================================
+2019-07-29 12:55:24,131:INFO:	kiperwasser_embeddings_extractor
+2019-07-29 12:55:24,131:INFO:	===================================================================================================
+
+2019-07-29 12:55:24,131:INFO:	
+Arguments:
+2019-07-29 12:55:24,131:INFO:	Namespace(batch_size=32, input_file=None, logging_file='/home/lpmayos/code/UniParse/logging.log', model_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', vocab_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-07-29 12:55:24,131:INFO:	
+
+2019-07-29 17:04:10,931:INFO:	
+
+
+===================================================================================================
+2019-07-29 17:04:10,931:INFO:	kiperwasser_embeddings_extractor
+2019-07-29 17:04:10,931:INFO:	===================================================================================================
+
+2019-07-29 17:04:10,931:INFO:	
+Arguments:
+2019-07-29 17:04:10,931:INFO:	Namespace(batch_size=32, input_file=None, logging_file='/home/lpmayos/code/UniParse/logging.log', model_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', vocab_file='/home/lpmayos/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-07-29 17:04:10,931:INFO:	
+

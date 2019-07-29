@@ -2,7 +2,7 @@ import argparse
 import logging
 import os
 
-from uniparse import Vocabulary, Model
+from uniparse import Vocabulary, ParserModel
 from uniparse.callbacks import TensorboardLoggerCallback, ModelSaveCallback
 from uniparse.models.kiperwasser import DependencyParser
 
@@ -80,7 +80,7 @@ def do_training(arguments, vocab, embs):
 
     # prep params
     logging.info("creating Model ...")
-    parser = Model(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
+    parser = ParserModel(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
     logging.info("... Model created")
 
     logging.info("training Model ...")
@@ -118,7 +118,7 @@ def do_training_big_datasets(arguments, vocab, embs, subset_size):
 
     # prep params
     logging.info("creating Model ...")
-    parser = Model(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
+    parser = ParserModel(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
     logging.info("... Model created")
 
     logging.info("training Model ...")
@@ -266,7 +266,7 @@ def main():
     else:
         logging.info('No training; loading model')
         model = DependencyParser(vocab, embs, arguments.no_update_pretrained_emb)
-        parser = Model(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
+        parser = ParserModel(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
 
     parser.load_from_file(arguments.model_file)
 
