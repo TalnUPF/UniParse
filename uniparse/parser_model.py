@@ -118,7 +118,12 @@ class ParserModel(object):
         """
         backend = self.backend
 
-        embeddings = {}
+        total_words = sum([len(a[0]) for a in samples])
+        embeddings_per_word = 4
+        model = self._parser.deep_bilstm.model
+        embeddings_len = self._parser.deep_bilstm.builder_layers[0][0].spec[1]  # = 125 =  word_dim + upos_dim from kiperwasser.py (TODO this is probably not the best way to get it)
+        embeddings = np.zeros((total_words, embeddings_per_word, embeddings_len))
+
         i = 0
         for sample in samples:
             backend.renew_cg()
@@ -131,21 +136,35 @@ class ParserModel(object):
 
             states = self._parser.extract_internal_states(words, tags)
 
-            for state in states:
+            for state in states:  # we receive one state per each word in the sample
                 state_layer1 = state[0]
                 hidden_state_layer1 = state_layer1.s()
-                hidden_state_layer1_f = hidden_state_layer1[0].value()
-                hidden_state_layer1_b = hidden_state_layer1[1].value()
+                hidden_state_layer1_f = np.array(hidden_state_layer1[0].value())
+                hidden_state_layer1_b = np.array(hidden_state_layer1[1].value())
 
                 state_layer2 = state[1]
                 hidden_state_layer2 = state_layer2.s()
-                hidden_state_layer2_f = hidden_state_layer2[0].value()
-                hidden_state_layer2_b = hidden_state_layer2[1].value()
+                hidden_state_layer2_f = np.array(hidden_state_layer2[0].value())
+                hidden_state_layer2_b = np.array(hidden_state_layer2[1].value())
 
-                embeddings[i] = [hidden_state_layer1_f, hidden_state_layer1_b, hidden_state_layer2_f, hidden_state_layer2_b]
+                embeddings[i][0] = hidden_state_layer1_f
+                embeddings[i][1] = hidden_state_layer1_b
+                embeddings[i][2] = hidden_state_layer2_f
+                embeddings[i][3] = hidden_state_layer2_b
+
                 i += 1
 
-        return embeddings
+        return embeddings  # numpy array n_words x 4 x 125
+
+    def extract_embeddings_from_word_tags_tuple(self, sentence_words):
+        sentence_tags = []  # TODO we assume that we work alwasy with the only_words=True model; rethink
+        batch_size = 32  # TODO hardcoded for testing purposes; see if we can determine it any other way
+        input_data = self._vocab.word_tags_tuple_to_conll(sentence_words, sentence_tags)
+        contextual_embeddings = self.extract_embeddings(input_data, batch_size)
+
+
+
+        return contextual_embeddings
 
     def run(self, samples: List, batch_size: int):
         indices, batches = self._batch_data(samples, strategy=self._batch_strategy, scale=batch_size, shuffle=False)

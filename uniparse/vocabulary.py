@@ -150,7 +150,7 @@ class Vocabulary(object):
 
         return pret_embs
 
-    def word_tags_tuple_to_conll(self, sentence_words, sentence_tags):
+    def word_tags_tuple_to_conll(self, sentence_words, sentence_tags=[]):
 
         word_root = self.ROOT
         lemma_root = self.ROOT
@@ -162,8 +162,13 @@ class Vocabulary(object):
         sents = []
         words, lemmas, tags, heads, rels, chars = [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
-        for i, (word, tag) in enumerate(zip(sentence_words, sentence_tags)):
+        for i, word in enumerate(sentence_words):
             # for each pair, we 'fake' a conllu line to parse
+            if len(sentence_tags) > 0:
+                tag = sentence_tags[i]
+            else:
+                tag = '_'
+
             line = f"{i}\t{word}\t_\t_\t_\t_\t0\t{tag}\t_\t_\n"
             blank_line, comment_line, word, lemma, tag, head, rel, characters = self._parse_line(line, tokenize=True)
 

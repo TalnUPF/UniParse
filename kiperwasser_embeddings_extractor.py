@@ -76,9 +76,4 @@ if __name__ == '__main__':
         tags = ('O', 'B-PP', 'B-NP', 'I-NP', 'B-NP', 'I-NP', 'B-NP', 'I-NP', 'I-NP', 'B-PP', 'B-NP', 'I-NP', 'I-NP', 'I-NP', 'B-VP', 'I-VP', 'I-VP', 'I-VP', 'B-NP', 'I-NP', 'B-PP', 'B-NP', 'B-PP', 'B-NP', 'I-NP', 'I-NP', 'O')
         embeddings = extract_embeddings_from_sentence(words, tags)
 
-    for i, embedding in embeddings.items():
-        print(i)
-        print('\tl1_f: %s' % embedding[0])
-        print('\tl1_b: %s' % embedding[1])
-        print('\tl2_f: %s' % embedding[2])
-        print('\tl2_b: %s' % embedding[3])
+    print(embeddings)
