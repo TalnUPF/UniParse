@@ -1,0 +1,54 @@
+2019-07-11 12:50:15,967:INFO:	
+
+
+===================================================================================================
+2019-07-11 12:50:15,969:INFO:	kiperwasser_main
+2019-07-11 12:50:15,970:INFO:	===================================================================================================
+
+2019-07-11 12:50:15,971:INFO:	
+Arguments:
+2019-07-11 12:50:15,972:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/medium/logging.log', model_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/medium/model.model', no_update_pretrained_emb=False, only_words=False, output_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/medium/output.out', patience=-1, results_folder='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/medium', tb_dest=None, test='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_medium/1b_test.bpe.conllu', train='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_medium/1b_train.bpe.conllu', vocab_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/medium/vocab.pkl')
+2019-07-11 12:50:15,973:INFO:	
+
+2019-07-11 13:28:30,910:INFO:	> saving vocab to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/medium/vocab.pkl
+2019-07-11 13:28:31,134:INFO:	Training with big dataset; subset_size = 10000
+2019-07-11 13:28:31,136:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-07-11 13:28:31,137:INFO:	tokenizing dev data ...
+2019-07-11 13:28:33,201:INFO:	_read_conll; read 7110 sentences
+2019-07-11 13:28:33,202:INFO:	... tokenized dev data
+2019-07-11 13:28:33,203:INFO:	creating model ...
+2019-07-11 13:28:33,300:INFO:	... model created
+2019-07-11 13:28:33,301:INFO:	creating ModelSaveCallback ...
+2019-07-11 13:28:33,302:INFO:	saving model to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/medium/model.model  (after step 0)
+2019-07-11 13:28:33,303:INFO:	... ModelSaveCallback created
+2019-07-11 13:28:33,304:INFO:	creating Model ...
+2019-07-11 13:28:33,320:INFO:	... Model created
+2019-07-11 13:28:33,321:INFO:	training Model ...
+2019-07-11 13:28:33,322:DEBUG:	...Training without patience for exactly 30 epochs
+2019-07-11 13:28:33,322:INFO:	
+2019-07-11 13:28:33,323:INFO:	Epoch 1
+2019-07-11 13:28:33,324:INFO:	=====================
+2019-07-11 13:28:36,717:INFO:	_read_conll; read 10000 sentences
+2019-07-11 13:36:05,472:INFO:	_read_conll; read 10000 sentences
+2019-07-11 13:42:33,674:INFO:	_read_conll; read 10000 sentences
+2019-07-11 13:48:57,130:INFO:	_read_conll; read 10000 sentences
+2019-07-11 13:55:26,634:INFO:	_read_conll; read 10000 sentences
+2019-07-11 14:02:09,267:INFO:	_read_conll; read 10000 sentences
+2019-07-11 14:09:24,682:INFO:	_read_conll; read 10000 sentences
+2019-07-11 14:16:21,071:INFO:	_read_conll; read 10000 sentences
+2019-07-11 14:23:43,208:INFO:	_read_conll; read 10000 sentences
+2019-07-11 14:30:48,700:INFO:	_read_conll; read 10000 sentences
+2019-07-11 14:42:04,910:INFO:	_read_conll; read 10000 sentences
+2019-07-11 15:03:09,290:INFO:	_read_conll; read 10000 sentences
+2019-07-11 15:24:02,192:INFO:	_read_conll; read 10000 sentences
+2019-07-11 15:45:00,823:INFO:	_read_conll; read 10000 sentences
+2019-07-11 16:05:51,740:INFO:	_read_conll; read 10000 sentences
+2019-07-11 16:26:45,398:INFO:	_read_conll; read 10000 sentences
+2019-07-11 16:48:01,816:INFO:	_read_conll; read 10000 sentences
+2019-07-11 17:09:25,774:INFO:	_read_conll; read 10000 sentences
+2019-07-11 17:27:46,646:INFO:	_read_conll; read 10000 sentences
+2019-07-11 17:44:22,713:INFO:	_read_conll; read 10000 sentences
+2019-07-11 18:01:03,857:INFO:	_read_conll; read 10000 sentences
+2019-07-11 18:17:48,297:INFO:	_read_conll; read 10000 sentences
+2019-07-11 18:34:31,375:INFO:	_read_conll; read 10000 sentences
+2019-07-11 18:51:11,026:INFO:	_read_conll; read 10000 sentences

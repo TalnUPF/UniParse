@@ -46,4 +46,6 @@ datasets/1-billion-benchmark/
 *.out
 *.pkl
 
+core
+
 .idea/*

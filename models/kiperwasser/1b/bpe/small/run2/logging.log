@@ -1,0 +1,53 @@
+2019-07-15 10:43:45,787:INFO:	
+
+
+===================================================================================================
+2019-07-15 10:43:45,850:INFO:	kiperwasser_main
+2019-07-15 10:43:45,851:INFO:	===================================================================================================
+
+2019-07-15 10:43:45,852:INFO:	
+Arguments:
+2019-07-15 10:43:45,853:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/run2/logging.log', model_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/run2/model.model', no_update_pretrained_emb=False, only_words=False, output_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/run2/output.out', patience=-1, results_folder='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/run2', tb_dest=None, test='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_small/1b_test.bpe.conllu', train='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_small/1b_train.bpe.conllu', vocab_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/run2/vocab.pkl')
+2019-07-15 10:43:45,854:INFO:	
+
+2019-07-15 10:43:46,914:INFO:	Training with big dataset; subset_size = 10000
+2019-07-15 10:43:46,916:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-07-15 10:43:46,917:INFO:	tokenizing dev data ...
+2019-07-15 10:43:51,579:INFO:	_read_conll; read 7110 sentences
+2019-07-15 10:43:51,580:INFO:	... tokenized dev data
+2019-07-15 10:43:51,582:INFO:	creating model ...
+2019-07-15 10:43:51,618:INFO:	... model created
+2019-07-15 10:43:51,620:INFO:	creating ModelSaveCallback ...
+2019-07-15 10:43:51,621:INFO:	saving model to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/run2/model.model  (after step 0)
+2019-07-15 10:43:51,621:INFO:	... ModelSaveCallback created
+2019-07-15 10:43:51,624:INFO:	creating Model ...
+2019-07-15 10:43:51,697:INFO:	... Model created
+2019-07-15 10:43:51,699:INFO:	training Model ...
+2019-07-15 10:43:51,700:DEBUG:	...Training without patience for exactly 30 epochs
+2019-07-15 10:43:51,701:INFO:	
+2019-07-15 10:43:51,702:INFO:	Epoch 1
+2019-07-15 10:43:51,704:INFO:	=====================
+2019-07-15 10:44:11,436:INFO:	_read_conll; read 10000 sentences
+2019-07-15 10:56:17,754:INFO:	_read_conll; read 10000 sentences
+2019-07-15 11:07:54,058:INFO:	_read_conll; read 10000 sentences
+2019-07-15 11:18:24,151:INFO:	_read_conll; read 10000 sentences
+2019-07-15 11:30:02,967:INFO:	_read_conll; read 10000 sentences
+2019-07-15 11:42:55,491:INFO:	_read_conll; read 10000 sentences
+2019-07-15 11:54:28,715:INFO:	_read_conll; read 10000 sentences
+2019-07-15 12:05:20,496:INFO:	_read_conll; read 10000 sentences
+2019-07-15 12:16:17,429:INFO:	_read_conll; read 10000 sentences
+2019-07-15 12:29:00,999:INFO:	_read_conll; read 10000 sentences
+2019-07-15 12:41:12,204:INFO:	_read_conll; read 10000 sentences
+2019-07-15 12:54:05,953:INFO:	_read_conll; read 10000 sentences
+2019-07-15 13:08:30,489:INFO:	_read_conll; read 10000 sentences
+2019-07-15 13:22:29,366:INFO:	_read_conll; read 10000 sentences
+2019-07-15 13:36:34,398:INFO:	_read_conll; read 10000 sentences
+2019-07-15 13:50:24,260:INFO:	_read_conll; read 10000 sentences
+2019-07-15 14:05:41,990:INFO:	_read_conll; read 10000 sentences
+2019-07-15 14:20:13,387:INFO:	_read_conll; read 10000 sentences
+2019-07-15 14:34:34,090:INFO:	_read_conll; read 10000 sentences
+2019-07-15 14:51:18,541:INFO:	_read_conll; read 10000 sentences
+2019-07-15 15:06:54,762:INFO:	_read_conll; read 10000 sentences
+2019-07-15 15:22:35,804:INFO:	_read_conll; read 10000 sentences
+2019-07-15 15:36:11,382:INFO:	_read_conll; read 10000 sentences
+2019-07-15 15:52:37,788:INFO:	_read_conll; read 10000 sentences
