@@ -152,15 +152,8 @@ class Vocabulary(object):
 
     def word_tags_tuple_to_conll(self, sentence_words, sentence_tags=[]):
 
-        word_root = self.ROOT
-        lemma_root = self.ROOT
-        tag_root = self.ROOT
-        rel_root = self.ROOT
-        char_root = [self.ROOT]
-        root_head = -1
-
         sents = []
-        words, lemmas, tags, heads, rels, chars = [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
+        words, lemmas, tags, heads, rels, chars = [], [], [], [], [], []
 
         for i, word in enumerate(sentence_words):
             # for each pair, we 'fake' a conllu line to parse
