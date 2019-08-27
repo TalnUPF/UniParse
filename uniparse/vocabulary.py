@@ -203,8 +203,7 @@ class Vocabulary(object):
             skipped_sentences = 0
             while skipped_sentences < init_sent:
                 line = f.readline()
-                blank_line, comment_line, word, lemma, tag, head, rel, characters = self._parse_line(line, tokenize=tokenize)
-                if blank_line:
+                if line == "\n" or line == "":
                     skipped_sentences += 1
 
             # read sentences until we reach end_sent

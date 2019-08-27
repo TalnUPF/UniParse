@@ -205,7 +205,7 @@ class ParserModel(object):
         else: 
             logging.debug(f"...Training without patience for exactly {epochs} epochs")
 
-        running_patience=patience
+        running_patience = patience
 
         training_data = self._batch_data(train, strategy=self._batch_strategy, scale=batch_size, shuffle=True)
         '''
@@ -230,93 +230,13 @@ class ParserModel(object):
 
             logging.info(f"Epoch {epoch}")
             logging.info("=====================")
+
             for step, (x, y) in enumerate(samples):
-                # renew graph
-                backend.renew_cg()
+                batch_size, global_step = self._train_step(backend, batch_size, callbacks, global_step, x, y)
 
-                words, lemmas, tags, chars = x
-                gold_arcs, gold_rels = y
-
-                batch_size, n = words.shape
-
-                # PAD = 0; ROOT = 1; OOV = 2; UNK = 2
-                # Tokens > 1 are valid tokens we want to compute loss for use for accuracy metrics
-                mask = np.greater(words, self._vocab.ROOT)
-                num_tokens = int(np.sum(mask))
-
-                """ this is necessary for satisfy compatibility with pytorch """
-                words = backend.input_tensor(words, dtype="int")
-                postags = backend.input_tensor(tags, dtype="int")
-                lemmas = backend.input_tensor(lemmas, dtype="int")
-
-                arc_preds, rel_preds, arc_scores, rel_scores = self._parser((words, lemmas, postags, gold_arcs, gold_rels, chars))
-
-                arc_loss = self.arc_loss(arc_scores, arc_preds, gold_arcs, mask)
-                rel_loss = self.rel_loss(rel_scores, None, gold_rels, mask)
-
-
-                loss = arc_loss + rel_loss
-                loss_value = backend.get_scalar(loss)
-                loss.backward()
-
-                backend.step(self._optimizer)
-
-                arc_correct = np.equal(arc_preds, gold_arcs).astype(np.float32) * mask
-                arc_accuracy = np.sum(arc_correct) / num_tokens
-
-                rel_correct = np.equal(rel_preds, gold_rels).astype(np.float32) * mask
-                rel_accuracy = np.sum(rel_correct) / num_tokens
-
-                training_info = {
-                    "arc_accuracy": arc_accuracy,
-                    "rel_accuracy": rel_accuracy,
-                    "arc_loss": backend.get_scalar(arc_loss),
-                    "rel_loss": backend.get_scalar(rel_loss),
-                    "global_step": global_step
-                }
-
-                for callback in callbacks:
-                    callback.on_batch_end(training_info)
-
-                sys.stdout.write(
-                    "\r\rStep #%d: Acc: arc %.2f, rel %.2f, loss %.3f"
-                    % (global_step, float(arc_accuracy), float(rel_accuracy), loss_value)
-                )
-                sys.stdout.flush()
-
-                global_step += 1
-
-            logging.debug("Completed epoch %s in %s" % (epoch, time.time()-start))
-            metrics = self.parse_and_evaluate(dev_file, dev, batch_size, None)
-            no_punct_dev_uas = metrics["nopunct_uas"]
-            no_punct_dev_las = metrics["nopunct_las"]
-            punct_dev_uas = metrics["uas"]
-            punct_dev_las = metrics["las"]
-            logging.debug(f"UAS (wo. punct) {no_punct_dev_uas:.{5}}\t LAS (wo. punct) {no_punct_dev_las:.{5}}")
-            logging.debug(f"UAS (w. punct) {punct_dev_uas:.{5}}\t LAS (w. punct) {punct_dev_las:.{5}}")
-
-            if patience > -1:
-                if max_dev_uas > no_punct_dev_uas:
-                    max_dev_uas = no_punct_dev_uas
-                    running_patience-=1
-                    logging.debug(f"Patience decremented to {running_patience}")
-                else:
-                    running_patience=patience
-                    logging.debug(f"Patience incremented to {running_patience}")
-                
-                if running_patience==0:
-                    break    
-            
-
-            batch_end_info = {
-                "dev_uas": no_punct_dev_uas,
-                "dev_las": no_punct_dev_las,
-                "global_step": global_step,
-                "model": self._parser
-            }
-
-            for callback in callbacks:
-                callback.on_epoch_end(epoch, batch_end_info)
+            do_break = self._evaluate_epoch(epoch, dev, dev_file, callbacks, batch_size, patience, max_dev_uas, running_patience, global_step, start)
+            if do_break:
+                break
 
         logging.debug(f"Finished at epoch {epoch}")
 
@@ -340,110 +260,177 @@ class ParserModel(object):
             logging.info(f"Epoch {epoch}")
             logging.info("=====================")
 
-            init_sent = 0
-            end_sent = init_sent + subset_size - 1
-            training_data = self._vocab.tokenize_conll(train_file, init_sent, end_sent)  # we just tokenize the sentences we need for training
+            with open(train_file, encoding="UTF-8") as f:
 
-            while len(training_data) > 0:
+                # ---------------------------------------------------
+                # I move here functionality from vocabulary.py for the sake of efficiency in the large file reading (lpmayos)
 
-                _, samples = self._batch_data(training_data, strategy=self._batch_strategy, scale=batch_size, shuffle=True)
-                samples = sklearn.utils.shuffle(samples)
+                tokenize = True
 
-                for step, (x, y) in enumerate(samples):
+                word_root = self._vocab.ROOT
+                lemma_root = self._vocab.ROOT
+                tag_root = self._vocab.ROOT
+                rel_root = self._vocab.ROOT
+                char_root = [self._vocab.ROOT]
+                root_head = -1
 
-                    # renew graph
-                    backend.renew_cg()
+                words, lemmas, tags, heads, rels, chars = [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
-                    words, lemmas, tags, chars = x
-                    gold_arcs, gold_rels = y
+                read_sentences = 0
+                total_read_sentences = 0
+                training_data = []
 
-                    batch_size, n = words.shape
+                for line in f.readlines():
 
-                    # PAD = 0; ROOT = 1; OOV = 2; UNK = 2
-                    # Tokens > 1 are valid tokens we want to compute loss for use for accuracy metrics
-                    mask = np.greater(words, self._vocab.ROOT)
-                    num_tokens = int(np.sum(mask))
+                    blank_line, comment_line, word, lemma, tag, head, rel, characters = self._vocab._parse_line(line, tokenize=tokenize)
 
-                    """ this is necessary for satisfy compatibility with pytorch """
-                    words = backend.input_tensor(words, dtype="int")
-                    postags = backend.input_tensor(tags, dtype="int")
-                    lemmas = backend.input_tensor(lemmas, dtype="int")
+                    if comment_line:
+                        pass
 
-                    arc_preds, rel_preds, arc_scores, rel_scores = self._parser((words, lemmas, postags, gold_arcs, gold_rels, chars))
+                    elif not blank_line:
+                        words.append(word)
+                        lemmas.append(lemma)
+                        tags.append(tag)
+                        heads.append(head)
+                        rels.append(rel)
+                        chars.append(characters)
 
-                    arc_loss = self.arc_loss(arc_scores, arc_preds, gold_arcs, mask)
-                    rel_loss = self.rel_loss(rel_scores, None, gold_rels, mask)
+                    else:
+                        sent = (words, lemmas, tags, heads, rels, chars)
+                        training_data.append(sent)
+                        read_sentences += 1
+                        total_read_sentences += 1
+                        words, lemmas, tags, heads, rels, chars = [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
-                    loss = arc_loss + rel_loss
-                    loss_value = backend.get_scalar(loss)
-                    loss.backward()
+                    if read_sentences > 0 and read_sentences % subset_size == 0:  # we have read 10000 sentences, lets use them to train
 
-                    backend.step(self._optimizer)
+                        logging.info('train_big_datasets; epoch %s; total sentences used to train: %s; read_sentences %s' % (epoch, total_read_sentences, read_sentences))
 
-                    arc_correct = np.equal(arc_preds, gold_arcs).astype(np.float32) * mask
-                    arc_accuracy = np.sum(arc_correct) / num_tokens
+                        _, samples = self._batch_data(training_data, strategy=self._batch_strategy, scale=batch_size, shuffle=True)
+                        samples = sklearn.utils.shuffle(samples)
 
-                    rel_correct = np.equal(rel_preds, gold_rels).astype(np.float32) * mask
-                    rel_accuracy = np.sum(rel_correct) / num_tokens
+                        for step, (x, y) in enumerate(samples):
 
-                    training_info = {
-                        "arc_accuracy": arc_accuracy,
-                        "rel_accuracy": rel_accuracy,
-                        "arc_loss": backend.get_scalar(arc_loss),
-                        "rel_loss": backend.get_scalar(rel_loss),
-                        "global_step": global_step
-                    }
+                            batch_size, global_step = self._train_step(backend, batch_size, callbacks, global_step, x, y)
 
-                    for callback in callbacks:
-                        callback.on_batch_end(training_info)
+                        read_sentences = 0
+                        training_data = []
 
-                    sys.stdout.write(
-                        "\r\rStep #%d: Acc: arc %.2f, rel %.2f, loss %.3f"
-                        % (global_step, float(arc_accuracy), float(rel_accuracy), loss_value)
-                    )
-                    sys.stdout.flush()
+                if len(training_data) > 0:  # train with the last sentences
+                    logging.info('train_big_datasets; epoch %s; total sentences used to train: %s; read_sentences %s' % (epoch, total_read_sentences, read_sentences))
 
-                    global_step += 1
+                    _, samples = self._batch_data(training_data, strategy=self._batch_strategy, scale=batch_size, shuffle=True)
+                    samples = sklearn.utils.shuffle(samples)
 
-                init_sent = end_sent + 1
-                end_sent = init_sent + subset_size -1
-                training_data = self._vocab.tokenize_conll(train_file, init_sent, end_sent)  # we just tokenize the sentences we need for training
+                    for step, (x, y) in enumerate(samples):
+                        batch_size, global_step = self._train_step(backend, batch_size, callbacks, global_step, x, y)
 
-
-            logging.debug("Completed epoch %s in %s" % (epoch, time.time() - start))
-
-            metrics = self.parse_and_evaluate(dev_file, dev, batch_size, None)
-            no_punct_dev_uas = metrics["nopunct_uas"]
-            no_punct_dev_las = metrics["nopunct_las"]
-            punct_dev_uas = metrics["uas"]
-            punct_dev_las = metrics["las"]
-            logging.debug(f"UAS (wo. punct) {no_punct_dev_uas:.{5}}\t LAS (wo. punct) {no_punct_dev_las:.{5}}")
-            logging.debug(f"UAS (w. punct) {punct_dev_uas:.{5}}\t LAS (w. punct) {punct_dev_las:.{5}}")
-
-            if patience > -1:
-                if max_dev_uas > no_punct_dev_uas:
-                    max_dev_uas = no_punct_dev_uas
-                    running_patience -= 1
-                    logging.debug(f"Patience decremented to {running_patience}")
-                else:
-                    running_patience = patience
-                    logging.debug(f"Patience incremented to {running_patience}")
-
-                if running_patience == 0:
+                # we have trained with all the sentences of the training set; evaluate epoch and finish, if needed
+                do_break = self._evaluate_epoch(epoch, dev, dev_file, callbacks, batch_size, patience, max_dev_uas, running_patience, global_step, start)
+                if do_break:
                     break
 
-            batch_end_info = {
-                "dev_uas": no_punct_dev_uas,
-                "dev_las": no_punct_dev_las,
-                "global_step": global_step,
-                "model": self._parser
-            }
-
-            for callback in callbacks:
-                callback.on_epoch_end(epoch, batch_end_info)
-
+            f.close()
 
         logging.debug(f"Finished at epoch {epoch}")
+
+    def _train_step(self, backend, batch_size, callbacks, global_step, x, y):
+
+        # renew graph
+        backend.renew_cg()
+
+        words, lemmas, tags, chars = x
+        gold_arcs, gold_rels = y
+
+        batch_size, n = words.shape
+
+        # PAD = 0; ROOT = 1; OOV = 2; UNK = 2
+        # Tokens > 1 are valid tokens we want to compute loss for use for accuracy metrics
+        mask = np.greater(words, self._vocab.ROOT)
+        num_tokens = int(np.sum(mask))
+
+        """ this is necessary for satisfy compatibility with pytorch """
+        words = backend.input_tensor(words, dtype="int")
+        postags = backend.input_tensor(tags, dtype="int")
+        lemmas = backend.input_tensor(lemmas, dtype="int")
+
+        arc_preds, rel_preds, arc_scores, rel_scores = self._parser((words, lemmas, postags, gold_arcs, gold_rels, chars))
+
+        arc_loss = self.arc_loss(arc_scores, arc_preds, gold_arcs, mask)
+        rel_loss = self.rel_loss(rel_scores, None, gold_rels, mask)
+
+        loss = arc_loss + rel_loss
+        loss_value = backend.get_scalar(loss)
+        loss.backward()
+
+        backend.step(self._optimizer)
+
+        arc_correct = np.equal(arc_preds, gold_arcs).astype(np.float32) * mask
+        arc_accuracy = np.sum(arc_correct) / num_tokens
+
+        rel_correct = np.equal(rel_preds, gold_rels).astype(np.float32) * mask
+        rel_accuracy = np.sum(rel_correct) / num_tokens
+
+        training_info = {
+            "arc_accuracy": arc_accuracy,
+            "rel_accuracy": rel_accuracy,
+            "arc_loss": backend.get_scalar(arc_loss),
+            "rel_loss": backend.get_scalar(rel_loss),
+            "global_step": global_step
+        }
+
+        for callback in callbacks:
+            callback.on_batch_end(training_info)
+
+        sys.stdout.write(
+            "\r\rStep #%d: Acc: arc %.2f, rel %.2f, loss %.3f"
+            % (global_step, float(arc_accuracy), float(rel_accuracy), loss_value)
+        )
+        sys.stdout.flush()
+
+        global_step += 1
+
+        return batch_size, global_step
+
+    def _evaluate_epoch(self, epoch, dev, dev_file, callbacks, batch_size, patience, max_dev_uas, running_patience, global_step, start):
+        logging.debug("Completed epoch %s in %s" % (epoch, time.time() - start))
+
+        do_break = False
+
+        metrics = self.parse_and_evaluate(dev_file, dev, batch_size, None)
+        no_punct_dev_uas = metrics["nopunct_uas"]
+        no_punct_dev_las = metrics["nopunct_las"]
+        punct_dev_uas = metrics["uas"]
+        punct_dev_las = metrics["las"]
+        logging.debug(f"UAS (wo. punct) {no_punct_dev_uas:.{5}}\t LAS (wo. punct) {no_punct_dev_las:.{5}}")
+        logging.debug(f"UAS (w. punct) {punct_dev_uas:.{5}}\t LAS (w. punct) {punct_dev_las:.{5}}")
+
+        if patience > -1:
+            if max_dev_uas > no_punct_dev_uas:
+                max_dev_uas = no_punct_dev_uas
+                running_patience -= 1
+                logging.debug(f"Patience decremented to {running_patience}")
+            else:
+                running_patience = patience
+                logging.debug(f"Patience incremented to {running_patience}")
+
+            if running_patience == 0:
+                do_break = True
+                return do_break
+
+        batch_end_info = {
+            "dev_uas": no_punct_dev_uas,
+            "dev_las": no_punct_dev_las,
+            "global_step": global_step,
+            "model": self._parser
+        }
+
+        for callback in callbacks:
+            callback.on_epoch_end(epoch, batch_end_info)
+
+        return do_break
+
+
 
     def parse(self, test_file: str, test_data: List, batch_size: int, output_file: str):
 
