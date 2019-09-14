@@ -120,18 +120,18 @@ class ParserModel(object):
 
         total_words = sum([len(a[0]) for a in samples])
         embeddings_per_word = 4
-        model = self._parser.deep_bilstm.model
         embeddings_len = self._parser.deep_bilstm.builder_layers[0][0].spec[1]  # = 125 =  word_dim + upos_dim from kiperwasser.py (TODO this is probably not the best way to get it)
         embeddings = np.zeros((total_words, embeddings_per_word, embeddings_len))
 
         i = 0
         for sample in samples:
+            backend.renew_cg()
 
             words, lemmas, tags, heads, rels, chars = sample
 
             words = backend.input_tensor(np.array([words]), dtype="int")
             tags = backend.input_tensor(np.array([tags]), dtype="int")
-            lemmas = backend.input_tensor(np.array([lemmas]), dtype="int")
+            # lemmas = backend.input_tensor(np.array([lemmas]), dtype="int")
 
             states = self._parser.extract_internal_states(words, tags)
 
@@ -153,6 +153,21 @@ class ParserModel(object):
 
                 i += 1
 
+        del words
+        del lemmas
+        del tags
+        del heads
+        del rels
+        del chars
+        del state_layer1
+        del hidden_state_layer1
+        del hidden_state_layer1_f
+        del hidden_state_layer1_b
+        del state_layer2
+        del hidden_state_layer2
+        del hidden_state_layer2_f
+        del hidden_state_layer2_b
+
         # at this point embeddings is a numpy array with shape n_words x 4 x 125
 
         if format == 'average':
@@ -167,10 +182,11 @@ class ParserModel(object):
         return embeddings
 
     def extract_embeddings_from_word_tags_tuple(self, sentence_words):
-        sentence_tags = []  # TODO we assume that we work alwasy with the only_words=True model; rethink
+        sentence_tags = []  # TODO we assume that we work always with the only_words=True model; rethink
         batch_size = 32  # TODO hardcoded for testing purposes; see if we can determine it any other way
         input_data = self._vocab.word_tags_tuple_to_conll(sentence_words, sentence_tags)
         contextual_embeddings = self.extract_embeddings(input_data, batch_size)
+        del input_data
         return contextual_embeddings
 
     def run(self, samples: List, batch_size: int):
