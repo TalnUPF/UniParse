@@ -1,0 +1,204 @@
+2019-09-12 13:24:40,940:INFO:	
+
+
+===================================================================================================
+2019-09-12 13:24:40,941:INFO:	kiperwasser_main
+2019-09-12 13:24:40,942:INFO:	===================================================================================================
+
+2019-09-12 13:24:40,942:INFO:	
+Arguments:
+2019-09-12 13:24:40,943:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run3/logging.log', model_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run3/model.model', no_update_pretrained_emb=False, only_words=True, output_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run3/output.out', patience=-1, results_folder='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run3', tb_dest=None, test='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_small/1b_test.bpe.conllu', train='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_small/1b_train.bpe.conllu', vocab_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run3/vocab.pkl')
+2019-09-12 13:24:40,944:INFO:	
+
+2019-09-12 13:40:26,112:INFO:	> saving vocab to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run3/vocab.pkl
+2019-09-12 13:40:26,176:INFO:	Training with big dataset; subset_size = 10000
+2019-09-12 13:40:26,177:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-09-12 13:40:26,178:INFO:	tokenizing dev data ...
+2019-09-12 13:40:31,101:INFO:	_read_conll; read 7110 sentences
+2019-09-12 13:40:31,102:INFO:	... tokenized dev data
+2019-09-12 13:40:31,103:INFO:	creating model ...
+2019-09-12 13:40:31,231:INFO:	... model created
+2019-09-12 13:40:31,232:INFO:	creating ModelSaveCallback ...
+2019-09-12 13:40:31,233:INFO:	saving model to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run3/model.model  (after step 0)
+2019-09-12 13:40:31,234:INFO:	... ModelSaveCallback created
+2019-09-12 13:40:31,234:INFO:	creating Model ...
+2019-09-12 13:40:31,292:INFO:	... Model created
+2019-09-12 13:40:31,293:INFO:	training Model ...
+2019-09-12 13:40:31,294:DEBUG:	...Training without patience for exactly 30 epochs
+2019-09-12 13:40:31,295:INFO:	
+2019-09-12 13:40:31,296:INFO:	Epoch 1
+2019-09-12 13:40:31,296:INFO:	=====================
+2019-09-12 13:41:24,168:INFO:	train_big_datasets; epoch 1; total sentences used to train: 10000; read_sentences 10000
+2019-09-12 13:49:13,164:INFO:	train_big_datasets; epoch 1; total sentences used to train: 20000; read_sentences 10000
+2019-09-12 13:56:02,236:INFO:	train_big_datasets; epoch 1; total sentences used to train: 30000; read_sentences 10000
+2019-09-12 14:02:18,879:INFO:	train_big_datasets; epoch 1; total sentences used to train: 40000; read_sentences 10000
+2019-09-12 14:08:54,566:INFO:	train_big_datasets; epoch 1; total sentences used to train: 50000; read_sentences 10000
+2019-09-12 14:15:16,488:INFO:	train_big_datasets; epoch 1; total sentences used to train: 60000; read_sentences 10000
+2019-09-12 14:22:33,031:INFO:	train_big_datasets; epoch 1; total sentences used to train: 70000; read_sentences 10000
+2019-09-12 14:29:55,655:INFO:	train_big_datasets; epoch 1; total sentences used to train: 80000; read_sentences 10000
+2019-09-12 14:37:07,021:INFO:	train_big_datasets; epoch 1; total sentences used to train: 90000; read_sentences 10000
+2019-09-12 14:44:17,427:INFO:	train_big_datasets; epoch 1; total sentences used to train: 100000; read_sentences 10000
+2019-09-12 14:53:01,046:INFO:	train_big_datasets; epoch 1; total sentences used to train: 110000; read_sentences 10000
+2019-09-12 15:03:20,116:INFO:	train_big_datasets; epoch 1; total sentences used to train: 120000; read_sentences 10000
+2019-09-12 15:13:43,105:INFO:	train_big_datasets; epoch 1; total sentences used to train: 130000; read_sentences 10000
+2019-09-12 15:23:54,270:INFO:	train_big_datasets; epoch 1; total sentences used to train: 140000; read_sentences 10000
+2019-09-12 15:34:15,723:INFO:	train_big_datasets; epoch 1; total sentences used to train: 150000; read_sentences 10000
+2019-09-12 15:46:25,251:INFO:	train_big_datasets; epoch 1; total sentences used to train: 160000; read_sentences 10000
+2019-09-12 15:58:23,530:INFO:	train_big_datasets; epoch 1; total sentences used to train: 170000; read_sentences 10000
+2019-09-12 16:10:20,666:INFO:	train_big_datasets; epoch 1; total sentences used to train: 180000; read_sentences 10000
+2019-09-12 16:22:18,148:INFO:	train_big_datasets; epoch 1; total sentences used to train: 190000; read_sentences 10000
+2019-09-12 16:34:19,781:INFO:	train_big_datasets; epoch 1; total sentences used to train: 200000; read_sentences 10000
+2019-09-12 16:46:22,552:INFO:	train_big_datasets; epoch 1; total sentences used to train: 210000; read_sentences 10000
+2019-09-12 16:58:23,167:INFO:	train_big_datasets; epoch 1; total sentences used to train: 220000; read_sentences 10000
+2019-09-12 17:10:44,284:INFO:	train_big_datasets; epoch 1; total sentences used to train: 230000; read_sentences 10000
+2019-09-12 17:22:44,334:INFO:	train_big_datasets; epoch 1; total sentences used to train: 240000; read_sentences 10000
+2019-09-12 17:37:07,060:INFO:	train_big_datasets; epoch 1; total sentences used to train: 250000; read_sentences 10000
+2019-09-12 17:49:09,896:INFO:	train_big_datasets; epoch 1; total sentences used to train: 260000; read_sentences 10000
+2019-09-12 18:01:18,130:INFO:	train_big_datasets; epoch 1; total sentences used to train: 270000; read_sentences 10000
+2019-09-12 18:13:35,516:INFO:	train_big_datasets; epoch 1; total sentences used to train: 280000; read_sentences 10000
+2019-09-12 18:25:37,980:INFO:	train_big_datasets; epoch 1; total sentences used to train: 290000; read_sentences 10000
+2019-09-12 18:37:55,082:INFO:	train_big_datasets; epoch 1; total sentences used to train: 300000; read_sentences 10000
+2019-09-12 18:49:52,318:INFO:	train_big_datasets; epoch 1; total sentences used to train: 310000; read_sentences 10000
+2019-09-12 19:02:00,619:INFO:	train_big_datasets; epoch 1; total sentences used to train: 320000; read_sentences 10000
+2019-09-12 19:13:53,972:INFO:	train_big_datasets; epoch 1; total sentences used to train: 330000; read_sentences 10000
+2019-09-12 19:25:56,182:INFO:	train_big_datasets; epoch 1; total sentences used to train: 340000; read_sentences 10000
+2019-09-12 19:37:41,629:INFO:	train_big_datasets; epoch 1; total sentences used to train: 350000; read_sentences 10000
+2019-09-12 19:49:33,250:INFO:	train_big_datasets; epoch 1; total sentences used to train: 360000; read_sentences 10000
+2019-09-12 20:00:11,537:INFO:	train_big_datasets; epoch 1; total sentences used to train: 370000; read_sentences 10000
+2019-09-12 20:08:31,816:INFO:	train_big_datasets; epoch 1; total sentences used to train: 380000; read_sentences 10000
+2019-09-12 20:16:42,866:INFO:	train_big_datasets; epoch 1; total sentences used to train: 390000; read_sentences 10000
+2019-09-12 20:24:56,473:INFO:	train_big_datasets; epoch 1; total sentences used to train: 400000; read_sentences 10000
+2019-09-12 20:33:21,083:INFO:	train_big_datasets; epoch 1; total sentences used to train: 410000; read_sentences 10000
+2019-09-12 20:41:34,135:INFO:	train_big_datasets; epoch 1; total sentences used to train: 420000; read_sentences 10000
+2019-09-12 20:49:49,842:INFO:	train_big_datasets; epoch 1; total sentences used to train: 430000; read_sentences 10000
+2019-09-12 20:58:05,411:INFO:	train_big_datasets; epoch 1; total sentences used to train: 440000; read_sentences 10000
+2019-09-12 21:06:22,978:INFO:	train_big_datasets; epoch 1; total sentences used to train: 450000; read_sentences 10000
+2019-09-12 21:14:43,419:INFO:	train_big_datasets; epoch 1; total sentences used to train: 460000; read_sentences 10000
+2019-09-12 21:23:04,636:INFO:	train_big_datasets; epoch 1; total sentences used to train: 470000; read_sentences 10000
+2019-09-12 21:31:12,528:INFO:	train_big_datasets; epoch 1; total sentences used to train: 480000; read_sentences 10000
+2019-09-12 21:39:21,553:INFO:	train_big_datasets; epoch 1; total sentences used to train: 490000; read_sentences 10000
+2019-09-12 21:47:30,700:INFO:	train_big_datasets; epoch 1; total sentences used to train: 500000; read_sentences 10000
+2019-09-12 21:55:43,329:INFO:	train_big_datasets; epoch 1; total sentences used to train: 510000; read_sentences 10000
+2019-09-12 22:03:57,449:INFO:	train_big_datasets; epoch 1; total sentences used to train: 520000; read_sentences 10000
+2019-09-12 22:12:13,640:INFO:	train_big_datasets; epoch 1; total sentences used to train: 530000; read_sentences 10000
+2019-09-12 22:20:28,089:INFO:	train_big_datasets; epoch 1; total sentences used to train: 540000; read_sentences 10000
+2019-09-12 22:33:41,925:INFO:	train_big_datasets; epoch 1; total sentences used to train: 550000; read_sentences 10000
+2019-09-12 22:46:51,066:INFO:	train_big_datasets; epoch 1; total sentences used to train: 560000; read_sentences 10000
+2019-09-12 22:59:50,523:INFO:	train_big_datasets; epoch 1; total sentences used to train: 570000; read_sentences 10000
+2019-09-12 23:12:50,269:INFO:	train_big_datasets; epoch 1; total sentences used to train: 580000; read_sentences 10000
+2019-09-12 23:25:54,332:INFO:	train_big_datasets; epoch 1; total sentences used to train: 590000; read_sentences 10000
+2019-09-12 23:38:57,859:INFO:	train_big_datasets; epoch 1; total sentences used to train: 600000; read_sentences 10000
+2019-09-12 23:52:21,541:INFO:	train_big_datasets; epoch 1; total sentences used to train: 610000; read_sentences 10000
+2019-09-13 00:05:29,905:INFO:	train_big_datasets; epoch 1; total sentences used to train: 620000; read_sentences 10000
+2019-09-13 00:18:34,200:INFO:	train_big_datasets; epoch 1; total sentences used to train: 630000; read_sentences 10000
+2019-09-13 00:31:37,975:INFO:	train_big_datasets; epoch 1; total sentences used to train: 640000; read_sentences 10000
+2019-09-13 00:44:47,617:INFO:	train_big_datasets; epoch 1; total sentences used to train: 650000; read_sentences 10000
+2019-09-13 00:57:51,888:INFO:	train_big_datasets; epoch 1; total sentences used to train: 660000; read_sentences 10000
+2019-09-13 01:10:54,978:INFO:	train_big_datasets; epoch 1; total sentences used to train: 670000; read_sentences 10000
+2019-09-13 01:24:01,697:INFO:	train_big_datasets; epoch 1; total sentences used to train: 680000; read_sentences 10000
+2019-09-13 01:45:16,082:INFO:	train_big_datasets; epoch 1; total sentences used to train: 690000; read_sentences 10000
+2019-09-13 02:06:13,641:INFO:	train_big_datasets; epoch 1; total sentences used to train: 700000; read_sentences 10000
+2019-09-13 02:27:24,003:INFO:	train_big_datasets; epoch 1; total sentences used to train: 710000; read_sentences 10000
+2019-09-13 02:48:16,571:INFO:	train_big_datasets; epoch 1; total sentences used to train: 720000; read_sentences 10000
+2019-09-13 03:09:41,216:INFO:	train_big_datasets; epoch 1; total sentences used to train: 730000; read_sentences 10000
+2019-09-13 03:30:42,527:INFO:	train_big_datasets; epoch 1; total sentences used to train: 740000; read_sentences 10000
+2019-09-13 03:51:42,521:INFO:	train_big_datasets; epoch 1; total sentences used to train: 750000; read_sentences 10000
+2019-09-13 04:13:00,644:INFO:	train_big_datasets; epoch 1; total sentences used to train: 760000; read_sentences 10000
+2019-09-13 04:34:04,988:INFO:	train_big_datasets; epoch 1; total sentences used to train: 770000; read_sentences 10000
+2019-09-13 04:55:03,113:INFO:	train_big_datasets; epoch 1; total sentences used to train: 780000; read_sentences 10000
+2019-09-13 05:15:59,313:INFO:	train_big_datasets; epoch 1; total sentences used to train: 790000; read_sentences 10000
+2019-09-13 05:37:03,441:INFO:	train_big_datasets; epoch 1; total sentences used to train: 800000; read_sentences 10000
+2019-09-13 05:58:09,286:INFO:	train_big_datasets; epoch 1; total sentences used to train: 810000; read_sentences 10000
+2019-09-13 06:19:10,973:INFO:	train_big_datasets; epoch 1; total sentences used to train: 820000; read_sentences 10000
+2019-09-13 06:40:16,954:INFO:	train_big_datasets; epoch 1; total sentences used to train: 830000; read_sentences 10000
+2019-09-13 07:01:34,279:INFO:	train_big_datasets; epoch 1; total sentences used to train: 840000; read_sentences 10000
+2019-09-13 07:22:42,155:INFO:	train_big_datasets; epoch 1; total sentences used to train: 850000; read_sentences 10000
+2019-09-13 07:43:21,379:INFO:	train_big_datasets; epoch 1; total sentences used to train: 860000; read_sentences 10000
+2019-09-13 08:04:24,401:INFO:	train_big_datasets; epoch 1; total sentences used to train: 870000; read_sentences 10000
+2019-09-13 08:25:36,963:INFO:	train_big_datasets; epoch 1; total sentences used to train: 880000; read_sentences 10000
+2019-09-13 08:46:43,419:INFO:	train_big_datasets; epoch 1; total sentences used to train: 890000; read_sentences 10000
+2019-09-13 09:07:54,687:INFO:	train_big_datasets; epoch 1; total sentences used to train: 900000; read_sentences 10000
+2019-09-13 09:28:58,417:INFO:	train_big_datasets; epoch 1; total sentences used to train: 910000; read_sentences 10000
+2019-09-13 09:50:20,338:INFO:	train_big_datasets; epoch 1; total sentences used to train: 920000; read_sentences 10000
+2019-09-13 10:11:19,233:INFO:	train_big_datasets; epoch 1; total sentences used to train: 930000; read_sentences 10000
+2019-09-13 10:32:35,469:INFO:	train_big_datasets; epoch 1; total sentences used to train: 940000; read_sentences 10000
+2019-09-13 10:53:44,770:INFO:	train_big_datasets; epoch 1; total sentences used to train: 950000; read_sentences 10000
+2019-09-13 11:14:47,726:INFO:	train_big_datasets; epoch 1; total sentences used to train: 960000; read_sentences 10000
+2019-09-13 11:36:08,093:INFO:	train_big_datasets; epoch 1; total sentences used to train: 970000; read_sentences 10000
+2019-09-13 11:57:19,917:INFO:	train_big_datasets; epoch 1; total sentences used to train: 980000; read_sentences 10000
+2019-09-13 12:18:20,433:INFO:	train_big_datasets; epoch 1; total sentences used to train: 990000; read_sentences 10000
+2019-09-13 12:39:37,847:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1000000; read_sentences 10000
+2019-09-13 13:00:37,003:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1010000; read_sentences 10000
+2019-09-13 13:21:42,983:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1020000; read_sentences 10000
+2019-09-13 13:42:43,225:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1030000; read_sentences 10000
+2019-09-13 14:03:54,892:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1040000; read_sentences 10000
+2019-09-13 14:24:52,136:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1050000; read_sentences 10000
+2019-09-13 14:46:12,922:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1060000; read_sentences 10000
+2019-09-13 15:07:20,870:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1070000; read_sentences 10000
+2019-09-13 15:28:14,658:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1080000; read_sentences 10000
+2019-09-13 15:49:25,770:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1090000; read_sentences 10000
+2019-09-13 16:10:36,358:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1100000; read_sentences 10000
+2019-09-13 16:31:46,214:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1110000; read_sentences 10000
+2019-09-13 16:52:53,180:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1120000; read_sentences 10000
+2019-09-13 17:14:00,421:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1130000; read_sentences 10000
+2019-09-13 17:35:05,362:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1140000; read_sentences 10000
+2019-09-13 17:56:09,232:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1150000; read_sentences 10000
+2019-09-13 18:19:21,971:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1160000; read_sentences 10000
+2019-09-13 18:42:55,449:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1170000; read_sentences 10000
+2019-09-13 19:05:39,991:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1180000; read_sentences 10000
+2019-09-13 19:29:24,687:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1190000; read_sentences 10000
+2019-09-13 19:51:02,035:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1200000; read_sentences 10000
+2019-09-13 20:11:57,400:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1210000; read_sentences 10000
+2019-09-13 20:34:01,866:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1220000; read_sentences 10000
+2019-09-13 21:03:16,949:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1230000; read_sentences 10000
+2019-09-13 21:25:58,204:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1240000; read_sentences 10000
+2019-09-13 21:47:54,698:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1250000; read_sentences 10000
+2019-09-13 22:09:05,380:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1260000; read_sentences 10000
+2019-09-13 22:30:01,245:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1270000; read_sentences 10000
+2019-09-13 22:51:09,293:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1280000; read_sentences 10000
+2019-09-13 23:12:08,074:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1290000; read_sentences 10000
+2019-09-13 23:33:23,930:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1300000; read_sentences 10000
+2019-09-13 23:54:28,292:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1310000; read_sentences 10000
+2019-09-14 00:15:36,962:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1320000; read_sentences 10000
+2019-09-14 00:36:33,159:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1330000; read_sentences 10000
+2019-09-14 00:57:39,306:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1340000; read_sentences 10000
+2019-09-14 01:18:47,669:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1350000; read_sentences 10000
+2019-09-14 01:39:55,498:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1360000; read_sentences 10000
+2019-09-14 02:00:48,812:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1370000; read_sentences 10000
+2019-09-14 02:21:57,224:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1380000; read_sentences 10000
+2019-09-14 02:43:03,206:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1390000; read_sentences 10000
+2019-09-14 03:04:03,975:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1400000; read_sentences 10000
+2019-09-14 03:25:05,011:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1410000; read_sentences 10000
+2019-09-14 03:46:15,563:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1420000; read_sentences 10000
+2019-09-14 04:07:21,071:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1430000; read_sentences 10000
+2019-09-14 04:28:09,942:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1440000; read_sentences 10000
+2019-09-14 04:49:26,010:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1450000; read_sentences 10000
+2019-09-14 05:10:30,696:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1460000; read_sentences 10000
+2019-09-14 05:31:35,810:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1470000; read_sentences 10000
+2019-09-14 05:52:41,604:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1480000; read_sentences 10000
+2019-09-14 06:13:54,752:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1490000; read_sentences 10000
+2019-09-14 06:35:22,364:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1500000; read_sentences 10000
+2019-09-14 06:56:33,996:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1510000; read_sentences 10000
+2019-09-14 07:17:48,917:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1520000; read_sentences 10000
+2019-09-14 07:38:47,112:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1530000; read_sentences 10000
+2019-09-14 07:59:51,816:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1540000; read_sentences 10000
+2019-09-14 08:20:51,104:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1550000; read_sentences 10000
+2019-09-14 08:41:53,114:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1560000; read_sentences 10000
+2019-09-14 09:03:04,865:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1570000; read_sentences 10000
+2019-09-14 09:24:20,857:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1580000; read_sentences 10000
+2019-09-14 09:45:24,699:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1590000; read_sentences 10000
+2019-09-14 10:06:41,393:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1600000; read_sentences 10000
+2019-09-14 10:27:47,014:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1610000; read_sentences 10000
+2019-09-14 10:48:55,000:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1620000; read_sentences 10000
+2019-09-14 11:10:00,711:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1630000; read_sentences 10000
+2019-09-14 11:31:08,549:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1640000; read_sentences 10000
+2019-09-14 11:52:15,240:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1650000; read_sentences 10000
+2019-09-14 12:13:26,900:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1660000; read_sentences 10000
+2019-09-14 12:34:43,078:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1670000; read_sentences 10000
+2019-09-14 12:55:52,253:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1680000; read_sentences 10000
+2019-09-14 13:16:57,369:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1690000; read_sentences 10000
+2019-09-14 13:38:03,083:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1700000; read_sentences 10000
+2019-09-14 13:59:11,249:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1710000; read_sentences 10000
+2019-09-14 14:20:11,371:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1720000; read_sentences 10000
+2019-09-14 14:41:23,169:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1730000; read_sentences 10000
+2019-09-14 15:02:28,223:INFO:	train_big_datasets; epoch 1; total sentences used to train: 1740000; read_sentences 10000

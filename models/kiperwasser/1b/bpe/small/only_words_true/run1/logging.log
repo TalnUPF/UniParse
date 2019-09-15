@@ -1,0 +1,140 @@
+2019-08-23 12:21:07,779:INFO:	
+
+
+===================================================================================================
+2019-08-23 12:21:07,781:INFO:	kiperwasser_main
+2019-08-23 12:21:07,782:INFO:	===================================================================================================
+
+2019-08-23 12:21:07,782:INFO:	
+Arguments:
+2019-08-23 12:21:07,783:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_mini/1b_dev.bpe.conllu', dev_mode=False, do_training=True, embs=None, epochs=30, logging_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run1/logging.log', model_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run1/model.model', no_update_pretrained_emb=False, only_words=True, output_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run1/output.out', patience=-1, results_folder='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run1', tb_dest=None, test='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_small/1b_test.bpe.conllu', train='/homedtic/lperez/datasets/1-billion-word-language-modeling-benchmark-r13output/conll_bpe_small/1b_train.bpe.conllu', vocab_file='/homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run1/vocab.pkl')
+2019-08-23 12:21:07,784:INFO:	
+
+2019-08-23 12:55:00,827:INFO:	> saving vocab to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run1/vocab.pkl
+2019-08-23 12:55:00,946:INFO:	Training with big dataset; subset_size = 10000
+2019-08-23 12:55:00,946:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-08-23 12:55:00,947:INFO:	tokenizing dev data ...
+2019-08-23 12:55:11,016:INFO:	_read_conll; read 7110 sentences
+2019-08-23 12:55:11,017:INFO:	... tokenized dev data
+2019-08-23 12:55:11,018:INFO:	creating model ...
+2019-08-23 12:55:11,255:INFO:	... model created
+2019-08-23 12:55:11,259:INFO:	creating ModelSaveCallback ...
+2019-08-23 12:55:11,261:INFO:	saving model to /homedtic/lperez/UniParse/models/kiperwasser/1b/bpe/small/only_words_true/run1/model.model  (after step 0)
+2019-08-23 12:55:11,262:INFO:	... ModelSaveCallback created
+2019-08-23 12:55:11,263:INFO:	creating Model ...
+2019-08-23 12:55:11,276:INFO:	... Model created
+2019-08-23 12:55:11,277:INFO:	training Model ...
+2019-08-23 12:55:11,278:DEBUG:	...Training without patience for exactly 30 epochs
+2019-08-23 12:55:11,278:INFO:	
+2019-08-23 12:55:11,280:INFO:	Epoch 1
+2019-08-23 12:55:11,281:INFO:	=====================
+2019-08-23 12:55:24,725:INFO:	_read_conll; read 10000 sentences
+2019-08-23 13:07:01,982:INFO:	_read_conll; read 10000 sentences
+2019-08-23 13:50:58,145:INFO:	_read_conll; read 10000 sentences
+2019-08-23 14:35:13,860:INFO:	_read_conll; read 10000 sentences
+2019-08-23 15:19:49,972:INFO:	_read_conll; read 10000 sentences
+2019-08-23 16:04:56,384:INFO:	_read_conll; read 10000 sentences
+2019-08-23 16:50:14,327:INFO:	_read_conll; read 10000 sentences
+2019-08-23 17:35:41,693:INFO:	_read_conll; read 10000 sentences
+2019-08-23 18:21:25,290:INFO:	_read_conll; read 10000 sentences
+2019-08-23 19:06:59,392:INFO:	_read_conll; read 10000 sentences
+2019-08-23 19:53:03,353:INFO:	_read_conll; read 10000 sentences
+2019-08-23 20:39:31,669:INFO:	_read_conll; read 10000 sentences
+2019-08-23 21:25:59,455:INFO:	_read_conll; read 10000 sentences
+2019-08-23 22:12:42,079:INFO:	_read_conll; read 10000 sentences
+2019-08-23 22:59:42,641:INFO:	_read_conll; read 10000 sentences
+2019-08-23 23:46:30,529:INFO:	_read_conll; read 10000 sentences
+2019-08-24 00:33:53,875:INFO:	_read_conll; read 10000 sentences
+2019-08-24 01:21:13,619:INFO:	_read_conll; read 10000 sentences
+2019-08-24 02:08:20,601:INFO:	_read_conll; read 10000 sentences
+2019-08-24 02:56:11,358:INFO:	_read_conll; read 10000 sentences
+2019-08-24 03:44:14,960:INFO:	_read_conll; read 10000 sentences
+2019-08-24 04:32:33,062:INFO:	_read_conll; read 10000 sentences
+2019-08-24 05:20:51,655:INFO:	_read_conll; read 10000 sentences
+2019-08-24 06:09:17,506:INFO:	_read_conll; read 10000 sentences
+2019-08-24 07:01:24,876:INFO:	_read_conll; read 10000 sentences
+2019-08-24 07:51:00,725:INFO:	_read_conll; read 10000 sentences
+2019-08-24 08:40:14,772:INFO:	_read_conll; read 10000 sentences
+2019-08-24 09:30:12,559:INFO:	_read_conll; read 10000 sentences
+2019-08-24 10:20:09,756:INFO:	_read_conll; read 10000 sentences
+2019-08-24 11:10:23,800:INFO:	_read_conll; read 10000 sentences
+2019-08-24 12:00:31,462:INFO:	_read_conll; read 10000 sentences
+2019-08-24 12:50:47,730:INFO:	_read_conll; read 10000 sentences
+2019-08-24 13:40:36,088:INFO:	_read_conll; read 10000 sentences
+2019-08-24 14:30:59,390:INFO:	_read_conll; read 10000 sentences
+2019-08-24 15:21:19,548:INFO:	_read_conll; read 10000 sentences
+2019-08-24 16:11:58,913:INFO:	_read_conll; read 10000 sentences
+2019-08-24 17:02:36,494:INFO:	_read_conll; read 10000 sentences
+2019-08-24 17:54:05,520:INFO:	_read_conll; read 10000 sentences
+2019-08-24 18:45:28,733:INFO:	_read_conll; read 10000 sentences
+2019-08-24 19:37:10,846:INFO:	_read_conll; read 10000 sentences
+2019-08-24 20:29:17,489:INFO:	_read_conll; read 10000 sentences
+2019-08-24 21:21:12,164:INFO:	_read_conll; read 10000 sentences
+2019-08-24 22:13:19,397:INFO:	_read_conll; read 10000 sentences
+2019-08-24 23:06:00,865:INFO:	_read_conll; read 10000 sentences
+2019-08-24 23:59:00,616:INFO:	_read_conll; read 10000 sentences
+2019-08-25 00:52:11,426:INFO:	_read_conll; read 10000 sentences
+2019-08-25 01:45:06,828:INFO:	_read_conll; read 10000 sentences
+2019-08-25 02:38:09,114:INFO:	_read_conll; read 10000 sentences
+2019-08-25 03:31:22,545:INFO:	_read_conll; read 10000 sentences
+2019-08-25 04:25:02,175:INFO:	_read_conll; read 10000 sentences
+2019-08-25 05:18:37,939:INFO:	_read_conll; read 10000 sentences
+2019-08-25 06:12:46,700:INFO:	_read_conll; read 10000 sentences
+2019-08-25 07:07:05,788:INFO:	_read_conll; read 10000 sentences
+2019-08-25 08:01:27,907:INFO:	_read_conll; read 10000 sentences
+2019-08-25 08:56:22,960:INFO:	_read_conll; read 10000 sentences
+2019-08-25 09:51:23,779:INFO:	_read_conll; read 10000 sentences
+2019-08-25 10:46:05,421:INFO:	_read_conll; read 10000 sentences
+2019-08-25 11:40:52,712:INFO:	_read_conll; read 10000 sentences
+2019-08-25 12:35:57,054:INFO:	_read_conll; read 10000 sentences
+2019-08-25 13:31:48,263:INFO:	_read_conll; read 10000 sentences
+2019-08-25 14:28:11,303:INFO:	_read_conll; read 10000 sentences
+2019-08-25 15:24:45,282:INFO:	_read_conll; read 10000 sentences
+2019-08-25 16:20:56,164:INFO:	_read_conll; read 10000 sentences
+2019-08-25 17:17:08,670:INFO:	_read_conll; read 10000 sentences
+2019-08-25 18:13:50,765:INFO:	_read_conll; read 10000 sentences
+2019-08-25 19:10:39,575:INFO:	_read_conll; read 10000 sentences
+2019-08-25 20:07:44,271:INFO:	_read_conll; read 10000 sentences
+2019-08-25 21:04:57,349:INFO:	_read_conll; read 10000 sentences
+2019-08-25 22:02:56,471:INFO:	_read_conll; read 10000 sentences
+2019-08-25 23:00:39,006:INFO:	_read_conll; read 10000 sentences
+2019-08-25 23:58:33,396:INFO:	_read_conll; read 10000 sentences
+2019-08-26 00:56:13,523:INFO:	_read_conll; read 10000 sentences
+2019-08-26 01:55:11,376:INFO:	_read_conll; read 10000 sentences
+2019-08-26 02:53:20,189:INFO:	_read_conll; read 10000 sentences
+2019-08-26 03:51:43,060:INFO:	_read_conll; read 10000 sentences
+2019-08-26 04:50:50,592:INFO:	_read_conll; read 10000 sentences
+2019-08-26 05:49:38,629:INFO:	_read_conll; read 10000 sentences
+2019-08-26 06:48:34,618:INFO:	_read_conll; read 10000 sentences
+2019-08-26 07:47:40,084:INFO:	_read_conll; read 10000 sentences
+2019-08-26 08:47:01,236:INFO:	_read_conll; read 10000 sentences
+2019-08-26 09:46:50,390:INFO:	_read_conll; read 10000 sentences
+2019-08-26 10:46:14,894:INFO:	_read_conll; read 10000 sentences
+2019-08-26 11:46:25,609:INFO:	_read_conll; read 10000 sentences
+2019-08-26 12:47:18,277:INFO:	_read_conll; read 10000 sentences
+2019-08-26 13:48:14,696:INFO:	_read_conll; read 10000 sentences
+2019-08-26 14:48:22,956:INFO:	_read_conll; read 10000 sentences
+2019-08-26 15:49:14,955:INFO:	_read_conll; read 10000 sentences
+2019-08-26 16:50:40,481:INFO:	_read_conll; read 10000 sentences
+2019-08-26 17:52:24,901:INFO:	_read_conll; read 10000 sentences
+2019-08-26 18:54:13,381:INFO:	_read_conll; read 10000 sentences
+2019-08-26 19:55:57,446:INFO:	_read_conll; read 10000 sentences
+2019-08-26 20:58:21,379:INFO:	_read_conll; read 10000 sentences
+2019-08-26 22:00:27,522:INFO:	_read_conll; read 10000 sentences
+2019-08-26 23:02:53,039:INFO:	_read_conll; read 10000 sentences
+2019-08-27 00:05:31,510:INFO:	_read_conll; read 10000 sentences
+2019-08-27 01:08:00,623:INFO:	_read_conll; read 10000 sentences
+2019-08-27 02:11:20,975:INFO:	_read_conll; read 10000 sentences
+2019-08-27 03:14:52,455:INFO:	_read_conll; read 10000 sentences
+2019-08-27 04:17:46,558:INFO:	_read_conll; read 10000 sentences
+2019-08-27 05:21:52,493:INFO:	_read_conll; read 10000 sentences
+2019-08-27 06:25:25,497:INFO:	_read_conll; read 10000 sentences
+2019-08-27 07:29:17,571:INFO:	_read_conll; read 10000 sentences
+2019-08-27 08:33:09,256:INFO:	_read_conll; read 10000 sentences
+2019-08-27 09:37:37,883:INFO:	_read_conll; read 10000 sentences
+2019-08-27 10:41:57,415:INFO:	_read_conll; read 10000 sentences
+2019-08-27 11:47:16,094:INFO:	_read_conll; read 10000 sentences
+2019-08-27 12:52:21,677:INFO:	_read_conll; read 10000 sentences
+2019-08-27 13:57:09,360:INFO:	_read_conll; read 10000 sentences
+2019-08-27 15:02:21,977:INFO:	_read_conll; read 10000 sentences
+2019-08-27 16:08:00,064:INFO:	_read_conll; read 10000 sentences
