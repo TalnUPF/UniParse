@@ -73,6 +73,9 @@ class DependencyParser(Parser):
         self.l_scorer = Dense(params, hidden_dim, self.label_count, activation=None, use_bias=True)
         self.params = params
 
+    def get_embeddings_len(self):
+        return self.deep_bilstm.builder_layers[0][0].spec[1]  # = 125 =  word_dim + upos_dim from kiperwasser.py (TODO this is probably not the best way to get it)
+
     def parameters(self):
         return self.params
 

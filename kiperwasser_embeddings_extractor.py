@@ -3,31 +3,8 @@ import logging
 
 from kiperwasser_main import transform_to_conllu
 from uniparse import Vocabulary, ParserModel
-from uniparse.models.kiperwasser import DependencyParser
-
-
-def extract_embeddings_from_sentence(words, tags):
-
-    input_data = vocab.word_tags_tuple_to_conll(words, tags)
-
-    embeddings = parser.extract_embeddings(input_data, arguments.batch_size)
-
-    return embeddings
-
-
-def extract_embeddings_from_file():
-
-    # transform input files into conllu if needed
-
-    arguments.input_file = transform_to_conllu(arguments.input_file)
-
-    # parse test file
-
-    input_data = vocab.tokenize_conll(arguments.input_file)
-
-    embeddings = parser.extract_embeddings(input_data, arguments.batch_size)
-
-    return embeddings
+from uniparse.models.kiperwasser import DependencyParser as DependencyParser
+from uniparse.models.pytorch_kiperwasser import DependencyParser as DependencyParserPytorch
 
 
 if __name__ == '__main__':
@@ -64,16 +41,30 @@ if __name__ == '__main__':
 
     # load model
 
-    embs = None
-    model = DependencyParser(vocab, embs, False)
-    parser = ParserModel(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
-    parser.load_from_file(arguments.model_file)
+    backend = 'pytorch'
+    if backend == 'dynet':
+        embs = None
+        parser = DependencyParser(vocab, embs, False)
+    elif backend == 'pytorch':
+        arguments.vocab_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/vocab.pkl'
+        arguments.model_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model'
+        only_words = False
+        vocab = Vocabulary(only_words)
+        vocab.load(arguments.vocab_file)
+        parser = DependencyParserPytorch(vocab)
+
+    model = ParserModel(parser, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
+    model.load_from_file(arguments.model_file)
 
     if arguments.input_file is not None:
-        embeddings = extract_embeddings_from_file()
+        arguments.input_file = transform_to_conllu(arguments.input_file)
+        input_data = vocab.tokenize_conll(arguments.input_file)
+
     else:
         words = ('Chancellor', 'of', 'the', 'Exchequer', 'Nigel', 'Lawson', "'s", 'restated', 'commitment', 'to', 'a', 'firm', 'monetary', 'policy', 'has', 'helped', 'to', 'prevent', 'a', 'freefall', 'in', 'sterling', 'over', 'the', 'past', 'week', '.')
         tags = ('O', 'B-PP', 'B-NP', 'I-NP', 'B-NP', 'I-NP', 'B-NP', 'I-NP', 'I-NP', 'B-PP', 'B-NP', 'I-NP', 'I-NP', 'I-NP', 'B-VP', 'I-VP', 'I-VP', 'I-VP', 'B-NP', 'I-NP', 'B-PP', 'B-NP', 'B-PP', 'B-NP', 'I-NP', 'I-NP', 'O')
-        embeddings = extract_embeddings_from_sentence(words, tags)
+        input_data = vocab.word_tags_tuple_to_conll(words, tags)
+
+    embeddings = model.extract_embeddings(input_data)
 
     print(embeddings)

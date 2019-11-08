@@ -108,7 +108,7 @@ class ParserModel(object):
 
         return _idx, _sentences
 
-    def extract_embeddings(self, samples: List, batch_size: int, format='concat'):
+    def extract_embeddings(self, samples: List, format='concat'):
         """
         based on original function 'run', but instead of calling _parser() to end up executing dynet 'transduce'
         function, we call 'extract_internal_states' to end up executing dynet 'add_inputs' function:
@@ -120,7 +120,7 @@ class ParserModel(object):
 
         total_words = sum([len(a[0]) for a in samples])
         embeddings_per_word = 4
-        embeddings_len = self._parser.deep_bilstm.builder_layers[0][0].spec[1]  # = 125 =  word_dim + upos_dim from kiperwasser.py (TODO this is probably not the best way to get it)
+        embeddings_len = self._parser.get_embeddings_len()
         embeddings = np.zeros((total_words, embeddings_per_word, embeddings_len))
 
         i = 0
@@ -131,7 +131,6 @@ class ParserModel(object):
 
             words = backend.input_tensor(np.array([words]), dtype="int")
             tags = backend.input_tensor(np.array([tags]), dtype="int")
-            # lemmas = backend.input_tensor(np.array([lemmas]), dtype="int")
 
             states = self._parser.extract_internal_states(words, tags)
 
@@ -152,21 +151,6 @@ class ParserModel(object):
                 embeddings[i][3] = hidden_state_layer2_b
 
                 i += 1
-
-        del words
-        del lemmas
-        del tags
-        del heads
-        del rels
-        del chars
-        del state_layer1
-        del hidden_state_layer1
-        del hidden_state_layer1_f
-        del hidden_state_layer1_b
-        del state_layer2
-        del hidden_state_layer2
-        del hidden_state_layer2_f
-        del hidden_state_layer2_b
 
         # at this point embeddings is a numpy array with shape n_words x 4 x 125
 

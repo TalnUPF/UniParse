@@ -1,0 +1,416 @@
+2019-11-08 18:02:36,743:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:02:36,744:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:02:36,744:INFO:	===================================================================================================
+
+2019-11-08 18:02:36,744:INFO:	
+Arguments:
+2019-11-08 18:02:36,744:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/vocab.pkl')
+2019-11-08 18:02:36,744:INFO:	
+
+2019-11-08 18:03:20,443:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:03:20,443:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:03:20,443:INFO:	===================================================================================================
+
+2019-11-08 18:03:20,443:INFO:	
+Arguments:
+2019-11-08 18:03:20,443:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/vocab.pkl')
+2019-11-08 18:03:20,443:INFO:	
+
+2019-11-08 18:06:41,574:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:06:41,574:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:06:41,574:INFO:	===================================================================================================
+
+2019-11-08 18:06:41,574:INFO:	
+Arguments:
+2019-11-08 18:06:41,574:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/vocab.pkl')
+2019-11-08 18:06:41,574:INFO:	
+
+2019-11-08 18:07:10,421:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:07:10,421:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:07:10,421:INFO:	===================================================================================================
+
+2019-11-08 18:07:10,421:INFO:	
+Arguments:
+2019-11-08 18:07:10,421:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/vocab.pkl')
+2019-11-08 18:07:10,421:INFO:	
+
+2019-11-08 18:07:18,409:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:07:18,413:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:19:03,297:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:19:03,297:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:19:03,297:INFO:	===================================================================================================
+
+2019-11-08 18:19:03,297:INFO:	
+Arguments:
+2019-11-08 18:19:03,297:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini_test/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini_test/vocab.pkl')
+2019-11-08 18:19:03,297:INFO:	
+
+2019-11-08 18:21:03,205:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:21:03,205:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:21:03,205:INFO:	===================================================================================================
+
+2019-11-08 18:21:03,205:INFO:	
+Arguments:
+2019-11-08 18:21:03,205:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/only_words_true/run1/vocab.pkl')
+2019-11-08 18:21:03,205:INFO:	
+
+2019-11-08 18:21:54,809:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:21:54,809:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:21:54,809:INFO:	===================================================================================================
+
+2019-11-08 18:21:54,809:INFO:	
+Arguments:
+2019-11-08 18:21:54,809:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:21:54,809:INFO:	
+
+2019-11-08 18:21:57,539:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:21:57,587:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:22:31,469:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:22:31,469:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:22:31,469:INFO:	===================================================================================================
+
+2019-11-08 18:22:31,469:INFO:	
+Arguments:
+2019-11-08 18:22:31,469:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:22:31,469:INFO:	
+
+2019-11-08 18:22:33,790:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:22:33,794:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:24:27,099:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:24:27,099:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:24:27,100:INFO:	===================================================================================================
+
+2019-11-08 18:24:27,100:INFO:	
+Arguments:
+2019-11-08 18:24:27,100:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:24:27,100:INFO:	
+
+2019-11-08 18:24:29,436:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:24:29,440:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:25:12,146:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:25:12,146:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:25:12,147:INFO:	===================================================================================================
+
+2019-11-08 18:25:12,147:INFO:	
+Arguments:
+2019-11-08 18:25:12,147:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:25:12,147:INFO:	
+
+2019-11-08 18:25:14,473:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:25:14,478:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:28:44,168:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:28:44,168:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:28:44,168:INFO:	===================================================================================================
+
+2019-11-08 18:28:44,168:INFO:	
+Arguments:
+2019-11-08 18:28:44,169:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:28:44,169:INFO:	
+
+2019-11-08 18:28:46,533:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:28:46,534:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:29:11,732:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:29:11,733:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:29:11,733:INFO:	===================================================================================================
+
+2019-11-08 18:29:11,733:INFO:	
+Arguments:
+2019-11-08 18:29:11,733:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:29:11,733:INFO:	
+
+2019-11-08 18:29:14,102:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:29:14,106:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:43:47,779:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:43:47,780:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:43:47,780:INFO:	===================================================================================================
+
+2019-11-08 18:43:47,780:INFO:	
+Arguments:
+2019-11-08 18:43:47,780:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:43:47,780:INFO:	
+
+2019-11-08 18:43:50,144:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:43:50,147:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:44:44,843:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:44:44,843:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:44:44,843:INFO:	===================================================================================================
+
+2019-11-08 18:44:44,844:INFO:	
+Arguments:
+2019-11-08 18:44:44,844:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:44:44,844:INFO:	
+
+2019-11-08 18:44:47,213:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:44:47,217:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:53:05,837:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:53:05,837:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:53:05,837:INFO:	===================================================================================================
+
+2019-11-08 18:53:05,837:INFO:	
+Arguments:
+2019-11-08 18:53:05,837:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:53:05,837:INFO:	
+
+2019-11-08 18:53:08,191:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:53:08,192:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:53:24,999:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:53:25,000:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:53:25,000:INFO:	===================================================================================================
+
+2019-11-08 18:53:25,000:INFO:	
+Arguments:
+2019-11-08 18:53:25,000:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:53:25,000:INFO:	
+
+2019-11-08 18:53:27,353:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:53:27,354:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:55:19,758:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:55:19,758:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:55:19,759:INFO:	===================================================================================================
+
+2019-11-08 18:55:19,759:INFO:	
+Arguments:
+2019-11-08 18:55:19,759:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:55:19,759:INFO:	
+
+2019-11-08 18:55:22,104:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 18:55:22,105:INFO:	_read_conll; read 2 sentences
+2019-11-08 18:56:47,433:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:56:47,433:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:56:47,433:INFO:	===================================================================================================
+
+2019-11-08 18:56:47,433:INFO:	
+Arguments:
+2019-11-08 18:56:47,433:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:56:47,433:INFO:	
+
+2019-11-08 18:59:25,046:INFO:	
+
+
+===================================================================================================
+2019-11-08 18:59:25,046:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 18:59:25,046:INFO:	===================================================================================================
+
+2019-11-08 18:59:25,046:INFO:	
+Arguments:
+2019-11-08 18:59:25,046:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 18:59:25,046:INFO:	
+
+2019-11-08 19:01:06,409:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:01:06,409:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:01:06,410:INFO:	===================================================================================================
+
+2019-11-08 19:01:06,410:INFO:	
+Arguments:
+2019-11-08 19:01:06,410:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:01:06,410:INFO:	
+
+2019-11-08 19:02:50,835:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:02:50,835:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:02:50,835:INFO:	===================================================================================================
+
+2019-11-08 19:02:50,835:INFO:	
+Arguments:
+2019-11-08 19:02:50,835:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:02:50,835:INFO:	
+
+2019-11-08 19:03:38,701:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:03:38,701:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:03:38,701:INFO:	===================================================================================================
+
+2019-11-08 19:03:38,701:INFO:	
+Arguments:
+2019-11-08 19:03:38,701:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:03:38,701:INFO:	
+
+2019-11-08 19:03:38,722:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:03:38,722:INFO:	_read_conll; read 2 sentences
+2019-11-08 19:07:51,906:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:07:51,906:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:07:51,907:INFO:	===================================================================================================
+
+2019-11-08 19:07:51,907:INFO:	
+Arguments:
+2019-11-08 19:07:51,907:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:07:51,907:INFO:	
+
+2019-11-08 19:07:54,282:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:07:54,283:INFO:	_read_conll; read 2 sentences
+2019-11-08 19:08:07,113:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:08:07,113:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:08:07,113:INFO:	===================================================================================================
+
+2019-11-08 19:08:07,113:INFO:	
+Arguments:
+2019-11-08 19:08:07,113:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:08:07,113:INFO:	
+
+2019-11-08 19:08:09,519:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:08:09,520:INFO:	_read_conll; read 2 sentences
+2019-11-08 19:08:18,946:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:08:18,946:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:08:18,946:INFO:	===================================================================================================
+
+2019-11-08 19:08:18,946:INFO:	
+Arguments:
+2019-11-08 19:08:18,946:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:08:18,946:INFO:	
+
+2019-11-08 19:08:18,966:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:08:18,967:INFO:	_read_conll; read 2 sentences
+2019-11-08 19:09:35,711:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:09:35,711:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:09:35,711:INFO:	===================================================================================================
+
+2019-11-08 19:09:35,711:INFO:	
+Arguments:
+2019-11-08 19:09:35,711:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:09:35,711:INFO:	
+
+2019-11-08 19:09:35,730:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:09:35,731:INFO:	_read_conll; read 2 sentences
+2019-11-08 19:10:00,521:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:10:00,521:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:10:00,521:INFO:	===================================================================================================
+
+2019-11-08 19:10:00,522:INFO:	
+Arguments:
+2019-11-08 19:10:00,522:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:10:00,522:INFO:	
+
+2019-11-08 19:10:04,658:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:10:04,665:INFO:	_read_conll; read 2 sentences
+2019-11-08 19:11:46,665:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:11:46,665:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:11:46,666:INFO:	===================================================================================================
+
+2019-11-08 19:11:46,666:INFO:	
+Arguments:
+2019-11-08 19:11:46,666:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:11:46,666:INFO:	
+
+2019-11-08 19:11:46,688:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:11:46,692:INFO:	_read_conll; read 2 sentences
+2019-11-08 19:19:23,749:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:19:23,750:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:19:23,750:INFO:	===================================================================================================
+
+2019-11-08 19:19:23,750:INFO:	
+Arguments:
+2019-11-08 19:19:23,750:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:19:23,750:INFO:	
+
+2019-11-08 19:19:23,774:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:19:23,777:INFO:	_read_conll; read 2 sentences
+2019-11-08 19:23:35,390:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:23:35,391:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:23:35,391:INFO:	===================================================================================================
+
+2019-11-08 19:23:35,391:INFO:	
+Arguments:
+2019-11-08 19:23:35,391:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:23:35,391:INFO:	
+
+2019-11-08 19:23:35,415:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:23:35,418:INFO:	_read_conll; read 2 sentences
+2019-11-08 19:25:04,255:INFO:	
+
+
+===================================================================================================
+2019-11-08 19:25:04,255:INFO:	kiperwasser_embeddings_extractor
+2019-11-08 19:25:04,255:INFO:	===================================================================================================
+
+2019-11-08 19:25:04,255:INFO:	
+Arguments:
+2019-11-08 19:25:04,255:INFO:	Namespace(batch_size=32, input_file='/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt', logging_file='/home/lpmayos/hd/code/UniParse/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/model.model', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl')
+2019-11-08 19:25:04,255:INFO:	
+
+2019-11-08 19:25:04,275:INFO:	Created new file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt.conllu from the original file /home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt
+2019-11-08 19:25:04,276:INFO:	_read_conll; read 2 sentences

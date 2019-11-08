@@ -27,6 +27,18 @@ class BiRNN(nn.Module):
         # Decode the hidden state of the last time step
         return out
 
+    def get_hidden_states(self, x):
+        # Set initial states
+        h0 = torch.zeros(self.num_layers * 2, x.size(0), self.hidden_size)
+        c0 = torch.zeros(self.num_layers * 2, x.size(0), self.hidden_size)
+
+        # Forward propagate LSTM
+        out, hidden = self.lstm(x, (h0, c0))  # out: tensor of shape (batch_size, seq_length, hidden_size*2)
+
+        # Decode the hidden state of the last time step
+        return out, hidden
+
+
 
 class DependencyParser(nn.Module, Parser):
     def save_to_file(self, filename: str) -> None:
@@ -68,6 +80,9 @@ class DependencyParser(nn.Module, Parser):
         # label scoring
         self.l_scorer = nn.Linear(hidden_dim, vocab.label_count, bias=True)
 
+    def get_embeddings_len(self):
+        return 125  # TODO lpmayos compute/get the right value instead of hardcoded
+
     def init_weights(self):
         nn.init.xavier_uniform_(self.wlookup.weight)
         nn.init.xavier_uniform_(self.tlookup.weight)
@@ -80,7 +95,6 @@ class DependencyParser(nn.Module, Parser):
 
     def get_backend_name(self):
         return "pytorch"
-        # return "dynet"
 
     @staticmethod
     def _propability_map(matrix, dictionary):
@@ -147,4 +161,17 @@ class DependencyParser(nn.Module, Parser):
 
         return parsed_trees, predicted_rels, arc_scores, rel_scores
 
+    def extract_internal_states(self, word_ids, upos_ids):
+        """
+        """
 
+        word_embs = self.wlookup(word_ids)
+        upos_embs = self.tlookup(upos_ids)
+
+        words = torch.cat([word_embs, upos_embs], dim=-1)
+
+        # word_exprs = self.deep_bilstm(words)
+        out, hidden = self.deep_bilstm.get_hidden_states(words)
+
+        #return state_pairs_list
+        return hidden
