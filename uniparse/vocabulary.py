@@ -88,7 +88,10 @@ class Vocabulary(object):
         with open(input_file, encoding="UTF-8") as f:
             for line in f:
 
-                blank_line, comment_line, word, lemma, tag, _, rel, chars = self._parse_line(line, tokenize=False)
+                try:
+                    blank_line, comment_line, word, lemma, tag, _, rel, chars = self._parse_line(line, tokenize=False)
+                except:
+                    continue
 
                 if comment_line:
                     continue
@@ -210,9 +213,13 @@ class Vocabulary(object):
 
             line = f.readline()
             read_sentences = skipped_sentences
+            save_sentence = True
             while line and read_sentences <= end_sent:
 
-                blank_line, comment_line, word, lemma, tag, head, rel, characters = self._parse_line(line, tokenize=tokenize)
+                try:
+                    blank_line, comment_line, word, lemma, tag, head, rel, characters = self._parse_line(line, tokenize=tokenize)
+                except:
+                    save_sentence = False
 
                 if comment_line:
                     pass
@@ -229,8 +236,12 @@ class Vocabulary(object):
                 else:
                     read_sentences += 1
                     sent = (words, lemmas, tags, heads, rels, chars)
-                    sents.append(sent)
+                    if save_sentence:
+                        sents.append(sent)
+                    else:
+                        print(line)
                     sent_to_save = False
+                    save_sentence = True
                     words, lemmas, tags, heads, rels, chars = [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
                 line = f.readline()

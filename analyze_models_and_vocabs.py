@@ -29,13 +29,12 @@ def analyze_models_and_vocabs(path):
 
 
 if __name__ == '__main__':
-
     logging.basicConfig(filename='analyze_models_and_vocabs.log',
                         level=logging.DEBUG,
                         format="%(asctime)s:%(levelname)s:\t%(message)s")
 
-    paths = ['/home/lpmayos/code/UniParse/models',
-             '/home/lpmayos/code/UniParse/datasets',
+    paths = ['/home/lpmayos/hd/code/UniParse/models',
+             '/home/lpmayos/hd/code/UniParse/datasets',
              '/homedtic/lperez/UniParse/models',
              '/homedtic/lperez/datasets']
     for path in paths:

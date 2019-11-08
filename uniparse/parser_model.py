@@ -86,7 +86,7 @@ class ParserModel(object):
             loss_options = {
                 # included for completeness
                 "crossentropy": (loss.crossentropy, loss.crossentropy),
-                "kiperwasser": (loss.hinge, loss.kipperwasser_hinge),
+                "kiperwasser": (loss.hinge, loss.hinge),
                 "hinge": (loss.hinge, loss.hinge)
             }
             if input_loss not in loss_options:
@@ -295,10 +295,13 @@ class ParserModel(object):
                 read_sentences = 0
                 total_read_sentences = 0
                 training_data = []
-
+                drop_sentence = False
                 for line in f.readlines():
 
-                    blank_line, comment_line, word, lemma, tag, head, rel, characters = self._vocab._parse_line(line, tokenize=tokenize)
+                    try:
+                        blank_line, comment_line, word, lemma, tag, head, rel, characters = self._vocab._parse_line(line, tokenize=tokenize)
+                    except:
+                        drop_sentence = True
 
                     if comment_line:
                         pass
@@ -313,9 +316,11 @@ class ParserModel(object):
 
                     else:
                         sent = (words, lemmas, tags, heads, rels, chars)
-                        training_data.append(sent)
-                        read_sentences += 1
-                        total_read_sentences += 1
+                        if not drop_sentence:
+                            training_data.append(sent)
+                            read_sentences += 1
+                            total_read_sentences += 1
+                        drop_sentence = False
                         words, lemmas, tags, heads, rels, chars = [word_root], [lemma_root], [tag_root], [root_head], [rel_root], [char_root]
 
                     if read_sentences > 0 and read_sentences % subset_size == 0:  # we have read 10000 sentences, lets use them to train

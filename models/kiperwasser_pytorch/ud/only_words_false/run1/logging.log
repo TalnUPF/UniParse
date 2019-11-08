@@ -1,0 +1,285 @@
+2019-11-08 16:33:50,594:INFO:	kiperwasser_main
+2019-11-08 16:33:50,594:INFO:	===================================================================================================
+
+2019-11-08 16:33:50,595:INFO:	
+Arguments:
+2019-11-08 16:33:50,595:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-dev.conllu', dev_mode=False, do_training=True, epochs=30, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-train.conllu', vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/vocab.pkl')
+2019-11-08 16:33:50,595:INFO:	
+
+2019-11-08 16:33:50,602:INFO:	> saving vocab to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/vocab.pkl
+2019-11-08 16:33:50,602:INFO:	Training with big dataset; subset_size = 10000
+2019-11-08 16:33:50,602:DEBUG:	Init training with big dataset (there is no dev mode)
+2019-11-08 16:33:50,602:INFO:	tokenizing dev data ...
+2019-11-08 16:33:50,607:INFO:	_read_conll; read 38 sentences
+2019-11-08 16:33:50,607:INFO:	... tokenized dev data
+2019-11-08 16:33:50,607:INFO:	creating model ...
+2019-11-08 16:33:50,613:INFO:	... model created
+2019-11-08 16:33:50,613:INFO:	creating ModelSaveCallback ...
+2019-11-08 16:33:50,613:INFO:	saving model to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model  (after step 0)
+2019-11-08 16:33:50,613:INFO:	... ModelSaveCallback created
+2019-11-08 16:33:50,613:INFO:	creating Model ...
+2019-11-08 16:33:50,614:INFO:	... Model created
+2019-11-08 16:33:50,614:INFO:	training Model ...
+2019-11-08 16:33:50,614:DEBUG:	...Training without patience for exactly 30 epochs
+2019-11-08 16:33:50,614:INFO:	
+2019-11-08 16:33:50,614:INFO:	Epoch 1
+2019-11-08 16:33:50,614:INFO:	=====================
+2019-11-08 16:33:50,624:INFO:	train_big_datasets; epoch 1; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:33:53,273:DEBUG:	Completed epoch 1 in 2.658984422683716
+2019-11-08 16:33:53,748:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:33:53,754:DEBUG:	UAS (wo. punct) 0.1054	 LAS (wo. punct) 0.032938
+2019-11-08 16:33:53,754:DEBUG:	UAS (w. punct) 0.10587	 LAS (w. punct) 0.040276
+2019-11-08 16:33:53,756:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:33:53,756:INFO:	
+2019-11-08 16:33:53,756:INFO:	Epoch 2
+2019-11-08 16:33:53,756:INFO:	=====================
+2019-11-08 16:33:53,766:INFO:	train_big_datasets; epoch 2; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:33:57,591:DEBUG:	Completed epoch 2 in 3.834784507751465
+2019-11-08 16:33:58,038:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:33:58,044:DEBUG:	UAS (wo. punct) 0.14361	 LAS (wo. punct) 0.090909
+2019-11-08 16:33:58,044:DEBUG:	UAS (w. punct) 0.1542	 LAS (w. punct) 0.10817
+2019-11-08 16:33:58,047:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:33:58,047:INFO:	
+2019-11-08 16:33:58,047:INFO:	Epoch 3
+2019-11-08 16:33:58,047:INFO:	=====================
+2019-11-08 16:33:58,057:INFO:	train_big_datasets; epoch 3; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:01,892:DEBUG:	Completed epoch 3 in 3.8451764583587646
+2019-11-08 16:34:02,343:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:02,349:DEBUG:	UAS (wo. punct) 0.30303	 LAS (wo. punct) 0.23057
+2019-11-08 16:34:02,349:DEBUG:	UAS (w. punct) 0.3084	 LAS (w. punct) 0.24511
+2019-11-08 16:34:02,352:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:34:02,352:INFO:	
+2019-11-08 16:34:02,352:INFO:	Epoch 4
+2019-11-08 16:34:02,352:INFO:	=====================
+2019-11-08 16:34:02,362:INFO:	train_big_datasets; epoch 4; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:06,307:DEBUG:	Completed epoch 4 in 3.9552786350250244
+2019-11-08 16:34:06,834:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:06,840:DEBUG:	UAS (wo. punct) 0.45059	 LAS (wo. punct) 0.3834
+2019-11-08 16:34:06,840:DEBUG:	UAS (w. punct) 0.42232	 LAS (w. punct) 0.36364
+2019-11-08 16:34:06,843:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:34:06,844:INFO:	
+2019-11-08 16:34:06,844:INFO:	Epoch 5
+2019-11-08 16:34:06,844:INFO:	=====================
+2019-11-08 16:34:06,855:INFO:	train_big_datasets; epoch 5; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:11,145:DEBUG:	Completed epoch 5 in 4.301260709762573
+2019-11-08 16:34:11,585:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:11,592:DEBUG:	UAS (wo. punct) 0.50461	 LAS (wo. punct) 0.45191
+2019-11-08 16:34:11,592:DEBUG:	UAS (w. punct) 0.49367	 LAS (w. punct) 0.44764
+2019-11-08 16:34:11,595:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:34:11,595:INFO:	
+2019-11-08 16:34:11,595:INFO:	Epoch 6
+2019-11-08 16:34:11,595:INFO:	=====================
+2019-11-08 16:34:11,606:INFO:	train_big_datasets; epoch 6; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:15,369:DEBUG:	Completed epoch 6 in 3.7740774154663086
+2019-11-08 16:34:15,883:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:15,891:DEBUG:	UAS (wo. punct) 0.46904	 LAS (wo. punct) 0.43083
+2019-11-08 16:34:15,891:DEBUG:	UAS (w. punct) 0.44994	 LAS (w. punct) 0.41657
+2019-11-08 16:34:15,891:INFO:	
+2019-11-08 16:34:15,891:INFO:	Epoch 7
+2019-11-08 16:34:15,891:INFO:	=====================
+2019-11-08 16:34:15,901:INFO:	train_big_datasets; epoch 7; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:19,625:DEBUG:	Completed epoch 7 in 3.7343862056732178
+2019-11-08 16:34:20,111:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:20,117:DEBUG:	UAS (wo. punct) 0.61001	 LAS (wo. punct) 0.54545
+2019-11-08 16:34:20,117:DEBUG:	UAS (w. punct) 0.58803	 LAS (w. punct) 0.53165
+2019-11-08 16:34:20,120:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:34:20,120:INFO:	
+2019-11-08 16:34:20,120:INFO:	Epoch 8
+2019-11-08 16:34:20,120:INFO:	=====================
+2019-11-08 16:34:20,130:INFO:	train_big_datasets; epoch 8; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:23,617:DEBUG:	Completed epoch 8 in 3.4974803924560547
+2019-11-08 16:34:24,015:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:24,021:DEBUG:	UAS (wo. punct) 0.60343	 LAS (wo. punct) 0.54677
+2019-11-08 16:34:24,021:DEBUG:	UAS (w. punct) 0.58688	 LAS (w. punct) 0.5374
+2019-11-08 16:34:24,021:INFO:	
+2019-11-08 16:34:24,021:INFO:	Epoch 9
+2019-11-08 16:34:24,021:INFO:	=====================
+2019-11-08 16:34:24,031:INFO:	train_big_datasets; epoch 9; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:27,160:DEBUG:	Completed epoch 9 in 3.138925313949585
+2019-11-08 16:34:27,587:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:27,593:DEBUG:	UAS (wo. punct) 0.69038	 LAS (wo. punct) 0.6166
+2019-11-08 16:34:27,593:DEBUG:	UAS (w. punct) 0.66628	 LAS (w. punct) 0.60184
+2019-11-08 16:34:27,596:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:34:27,596:INFO:	
+2019-11-08 16:34:27,597:INFO:	Epoch 10
+2019-11-08 16:34:27,597:INFO:	=====================
+2019-11-08 16:34:27,608:INFO:	train_big_datasets; epoch 10; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:31,732:DEBUG:	Completed epoch 10 in 4.1354639530181885
+2019-11-08 16:34:32,310:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:32,316:DEBUG:	UAS (wo. punct) 0.71278	 LAS (wo. punct) 0.639
+2019-11-08 16:34:32,316:DEBUG:	UAS (w. punct) 0.69505	 LAS (w. punct) 0.63061
+2019-11-08 16:34:32,319:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:34:32,319:INFO:	
+2019-11-08 16:34:32,319:INFO:	Epoch 11
+2019-11-08 16:34:32,319:INFO:	=====================
+2019-11-08 16:34:32,329:INFO:	train_big_datasets; epoch 11; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:37,258:DEBUG:	Completed epoch 11 in 4.938902854919434
+2019-11-08 16:34:37,795:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:37,811:DEBUG:	UAS (wo. punct) 0.70883	 LAS (wo. punct) 0.64163
+2019-11-08 16:34:37,811:DEBUG:	UAS (w. punct) 0.68354	 LAS (w. punct) 0.62486
+2019-11-08 16:34:37,811:INFO:	
+2019-11-08 16:34:37,812:INFO:	Epoch 12
+2019-11-08 16:34:37,812:INFO:	=====================
+2019-11-08 16:34:37,838:INFO:	train_big_datasets; epoch 12; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:42,096:DEBUG:	Completed epoch 12 in 4.28427529335022
+2019-11-08 16:34:42,666:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:42,677:DEBUG:	UAS (wo. punct) 0.71146	 LAS (wo. punct) 0.63768
+2019-11-08 16:34:42,677:DEBUG:	UAS (w. punct) 0.68815	 LAS (w. punct) 0.62371
+2019-11-08 16:34:42,678:INFO:	
+2019-11-08 16:34:42,678:INFO:	Epoch 13
+2019-11-08 16:34:42,678:INFO:	=====================
+2019-11-08 16:34:42,692:INFO:	train_big_datasets; epoch 13; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:47,629:DEBUG:	Completed epoch 13 in 4.950934171676636
+2019-11-08 16:34:48,102:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:48,109:DEBUG:	UAS (wo. punct) 0.69697	 LAS (wo. punct) 0.63241
+2019-11-08 16:34:48,109:DEBUG:	UAS (w. punct) 0.67434	 LAS (w. punct) 0.61795
+2019-11-08 16:34:48,109:INFO:	
+2019-11-08 16:34:48,109:INFO:	Epoch 14
+2019-11-08 16:34:48,109:INFO:	=====================
+2019-11-08 16:34:48,119:INFO:	train_big_datasets; epoch 14; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:50,908:DEBUG:	Completed epoch 14 in 2.799311876296997
+2019-11-08 16:34:51,274:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:51,280:DEBUG:	UAS (wo. punct) 0.69302	 LAS (wo. punct) 0.62582
+2019-11-08 16:34:51,280:DEBUG:	UAS (w. punct) 0.67204	 LAS (w. punct) 0.61335
+2019-11-08 16:34:51,280:INFO:	
+2019-11-08 16:34:51,280:INFO:	Epoch 15
+2019-11-08 16:34:51,280:INFO:	=====================
+2019-11-08 16:34:51,291:INFO:	train_big_datasets; epoch 15; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:53,548:DEBUG:	Completed epoch 15 in 2.267725706100464
+2019-11-08 16:34:53,929:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:53,935:DEBUG:	UAS (wo. punct) 0.6917	 LAS (wo. punct) 0.63241
+2019-11-08 16:34:53,935:DEBUG:	UAS (w. punct) 0.66858	 LAS (w. punct) 0.6168
+2019-11-08 16:34:53,935:INFO:	
+2019-11-08 16:34:53,935:INFO:	Epoch 16
+2019-11-08 16:34:53,935:INFO:	=====================
+2019-11-08 16:34:53,945:INFO:	train_big_datasets; epoch 16; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:56,323:DEBUG:	Completed epoch 16 in 2.3881428241729736
+2019-11-08 16:34:56,706:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:56,712:DEBUG:	UAS (wo. punct) 0.70092	 LAS (wo. punct) 0.64954
+2019-11-08 16:34:56,712:DEBUG:	UAS (w. punct) 0.67779	 LAS (w. punct) 0.63291
+2019-11-08 16:34:56,712:INFO:	
+2019-11-08 16:34:56,712:INFO:	Epoch 17
+2019-11-08 16:34:56,712:INFO:	=====================
+2019-11-08 16:34:56,722:INFO:	train_big_datasets; epoch 17; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:34:59,176:DEBUG:	Completed epoch 17 in 2.4633536338806152
+2019-11-08 16:34:59,581:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:34:59,587:DEBUG:	UAS (wo. punct) 0.71542	 LAS (wo. punct) 0.64559
+2019-11-08 16:34:59,587:DEBUG:	UAS (w. punct) 0.6939	 LAS (w. punct) 0.63291
+2019-11-08 16:34:59,590:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:34:59,590:INFO:	
+2019-11-08 16:34:59,590:INFO:	Epoch 18
+2019-11-08 16:34:59,590:INFO:	=====================
+2019-11-08 16:34:59,600:INFO:	train_big_datasets; epoch 18; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:04,305:DEBUG:	Completed epoch 18 in 4.714830160140991
+2019-11-08 16:35:04,793:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:04,801:DEBUG:	UAS (wo. punct) 0.70487	 LAS (wo. punct) 0.64427
+2019-11-08 16:35:04,802:DEBUG:	UAS (w. punct) 0.6847	 LAS (w. punct) 0.63176
+2019-11-08 16:35:04,802:INFO:	
+2019-11-08 16:35:04,802:INFO:	Epoch 19
+2019-11-08 16:35:04,802:INFO:	=====================
+2019-11-08 16:35:04,820:INFO:	train_big_datasets; epoch 19; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:08,999:DEBUG:	Completed epoch 19 in 4.197732210159302
+2019-11-08 16:35:09,444:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:09,450:DEBUG:	UAS (wo. punct) 0.71542	 LAS (wo. punct) 0.64427
+2019-11-08 16:35:09,450:DEBUG:	UAS (w. punct) 0.69735	 LAS (w. punct) 0.63521
+2019-11-08 16:35:09,450:INFO:	
+2019-11-08 16:35:09,450:INFO:	Epoch 20
+2019-11-08 16:35:09,450:INFO:	=====================
+2019-11-08 16:35:09,460:INFO:	train_big_datasets; epoch 20; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:13,151:DEBUG:	Completed epoch 20 in 3.700798511505127
+2019-11-08 16:35:13,531:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:13,537:DEBUG:	UAS (wo. punct) 0.72596	 LAS (wo. punct) 0.65481
+2019-11-08 16:35:13,537:DEBUG:	UAS (w. punct) 0.70771	 LAS (w. punct) 0.64557
+2019-11-08 16:35:13,539:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:35:13,540:INFO:	
+2019-11-08 16:35:13,540:INFO:	Epoch 21
+2019-11-08 16:35:13,540:INFO:	=====================
+2019-11-08 16:35:13,550:INFO:	train_big_datasets; epoch 21; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:15,980:DEBUG:	Completed epoch 21 in 2.440614938735962
+2019-11-08 16:35:16,383:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:16,389:DEBUG:	UAS (wo. punct) 0.71937	 LAS (wo. punct) 0.6469
+2019-11-08 16:35:16,389:DEBUG:	UAS (w. punct) 0.69275	 LAS (w. punct) 0.62946
+2019-11-08 16:35:16,389:INFO:	
+2019-11-08 16:35:16,389:INFO:	Epoch 22
+2019-11-08 16:35:16,389:INFO:	=====================
+2019-11-08 16:35:16,400:INFO:	train_big_datasets; epoch 22; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:19,622:DEBUG:	Completed epoch 22 in 3.2334678173065186
+2019-11-08 16:35:20,137:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:20,153:DEBUG:	UAS (wo. punct) 0.72069	 LAS (wo. punct) 0.65349
+2019-11-08 16:35:20,153:DEBUG:	UAS (w. punct) 0.69735	 LAS (w. punct) 0.63867
+2019-11-08 16:35:20,153:INFO:	
+2019-11-08 16:35:20,153:INFO:	Epoch 23
+2019-11-08 16:35:20,153:INFO:	=====================
+2019-11-08 16:35:20,176:INFO:	train_big_datasets; epoch 23; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:24,470:DEBUG:	Completed epoch 23 in 4.317446231842041
+2019-11-08 16:35:24,999:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:25,005:DEBUG:	UAS (wo. punct) 0.72727	 LAS (wo. punct) 0.6614
+2019-11-08 16:35:25,006:DEBUG:	UAS (w. punct) 0.70081	 LAS (w. punct) 0.64327
+2019-11-08 16:35:25,010:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/model.model
+2019-11-08 16:35:25,010:INFO:	
+2019-11-08 16:35:25,010:INFO:	Epoch 24
+2019-11-08 16:35:25,010:INFO:	=====================
+2019-11-08 16:35:25,021:INFO:	train_big_datasets; epoch 24; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:30,733:DEBUG:	Completed epoch 24 in 5.7229554653167725
+2019-11-08 16:35:31,228:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:31,235:DEBUG:	UAS (wo. punct) 0.7141	 LAS (wo. punct) 0.65217
+2019-11-08 16:35:31,235:DEBUG:	UAS (w. punct) 0.68815	 LAS (w. punct) 0.63406
+2019-11-08 16:35:31,235:INFO:	
+2019-11-08 16:35:31,235:INFO:	Epoch 25
+2019-11-08 16:35:31,235:INFO:	=====================
+2019-11-08 16:35:31,247:INFO:	train_big_datasets; epoch 25; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:35,593:DEBUG:	Completed epoch 25 in 4.357861518859863
+2019-11-08 16:35:36,065:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:36,072:DEBUG:	UAS (wo. punct) 0.71673	 LAS (wo. punct) 0.66271
+2019-11-08 16:35:36,072:DEBUG:	UAS (w. punct) 0.6939	 LAS (w. punct) 0.64672
+2019-11-08 16:35:36,072:INFO:	
+2019-11-08 16:35:36,072:INFO:	Epoch 26
+2019-11-08 16:35:36,072:INFO:	=====================
+2019-11-08 16:35:36,082:INFO:	train_big_datasets; epoch 26; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:40,420:DEBUG:	Completed epoch 26 in 4.347809314727783
+2019-11-08 16:35:40,990:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:40,996:DEBUG:	UAS (wo. punct) 0.70883	 LAS (wo. punct) 0.6469
+2019-11-08 16:35:40,996:DEBUG:	UAS (w. punct) 0.6893	 LAS (w. punct) 0.63521
+2019-11-08 16:35:40,996:INFO:	
+2019-11-08 16:35:40,996:INFO:	Epoch 27
+2019-11-08 16:35:40,996:INFO:	=====================
+2019-11-08 16:35:41,007:INFO:	train_big_datasets; epoch 27; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:45,191:DEBUG:	Completed epoch 27 in 4.194766998291016
+2019-11-08 16:35:45,670:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:45,677:DEBUG:	UAS (wo. punct) 0.71278	 LAS (wo. punct) 0.65217
+2019-11-08 16:35:45,677:DEBUG:	UAS (w. punct) 0.69505	 LAS (w. punct) 0.64212
+2019-11-08 16:35:45,677:INFO:	
+2019-11-08 16:35:45,677:INFO:	Epoch 28
+2019-11-08 16:35:45,677:INFO:	=====================
+2019-11-08 16:35:45,687:INFO:	train_big_datasets; epoch 28; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:49,814:DEBUG:	Completed epoch 28 in 4.137052297592163
+2019-11-08 16:35:50,279:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:50,286:DEBUG:	UAS (wo. punct) 0.70619	 LAS (wo. punct) 0.64822
+2019-11-08 16:35:50,286:DEBUG:	UAS (w. punct) 0.68239	 LAS (w. punct) 0.63176
+2019-11-08 16:35:50,286:INFO:	
+2019-11-08 16:35:50,286:INFO:	Epoch 29
+2019-11-08 16:35:50,286:INFO:	=====================
+2019-11-08 16:35:50,296:INFO:	train_big_datasets; epoch 29; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:54,270:DEBUG:	Completed epoch 29 in 3.984407901763916
+2019-11-08 16:35:54,761:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:54,767:DEBUG:	UAS (wo. punct) 0.71673	 LAS (wo. punct) 0.65481
+2019-11-08 16:35:54,767:DEBUG:	UAS (w. punct) 0.69275	 LAS (w. punct) 0.63867
+2019-11-08 16:35:54,767:INFO:	
+2019-11-08 16:35:54,767:INFO:	Epoch 30
+2019-11-08 16:35:54,767:INFO:	=====================
+2019-11-08 16:35:54,777:INFO:	train_big_datasets; epoch 30; total sentences used to train: 63; read_sentences 63
+2019-11-08 16:35:59,045:DEBUG:	Completed epoch 30 in 4.277802228927612
+2019-11-08 16:35:59,537:DEBUG:	output file saved to 1108163350_on_en-ud-dev.conllu
+2019-11-08 16:35:59,544:DEBUG:	UAS (wo. punct) 0.72464	 LAS (wo. punct) 0.65613
+2019-11-08 16:35:59,544:DEBUG:	UAS (w. punct) 0.70541	 LAS (w. punct) 0.64557
+2019-11-08 16:35:59,544:DEBUG:	Finished at epoch 30
+2019-11-08 16:35:59,544:INFO:	...Model trained
+2019-11-08 16:35:59,544:INFO:	Model maxed on dev at epoch 23 
+2019-11-08 16:35:59,552:INFO:	_read_conll; read 38 sentences
+2019-11-08 16:35:59,831:DEBUG:	output file saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/run1/output.out
+2019-11-08 16:35:59,838:INFO:	{'uas': 0.7008055235903338, 'las': 0.6432681242807825, 'nopunct_uas': 0.7272727272727273, 'nopunct_las': 0.6613965744400527}
+2019-11-08 16:35:59,838:INFO:	
+--------------------------------------------------------
+2019-11-08 16:35:59,838:INFO:	Test score: 0.7272727272727273 0.6613965744400527
+2019-11-08 16:35:59,838:INFO:	--------------------------------------------------------
+

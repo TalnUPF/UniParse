@@ -187,3 +187,23 @@
 2019-08-07 13:20:39,083:INFO:	File /home/lpmayos/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll has 2416 sentences.
 2019-08-07 13:20:39,365:INFO:	File /home/lpmayos/code/UniParse/datasets/bpe_vocabulary_reduction/babau4.conllu has 47859 sentences.
 2019-08-07 13:20:39,937:INFO:	File /home/lpmayos/code/UniParse/datasets/bpe_vocabulary_reduction/babau4_pieced.conllu has 47860 sentences.
+2019-11-08 17:06:53,452:INFO:	Size of /home/lpmayos/hd/code/UniParse/models/kiperwasser/1b/bpe/mini/only_words_true/run1/vocab.pkl: 37347
+2019-11-08 17:06:53,453:INFO:	Size of /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/vocab.pkl: 678
+2019-11-08 17:06:53,454:INFO:	Size of /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/vocab.pkl: 678
+2019-11-08 17:06:53,454:INFO:	Size of /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_true/run1/vocab.pkl: 678
+2019-11-08 17:06:53,482:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-train.conllu has 64 sentences.
+2019-11-08 17:06:53,488:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-dev.conllu has 37 sentences.
+2019-11-08 17:06:53,495:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-test.conllu has 37 sentences.
+2019-11-08 17:06:53,503:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.conll has 1700 sentences.
+2019-11-08 17:06:53,544:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.bpe.conll has 39832 sentences.
+2019-11-08 17:06:53,550:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/PTB_SD_3_3_0/prova.bpe.conll has 1 sentences.
+2019-11-08 17:06:53,560:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.bpe.conll has 2416 sentences.
+2019-11-08 17:06:53,599:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/PTB_SD_3_3_0/train.gold.conll has 39832 sentences.
+2019-11-08 17:06:53,607:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/PTB_SD_3_3_0/dev.gold.bpe.conll has 1700 sentences.
+2019-11-08 17:06:53,617:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/PTB_SD_3_3_0/test.gold.conll has 2416 sentences.
+2019-11-08 17:06:53,624:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/PTB_SD_3_3_0/prova.conll has 1 sentences.
+2019-11-08 17:06:53,644:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu has 12543 sentences.
+2019-11-08 17:06:53,652:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu has 2002 sentences.
+2019-11-08 17:06:53,660:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu has 2077 sentences.
+2019-11-08 17:06:53,709:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/bpe_vocabulary_reduction/babau4_pieced.conllu has 47860 sentences.
+2019-11-08 17:06:53,757:INFO:	File /home/lpmayos/hd/code/UniParse/datasets/bpe_vocabulary_reduction/babau4.conllu has 47859 sentences.
