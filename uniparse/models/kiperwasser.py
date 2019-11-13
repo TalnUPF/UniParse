@@ -174,11 +174,7 @@ class DependencyParser(Parser):
 
         return parsed_tree, predicted_rels, arc_scores, rel_scores
 
-    def extract_internal_states(self, word_ids, upos_ids):
-        """
-        based on original function 'run', but instead of transduce we call add_inputs to get the list of state pairs
-        (stateF, stateB)
-        """
+    def get_hidden_states(self, word_ids, upos_ids):
         n = word_ids.shape[-1]
 
         word_embs = [dy.lookup_batch(self.wlookup, word_ids[:, i]) for i in range(n)]
@@ -186,3 +182,46 @@ class DependencyParser(Parser):
         words = [dy.concatenate([w, p]) for w, p in zip(word_embs, upos_embs)]
         state_pairs_list = self.deep_bilstm.add_inputs(words)
         return state_pairs_list
+
+    def extract_internal_states(self, samples, backend):
+        """
+        based on original function 'run', but instead of transduce we call add_inputs to get the list of state pairs
+        (stateF, stateB)
+        """
+
+        total_words = sum([len(a[0]) for a in samples])
+        embeddings_per_word = 4
+        embeddings_len = self.get_embeddings_len()
+        embeddings = np.zeros((total_words, embeddings_per_word, embeddings_len))
+
+        i = 0
+        for sample in samples:
+            backend.renew_cg()
+
+            words, lemmas, tags, heads, rels, chars = sample
+
+            words = backend.input_tensor(np.array([words]), dtype="int")
+            tags = backend.input_tensor(np.array([tags]), dtype="int")
+
+            states = self.get_hidden_states(words, tags)
+
+            for state in states:  # we receive one state per each word in the sample
+
+                state_layer1 = state[0]
+                hidden_state_layer1 = state_layer1.s()
+                hidden_state_layer1_f = np.array(hidden_state_layer1[0].value())
+                hidden_state_layer1_b = np.array(hidden_state_layer1[1].value())
+
+                state_layer2 = state[1]
+                hidden_state_layer2 = state_layer2.s()
+                hidden_state_layer2_f = np.array(hidden_state_layer2[0].value())
+                hidden_state_layer2_b = np.array(hidden_state_layer2[1].value())
+
+                embeddings[i][0] = hidden_state_layer1_f
+                embeddings[i][1] = hidden_state_layer1_b
+                embeddings[i][2] = hidden_state_layer2_f
+                embeddings[i][3] = hidden_state_layer2_b
+
+                i += 1
+
+        return embeddings

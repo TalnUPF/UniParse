@@ -116,43 +116,8 @@ class ParserModel(object):
                 returns the list of state pairs (stateF, stateB) obtained by adding inputs to both forward (stateF) and
                 backward (stateB) RNNs. Does not preserve the internal state after adding the inputs
         """
-        backend = self.backend
-
-        total_words = sum([len(a[0]) for a in samples])
-        embeddings_per_word = 4
-        embeddings_len = self._parser.get_embeddings_len()
-        embeddings = np.zeros((total_words, embeddings_per_word, embeddings_len))
-
-        i = 0
-        for sample in samples:
-            backend.renew_cg()
-
-            words, lemmas, tags, heads, rels, chars = sample
-
-            words = backend.input_tensor(np.array([words]), dtype="int")
-            tags = backend.input_tensor(np.array([tags]), dtype="int")
-
-            states = self._parser.extract_internal_states(words, tags)
-
-            for state in states:  # we receive one state per each word in the sample
-                state_layer1 = state[0]
-                hidden_state_layer1 = state_layer1.s()
-                hidden_state_layer1_f = np.array(hidden_state_layer1[0].value())
-                hidden_state_layer1_b = np.array(hidden_state_layer1[1].value())
-
-                state_layer2 = state[1]
-                hidden_state_layer2 = state_layer2.s()
-                hidden_state_layer2_f = np.array(hidden_state_layer2[0].value())
-                hidden_state_layer2_b = np.array(hidden_state_layer2[1].value())
-
-                embeddings[i][0] = hidden_state_layer1_f
-                embeddings[i][1] = hidden_state_layer1_b
-                embeddings[i][2] = hidden_state_layer2_f
-                embeddings[i][3] = hidden_state_layer2_b
-
-                i += 1
-
-        # at this point embeddings is a numpy array with shape n_words x 4 x 125
+        # embeddings is a numpy array with shape n_words x 4 x 125
+        embeddings = self._parser.extract_internal_states(samples, self.backend)
 
         if format == 'average':
             raise NotImplementedError
