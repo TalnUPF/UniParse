@@ -33,12 +33,26 @@ if __name__ == '__main__':
         embs = None
         parser = DependencyParser(vocab, embs, False)
     elif backend == 'pytorch':
-        vocab_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/vocab.pkl'
-        model_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model'
+
+        run = 1
+
+        if run == 1:
+            vocab_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/vocab.pkl'
+            model_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/model.model'
+            upos_dim = 25
+            word_dim = 100
+            hidden_dim = 100
+        elif run == 2:
+            vocab_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/vocab.pkl'
+            model_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model'
+            upos_dim = 25
+            word_dim = 100
+            hidden_dim = 200
+
         only_words = False
         vocab = Vocabulary(only_words)
         vocab.load(vocab_file)
-        parser = DependencyParserPytorch(vocab)
+        parser = DependencyParserPytorch(vocab, upos_dim, word_dim, hidden_dim)
 
     model = ParserModel(parser, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
     model.load_from_file(model_file)

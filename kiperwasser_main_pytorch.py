@@ -54,7 +54,7 @@ def do_training(arguments, vocab):
 
     # instantiate model
     logging.info("creating model ...")
-    model = DependencyParser(vocab)
+    model = DependencyParser(vocab, arguments.upos_dim, arguments.word_dim, arguments.hidden_dim)
     logging.info("... model created")
 
     callbacks = []
@@ -94,7 +94,7 @@ def do_training_big_datasets(arguments, vocab, subset_size):
 
     # instantiate model
     logging.info("creating model ...")
-    model = DependencyParser(vocab)
+    model = DependencyParser(vocab, arguments.upos_dim, arguments.word_dim, arguments.hidden_dim)
     logging.info("... model created")
 
     callbacks = []
@@ -188,6 +188,10 @@ def main():
 
     parser.add_argument("--only_words", dest="only_words", type=str2bool, default=False, help="Should we use only words to train? Lemmas and POS will be ignored", required=True)
 
+    parser.add_argument("--upos_dim", dest="upos_dim", type=int, default=25)
+    parser.add_argument("--word_dim", dest="word_dim", type=int, default=100)
+    parser.add_argument("--hidden_dim", dest="hidden_dim", type=int, default=100)
+
     parser.add_argument("--do_training", dest="do_training", type=str2bool, default=False, help="Should we train the model?", required=True)
     parser.add_argument("--train_file", dest="train", help="Annotated CONLL train file", metavar="FILE", required=False)
     parser.add_argument("--dev_file", dest="dev", help="Annotated CONLL dev file", metavar="FILE", required=False)
@@ -255,10 +259,9 @@ def main():
 
     else:
         logging.info('No training; loading model')
-        model = DependencyParser(vocab)
+        model = DependencyParser(vocab, arguments.upos_dim, arguments.word_dim, arguments.hidden_dim)
         parser = ParserModel(model, decoder="eisner", loss="kiperwasser", optimizer="adam", strategy="bucket", vocab=vocab)
-
-    parser.load_from_file(arguments.model_file)
+        parser.load_from_file(arguments.model_file)
 
     # parse test file
 

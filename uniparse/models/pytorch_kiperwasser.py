@@ -47,13 +47,15 @@ class DependencyParser(nn.Module, Parser):
     def load_from_file(self, filename: str) -> None:
         self.load_state_dict(torch.load(filename))
 
-    def __init__(self, vocab):
+    def __init__(self, vocab, upos_dim=25, word_dim=100, hidden_dim=100):
         super().__init__()
 
-        upos_dim = 25
-        word_dim = 100
-        hidden_dim = 100
-        bilstm_out = (word_dim+upos_dim) * 2
+        upos_dim = upos_dim
+        word_dim = word_dim
+        input_dim = word_dim + upos_dim
+        hidden_dim = hidden_dim
+        num_layers = 2
+        bilstm_out = hidden_dim * num_layers  # TODO lpmayos I change this; original: (word_dim+upos_dim) * 2
 
         self.word_count = vocab.vocab_size
         self.upos_count = vocab.upos_size
@@ -64,24 +66,25 @@ class DependencyParser(nn.Module, Parser):
         self.wlookup = nn.Embedding(self.word_count, word_dim)
         self.tlookup = nn.Embedding(self.word_count, upos_dim)
 
-        self.deep_bilstm = BiRNN(word_dim+upos_dim, word_dim+upos_dim, 2)
+        self.deep_bilstm = BiRNN(input_dim, hidden_dim, num_layers)  # TODO lpmayos I change this; original: BiRNN(word_dim+upos_dim, word_dim+upos_dim, 2)
 
         # edge encoding
-        self.edge_head = nn.Linear(bilstm_out, hidden_dim)
-        self.edge_modi = nn.Linear(bilstm_out, hidden_dim, bias=True)
+        hidden_dim_scorers = 100  # TODO lpmayos: re-set because it was originally 100, and I just want to play with the biLSTM encoder
+        self.edge_head = nn.Linear(bilstm_out, hidden_dim_scorers)  # in_features, out_features
+        self.edge_modi = nn.Linear(bilstm_out, hidden_dim_scorers, bias=True)
 
         # edge scoring
-        self.e_scorer = nn.Linear(hidden_dim, 1, bias=True)
+        self.e_scorer = nn.Linear(hidden_dim_scorers, 1, bias=True)
 
         # rel encoding
-        self.label_head = nn.Linear(bilstm_out, hidden_dim)
-        self.label_modi = nn.Linear(bilstm_out, hidden_dim, bias=True)
+        self.label_head = nn.Linear(bilstm_out, hidden_dim_scorers)
+        self.label_modi = nn.Linear(bilstm_out, hidden_dim_scorers, bias=True)
 
         # label scoring
-        self.l_scorer = nn.Linear(hidden_dim, vocab.label_count, bias=True)
+        self.l_scorer = nn.Linear(hidden_dim_scorers, vocab.label_count, bias=True)
 
     def get_embeddings_len(self):
-        return 125  # TODO lpmayos compute/get the right value instead of hardcoded
+        return self.deep_bilstm.hidden_size
 
     def init_weights(self):
         nn.init.xavier_uniform_(self.wlookup.weight)
