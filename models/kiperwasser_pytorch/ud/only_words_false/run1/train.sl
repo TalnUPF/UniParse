@@ -37,7 +37,7 @@ hidden_dim=100
 
 cd /homedtic/lperez/UniParse
 
-python setup.py build_ext --inplace  # compiling decoders
+# python setup.py build_ext --inplace  # compiling decoders
 
 python kiperwasser_main_pytorch.py --results_folder $results_folder \
                                    --logging_file $logging_file \
