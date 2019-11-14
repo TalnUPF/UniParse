@@ -92,3 +92,24 @@ Arguments:
 2019-11-14 11:55:54,128:INFO:	Test score: 0.4137022397891963 0.3557312252964427
 2019-11-14 11:55:54,128:INFO:	--------------------------------------------------------
 
+2019-11-14 12:11:18,824:INFO:	
+
+
+===================================================================================================
+2019-11-14 12:11:18,824:INFO:	kiperwasser_main
+2019-11-14 12:11:18,825:INFO:	===================================================================================================
+
+2019-11-14 12:11:18,825:INFO:	
+Arguments:
+2019-11-14 12:11:18,825:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 12:11:18,825:INFO:	
+
+2019-11-14 12:11:18,825:INFO:	No training; loading model
+2019-11-14 12:11:18,847:INFO:	_read_conll; read 38 sentences
+2019-11-14 12:11:19,141:DEBUG:	output file saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out
+2019-11-14 12:11:19,147:INFO:	{'uas': 0.40736478711162255, 'las': 0.3567318757192175, 'nopunct_uas': 0.4137022397891963, 'nopunct_las': 0.3557312252964427}
+2019-11-14 12:11:19,147:INFO:	
+--------------------------------------------------------
+2019-11-14 12:11:19,147:INFO:	Test score: 0.4137022397891963 0.3557312252964427
+2019-11-14 12:11:19,147:INFO:	--------------------------------------------------------
+
