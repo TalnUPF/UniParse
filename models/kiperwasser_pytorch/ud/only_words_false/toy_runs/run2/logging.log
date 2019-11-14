@@ -1,115 +1,314 @@
-2019-11-14 11:55:27,925:INFO:	
+2019-11-14 13:29:57,334:INFO:	
 
 
 ===================================================================================================
-2019-11-14 11:55:27,925:INFO:	kiperwasser_main
-2019-11-14 11:55:27,925:INFO:	===================================================================================================
+2019-11-14 13:29:57,334:INFO:	kiperwasser_main
+2019-11-14 13:29:57,334:INFO:	===================================================================================================
 
-2019-11-14 11:55:27,925:INFO:	
+2019-11-14 13:29:57,334:INFO:	
 Arguments:
-2019-11-14 11:55:27,925:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-dev.conllu', dev_mode=False, do_training=True, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/vocab.pkl', word_dim=100)
-2019-11-14 11:55:27,925:INFO:	
+2019-11-14 13:29:57,335:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-dev.conllu', dev_mode=False, do_training=True, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 13:29:57,335:INFO:	
 
-2019-11-14 11:55:27,932:INFO:	> saving vocab to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/vocab.pkl
-2019-11-14 11:55:27,932:INFO:	Training with big dataset; subset_size = 10000
-2019-11-14 11:55:27,932:DEBUG:	Init training with big dataset (there is no dev mode)
-2019-11-14 11:55:27,932:INFO:	tokenizing dev data ...
-2019-11-14 11:55:27,938:INFO:	_read_conll; read 38 sentences
-2019-11-14 11:55:27,938:INFO:	... tokenized dev data
-2019-11-14 11:55:27,938:INFO:	creating model ...
-2019-11-14 11:55:27,949:INFO:	... model created
-2019-11-14 11:55:27,949:INFO:	creating ModelSaveCallback ...
-2019-11-14 11:55:27,949:INFO:	saving model to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model  (after step 0)
-2019-11-14 11:55:27,949:INFO:	... ModelSaveCallback created
-2019-11-14 11:55:27,949:INFO:	creating Model ...
-2019-11-14 11:55:27,950:INFO:	... Model created
-2019-11-14 11:55:27,950:INFO:	training Model ...
-2019-11-14 11:55:27,950:DEBUG:	...Training without patience for exactly 4 epochs
-2019-11-14 11:55:27,950:INFO:	
-2019-11-14 11:55:27,950:INFO:	Epoch 1
-2019-11-14 11:55:27,950:INFO:	=====================
-2019-11-14 11:55:27,960:INFO:	train_big_datasets; epoch 1; total sentences used to train: 63; read_sentences 63
-2019-11-14 11:55:31,314:DEBUG:	Completed epoch 1 in 3.364013433456421
-2019-11-14 11:55:31,672:DEBUG:	output file saved to 1114115527_on_en-ud-dev.conllu
-2019-11-14 11:55:31,678:DEBUG:	UAS (wo. punct) 0.11199	 LAS (wo. punct) 0.038208
-2019-11-14 11:55:31,678:DEBUG:	UAS (w. punct) 0.11507	 LAS (w. punct) 0.050633
-2019-11-14 11:55:31,682:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model
-2019-11-14 11:55:31,682:INFO:	
-2019-11-14 11:55:31,682:INFO:	Epoch 2
-2019-11-14 11:55:31,682:INFO:	=====================
-2019-11-14 11:55:31,694:INFO:	train_big_datasets; epoch 2; total sentences used to train: 63; read_sentences 63
-2019-11-14 11:55:35,385:DEBUG:	Completed epoch 2 in 3.702882766723633
-2019-11-14 11:55:35,861:DEBUG:	output file saved to 1114115527_on_en-ud-dev.conllu
-2019-11-14 11:55:35,867:DEBUG:	UAS (wo. punct) 0.018445	 LAS (wo. punct) 0.013175
-2019-11-14 11:55:35,867:DEBUG:	UAS (w. punct) 0.018412	 LAS (w. punct) 0.013809
-2019-11-14 11:55:35,867:INFO:	
-2019-11-14 11:55:35,867:INFO:	Epoch 3
-2019-11-14 11:55:35,867:INFO:	=====================
-2019-11-14 11:55:35,877:INFO:	train_big_datasets; epoch 3; total sentences used to train: 63; read_sentences 63
-2019-11-14 11:55:40,046:DEBUG:	Completed epoch 3 in 4.179619550704956
-2019-11-14 11:55:40,505:DEBUG:	output file saved to 1114115527_on_en-ud-dev.conllu
-2019-11-14 11:55:40,511:DEBUG:	UAS (wo. punct) 0.22398	 LAS (wo. punct) 0.17391
-2019-11-14 11:55:40,511:DEBUG:	UAS (w. punct) 0.22209	 LAS (w. punct) 0.17837
-2019-11-14 11:55:40,516:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model
-2019-11-14 11:55:40,516:INFO:	
-2019-11-14 11:55:40,516:INFO:	Epoch 4
-2019-11-14 11:55:40,517:INFO:	=====================
-2019-11-14 11:55:40,528:INFO:	train_big_datasets; epoch 4; total sentences used to train: 63; read_sentences 63
-2019-11-14 11:55:44,121:DEBUG:	Completed epoch 4 in 3.6045308113098145
-2019-11-14 11:55:44,530:DEBUG:	output file saved to 1114115527_on_en-ud-dev.conllu
-2019-11-14 11:55:44,545:DEBUG:	UAS (wo. punct) 0.4137	 LAS (wo. punct) 0.35573
-2019-11-14 11:55:44,546:DEBUG:	UAS (w. punct) 0.40736	 LAS (w. punct) 0.35673
-2019-11-14 11:55:44,554:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model
-2019-11-14 11:55:44,554:DEBUG:	Finished at epoch 4
-2019-11-14 11:55:44,555:INFO:	...Model trained
-2019-11-14 11:55:44,555:INFO:	Model maxed on dev at epoch 4 
-2019-11-14 11:55:44,569:INFO:	_read_conll; read 38 sentences
-2019-11-14 11:55:45,023:DEBUG:	output file saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/output.out
-2019-11-14 11:55:45,038:INFO:	{'uas': 0.40736478711162255, 'las': 0.3567318757192175, 'nopunct_uas': 0.4137022397891963, 'nopunct_las': 0.3557312252964427}
-2019-11-14 11:55:45,039:INFO:	
+2019-11-14 13:29:57,342:INFO:	> saving vocab to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl
+2019-11-14 13:29:57,342:INFO:	Training with normal dataset
+2019-11-14 13:29:57,342:DEBUG:	Init training
+2019-11-14 13:29:57,342:INFO:	>> Loading in data
+2019-11-14 13:29:57,342:INFO:	tokenizing train data ...
+2019-11-14 13:29:57,352:INFO:	_read_conll; read 64 sentences
+2019-11-14 13:29:57,352:INFO:	... tokenized train data
+2019-11-14 13:29:57,352:INFO:	tokenizing dev data ...
+2019-11-14 13:29:57,357:INFO:	_read_conll; read 38 sentences
+2019-11-14 13:29:57,357:INFO:	... tokenized dev data
+2019-11-14 13:29:57,357:INFO:	creating model ...
+2019-11-14 13:29:57,368:INFO:	... model created
+2019-11-14 13:29:57,368:INFO:	creating ModelSaveCallback ...
+2019-11-14 13:29:57,368:INFO:	saving model to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model  (after step 0)
+2019-11-14 13:29:57,369:INFO:	... ModelSaveCallback created
+2019-11-14 13:29:57,369:INFO:	creating Model ...
+2019-11-14 13:29:57,369:INFO:	... Model created
+2019-11-14 13:29:57,369:INFO:	training Model ...
+2019-11-14 13:29:57,369:DEBUG:	...Training without patience for exactly 4 epochs
+2019-11-14 13:29:57,375:INFO:	Epoch 1
+2019-11-14 13:29:57,376:INFO:	=====================
+2019-11-14 13:30:00,972:DEBUG:	Completed epoch 1 in 3.5960779190063477
+2019-11-14 13:30:01,353:DEBUG:	output file saved to 1114132957_on_en-ud-dev.conllu
+2019-11-14 13:30:01,359:DEBUG:	UAS (wo. punct) 0.065876	 LAS (wo. punct) 0.030303
+2019-11-14 13:30:01,359:DEBUG:	UAS (w. punct) 0.066743	 LAS (w. punct) 0.034522
+2019-11-14 13:30:01,363:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model
+2019-11-14 13:30:01,363:INFO:	Epoch 2
+2019-11-14 13:30:01,363:INFO:	=====================
+2019-11-14 13:30:04,566:DEBUG:	Completed epoch 2 in 3.2027976512908936
+2019-11-14 13:30:05,022:DEBUG:	output file saved to 1114132957_on_en-ud-dev.conllu
+2019-11-14 13:30:05,028:DEBUG:	UAS (wo. punct) 0.081686	 LAS (wo. punct) 0.052701
+2019-11-14 13:30:05,028:DEBUG:	UAS (w. punct) 0.086306	 LAS (w. punct) 0.059839
+2019-11-14 13:30:05,033:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model
+2019-11-14 13:30:05,033:INFO:	Epoch 3
+2019-11-14 13:30:05,033:INFO:	=====================
+2019-11-14 13:30:07,768:DEBUG:	Completed epoch 3 in 2.7354440689086914
+2019-11-14 13:30:08,166:DEBUG:	output file saved to 1114132957_on_en-ud-dev.conllu
+2019-11-14 13:30:08,172:DEBUG:	UAS (wo. punct) 0.19499	 LAS (wo. punct) 0.14625
+2019-11-14 13:30:08,172:DEBUG:	UAS (w. punct) 0.20023	 LAS (w. punct) 0.1565
+2019-11-14 13:30:08,178:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model
+2019-11-14 13:30:08,178:INFO:	Epoch 4
+2019-11-14 13:30:08,178:INFO:	=====================
+2019-11-14 13:30:11,398:DEBUG:	Completed epoch 4 in 3.219754457473755
+2019-11-14 13:30:11,873:DEBUG:	output file saved to 1114132957_on_en-ud-dev.conllu
+2019-11-14 13:30:11,879:DEBUG:	UAS (wo. punct) 0.29117	 LAS (wo. punct) 0.24638
+2019-11-14 13:30:11,879:DEBUG:	UAS (w. punct) 0.29114	 LAS (w. punct) 0.25086
+2019-11-14 13:30:11,884:INFO:	saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model
+2019-11-14 13:30:11,884:DEBUG:	Finished at epoch 4
+2019-11-14 13:30:11,885:INFO:	...Model trained
+2019-11-14 13:30:11,885:INFO:	Model maxed on dev at epoch 4 
+2019-11-14 13:30:11,890:INFO:	_read_conll; read 38 sentences
+2019-11-14 13:30:12,153:DEBUG:	output file saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out
+2019-11-14 13:30:12,159:INFO:	{'uas': 0.2911392405063291, 'las': 0.2508630609896433, 'nopunct_uas': 0.29117259552042163, 'nopunct_las': 0.2463768115942029}
+2019-11-14 13:30:12,159:INFO:	
 --------------------------------------------------------
-2019-11-14 11:55:45,039:INFO:	Test score: 0.4137022397891963 0.3557312252964427
-2019-11-14 11:55:45,039:INFO:	--------------------------------------------------------
+2019-11-14 13:30:12,159:INFO:	Test score: 0.29117259552042163 0.2463768115942029
+2019-11-14 13:30:12,159:INFO:	--------------------------------------------------------
 
-2019-11-14 11:55:53,823:INFO:	
+2019-11-14 13:30:32,848:INFO:	
 
 
 ===================================================================================================
-2019-11-14 11:55:53,823:INFO:	kiperwasser_main
-2019-11-14 11:55:53,823:INFO:	===================================================================================================
+2019-11-14 13:30:32,848:INFO:	kiperwasser_main
+2019-11-14 13:30:32,848:INFO:	===================================================================================================
 
-2019-11-14 11:55:53,823:INFO:	
+2019-11-14 13:30:32,848:INFO:	
 Arguments:
-2019-11-14 11:55:53,823:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/vocab.pkl', word_dim=100)
-2019-11-14 11:55:53,823:INFO:	
+2019-11-14 13:30:32,848:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 13:30:32,848:INFO:	
 
-2019-11-14 11:55:53,823:INFO:	No training; loading model
-2019-11-14 11:55:53,845:INFO:	_read_conll; read 38 sentences
-2019-11-14 11:55:54,121:DEBUG:	output file saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/output.out
-2019-11-14 11:55:54,127:INFO:	{'uas': 0.40736478711162255, 'las': 0.3567318757192175, 'nopunct_uas': 0.4137022397891963, 'nopunct_las': 0.3557312252964427}
-2019-11-14 11:55:54,127:INFO:	
+2019-11-14 13:30:32,848:INFO:	No training; loading model
+2019-11-14 13:30:32,870:INFO:	_read_conll; read 38 sentences
+2019-11-14 13:30:33,127:DEBUG:	output file saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out
+2019-11-14 13:30:33,133:INFO:	{'uas': 0.2911392405063291, 'las': 0.2508630609896433, 'nopunct_uas': 0.29117259552042163, 'nopunct_las': 0.2463768115942029}
+2019-11-14 13:30:33,133:INFO:	
 --------------------------------------------------------
-2019-11-14 11:55:54,128:INFO:	Test score: 0.4137022397891963 0.3557312252964427
-2019-11-14 11:55:54,128:INFO:	--------------------------------------------------------
+2019-11-14 13:30:33,133:INFO:	Test score: 0.29117259552042163 0.2463768115942029
+2019-11-14 13:30:33,133:INFO:	--------------------------------------------------------
 
-2019-11-14 12:11:18,824:INFO:	
+2019-11-14 13:32:52,130:INFO:	
 
 
 ===================================================================================================
-2019-11-14 12:11:18,824:INFO:	kiperwasser_main
-2019-11-14 12:11:18,825:INFO:	===================================================================================================
+2019-11-14 13:32:52,130:INFO:	kiperwasser_main
+2019-11-14 13:32:52,130:INFO:	===================================================================================================
 
-2019-11-14 12:11:18,825:INFO:	
+2019-11-14 13:32:52,130:INFO:	
 Arguments:
-2019-11-14 12:11:18,825:INFO:	Namespace(batch_size=32, big_dataset=True, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1_toy/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
-2019-11-14 12:11:18,825:INFO:	
+2019-11-14 13:32:52,130:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 13:32:52,130:INFO:	
 
-2019-11-14 12:11:18,825:INFO:	No training; loading model
-2019-11-14 12:11:18,847:INFO:	_read_conll; read 38 sentences
-2019-11-14 12:11:19,141:DEBUG:	output file saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out
-2019-11-14 12:11:19,147:INFO:	{'uas': 0.40736478711162255, 'las': 0.3567318757192175, 'nopunct_uas': 0.4137022397891963, 'nopunct_las': 0.3557312252964427}
-2019-11-14 12:11:19,147:INFO:	
+2019-11-14 13:32:52,130:INFO:	No training; loading model
+2019-11-14 13:32:52,319:INFO:	_read_conll; read 2076 sentences
+2019-11-14 13:33:11,015:INFO:	
+
+
+===================================================================================================
+2019-11-14 13:33:11,016:INFO:	kiperwasser_main
+2019-11-14 13:33:11,016:INFO:	===================================================================================================
+
+2019-11-14 13:33:11,016:INFO:	
+Arguments:
+2019-11-14 13:33:11,016:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 13:33:11,016:INFO:	
+
+2019-11-14 13:33:16,226:INFO:	No training; loading model
+2019-11-14 13:33:21,929:INFO:	_read_conll; read 2076 sentences
+2019-11-14 13:40:09,484:INFO:	
+
+
+===================================================================================================
+2019-11-14 13:40:09,484:INFO:	kiperwasser_main
+2019-11-14 13:40:09,484:INFO:	===================================================================================================
+
+2019-11-14 13:40:09,484:INFO:	
+Arguments:
+2019-11-14 13:40:09,484:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 13:40:09,484:INFO:	
+
+2019-11-14 13:40:09,484:INFO:	No training; loading model
+2019-11-14 13:40:09,667:INFO:	_read_conll; read 2076 sentences
+2019-11-14 13:40:35,359:INFO:	
+
+
+===================================================================================================
+2019-11-14 13:40:35,360:INFO:	kiperwasser_main
+2019-11-14 13:40:35,360:INFO:	===================================================================================================
+
+2019-11-14 13:40:35,360:INFO:	
+Arguments:
+2019-11-14 13:40:35,360:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 13:40:35,360:INFO:	
+
+2019-11-14 13:40:35,360:INFO:	No training; loading model
+2019-11-14 13:40:35,981:INFO:	_read_conll; read 2076 sentences
+2019-11-14 13:44:08,184:INFO:	
+
+
+===================================================================================================
+2019-11-14 13:44:08,185:INFO:	kiperwasser_main
+2019-11-14 13:44:08,185:INFO:	===================================================================================================
+
+2019-11-14 13:44:08,185:INFO:	
+Arguments:
+2019-11-14 13:44:08,185:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 13:44:08,185:INFO:	
+
+2019-11-14 13:44:08,186:INFO:	No training; loading model
+2019-11-14 13:44:08,816:INFO:	_read_conll; read 2076 sentences
+2019-11-14 13:46:12,438:INFO:	
+
+
+===================================================================================================
+2019-11-14 13:46:12,438:INFO:	kiperwasser_main
+2019-11-14 13:46:12,438:INFO:	===================================================================================================
+
+2019-11-14 13:46:12,438:INFO:	
+Arguments:
+2019-11-14 13:46:12,439:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 13:46:12,439:INFO:	
+
+2019-11-14 13:46:12,439:INFO:	No training; loading model
+2019-11-14 13:47:03,507:INFO:	_read_conll; read 2076 sentences
+2019-11-14 15:21:12,446:INFO:	
+
+
+===================================================================================================
+2019-11-14 15:21:12,446:INFO:	kiperwasser_main
+2019-11-14 15:21:12,446:INFO:	===================================================================================================
+
+2019-11-14 15:21:12,446:INFO:	
+Arguments:
+2019-11-14 15:21:12,446:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 15:21:12,446:INFO:	
+
+2019-11-14 15:21:12,447:INFO:	No training; loading model
+2019-11-14 15:25:54,119:INFO:	
+
+
+===================================================================================================
+2019-11-14 15:25:54,120:INFO:	kiperwasser_main
+2019-11-14 15:25:54,120:INFO:	===================================================================================================
+
+2019-11-14 15:25:54,120:INFO:	
+Arguments:
+2019-11-14 15:25:54,120:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 15:25:54,120:INFO:	
+
+2019-11-14 15:25:54,120:INFO:	No training; loading model
+2019-11-14 15:26:45,840:INFO:	
+
+
+===================================================================================================
+2019-11-14 15:26:45,840:INFO:	kiperwasser_main
+2019-11-14 15:26:45,840:INFO:	===================================================================================================
+
+2019-11-14 15:26:45,840:INFO:	
+Arguments:
+2019-11-14 15:26:45,841:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 15:26:45,841:INFO:	
+
+2019-11-14 15:26:45,841:INFO:	No training; loading model
+2019-11-14 15:35:59,709:INFO:	
+
+
+===================================================================================================
+2019-11-14 15:35:59,709:INFO:	kiperwasser_main
+2019-11-14 15:35:59,709:INFO:	===================================================================================================
+
+2019-11-14 15:35:59,709:INFO:	
+Arguments:
+2019-11-14 15:35:59,709:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 15:35:59,709:INFO:	
+
+2019-11-14 15:35:59,710:INFO:	No training; loading model
+2019-11-14 15:41:39,939:INFO:	
+
+
+===================================================================================================
+2019-11-14 15:41:39,939:INFO:	kiperwasser_main
+2019-11-14 15:41:39,939:INFO:	===================================================================================================
+
+2019-11-14 15:41:39,939:INFO:	
+Arguments:
+2019-11-14 15:41:39,939:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 15:41:39,939:INFO:	
+
+2019-11-14 15:41:39,940:INFO:	No training; loading model
+2019-11-14 15:41:53,919:INFO:	
+
+
+===================================================================================================
+2019-11-14 15:41:53,919:INFO:	kiperwasser_main
+2019-11-14 15:41:53,920:INFO:	===================================================================================================
+
+2019-11-14 15:41:53,920:INFO:	
+Arguments:
+2019-11-14 15:41:53,920:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 15:41:53,920:INFO:	
+
+2019-11-14 15:41:53,920:INFO:	No training; loading model
+2019-11-14 15:42:18,846:INFO:	_read_conll; read 2076 sentences
+2019-11-14 15:50:37,626:INFO:	
+
+
+===================================================================================================
+2019-11-14 15:50:37,626:INFO:	kiperwasser_main
+2019-11-14 15:50:37,626:INFO:	===================================================================================================
+
+2019-11-14 15:50:37,626:INFO:	
+Arguments:
+2019-11-14 15:50:37,627:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 15:50:37,627:INFO:	
+
+2019-11-14 15:50:37,627:INFO:	No training; loading model
+2019-11-14 16:05:54,602:INFO:	
+
+
+===================================================================================================
+2019-11-14 16:05:54,602:INFO:	kiperwasser_main
+2019-11-14 16:05:54,602:INFO:	===================================================================================================
+
+2019-11-14 16:05:54,602:INFO:	
+Arguments:
+2019-11-14 16:05:54,602:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 16:05:54,602:INFO:	
+
+2019-11-14 16:05:54,603:INFO:	No training; loading model
+2019-11-14 16:06:24,397:INFO:	
+
+
+===================================================================================================
+2019-11-14 16:06:24,397:INFO:	kiperwasser_main
+2019-11-14 16:06:24,397:INFO:	===================================================================================================
+
+2019-11-14 16:06:24,397:INFO:	
+Arguments:
+2019-11-14 16:06:24,397:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 16:06:24,397:INFO:	
+
+2019-11-14 16:06:24,398:INFO:	No training; loading model
+2019-11-14 16:11:21,200:INFO:	
+
+
+===================================================================================================
+2019-11-14 16:11:21,200:INFO:	kiperwasser_main
+2019-11-14 16:11:21,200:INFO:	===================================================================================================
+
+2019-11-14 16:11:21,200:INFO:	
+Arguments:
+2019-11-14 16:11:21,200:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-dev.conllu', dev_mode=False, do_training=False, epochs=4, hidden_dim=200, logging_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/logging.log', model_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model', only_words=False, output_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out', patience=-1, results_folder='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2', tb_dest=None, test='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-test.conllu', train='/home/lpmayos/hd/code/UniParse/datasets/ud2.1/en-ud-train.conllu', upos_dim=25, vocab_file='/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl', word_dim=100)
+2019-11-14 16:11:21,200:INFO:	
+
+2019-11-14 16:11:21,200:INFO:	No training; loading model
+2019-11-14 16:11:21,380:INFO:	_read_conll; read 2076 sentences
+2019-11-14 16:11:23,417:DEBUG:	output file saved to /home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/output.out
+2019-11-14 16:11:23,672:INFO:	{'uas': 0.3523874107463401, 'las': 0.29817703139335433, 'nopunct_uas': 0.35594380074810694, 'nopunct_las': 0.2956390840251802}
+2019-11-14 16:11:23,672:INFO:	
 --------------------------------------------------------
-2019-11-14 12:11:19,147:INFO:	Test score: 0.4137022397891963 0.3557312252964427
-2019-11-14 12:11:19,147:INFO:	--------------------------------------------------------
+2019-11-14 16:11:23,672:INFO:	Test score: 0.35594380074810694 0.2956390840251802
+2019-11-14 16:11:23,672:INFO:	--------------------------------------------------------
 
