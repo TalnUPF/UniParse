@@ -12,7 +12,7 @@ module load scikit-learn/0.19.1-foss-2017a-Python-3.6.4
 
 # dataset
 
-dataset_folder=homedtic/lperez/UniParse/datasets/ud2.1/
+dataset_folder=/homedtic/lperez/UniParse/datasets/ud2.1/
 train_file=$dataset_folder/en-ud-train.conllu
 train_file=$dataset_folder/en-ud-train.conllu
 dev_file=$dataset_folder/en-ud-dev.conllu
@@ -31,7 +31,7 @@ vocab_file=$results_folder/vocab.pkl
 # running the code
 
 do_training=True
-big_dataset=True
+big_dataset=False
 only_words=False
 hidden_dim=100
 
