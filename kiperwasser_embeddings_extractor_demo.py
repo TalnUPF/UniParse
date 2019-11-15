@@ -37,14 +37,14 @@ if __name__ == '__main__':
         run = 1
 
         if run == 1:
-            vocab_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/vocab.pkl'
-            model_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run1/model.model'
+            vocab_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run1/vocab.pkl'
+            model_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run1/model.model'
             upos_dim = 25
             word_dim = 100
             hidden_dim = 100
         elif run == 2:
-            vocab_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/vocab.pkl'
-            model_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/run2/model.model'
+            vocab_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/vocab.pkl'
+            model_file = '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run2/model.model'
             upos_dim = 25
             word_dim = 100
             hidden_dim = 200
@@ -58,7 +58,8 @@ if __name__ == '__main__':
     model.load_from_file(model_file)
 
     # input_file = '/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt'
-    input_file = None
+    # input_file = None
+    input_file = '/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/en_ewt-ud-dev.conllu'
 
     if input_file is not None:
         input_file = transform_to_conllu(input_file)

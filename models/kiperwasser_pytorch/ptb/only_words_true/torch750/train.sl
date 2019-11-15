@@ -12,7 +12,7 @@ module load scikit-learn/0.19.1-foss-2017a-Python-3.6.4
 
 # dataset
 
-dataset_folder=homedtic/lperez/UniParse/datasets/PTB_SD_3_3_0/
+dataset_folder=/homedtic/lperez/UniParse/datasets/PTB_SD_3_3_0/
 train_file=$dataset_folder/train.gold.conll
 dev_file=$dataset_folder/dev.gold.conll
 test_file=$dataset_folder/test.gold.conll
