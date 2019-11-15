@@ -179,22 +179,24 @@ class DependencyParser(nn.Module, Parser):
         #return state_pairs_list
         return hidden
 
-    def extract_internal_states(self, samples, backend):
+    def extract_internal_states(self, samples, format, backend):
         """
         based on original function 'run', but instead of transduce we call add_inputs to get the list of state pairs
         (stateF, stateB)
         """
 
-        total_words = sum([len(a[0]) for a in samples])
-        embeddings_per_word = 4
-        embeddings_len = self.get_embeddings_len()
-        embeddings = np.zeros((total_words, embeddings_per_word, embeddings_len))
+        embeddings = {}
+
+        # total_words = sum([len(a[0]) for a in samples])
+        # embeddings_per_word = 4
+        # embeddings_len = self.get_embeddings_len()
+        # embeddings = np.zeros((total_words, embeddings_per_word, embeddings_len))
 
         i = 0
-        for sample in samples:
+        for sentence in samples:
             backend.renew_cg()
 
-            words, lemmas, tags, heads, rels, chars = sample
+            words, lemmas, tags, heads, rels, chars = sentence
 
             words = backend.input_tensor(np.array([words]), dtype="int")
             tags = backend.input_tensor(np.array([tags]), dtype="int")

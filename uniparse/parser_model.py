@@ -3,6 +3,7 @@ import sys
 import time
 import ntpath
 import logging
+import hdfdict
 from typing import *
 
 from uniparse.types import Parser
@@ -108,7 +109,7 @@ class ParserModel(object):
 
         return _idx, _sentences
 
-    def extract_embeddings(self, samples: List, format='concat'):
+    def extract_embeddings(self, samples: List, format='concat', save=False, file_path=None):
         """
         based on original function 'run', but instead of calling _parser() to end up executing dynet 'transduce'
         function, we call 'extract_internal_states' to end up executing dynet 'add_inputs' function:
@@ -116,27 +117,26 @@ class ParserModel(object):
                 returns the list of state pairs (stateF, stateB) obtained by adding inputs to both forward (stateF) and
                 backward (stateB) RNNs. Does not preserve the internal state after adding the inputs
         """
-        # embeddings is a numpy array with shape n_words x 4 x 125
-        embeddings = self._parser.extract_internal_states(samples, self.backend)
 
-        if format == 'average':
-            raise NotImplementedError
-        elif format == 'max':
-            raise NotImplementedError
-        else:  # default: concat
-            embeddings_dimension = embeddings.shape[1] * embeddings.shape[2]
-            embeddings = embeddings.reshape((embeddings.shape[0], embeddings_dimension))
+        embeddings = self._parser.extract_internal_states(samples, format, self.backend)  # {'0': <np.ndarray(size=(1,SEQLEN1,FEATURE_COUNT))>, '1':<np.ndarray(size=(1,SEQLEN1,FEATURE_COUNT))>...}
 
-        embeddings = embeddings.astype(np.float32)
+        # # embeddings is a numpy array with shape n_words x 4 x 125
+        # embeddings = self._parser.extract_internal_states(samples, self.backend)
+        #
+        # if format == 'average':
+        #     raise NotImplementedError
+        # elif format == 'max':
+        #     raise NotImplementedError
+        # else:  # default: concat
+        #     embeddings_dimension = embeddings.shape[1] * embeddings.shape[2]
+        #     embeddings = embeddings.reshape((embeddings.shape[0], embeddings_dimension))
+        #
+        # embeddings = embeddings.astype(np.float32)
+
+        if save:
+            hdfdict.dump(embeddings, file_path)
+
         return embeddings
-
-    def extract_embeddings_from_word_tags_tuple(self, sentence_words):
-        sentence_tags = []  # TODO we assume that we work always with the only_words=True model; rethink
-        batch_size = 32  # TODO hardcoded for testing purposes; see if we can determine it any other way
-        input_data = self._vocab.word_tags_tuple_to_conll(sentence_words, sentence_tags)
-        contextual_embeddings = self.extract_embeddings(input_data, batch_size)
-        del input_data
-        return contextual_embeddings
 
     def run(self, samples: List, batch_size: int):
         indices, batches = self._batch_data(samples, strategy=self._batch_strategy, scale=batch_size, shuffle=False)

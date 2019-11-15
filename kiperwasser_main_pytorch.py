@@ -4,7 +4,7 @@ import os
 
 from uniparse import Vocabulary, ParserModel
 from uniparse.callbacks import TensorboardLoggerCallback, ModelSaveCallback
-from uniparse.models.pytorch_kiperwasser import DependencyParser
+from uniparse.models.kiperwasser_pytorch import DependencyParser
 
 
 def str2bool(v):

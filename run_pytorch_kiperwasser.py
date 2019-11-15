@@ -5,7 +5,7 @@ from uniparse.callbacks import ModelSaveCallback
 
 from uniparse import ParserModel
 from uniparse.vocabulary import Vocabulary
-from uniparse.models.pytorch_kiperwasser import DependencyParser
+from uniparse.models.kiperwasser_pytorch import DependencyParser
 
 parser = argparse.ArgumentParser()
 

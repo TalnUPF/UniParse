@@ -3,7 +3,7 @@ import logging
 from kiperwasser_main import transform_to_conllu
 from uniparse import Vocabulary, ParserModel
 from uniparse.models.kiperwasser import DependencyParser as DependencyParser
-from uniparse.models.pytorch_kiperwasser import DependencyParser as DependencyParserPytorch
+from uniparse.models.kiperwasser_pytorch import DependencyParser as DependencyParserPytorch
 
 
 if __name__ == '__main__':
@@ -58,18 +58,9 @@ if __name__ == '__main__':
     model.load_from_file(model_file)
 
     # input_file = '/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt'
-    # input_file = None
     input_file = '/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/en_ewt-ud-dev.conllu'
 
-    if input_file is not None:
-        input_file = transform_to_conllu(input_file)
-        input_data = vocab.tokenize_conll(input_file)
+    input_file = transform_to_conllu(input_file)
+    input_data = vocab.tokenize_conll(input_file)
 
-    else:
-        words = ('Chancellor', 'of', 'the', 'Exchequer', 'Nigel', 'Lawson', "'s", 'restated', 'commitment', 'to', 'a', 'firm', 'monetary', 'policy', 'has', 'helped', 'to', 'prevent', 'a', 'freefall', 'in', 'sterling', 'over', 'the', 'past', 'week', '.')
-        tags = ('O', 'B-PP', 'B-NP', 'I-NP', 'B-NP', 'I-NP', 'B-NP', 'I-NP', 'I-NP', 'B-PP', 'B-NP', 'I-NP', 'I-NP', 'I-NP', 'B-VP', 'I-VP', 'I-VP', 'I-VP', 'B-NP', 'I-NP', 'B-PP', 'B-NP', 'B-PP', 'B-NP', 'I-NP', 'I-NP', 'O')
-        input_data = vocab.word_tags_tuple_to_conll(words, tags)
-
-    embeddings = model.extract_embeddings(input_data)
-
-    print(embeddings)
+    embeddings = model.extract_embeddings(input_data, format='concat', save=True, file_path='babau.hdf5')  # {'0': <np.ndarray(size=(1,SEQLEN1,FEATURE_COUNT))>, '1':<np.ndarray(size=(1,SEQLEN1,FEATURE_COUNT))>...}
