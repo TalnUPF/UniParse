@@ -1,0 +1,265 @@
+2019-11-14 21:00:54,182:INFO:	
+
+
+===================================================================================================
+2019-11-14 21:00:54,183:INFO:	kiperwasser_main
+2019-11-14 21:00:54,184:INFO:	===================================================================================================
+
+2019-11-14 21:00:54,184:INFO:	
+Arguments:
+2019-11-14 21:00:54,185:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/homedtic/lperez/UniParse/datasets/ud2.1//en-ud-dev.conllu', dev_mode=False, do_training=True, epochs=30, hidden_dim=200, logging_file='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/logging.log', model_file='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model', only_words=True, output_file='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/output.out', patience=-1, results_folder='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200', tb_dest=None, test='/homedtic/lperez/UniParse/datasets/ud2.1//en-ud-test.conllu', train='/homedtic/lperez/UniParse/datasets/ud2.1//en-ud-train.conllu', upos_dim=25, vocab_file='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/vocab.pkl', word_dim=100)
+2019-11-14 21:00:54,186:INFO:	
+
+2019-11-14 21:00:55,611:INFO:	> saving vocab to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/vocab.pkl
+2019-11-14 21:00:55,625:INFO:	Training with normal dataset
+2019-11-14 21:00:55,626:DEBUG:	Init training
+2019-11-14 21:00:55,627:INFO:	>> Loading in data
+2019-11-14 21:00:55,628:INFO:	tokenizing train data ...
+2019-11-14 21:00:57,677:INFO:	_read_conll; read 12523 sentences
+2019-11-14 21:00:57,677:INFO:	... tokenized train data
+2019-11-14 21:00:57,678:INFO:	tokenizing dev data ...
+2019-11-14 21:00:58,029:INFO:	_read_conll; read 2001 sentences
+2019-11-14 21:00:58,030:INFO:	... tokenized dev data
+2019-11-14 21:00:58,031:INFO:	creating model ...
+2019-11-14 21:00:58,066:INFO:	... model created
+2019-11-14 21:00:58,067:INFO:	creating ModelSaveCallback ...
+2019-11-14 21:00:58,068:INFO:	saving model to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model  (after step 0)
+2019-11-14 21:00:58,069:INFO:	... ModelSaveCallback created
+2019-11-14 21:00:58,070:INFO:	creating Model ...
+2019-11-14 21:00:58,074:INFO:	... Model created
+2019-11-14 21:00:58,074:INFO:	training Model ...
+2019-11-14 21:00:58,075:DEBUG:	...Training without patience for exactly 30 epochs
+2019-11-14 21:00:58,595:INFO:	Epoch 1
+2019-11-14 21:00:58,596:INFO:	=====================
+2019-11-15 07:48:07,652:INFO:	
+
+
+===================================================================================================
+2019-11-15 07:48:07,683:INFO:	kiperwasser_main
+2019-11-15 07:48:07,683:INFO:	===================================================================================================
+
+2019-11-15 07:48:07,684:INFO:	
+Arguments:
+2019-11-15 07:48:07,685:INFO:	Namespace(batch_size=32, big_dataset=False, dev='/homedtic/lperez/UniParse/datasets/ud2.1//en-ud-dev.conllu', dev_mode=False, do_training=True, epochs=30, hidden_dim=200, logging_file='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/logging.log', model_file='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model', only_words=True, output_file='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/output.out', patience=-1, results_folder='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200', tb_dest=None, test='/homedtic/lperez/UniParse/datasets/ud2.1//en-ud-test.conllu', train='/homedtic/lperez/UniParse/datasets/ud2.1//en-ud-train.conllu', upos_dim=25, vocab_file='/homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/vocab.pkl', word_dim=100)
+2019-11-15 07:48:07,685:INFO:	
+
+2019-11-15 07:48:07,711:INFO:	Training with normal dataset
+2019-11-15 07:48:07,712:DEBUG:	Init training
+2019-11-15 07:48:07,713:INFO:	>> Loading in data
+2019-11-15 07:48:07,713:INFO:	tokenizing train data ...
+2019-11-15 07:48:11,006:INFO:	_read_conll; read 12523 sentences
+2019-11-15 07:48:11,007:INFO:	... tokenized train data
+2019-11-15 07:48:11,008:INFO:	tokenizing dev data ...
+2019-11-15 07:48:11,378:INFO:	_read_conll; read 2001 sentences
+2019-11-15 07:48:11,379:INFO:	... tokenized dev data
+2019-11-15 07:48:11,380:INFO:	creating model ...
+2019-11-15 07:48:11,447:INFO:	... model created
+2019-11-15 07:48:11,448:INFO:	creating ModelSaveCallback ...
+2019-11-15 07:48:11,449:INFO:	saving model to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model  (after step 0)
+2019-11-15 07:48:11,450:INFO:	... ModelSaveCallback created
+2019-11-15 07:48:11,451:INFO:	creating Model ...
+2019-11-15 07:48:11,457:INFO:	... Model created
+2019-11-15 07:48:11,458:INFO:	training Model ...
+2019-11-15 07:48:11,459:DEBUG:	...Training without patience for exactly 30 epochs
+2019-11-15 07:48:12,321:INFO:	Epoch 1
+2019-11-15 07:48:12,321:INFO:	=====================
+2019-11-15 07:50:27,903:DEBUG:	Completed epoch 1 in 135.58209538459778
+2019-11-15 07:50:34,335:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 07:50:34,784:DEBUG:	UAS (wo. punct) 0.38996	 LAS (wo. punct) 0.31662
+2019-11-15 07:50:34,785:DEBUG:	UAS (w. punct) 0.38401	 LAS (w. punct) 0.31896
+2019-11-15 07:50:35,358:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 07:50:35,359:INFO:	Epoch 2
+2019-11-15 07:50:35,359:INFO:	=====================
+2019-11-15 07:52:46,850:DEBUG:	Completed epoch 2 in 131.49171018600464
+2019-11-15 07:52:53,334:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 07:52:53,793:DEBUG:	UAS (wo. punct) 0.65609	 LAS (wo. punct) 0.5688
+2019-11-15 07:52:53,794:DEBUG:	UAS (w. punct) 0.63685	 LAS (w. punct) 0.55935
+2019-11-15 07:52:53,819:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 07:52:53,819:INFO:	Epoch 3
+2019-11-15 07:52:53,820:INFO:	=====================
+2019-11-15 07:55:06,215:DEBUG:	Completed epoch 3 in 132.39561223983765
+2019-11-15 07:55:12,724:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 07:55:13,165:DEBUG:	UAS (wo. punct) 0.7277	 LAS (wo. punct) 0.63837
+2019-11-15 07:55:13,166:DEBUG:	UAS (w. punct) 0.71412	 LAS (w. punct) 0.63486
+2019-11-15 07:55:13,207:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 07:55:13,208:INFO:	Epoch 4
+2019-11-15 07:55:13,209:INFO:	=====================
+2019-11-15 07:57:24,652:DEBUG:	Completed epoch 4 in 131.44415473937988
+2019-11-15 07:57:31,027:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 07:57:31,490:DEBUG:	UAS (wo. punct) 0.7777	 LAS (wo. punct) 0.704
+2019-11-15 07:57:31,491:DEBUG:	UAS (w. punct) 0.76383	 LAS (w. punct) 0.69815
+2019-11-15 07:57:31,516:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 07:57:31,517:INFO:	Epoch 5
+2019-11-15 07:57:31,517:INFO:	=====================
+2019-11-15 07:59:42,859:DEBUG:	Completed epoch 5 in 131.34225010871887
+2019-11-15 07:59:49,531:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 07:59:49,984:DEBUG:	UAS (wo. punct) 0.78569	 LAS (wo. punct) 0.71512
+2019-11-15 07:59:49,985:DEBUG:	UAS (w. punct) 0.77422	 LAS (w. punct) 0.71161
+2019-11-15 07:59:50,009:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 07:59:50,010:INFO:	Epoch 6
+2019-11-15 07:59:50,011:INFO:	=====================
+2019-11-15 08:02:07,631:DEBUG:	Completed epoch 6 in 137.62138414382935
+2019-11-15 08:02:14,470:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:02:14,926:DEBUG:	UAS (wo. punct) 0.79823	 LAS (wo. punct) 0.73025
+2019-11-15 08:02:14,927:DEBUG:	UAS (w. punct) 0.78847	 LAS (w. punct) 0.72813
+2019-11-15 08:02:14,952:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 08:02:14,953:INFO:	Epoch 7
+2019-11-15 08:02:14,953:INFO:	=====================
+2019-11-15 08:04:32,758:DEBUG:	Completed epoch 7 in 137.80532240867615
+2019-11-15 08:04:39,518:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:04:39,980:DEBUG:	UAS (wo. punct) 0.80581	 LAS (wo. punct) 0.73824
+2019-11-15 08:04:39,981:DEBUG:	UAS (w. punct) 0.79584	 LAS (w. punct) 0.73561
+2019-11-15 08:04:40,005:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 08:04:40,007:INFO:	Epoch 8
+2019-11-15 08:04:40,007:INFO:	=====================
+2019-11-15 08:06:58,058:DEBUG:	Completed epoch 8 in 138.05202865600586
+2019-11-15 08:07:04,906:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:07:05,495:DEBUG:	UAS (wo. punct) 0.80963	 LAS (wo. punct) 0.74637
+2019-11-15 08:07:05,496:DEBUG:	UAS (w. punct) 0.80077	 LAS (w. punct) 0.74457
+2019-11-15 08:07:05,523:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 08:07:05,524:INFO:	Epoch 9
+2019-11-15 08:07:05,525:INFO:	=====================
+2019-11-15 08:09:22,972:DEBUG:	Completed epoch 9 in 137.44820761680603
+2019-11-15 08:09:29,772:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:09:30,226:DEBUG:	UAS (wo. punct) 0.81094	 LAS (wo. punct) 0.74864
+2019-11-15 08:09:30,227:DEBUG:	UAS (w. punct) 0.80189	 LAS (w. punct) 0.74648
+2019-11-15 08:09:30,254:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 08:09:30,255:INFO:	Epoch 10
+2019-11-15 08:09:30,256:INFO:	=====================
+2019-11-15 08:11:44,766:DEBUG:	Completed epoch 10 in 134.51108312606812
+2019-11-15 08:11:51,510:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:11:51,965:DEBUG:	UAS (wo. punct) 0.81367	 LAS (wo. punct) 0.75077
+2019-11-15 08:11:51,966:DEBUG:	UAS (w. punct) 0.80511	 LAS (w. punct) 0.7491
+2019-11-15 08:11:51,990:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 08:11:51,991:INFO:	Epoch 11
+2019-11-15 08:11:51,992:INFO:	=====================
+2019-11-15 08:14:04,883:DEBUG:	Completed epoch 11 in 132.89224076271057
+2019-11-15 08:14:11,732:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:14:12,170:DEBUG:	UAS (wo. punct) 0.8203	 LAS (wo. punct) 0.75867
+2019-11-15 08:14:12,171:DEBUG:	UAS (w. punct) 0.81128	 LAS (w. punct) 0.75647
+2019-11-15 08:14:12,196:INFO:	saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/model.model
+2019-11-15 08:14:12,197:INFO:	Epoch 12
+2019-11-15 08:14:12,198:INFO:	=====================
+2019-11-15 08:16:23,181:DEBUG:	Completed epoch 12 in 130.9847707748413
+2019-11-15 08:16:29,246:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:16:29,709:DEBUG:	UAS (wo. punct) 0.82003	 LAS (wo. punct) 0.75677
+2019-11-15 08:16:29,710:DEBUG:	UAS (w. punct) 0.80953	 LAS (w. punct) 0.75312
+2019-11-15 08:16:29,711:INFO:	Epoch 13
+2019-11-15 08:16:29,711:INFO:	=====================
+2019-11-15 08:18:42,709:DEBUG:	Completed epoch 13 in 132.99832391738892
+2019-11-15 08:18:49,279:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:18:49,743:DEBUG:	UAS (wo. punct) 0.81512	 LAS (wo. punct) 0.75613
+2019-11-15 08:18:49,744:DEBUG:	UAS (w. punct) 0.80627	 LAS (w. punct) 0.75368
+2019-11-15 08:18:49,744:INFO:	Epoch 14
+2019-11-15 08:18:49,745:INFO:	=====================
+2019-11-15 08:21:02,968:DEBUG:	Completed epoch 14 in 133.2237298488617
+2019-11-15 08:21:09,420:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:21:09,883:DEBUG:	UAS (wo. punct) 0.81957	 LAS (wo. punct) 0.7584
+2019-11-15 08:21:09,884:DEBUG:	UAS (w. punct) 0.81128	 LAS (w. punct) 0.75691
+2019-11-15 08:21:09,885:INFO:	Epoch 15
+2019-11-15 08:21:09,886:INFO:	=====================
+2019-11-15 08:23:23,084:DEBUG:	Completed epoch 15 in 133.19882035255432
+2019-11-15 08:23:29,559:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:23:30,163:DEBUG:	UAS (wo. punct) 0.8154	 LAS (wo. punct) 0.75045
+2019-11-15 08:23:30,164:DEBUG:	UAS (w. punct) 0.80587	 LAS (w. punct) 0.74803
+2019-11-15 08:23:30,165:INFO:	Epoch 16
+2019-11-15 08:23:30,166:INFO:	=====================
+2019-11-15 08:25:43,104:DEBUG:	Completed epoch 16 in 132.9386568069458
+2019-11-15 08:25:49,542:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:25:49,990:DEBUG:	UAS (wo. punct) 0.81962	 LAS (wo. punct) 0.75545
+2019-11-15 08:25:49,991:DEBUG:	UAS (w. punct) 0.81017	 LAS (w. punct) 0.75301
+2019-11-15 08:25:49,992:INFO:	Epoch 17
+2019-11-15 08:25:49,993:INFO:	=====================
+2019-11-15 08:28:03,807:DEBUG:	Completed epoch 17 in 133.8151979446411
+2019-11-15 08:28:26,565:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:28:27,003:DEBUG:	UAS (wo. punct) 0.80767	 LAS (wo. punct) 0.73869
+2019-11-15 08:28:27,004:DEBUG:	UAS (w. punct) 0.79663	 LAS (w. punct) 0.73529
+2019-11-15 08:28:27,005:INFO:	Epoch 18
+2019-11-15 08:28:27,006:INFO:	=====================
+2019-11-15 08:30:41,860:DEBUG:	Completed epoch 18 in 134.85570406913757
+2019-11-15 08:30:50,820:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:30:51,276:DEBUG:	UAS (wo. punct) 0.81698	 LAS (wo. punct) 0.75218
+2019-11-15 08:30:51,277:DEBUG:	UAS (w. punct) 0.80802	 LAS (w. punct) 0.75054
+2019-11-15 08:30:51,278:INFO:	Epoch 19
+2019-11-15 08:30:51,278:INFO:	=====================
+2019-11-15 08:33:09,870:DEBUG:	Completed epoch 19 in 138.59260511398315
+2019-11-15 08:33:16,671:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:33:17,187:DEBUG:	UAS (wo. punct) 0.8124	 LAS (wo. punct) 0.74832
+2019-11-15 08:33:17,188:DEBUG:	UAS (w. punct) 0.80356	 LAS (w. punct) 0.7466
+2019-11-15 08:33:17,189:INFO:	Epoch 20
+2019-11-15 08:33:17,189:INFO:	=====================
+2019-11-15 08:35:41,111:DEBUG:	Completed epoch 20 in 143.92296743392944
+2019-11-15 08:35:47,777:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:35:48,249:DEBUG:	UAS (wo. punct) 0.81839	 LAS (wo. punct) 0.75586
+2019-11-15 08:35:48,250:DEBUG:	UAS (w. punct) 0.80865	 LAS (w. punct) 0.75301
+2019-11-15 08:35:48,251:INFO:	Epoch 21
+2019-11-15 08:35:48,252:INFO:	=====================
+2019-11-15 08:38:09,774:DEBUG:	Completed epoch 21 in 141.5232446193695
+2019-11-15 08:38:16,791:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:38:17,251:DEBUG:	UAS (wo. punct) 0.81735	 LAS (wo. punct) 0.75377
+2019-11-15 08:38:17,252:DEBUG:	UAS (w. punct) 0.80814	 LAS (w. punct) 0.75157
+2019-11-15 08:38:17,253:INFO:	Epoch 22
+2019-11-15 08:38:17,254:INFO:	=====================
+2019-11-15 08:40:39,679:DEBUG:	Completed epoch 22 in 142.4268078804016
+2019-11-15 08:40:46,565:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:40:47,083:DEBUG:	UAS (wo. punct) 0.81335	 LAS (wo. punct) 0.75045
+2019-11-15 08:40:47,084:DEBUG:	UAS (w. punct) 0.80479	 LAS (w. punct) 0.74871
+2019-11-15 08:40:47,085:INFO:	Epoch 23
+2019-11-15 08:40:47,086:INFO:	=====================
+2019-11-15 08:43:08,159:DEBUG:	Completed epoch 23 in 141.07403540611267
+2019-11-15 08:43:14,595:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:43:15,190:DEBUG:	UAS (wo. punct) 0.81213	 LAS (wo. punct) 0.74796
+2019-11-15 08:43:15,191:DEBUG:	UAS (w. punct) 0.80408	 LAS (w. punct) 0.74699
+2019-11-15 08:43:15,192:INFO:	Epoch 24
+2019-11-15 08:43:15,192:INFO:	=====================
+2019-11-15 08:45:32,566:DEBUG:	Completed epoch 24 in 137.37423753738403
+2019-11-15 08:45:46,098:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:45:46,556:DEBUG:	UAS (wo. punct) 0.8149	 LAS (wo. punct) 0.75313
+2019-11-15 08:45:46,557:DEBUG:	UAS (w. punct) 0.80631	 LAS (w. punct) 0.75137
+2019-11-15 08:45:46,558:INFO:	Epoch 25
+2019-11-15 08:45:46,558:INFO:	=====================
+2019-11-15 08:48:02,985:DEBUG:	Completed epoch 25 in 136.4274275302887
+2019-11-15 08:48:08,989:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:48:09,403:DEBUG:	UAS (wo. punct) 0.81794	 LAS (wo. punct) 0.75327
+2019-11-15 08:48:09,404:DEBUG:	UAS (w. punct) 0.80913	 LAS (w. punct) 0.75161
+2019-11-15 08:48:09,405:INFO:	Epoch 26
+2019-11-15 08:48:09,406:INFO:	=====================
+2019-11-15 08:50:27,840:DEBUG:	Completed epoch 26 in 138.43505024909973
+2019-11-15 08:50:34,342:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:50:34,812:DEBUG:	UAS (wo. punct) 0.81312	 LAS (wo. punct) 0.74955
+2019-11-15 08:50:34,813:DEBUG:	UAS (w. punct) 0.80396	 LAS (w. punct) 0.74739
+2019-11-15 08:50:34,814:INFO:	Epoch 27
+2019-11-15 08:50:34,814:INFO:	=====================
+2019-11-15 08:52:55,253:DEBUG:	Completed epoch 27 in 140.4399721622467
+2019-11-15 08:53:01,848:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:53:02,317:DEBUG:	UAS (wo. punct) 0.81798	 LAS (wo. punct) 0.755
+2019-11-15 08:53:02,317:DEBUG:	UAS (w. punct) 0.80834	 LAS (w. punct) 0.75233
+2019-11-15 08:53:02,318:INFO:	Epoch 28
+2019-11-15 08:53:02,318:INFO:	=====================
+2019-11-15 08:55:22,039:DEBUG:	Completed epoch 28 in 139.72148823738098
+2019-11-15 08:55:28,475:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:55:28,910:DEBUG:	UAS (wo. punct) 0.81417	 LAS (wo. punct) 0.75077
+2019-11-15 08:55:28,911:DEBUG:	UAS (w. punct) 0.80527	 LAS (w. punct) 0.74883
+2019-11-15 08:55:28,913:INFO:	Epoch 29
+2019-11-15 08:55:28,914:INFO:	=====================
+2019-11-15 08:57:49,655:DEBUG:	Completed epoch 29 in 140.74268198013306
+2019-11-15 08:57:56,069:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 08:57:56,505:DEBUG:	UAS (wo. punct) 0.81072	 LAS (wo. punct) 0.74673
+2019-11-15 08:57:56,506:DEBUG:	UAS (w. punct) 0.80137	 LAS (w. punct) 0.74445
+2019-11-15 08:57:56,507:INFO:	Epoch 30
+2019-11-15 08:57:56,508:INFO:	=====================
+2019-11-15 09:00:16,319:DEBUG:	Completed epoch 30 in 139.81202507019043
+2019-11-15 09:00:22,787:DEBUG:	output file saved to 1115074811_on_en-ud-dev.conllu
+2019-11-15 09:00:23,397:DEBUG:	UAS (wo. punct) 0.81371	 LAS (wo. punct) 0.7505
+2019-11-15 09:00:23,398:DEBUG:	UAS (w. punct) 0.80579	 LAS (w. punct) 0.74934
+2019-11-15 09:00:23,399:DEBUG:	Finished at epoch 30
+2019-11-15 09:00:23,402:INFO:	...Model trained
+2019-11-15 09:00:23,403:INFO:	Model maxed on dev at epoch 11 
+2019-11-15 09:00:23,782:INFO:	_read_conll; read 2076 sentences
+2019-11-15 09:00:30,263:DEBUG:	output file saved to /homedtic/lperez/UniParse/models/kiperwasser_pytorch/ud/only_words_true/torch200/output.out
+2019-11-15 09:00:30,726:INFO:	{'uas': 0.81052295663967455, 'las': 0.75818740276835928, 'nopunct_uas': 0.82227898914332631, 'nopunct_las': 0.76338837697290396}
+2019-11-15 09:00:30,727:INFO:	
+--------------------------------------------------------
+2019-11-15 09:00:30,728:INFO:	Test score: 0.822278989143 0.763388376973
+2019-11-15 09:00:30,729:INFO:	--------------------------------------------------------
+
