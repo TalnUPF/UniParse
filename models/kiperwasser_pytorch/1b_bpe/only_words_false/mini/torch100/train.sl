@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name="torch10"
+#SBATCH --job-name="t100mini"
 #SBATCH -n 1
 #SBATCH -N 1
 #SBATCH --mem=20Gb
