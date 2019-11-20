@@ -33,11 +33,29 @@ class BiRNN(nn.Module):
         c0 = torch.zeros(self.num_layers * 2, x.size(0), self.hidden_size)
 
         # Forward propagate LSTM
+        """
+        Input: Pytorch’s LSTM expects all of its inputs to be 3D tensors. The first axis is the sequence itself, the second 
+        indexes instances in the mini-batch, and the third indexes elements of the input. 
+                
+        Source: https://pytorch.org/tutorials/beginner/nlp/sequence_models_tutorial.html
+        Output: 
+            - the first value returned by LSTM is all of the hidden states throughout the sequence. 
+            - the second is just the most recent hidden state (compare the last slice of "out" with "hidden" below, 
+              they are the same).
+        The reason for this is that: "out" will give you access to all hidden states in the sequence; "hidden" will 
+        allow you to continue the sequence and backpropagate, by passing it as an argument  to the lstm at a later time.
+        """
         out, hidden = self.lstm(x, (h0, c0))  # out: tensor of shape (batch_size, seq_length, hidden_size*2)
+
+        """The two 3D tensors are actually concatenated on the last axis, so to merge them, we usually do something like this:
+            output = output[:, :, :self.hidden_dim] + output[:, :, self.hidden_dim:]
+        aux1 = out[:, :, :self.hidden_size]
+        aux2 = out[:, :, self.hidden_size:]
+        aux3 = aux1 + aux2  # size torch.Size([1, 8, 100])
+        """
 
         # Decode the hidden state of the last time step
         return out, hidden
-
 
 
 class DependencyParser(nn.Module, Parser):
@@ -174,10 +192,10 @@ class DependencyParser(nn.Module, Parser):
         words = torch.cat([word_embs, upos_embs], dim=-1)
 
         # word_exprs = self.deep_bilstm(words)
-        out, hidden = self.deep_bilstm.get_hidden_states(words)
+        out, (h_n, c_n) = self.deep_bilstm.get_hidden_states(words)
 
         #return state_pairs_list
-        return hidden
+        return out
 
     def extract_internal_states(self, samples, format, backend):
         """
@@ -201,7 +219,7 @@ class DependencyParser(nn.Module, Parser):
             words = backend.input_tensor(np.array([words]), dtype="int")
             tags = backend.input_tensor(np.array([tags]), dtype="int")
 
-            states = self.get_hidden_states(words, tags)
+            states = self.get_hidden_states(words, tags)  # TODO lpmayos: tengo los hidden states backward y forward de cada token, pero no por cada capa
 
             for state in states:  # we receive one state per each word in the sample
 

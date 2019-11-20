@@ -3,7 +3,7 @@ import sys
 import time
 import ntpath
 import logging
-import hdfdict
+# import hdfdict
 from typing import *
 
 from uniparse.types import Parser
@@ -134,7 +134,8 @@ class ParserModel(object):
         # embeddings = embeddings.astype(np.float32)
 
         if save:
-            hdfdict.dump(embeddings, file_path)
+            print('TODO')
+            # hdfdict.dump(embeddings, file_path)  # TODO lpmayos commented out because modules does not exist in cluster
 
         return embeddings
 
