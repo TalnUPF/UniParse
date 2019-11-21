@@ -225,3 +225,27 @@ class DependencyParser(Parser):
                 i += 1
 
         return embeddings
+
+    def extract_embeddings(self, samples, backend, format='concat', save=False, file_path=None):
+        """
+        based on original function 'run', but instead of calling _parser() to end up executing dynet 'transduce'
+        function, we call 'extract_internal_states' to end up executing dynet 'add_inputs' function:
+            add_inputs(es)
+                returns the list of state pairs (stateF, stateB) obtained by adding inputs to both forward (stateF) and
+                backward (stateB) RNNs. Does not preserve the internal state after adding the inputs
+        """
+
+        # embeddings is a numpy array with shape n_words x 4 x 125
+        embeddings = self.extract_internal_states(samples, backend)
+
+        if format == 'average':
+            raise NotImplementedError
+        elif format == 'max':
+            raise NotImplementedError
+        else:  # default: concat
+            embeddings_dimension = embeddings.shape[1] * embeddings.shape[2]
+            embeddings = embeddings.reshape((embeddings.shape[0], embeddings_dimension))
+
+        embeddings = embeddings.astype(np.float32)
+
+        return embeddings
