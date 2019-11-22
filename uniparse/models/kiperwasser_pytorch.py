@@ -196,38 +196,3 @@ class DependencyParser(nn.Module, Parser):
 
         #return state_pairs_list
         return out
-
-    def extract_internal_states(self, samples, format, backend):
-        """
-        based on original function 'run', but instead of transduce we call add_inputs to get the list of state pairs
-        (stateF, stateB)
-        """
-
-        embeddings = {}
-
-        # total_words = sum([len(a[0]) for a in samples])
-        # embeddings_per_word = 4
-        # embeddings_len = self.get_embeddings_len()
-        # embeddings = np.zeros((total_words, embeddings_per_word, embeddings_len))
-
-        i = 0
-        for sentence in samples:
-            backend.renew_cg()
-
-            words, lemmas, tags, heads, rels, chars = sentence
-
-            words = backend.input_tensor(np.array([words]), dtype="int")
-            tags = backend.input_tensor(np.array([tags]), dtype="int")
-
-            states = self.get_hidden_states(words, tags)  # TODO lpmayos: tengo los hidden states backward y forward de cada token, pero no por cada capa
-
-            for state in states:  # we receive one state per each word in the sample
-
-                embeddings[i][0] = state[0].detach().numpy()
-                embeddings[i][1] = state[1].detach().numpy()
-                embeddings[i][2] = state[2].detach().numpy()
-                embeddings[i][3] = state[3].detach().numpy()
-
-                i += 1
-
-        return embeddings
