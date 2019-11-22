@@ -1,5 +1,6 @@
 import collections
 import logging
+import os
 
 import h5py
 import torch
@@ -20,14 +21,18 @@ We decouple the model to extract and use embeddings, generating separate LSTM fo
 class EmbeddingsExtractor(object):
 
     def __init__(self, logging_file, model_config):
-        self.logging_file = logging_file
-        self.model_config = model_config
 
         # configure logging
+        self.logging_file = logging_file
         self._configure_logging()
 
-        # load vocabilary, parser and model
+        self.model_config = model_config
+        logging.info(model_config)
+
+        # load vocabulary, parser and model
         self._load_model()
+
+        # create lstms
         self._create_lstms()
 
     def _configure_logging(self):
@@ -88,14 +93,14 @@ class EmbeddingsExtractor(object):
     def generate_embeddings(self, input_file):
 
         logging.info("\n\n\n===================================================================================================")
-        logging.info("kiperwasser_contextual embeddings_extractor")
+        logging.info("Generating K&G contextual embeddings for %s" % input_file)
         logging.info("===================================================================================================\n")
 
         # generate tokenized data
-        input_data = self.vocab.tokenize_conll(input_file)
+        tokenized_sentences = self.vocab.tokenize_conll(input_file)
 
         embs = {}
-        for i, sample in enumerate(input_data):
+        for i, sample in enumerate(tokenized_sentences):
             self.model.backend.renew_cg()  # for pytorch it is just 'pass'
 
             # get embeddings
@@ -106,31 +111,35 @@ class EmbeddingsExtractor(object):
             tags = self.model.backend.input_tensor(np.array([tags]), dtype="int")
 
             word_embs = self.parser.wlookup(words)
-            tags_embs = self.parser.tlookup(tags)
+            tags_embs = self.parser.tlookup(tags)  # TODO think if it makes sense to use tag_embs or not!
 
-            input_data = torch.cat([word_embs, tags_embs], dim=-1)  # dim 1x8x125 (if we have 8 words in the sentence)
-            input_data_reversed = torch.flip(input_data, (1,))
+            input_data0 = torch.cat([word_embs, tags_embs], dim=-1)  # dim 1x8x125 (if we have 8 words in the sentence)
+            input_data0_reversed = torch.flip(input_data0, (1,))
 
             # feed data
 
-            out_lstm_fwd_0, hidden_lstm_fwd_0 = self.lstm_fwd_0(input_data)
-            out_lstm_bwd_0, hidden_lstm_bwd_0 = self.lstm_bwd_0(input_data_reversed)
+            out_lstm_fwd_0, hidden_lstm_fwd_0 = self.lstm_fwd_0(input_data0)
+            out_lstm_bwd_0, hidden_lstm_bwd_0 = self.lstm_bwd_0(input_data0_reversed)
 
-            input_data = torch.cat((out_lstm_fwd_0, out_lstm_bwd_0), 2)
-            input_data_reversed = torch.flip(input_data, (1,))
-            out_lstm_fwd_1, hidden_lstm_fwd_1 = self.lstm_fwd_1(input_data)
-            out_lstm_bwd_1, hidden_lstm_bwd_1 = self.lstm_bwd_1(input_data_reversed)
+            input_data1 = torch.cat((out_lstm_fwd_0, out_lstm_bwd_0), 2)
+            input_data1_reversed = torch.flip(input_data1, (1,))
+            out_lstm_fwd_1, hidden_lstm_fwd_1 = self.lstm_fwd_1(input_data1)
+            out_lstm_bwd_1, hidden_lstm_bwd_1 = self.lstm_bwd_1(input_data1_reversed)
 
             # generate embeddings
-            # TODO in ELMo they perform a task-dependant weighted sum of the concatenation of L0 (initial embeddings), L1 and L2
-            # For now we'll sum there without weighting just for testing purposes
 
-            sentence_embeddings = out_lstm_fwd_0 + out_lstm_bwd_0 + out_lstm_fwd_1 + out_lstm_bwd_1
+            out_lstm_bwd_0 = torch.flip(out_lstm_bwd_0, (1,))
+            out_lstm_bwd_1 = torch.flip(out_lstm_bwd_1, (1,))
+
+            # TODO in ELMo they perform a task-dependant weighted sum of the concatenation of L0 (initial embeddings), L1 and L2;
+            #  As our input has varying sizes and we are not weighting the layers, we'll just concatenate everything.
+            sentence_embeddings = torch.cat((input_data0, out_lstm_fwd_0, out_lstm_bwd_0, out_lstm_fwd_1, out_lstm_bwd_1), 2)  # 1 x 8 x 125+100+100+100+100 = 525
             embs[i] = sentence_embeddings
 
         return embs
 
-    def save_to_hdf5(self, embeddings, file_path):
+    @staticmethod
+    def save_to_hdf5(embeddings, file_path):
         # save embeddings in hdf5 format
 
         # Write contextual word representations to disk for each of the train, dev, and test split in hdf5 format, where the
@@ -140,18 +149,22 @@ class EmbeddingsExtractor(object):
 
         with h5py.File(file_path, 'w') as f:
             for k, v in embeddings.items():
+                logging.info('creating dataset for k %s' % str(k))
                 f.create_dataset(str(k), data=v.detach().numpy())
 
-    def check_hdf5_file(self, file_path):
+    @staticmethod
+    def check_hdf5_file(file_path):
 
-        with h5py.File('myfile.hdf5', 'r') as f:
+        with h5py.File(file_path, 'r') as f:
             for item in f.items():
-                print(item)
+                logging.info(item)
 
 
 if __name__ == '__main__':
 
-    logging_file = '/home/lpmayos/hd/code/UniParse/logging.log'
+    input_files = ['/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/en_ewt-ud-dev.conllu',
+                   '/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/en_ewt-ud-test.conllu',
+                   '/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/en_ewt-ud-train.conllu']
 
     model_config = {
         'vocab_file': '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run1/vocab.pkl',
@@ -162,20 +175,26 @@ if __name__ == '__main__':
         'hidden_dim': 100
     }
 
+    output_folder = '/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/kg_ctx_embs_owtrue_hid100/'
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    logging_file = output_folder + 'logging.log'
+
     embeddings_extractor = EmbeddingsExtractor(logging_file, model_config)
 
-    # generate input data
+    for file_path in input_files:
+        file_path = transform_to_conllu(file_path)
 
-    # input_file = '/home/lpmayos/hd/code/cvt_text/data/raw_data/depparse/test_mini.txt'
-    input_file = '/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/en_ewt-ud-dev.conllu'
-    input_file = transform_to_conllu(input_file)
+        # compute embeddings
 
-    # compute embeddings
+        embs = embeddings_extractor.generate_embeddings(file_path)
 
-    embs = embeddings_extractor.generate_embeddings(input_file)
+        # save embeddings in hdf5 format
 
-    # save embedidngs in hdf5 format
+        output_file = output_folder + file_path.split('/')[-1].replace('.conllu', '.kg-layers.hdf5')
+        embeddings_extractor.save_to_hdf5(embs, output_file)
 
-    output_file = 'myfile.hdf5'
-    embeddings_extractor.save_to_hdf5(embs, output_file)
-    embeddings_extractor.check_hdf5_file(output_file)
+        # check that embeddings were correctly saved
+
+        embeddings_extractor.check_hdf5_file(output_file)
