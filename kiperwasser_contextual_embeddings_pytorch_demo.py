@@ -133,13 +133,14 @@ class EmbeddingsExtractor(object):
 
             # TODO in ELMo they perform a task-dependant weighted sum of the concatenation of L0 (initial embeddings), L1 and L2;
             #  As our input has varying sizes and we are not weighting the layers, we'll just concatenate everything.
+            # TODO for the syntactic probes, ELMo stores sepparately the three layers, so maybe we can do the same at least with layer 0 and layer1 ¿?
             sentence_embeddings = torch.cat((input_data0, out_lstm_fwd_0, out_lstm_bwd_0, out_lstm_fwd_1, out_lstm_bwd_1), 2)  # 1 x 8 x 125+100+100+100+100 = 525
             embs[i] = sentence_embeddings
 
         return embs
 
     @staticmethod
-    def save_to_hdf5(embeddings, file_path):
+    def save_to_hdf5(embeddings, file_path, skip_root=False):
         # save embeddings in hdf5 format
 
         # Write contextual word representations to disk for each of the train, dev, and test split in hdf5 format, where the
@@ -150,7 +151,10 @@ class EmbeddingsExtractor(object):
         with h5py.File(file_path, 'w') as f:
             for k, v in embeddings.items():
                 logging.info('creating dataset for k %s' % str(k))
-                f.create_dataset(str(k), data=v.detach().numpy())
+                sentence_embs = v.detach().numpy()
+                if skip_root and sentence_embs.shape[1] != 1:  # TODO for some reason, in sentences of 1 element we only have one token as if root was not attached ¿?
+                    sentence_embs = sentence_embs[:, 1:, :]
+                f.create_dataset(str(k), data=sentence_embs)
 
     @staticmethod
     def check_hdf5_file(file_path):
@@ -162,9 +166,9 @@ class EmbeddingsExtractor(object):
 
 if __name__ == '__main__':
 
-    input_files = ['/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/en_ewt-ud-dev.conllu',
-                   '/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/en_ewt-ud-test.conllu',
-                   '/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/en_ewt-ud-train.conllu']
+    input_files = ['/home/lpmayos/hd/code/structural-probes/lpmayos_tests/data/en_ewt-ud-sample/en_ewt-ud-dev.conllu',
+                   '/home/lpmayos/hd/code/structural-probes/lpmayos_tests/data/en_ewt-ud-sample/en_ewt-ud-test.conllu',
+                   '/home/lpmayos/hd/code/structural-probes/lpmayos_tests/data/en_ewt-ud-sample/en_ewt-ud-train.conllu']
 
     model_config = {
         'vocab_file': '/home/lpmayos/hd/code/UniParse/models/kiperwasser_pytorch/ud/only_words_false/toy_runs/run1/vocab.pkl',
@@ -175,7 +179,7 @@ if __name__ == '__main__':
         'hidden_dim': 100
     }
 
-    output_folder = '/home/lpmayos/hd/code/structural-probes/example/data/en_ewt-ud-sample/kg_ctx_embs_owtrue_hid100/'
+    output_folder = '/home/lpmayos/hd/code/structural-probes/lpmayos_tests/data/en_ewt-ud-sample/kg_ctx_embs_owtrue_hid100/'
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
@@ -193,7 +197,7 @@ if __name__ == '__main__':
         # save embeddings in hdf5 format
 
         output_file = output_folder + file_path.split('/')[-1].replace('.conllu', '.kg-layers.hdf5')
-        embeddings_extractor.save_to_hdf5(embs, output_file)
+        embeddings_extractor.save_to_hdf5(embs, output_file, skip_root=True)
 
         # check that embeddings were correctly saved
 
