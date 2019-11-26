@@ -152,7 +152,7 @@ class EmbeddingsExtractor(object):
             for k, v in embeddings.items():
                 logging.info('creating dataset for k %s' % str(k))
                 sentence_embs = v.detach().numpy()
-                if skip_root and sentence_embs.shape[1] != 1:  # TODO for some reason, in sentences of 1 element we only have one token as if root was not attached ¿?
+                if skip_root:
                     sentence_embs = sentence_embs[:, 1:, :]
                 f.create_dataset(str(k), data=sentence_embs)
 
